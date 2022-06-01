@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "安裝套件":"npm install",
+    "安裝套件": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

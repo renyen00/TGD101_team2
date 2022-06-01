@@ -1,0 +1,20 @@
+{
+  "name": "TGD_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renyen00/TGD101_team2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renyen00/TGD101_team2/issues"
+  },
+  "homepage": "https://github.com/renyen00/TGD101_team2#readme"
+}

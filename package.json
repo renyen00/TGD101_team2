@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "安裝套件": "npm install",
+    "開發(同步瀏覽器)":"gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

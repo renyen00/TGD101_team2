@@ -1,0 +1,14 @@
+@include btn_temp('btnXL_b',200px,50px,map-get($Mapcolor,'blue'),10px);
+@include btn_temp('btnL_b',150px,60px,map-get($Mapcolor,'blue'),10px);
+@include btn_temp('btnM_b',100px,60px,map-get($Mapcolor,'blue'),6px);
+@include btn_temp('btnS_b',100px,35px,map-get($Mapcolor,'blue'),6px);
+
+@include btn_temp('btnXL_y',200px,50px,map-get($Mapcolor,'yellow'),10px);
+@include btn_temp('btnL_y',150px,60px,map-get($Mapcolor,'yellow'),10px);
+@include btn_temp('btnM_y',100px,60px,map-get($Mapcolor,'yellow'),6px);
+@include btn_temp('btnS_y',100px,35px,map-get($Mapcolor,'yellow'),6px);
+
+@include btn_temp('btnXL_w',200px,50px,map-get($Mapcolor,'white'),10px);
+@include btn_temp('btnL_w',150px,60px,map-get($Mapcolor,'white'),10px);
+@include btn_temp('btnM_w',100px,60px,map-get($Mapcolor,'white'),6px);
+@include btn_temp('btnS_w',100px,35px,map-get($Mapcolor,'white'),6px);

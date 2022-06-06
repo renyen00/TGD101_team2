@@ -1,0 +1,11 @@
+@import 'base/var';
+@import 'base/reset';
+@import 'base/fontSet';
+@import 'mixin/mixin';
+@import 'component/btn';
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: map-get($fontSize,'type-4');
+}

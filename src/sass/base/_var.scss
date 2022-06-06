@@ -1,0 +1,24 @@
+/*變數設定*/
+
+/*如果要取出來使用，格式:map-get($map名稱,'屬性名稱')
+ex: 
+.example{
+    background-color: map-get($Mapcolor,'dkblue')
+}
+*/
+$fontSize : (
+    "type-1":20px,
+    "type-2":18px,
+    "type-3":16px,
+    "type-4":10px
+);
+$Mapcolor : (
+    "key" : "val",
+    "blue" : #2F4858,
+    "yellow" : #f2bf61,
+    "pink" : #F99090,
+    "white" : #ffffff,
+    "black" : #000000
+);
+//字體設定
+$fontFamily : 'Gill Sans',sans-serif; 

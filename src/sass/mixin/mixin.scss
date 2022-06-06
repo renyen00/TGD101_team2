@@ -33,7 +33,7 @@
                 color:$bgc;
             }@else{
                 background-color: lighten($bgc, 100);
-                border: 3px solid lighten($bgc, 100);
+                border: 3px solid $bgc;
                 color: lighten($bgc,0);
             }
 

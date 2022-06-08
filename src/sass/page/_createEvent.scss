@@ -1,11 +1,14 @@
 
+
 // 可共用?
 .createEvent_div_wrapper{
-    background-image: url('../images/backgroundimg/createEvent.svg');
+    // max-width: 100%;
+    background-image: url('../images/backgroundimg/vector.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain 120%;
     font-family: $fontFamily;
-    width: 1440px;
+    max-width: 1440px;
+    border: 1px solid #000;
     margin: 0 auto;
 
     position: relative;
@@ -134,7 +137,7 @@
 
 .createEvent_div_createForm{
     margin: 0 auto 35px;
-    border: 1px solid rgb(240, 235, 148);
+    // border: 1px solid rgb(240, 235, 148);
     width: 800px;
     height: 550px;
     padding: 25px;
@@ -143,7 +146,7 @@
     justify-content: space-around;
 
     ul{
-        border: 1px solid green;
+        // border: 1px solid green;
         padding-top: 15px;
     }
 

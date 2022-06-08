@@ -20,7 +20,7 @@ function tasking(params) {
 
 exports.log = tasking
 
-function mvfile(bbb) {
+function mvfile() {
     // src('').pipe(dest(''))
     // 將 '檔案位置的檔案' 通過通道 到 '目錄位置' 目錄下
     // ./*.副檔名 => 將 所有附檔名為html的檔案
@@ -36,20 +36,6 @@ function mvimages() {
 
 exports.mving = mvimages;
 
-//同步跟異步
-function tkA(cb) {
-    console.log('missionA');
-    cb();
-}
-
-
-function tkB(cb) {
-    console.log('missionB');
-    cb();
-}
-
-exports.async = series(tkA,tkB);//異步
-exports.sync = parallel(tkA,tkB);//同步
 
 //改名:打包完後改名字
 const rename = require('gulp-rename');
@@ -68,7 +54,7 @@ exports.css = minicss;
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 
-function miniJs(params) {
+function miniJs() {
     return src('./src/js/*.js')
     .pipe(uglify())
     .pipe(babel({
@@ -96,7 +82,7 @@ const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 
-function stylesass(params) {
+function stylesass() {
     return src('./src/sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
@@ -130,7 +116,7 @@ exports.all = parallel(includeHTML , stylesass , miniJs , mvimages);
 
 
 //監看
-function wahtch(params) {
+function wahtch() {
     // return watch() 監看結構
     // 監看單個資料路徑 : watch('',callback)
     // 監看多個資料路徑 : watch(['','',...],callback => (該檔案相關的函式))

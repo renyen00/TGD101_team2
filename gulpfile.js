@@ -31,7 +31,7 @@ exports.mv = mvfile;
 function mvimages() {
     // 將 '檔案夾中所有檔案' 通過通道 到 '目錄位置' 目錄下
     // /*.* => 將 所有檔案
-    return src(['./src/image/*.*','./src/image/**/*.*']).pipe(dest('dist/images'));
+    return src(['./src/images/*.*','./src/images/**/*.*']).pipe(dest('dist/images'));
 }
 
 exports.mving = mvimages;

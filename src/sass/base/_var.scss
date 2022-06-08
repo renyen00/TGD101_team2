@@ -1,3 +1,5 @@
+//zen maru font 引用
+@import "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap";
 /*變數設定*/
 
 /*如果要取出來使用，格式:map-get($map名稱,'屬性名稱')
@@ -21,4 +23,4 @@ $Mapcolor : (
     "black" : #000000
 );
 //字體設定
-$fontFamily : 'Gill Sans',sans-serif; 
+$fontFamily : 'Zen Maru Gothic', sans-serif;

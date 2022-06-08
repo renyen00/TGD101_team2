@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發起揪團</title>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="createEvent_div_wrapper">
+        <div class="createEvent_div_container">
+            <header>
+                <div class="createEvent_div_logo"><img src="./images/logo/logo_white_final.svg"></div>
+                <!-- @@include('./layout/nav.html') -->
+                <h1 class="createEvent_div_title">發起揪團</h1>
+
+                <ul class="createEvent_ul_breadcrumb">
+                    <li>首頁</li>
+                    <li>></li>
+                    <li>發起揪團</li>
+                </ul>
+            </header>
+            <span class="iconify" data-icon="icon-park-outline:bird" style="color: #f2bf61;" data-width="100" data-flip="horizontal"></span>
+
+            <main>
+                <div class="createEvent_icon_cloud1"></div>
+                <div class="createEvent_icon_cloud2"></div>
+                <section class="createEvent_section_rule">
+                    <h3>如何發起</h3>
+                    <h4>揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制</h4>
+                </section>
+                <div class="createEvent_icon_arrow"></div>
+                <form>
+                    <div class="createEvent_div_createForm">
+                        <ul class="createEvent_ul_formR">
+                            <li>
+                                <h4>活動主題<span>*此欄位尚未填寫</span></h4>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <h4>活動日期</h4>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <h4>活動時間</h4>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <h4>參加年齡</h4>
+                                <input type="text">
+                                <!-- <select name="ageRange" id="ageRange">
+                                    <option value="1">18 ~ 25</option>
+                                    <option value="2">20 ~ 30</option>
+                                    <option value="3">30 ~ 35</option>
+                                    <option value="4">35 以上</option>
+                                </select> -->
+                            </li>
+                        </ul>
+
+                        <ul class="createEvent_ul_formL">
+                            <li>
+                                <h4>活動區域<span>*此欄位尚未填寫</span></h4>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <h4>人數上限</h4>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <h4>活動內容</h4>
+                                <input type="text">
+                            </li>
+                        </ul>
+                    </div>
+                    <section class="createEvent_section_feeAndDeadline">
+                        <h4>入場費用<span>NT$ 200 /每人</span></h4>
+                        <h4>報名截止時間  2022年 6月 15日  上午 10 : 00</h4>
+                        <div>
+                            <span class="iconify edit" data-icon="bi:pencil" style="color: #2f4858;" data-width="24"></span>
+                        </div>
+                    </section>
+                    <div class="createEvent_icon_cloud3"></div>
+                    <div class="createEvent_icon_cloud4"></div>
+                    <div class="createEvent_div_choosePhoto">
+                        <div class="createEvent_div_choosePhotoL">
+                            <h3>請選擇一張圖片 或 上傳一張照片</h3>
+                            <div class="createEvent_div_photoZone"></div>
+                            <!-- <input type="button" class="btnXL_b--s" value="選擇上傳照片"> -->
+                            <label class="btnXL_b--s">
+                                <input type="file">選擇上傳照片
+                            </label>
+                        </div>
+                        <div class="createEvent_div_choosePhotoR">
+                            <ul>
+                                <li><img src="./images/backgroundimg/createEvent_presetimg1.webp"></li>
+                                <li><img src="./images/backgroundimg/createEvent_presetimg2.webp"></li>
+                                <li><img src="./images/backgroundimg/createEvent_presetimg3.webp"></li>
+                                <li><img src="./images/backgroundimg/createEvent_presetimg4.webp"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <section class="createEvent_section_note">
+                        <h4>報名截止時間若未滿最低人數自動解團，成團後系統發信通知之類的之類的之類的之類的之類的之類的之類的之類</h4>
+                    </section>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird" style="color: #2f4858;" data-width="60"></span>
+                    <input type="submit" class="btnXL_b createEvent_btn_submitCreate" value="發起揪團">
+
+                </form>
+            </main>
+            
+        </div>  <!-- container end -->
+        @@include('./layout/footer.html')
+    </div>  <!-- wrapper end -->
+</body>
+</html>

@@ -1,0 +1,307 @@
+
+// 可共用?
+.createEvent_div_wrapper{
+    background-image: url('../images/backgroundimg/createEvent.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: $fontFamily;
+    width: 1440px;
+    margin: 0 auto;
+
+    position: relative;
+
+    .iconify{
+        position: absolute;
+        top: 11%;
+        left: 17%;
+    }
+    main{
+        .createEvent_icon_cloud1{
+            width: 250px;
+            height: 200px;
+            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            position: absolute;
+            left: 3%;
+
+        }
+        .createEvent_icon_cloud2{
+            width: 250px;
+            height: 200px;
+            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            position: absolute;
+            top: 22%;
+            left: 16%;
+        }
+        .createEvent_icon_arrow{
+            width: 150px;
+            height: 140px;
+            background-image: url('../images/backgroundimg/createEvent_arrow.svg');
+            position: absolute;
+            top: 24.5%;
+            left: 67%;
+        }
+        .createEvent_icon_cloud3{
+            width: 250px;
+            height: 200px;
+            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            position: absolute;
+            top: 50%;
+            left: 22%;
+        }
+        .createEvent_icon_cloud4{
+            width: 250px;
+            height: 200px;
+            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            position: absolute;
+            top: 52%;
+            left: 43%;
+        }
+
+        .iconify{
+            position: absolute;
+            top: 95.2%;
+            left: 42.8%;
+        }
+        .createEvent_section_feeAndDeadline{
+            div{
+                position: absolute;
+                top: 50.5%;
+                left: 62%;
+                background-color: #F2BF61;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                .iconify{                
+                    top: 20%;
+                    left: 20%;
+                }
+            }
+        }
+    }
+}
+
+// 1200可共用?
+.createEvent_div_container{
+    width: 1200px;
+    padding-top: 35px;
+    // border: 1px solid #F99090;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.createEvent_div_logo{
+    width: 120px;
+    height: 120px;
+    margin: 35px auto;
+}
+
+.createEvent_div_title{
+    text-align: center;
+}
+
+// 可共用?
+.createEvent_ul_breadcrumb{
+    margin-left: 70px;
+    margin-top: 35px;
+    li{
+        display: inline-block;
+        color: #fff;
+        font-size: 20px;
+        margin-right: 5px;
+    }
+}
+
+.createEvent_section_rule{
+    border: 5px dashed #F2BF61;
+    border-radius: 30px;
+    margin: 85px auto 70px;
+    padding: 55px;
+    width: 700px;
+    height: 400px;
+
+    h3{
+    font-weight: bold;
+    margin-bottom: 60px;
+    }
+
+    h4{
+        line-height: 55px;
+        letter-spacing: .5em;
+    }
+}
+
+
+.createEvent_div_createForm{
+    margin: 0 auto 35px;
+    border: 1px solid rgb(240, 235, 148);
+    width: 800px;
+    height: 550px;
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-around;
+
+    ul{
+        border: 1px solid green;
+        padding-top: 15px;
+    }
+
+    h4{
+        font-weight: bold;
+    }
+
+    input{
+        border: 2px solid #fff;
+        border-radius: 10px;
+        width: 300px;
+        height: 50px;
+        background-color: transparent;
+        margin: 20px 0 40px;
+    }
+
+    span{
+        color: red;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}
+
+.createEvent_ul_formL li:last-child input{
+    height: 180px;
+}
+
+.createEvent_section_feeAndDeadline{
+    width: 800px;
+    margin: 0 auto 270px;
+
+    h4{
+        text-align: center;
+        margin-bottom: 35px;
+        font-weight: bold;
+    }
+
+    span{
+        margin-left: 30px;
+        font-size: 1.6rem;
+    }
+}
+
+// --------------------------------
+.createEvent_div_choosePhoto{
+    border: 5px solid rgba(47, 72, 88, 0.3);
+    box-shadow: 6px 12px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    background-color: #fff;
+    width: 1000px;
+    height: 635px;
+    margin: 0 auto 85px;
+
+    display: flex;
+}
+
+.createEvent_div_choosePhotoL{
+    // border: 1px solid pink;
+    flex-grow: 11;
+
+    h3{
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-width: 2px 5px 5px 2px;
+        border-radius: 34px 3px 34px 3px;
+        color: #2F4858;
+        font-weight: bold;
+        line-height: 110px;
+        text-align: center;
+    }
+
+    label{
+        font-weight: bold;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    input{
+        display: none;
+    }
+}
+
+.createEvent_div_photoZone{
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    margin: 35px auto;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-image: url('../images/backgroundimg/createEvent_presetimg1.webp');
+}
+
+
+
+.createEvent_div_choosePhotoR{
+    // border: 1px solid purple;
+    flex-grow: 2;
+
+    img{
+        width: 100%;
+    }
+
+    ul{
+        margin: 5% auto;
+        padding: 0;
+        overflow-y: auto;
+        width: 90%;
+        height: 95%;
+
+        //捲軸主體
+        &::-webkit-scrollbar {
+            width: 25px;
+        }
+        //捲軸底色
+        &::-webkit-scrollbar-track {
+            border: 2px solid rgba(47, 72, 88, 0.3);
+            border-radius: 40px;
+            background: #FFFFFF;
+        }
+        //捲軸本體顏色
+        &::-webkit-scrollbar-thumb {
+            background-color: #2F4858;
+            border-radius: 40px;
+        }
+    }
+    li{
+        width: 250px;
+        height: 200px;
+        display: block;
+        overflow: hidden;
+        border-radius: 40px;
+        margin-bottom: 35px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        cursor: pointer;
+    }
+
+}
+
+
+
+
+
+
+
+.createEvent_section_note{
+    width: 785px;
+    height: 205px;
+    border: 5px dashed #F2BF61;
+    border-radius: 30px;
+    margin: 0 auto 115px;
+    padding: 55px;
+
+    h4{
+        color: #2F4858;
+        line-height: 40px;
+        letter-spacing: .5em;
+        font-weight: bold;
+    }
+}
+
+.createEvent_btn_submitCreate{
+    margin: 0 auto 30px;
+}

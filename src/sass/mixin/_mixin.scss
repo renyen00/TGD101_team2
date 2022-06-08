@@ -1,0 +1,66 @@
+@mixin btn_temp($class,$w,$h,$bgc:null,$borderR:null){
+    .#{$class}{
+        display: block;
+        text-decoration: none;
+        width: $w; height: $h;
+        margin: 10px;
+        line-height: $h;
+        border: 3px solid $bgc;
+        box-shadow: 0px 4px 4px 0px rgba(0,0,0,.25);
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: $borderR;
+
+        @if($bgc == white){
+            background-color: $bgc;
+            color:#000000;
+        }@else{
+            background-color: $bgc;
+            color:lighten($bgc,100);
+        }
+        
+        // background-color: $bgc;
+        // color:lighten($bgc,100);
+
+        
+        cursor: pointer;
+        transition: all .2s ease;
+        &:hover{
+            
+            @if($bgc == white){
+                background-color: invert($bgc);
+                border: 3px solid invert($bgc);
+                color:$bgc;
+            }@else{
+                background-color: lighten($bgc, 100);
+                border: 3px solid $bgc;
+                color: lighten($bgc,0);
+            }
+
+        }
+        &--s{
+            display: block;
+            text-decoration: none;
+            width: $w;
+            height: $h;
+            margin: 10px;
+            line-height: $h;
+            text-align: center;
+            border: 3px solid $bgc;
+            border-radius: $borderR;
+            box-shadow: 0px 4px 4px 0px rgba(0,0,0,.25);
+            color:$bgc;
+            transition: all .2s ease;
+        }
+        &--s:hover{
+            
+        @if($bgc == white){
+            background-color: $bgc;
+            color:#000000;
+        }@else{
+            background-color: $bgc;
+            color:lighten($bgc,100);
+        }
+        }
+    }
+}

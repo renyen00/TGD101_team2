@@ -5,9 +5,11 @@
 @import 'component/btn';
 @import 'page/createEvent';  // Betty
 @import 'page/store';
+@import 'page/orderCompleted';
 *{
     box-sizing: border-box;
 }
 html{
     font-size: map-get($fontSize,'type-4');
+    font-family: $fontFamily;
 }

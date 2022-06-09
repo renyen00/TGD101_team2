@@ -6,53 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大嶼商行</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/vue.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="./js/store.min.js"></script>
 </head>
-<body>
-    <main id="allIncluded">
-        <header>
-            <div id="sliderBoard">
-                <ul id="sliderImg">
-                    <li>
-                        <img src="./images/store/slider1.jpg" class="slider">
+<body id="store_body" class="bgcBlue">
+        <header class="store_header">
+            <div id="store_div_sliderBoard">
+                <ul id="store_ul_sliderImg">
+                    <li class="store_li_slider">
+                        <img src="./images/store/slider1.jpg" class="store_img_slider">
                     </li>
         
-                    <li>
-                        <img src="./images/store/slider2.jpg" class="slider">
+                    <li class="store_li_slider">
+                        <img src="./images/store/slider2.jpg" class="store_img_slider">
                     </li>
         
-                    <li>
-                        <img src="./images/store/slider3.jpg" class="slider">
+                    <li class="store_li_slider">
+                        <img src="./images/store/slider3.jpg" class="store_img_slider">
                     </li>
                 </ul>
         
-                <ul id="sliderBtn">
+                <ul id="store_ul_sliderBtn">
                     <!-- <li></li>
                     <li></li>
                     <li></li> -->
                 </ul>
     
-                <div id="storeTitle">
-                    <img src="./images/logo/logo_white_final.svg" class="logo">
-                    <h1 class="title">大嶼商行</h1>
-                    <h3 class="subtitle">嶼人 * 旅人 - 嶼回憶的起始點</h3>
+                <div id="store_div_titleSection">
+                    <img src="./images/logo/logo_white_final.svg" class="store_img_logo">
+                    <h1 class="store_h1_title">大嶼商行</h1>
+                    <h3 class="store_h3_subtitle">嶼人 * 旅人 - 嶼回憶的起始點</h3>
                 </div>
             </div>        
         </header>
 
-        <section id="breadCrumb">
+        <section id="store_section_breadCrumb">
             <a href="index.html">首頁</a>
             <h5>&lt;&nbsp;大嶼商行</h5>
         </section>
 
-        <section id="cloudBtn">
-            <div class="all">
+        <section id="store_section_filterBtn">
+            <!-- <button v-for="couldBtn in btns" :data-i="index" class="all">
+                <h4>{{couldBtn}}</h4>
+            </button> -->
+
+            <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="70" data-height="70"></span>
+
+            <button class="store_btn_filter_All">
                 <h4>ALL</h4>
-            </div>
+            </button>
+            <button class="store_btn_filter">
+                <h4>服飾</h4>
+            </button>
+            <button class="store_btn_filter">
+                <h4>配件</h4>
+            </button>
+            <button class="store_btn_filter">
+                <h4>其他</h4>
+            </button>
         </section>
         
         
-        <!-- @@include('./layout/footer.html') -->
-    </main>   
+        
+        <!-- @@include('./layout/footer.html') --> 
 </body>
 </html>

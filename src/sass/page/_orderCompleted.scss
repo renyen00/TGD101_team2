@@ -16,40 +16,46 @@
 // ==========================================================
 
 #orderCompleted_body{
-    max-width: 1440px;
     margin: 0 auto;
     height: 1400px;
 
     .orderCompleted_header{
-        width: 100%;
+        width: 100vw;
         height: 600px;
-        position: relative;
+        margin: 0 auto;
 
-        .orderCompleted_logo{
+        .oc_div_headerWrapper{
+            // border: 1px solid pink;
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+
+            .orderCompleted_logo{
             width: 120px;
             position: absolute;
             top: 115px;
             left: 50%;
             transform: translateX(-50%);
-        };
+            };
 
-        .orderCompleted_h1{
+            .orderCompleted_h1{
             font-weight: bold;
             position: absolute;
             top: 293px;
             left: 50%;
             transform: translateX(-50%);
-        };
+            };
 
-        .orderCompleted_line{
+            .orderCompleted_line{
             height: 5px;
             width: 600px;
             position: absolute;
-            top: 442px;
+            top: 75%;
             left: 50%;
             transform: translateX(-50%);
-        };
-        .orderCompleted_circleL{
+            };
+            .orderCompleted_circleL{
             font-size: 2.4rem;
             line-height: 2.5;
             text-align: center;
@@ -57,10 +63,10 @@
             height: 60px;
             border-radius: 50%;
             position: absolute;
-            top: 417px;
-            left: 300px;
-        };
-        .orderCompleted_circleC{
+            top: 70%;
+            left: 24%;
+            };
+            .orderCompleted_circleC{
             font-size: 2.4rem;
             line-height: 2.5;
             text-align: center;
@@ -68,11 +74,11 @@
             height: 60px;
             border-radius: 50%;
             position: absolute;
-            top: 417px;
+            top: 70%;
             left: 50%;
             transform: translateX(-50%);
-        };
-        .orderCompleted_circleR{
+            };
+            .orderCompleted_circleR{
             font-size: 2.4rem;
             line-height: 2.5;
             text-align: center;
@@ -80,29 +86,30 @@
             height: 60px;
             border-radius: 50%;
             position: absolute;
-            top: 417px;
-            right: 300px;
-        };
-        #orderCompleted_icon_greyBird{
+            top: 70%;
+            right: 24%;
+            };
+            #orderCompleted_icon_greyBird{
             position: absolute;
-            top: 376px;
-            right: 308px;
-        };
-        .orderCompleted_h4_shoppingCart{
+            top: 63%;
+            right: 24.7%;
+            };
+            .orderCompleted_h4_shoppingCart{
             position: absolute;
-            top: 500px;
-            left: 300px;
-        };
-        .orderCompleted_h4_comfireOrder{
+            top: 84%;
+            left: 23.5%;
+            };
+            .orderCompleted_h4_comfireOrder{
             position: absolute;
-            top: 500px;
+            top: 84%;
             left: 50%;
             transform: translateX(-50%);
-        };
-        .orderCompleted_h4_complete{
+            };
+            .orderCompleted_h4_complete{
             position: absolute;
-            top: 500px;
-            right: 300px;
+            top: 84%;
+            right: 22.5%;
+            };
         };
     };
     // ====== Main ======
@@ -149,8 +156,8 @@
         #orderCompleted_icon_birdFill{
             display: block;
             position: absolute;
-            top: 45px;
-            left: 460px;
+            top: 30%;
+            left: 38%;
         };
         .orderCompleted_a_backToPre{
             margin: 0 auto;

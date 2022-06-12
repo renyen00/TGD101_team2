@@ -13,6 +13,9 @@ $pink:#F99090;
 $black:#000000;
 $gray:#C4C4C4;
 
+$send:#7A86F1;
+$del:#FF6161;
+
 $block:null;
 
 @mixin btnStyle{
@@ -28,6 +31,7 @@ html{
 }
 h1{font-size: $back_h1;}
 h2{font-size: $back_h3;}
+h3{font-size: $back_h4;}
 p{font-size:  $back_h5;}
 .back_btnL{
     width: 200px;
@@ -50,7 +54,7 @@ p{font-size:  $back_h5;}
 .back_btnM{
     width: 200px;
     height: 50px;
-    line-height: 50px;
+    line-height: 40px;
     border-radius: 10px; 
     background-color: $blue;
     color:$white;
@@ -112,10 +116,6 @@ table{
             button{
                 margin-left: 15px;
             }
-        &:last-child{
-            color:#7A86F1;
-            cursor: pointer;
-        }
         }
         
         &:nth-child(odd){
@@ -124,10 +124,6 @@ table{
         &:first-child{
             background-color:$blue;
             font-size: $back_h4;
-            td{
-                color:$white;
-                cursor: default;    
-            }
         }
     }
 }
@@ -216,3 +212,20 @@ table{
      max-height: 100px;
      vertical-align: middle;
   }
+  .backend_btn_dosomething{
+      &_blue{
+          border: none;
+          background-color: $white;
+          font-size: $back_h5;
+          color: $send;
+          cursor: pointer;
+      }
+      &_red{
+          border: none;
+          background-color: $white;
+          font-size: $back_h5;
+          color:$del;
+          cursor: pointer;
+      }
+  }
+  

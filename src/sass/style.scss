@@ -3,12 +3,25 @@
 @import 'base/fontSet';
 @import 'mixin/mixin';
 @import 'component/btn';
-@import 'page/createEvent';  // Betty
+@import 'page/createEvent';
 @import 'page/store';
+@import 'page/orderCompleted';
+@import 'page/createEventConfirm';
+@import 'page/createEventDetail';
+@import 'page/faq';
+@import 'page/backend_mod';
+@import 'page/backend_left';//backend
+@import 'page/backend_pop';
+@import 'page/index'; // jiang
+@import 'page/role'; // jiang
+@import 'page/about'; // jiang
+@import 'page/activity'; // jiang
+
 *{
     box-sizing: border-box;
 }
 html{
     font-size: map-get($fontSize,'type-4');
     background-color: #333;
+    font-family: $fontFamily;
 }

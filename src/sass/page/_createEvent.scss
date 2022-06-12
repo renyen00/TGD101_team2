@@ -1,75 +1,93 @@
+@mixin table{
+    @media (max-width: 1200px){
+        @content;
+    }
+}
 
+@mixin m{
+    @media (max-width: 576px){
+        @content;
+    }
+}
 
+// -----------------------------------------
 // 可共用?
 .createEvent_div_wrapper{
-    // max-width: 100%;
+    // min-width: 100%;
     background-image: url('../images/backgroundimg/Vector.svg');
     background-repeat: no-repeat;
-    background-size: contain 120%;
-    font-family: $fontFamily;
+    // background-size: 100% 120%;
     max-width: 1440px;
-    border: 1px solid #000;
+    // width: 1263px;
+    // max-width: 100%;
+    // width: 100%;
+    // min-width: 1440px;
+    // border: 1px solid #000;
     margin: 0 auto;
+}
+
+// 1200可共用?
+.createEvent_div_container{
+    width: 1200px;
+    padding-top: 35px;
+    // border: 1px solid #F99090;
+    margin: 0 auto;
+    color: #fff;
 
     position: relative;
 
+    @include table{
+        max-width: 100%;
+    }
+    
     .iconify{
         position: absolute;
         top: 12%;
-        left: 13%;
+        left: 10%;
     }
     main{
         .createEvent_icon_cloud1{
-            width: 250px;
-            height: 200px;
-            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            width: 20%;
             position: absolute;
-            left: 3%;
+            top: 16%;
+            left: -8%;
 
         }
         .createEvent_icon_cloud2{
-            width: 250px;
-            height: 200px;
-            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            width: 20%;
             position: absolute;
-            top: 22%;
-            left: 16%;
+            top: 23%;
+            left: 11%;
         }
         .createEvent_icon_arrow{
-            width: 150px;
-            height: 140px;
-            background-image: url('../images/backgroundimg/createEvent_arrow.svg');
+            width: 12%;
             position: absolute;
-            top: 24.5%;
-            left: 67%;
+            top: 26%;
+            left: 71%;
         }
         .createEvent_icon_cloud3{
-            width: 250px;
-            height: 200px;
-            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            width: 20%;
             position: absolute;
-            top: 50%;
-            left: 22%;
+            top: 53%;
+            left: 16%;
         }
         .createEvent_icon_cloud4{
-            width: 250px;
-            height: 200px;
-            background-image: url('../images/backgroundimg/createEvent_cloud.svg');
+            width: 20%;
             position: absolute;
-            top: 52%;
+            top: 55%;
             left: 43%;
         }
 
         .iconify{
             position: absolute;
-            top: 95.2%;
+            top: 96.4%;
             left: 42.8%;
         }
         .createEvent_section_feeAndDeadline{
             div{
                 position: absolute;
-                top: 50.5%;
-                left: 62%;
+                top: 53.3%;
+                left: 70%;
                 background-color: #F2BF61;
                 width: 40px;
                 height: 40px;
@@ -84,19 +102,10 @@
     }
 }
 
-// 1200可共用?
-.createEvent_div_container{
-    width: 1200px;
-    padding-top: 35px;
-    border: 1px solid #F99090;
-    margin: 0 auto;
-    color: #fff;
-}
-
 .createEvent_div_logo{
     width: 120px;
     height: 120px;
-    margin: 35px auto;
+    margin: 0 auto 3%;
 }
 
 .createEvent_div_title{
@@ -118,49 +127,59 @@
 .createEvent_section_rule{
     border: 5px dashed #F2BF61;
     border-radius: 30px;
-    margin: 85px auto 70px;
-    padding: 55px;
-    width: 700px;
-    height: 400px;
+    margin: 7% auto 5%;
+    padding: 5% 7%;
+    width: 60%;
+    height: 20%;
 
     h3{
     font-weight: bold;
-    margin-bottom: 60px;
+    margin-bottom: 6%;
     }
 
     h4{
-        line-height: 55px;
+        line-height: 50px;
         letter-spacing: .5em;
     }
 }
 
 
 .createEvent_div_createForm{
-    margin: 0 auto 35px;
+    margin: 0 auto 2%;
     // border: 1px solid rgb(240, 235, 148);
-    width: 800px;
-    height: 550px;
-    padding: 25px;
+    width: 65%;
+    height: 15%;
 
     display: flex;
     justify-content: space-around;
 
     ul{
         // border: 1px solid green;
-        padding-top: 15px;
+        padding-top: 2%;
     }
 
     h4{
         font-weight: bold;
     }
 
-    input{
-        border: 2px solid #fff;
+    input, select, textarea{
+        border: 2px solid map-get($Mapcolor, 'white');
         border-radius: 10px;
         width: 300px;
         height: 50px;
         background-color: transparent;
         margin: 20px 0 40px;
+        color: map-get($Mapcolor, 'white');
+        font-size: 2rem;
+        outline: none;
+        padding: 10px;
+    }
+
+    option{
+        text-align: center;
+        font-size: 1.5rem;
+        border-radius: 30px;
+        color: map-get($Mapcolor, 'blue');
     }
 
     span{
@@ -170,23 +189,27 @@
     }
 }
 
-.createEvent_ul_formL li:last-child input{
+.createEvent_ul_formL li textarea{
     height: 180px;
 }
 
 .createEvent_section_feeAndDeadline{
     width: 800px;
-    margin: 0 auto 270px;
+    margin: 0 auto 20%;
+
+    @include table{
+        width: 100%;
+    }
 
     h4{
         text-align: center;
-        margin-bottom: 35px;
+        margin-bottom: 5%;
         font-weight: bold;
     }
 
     span{
-        margin-left: 30px;
-        font-size: 1.6rem;
+        margin-left: 5%;
+        font-size: 2rem;
     }
 }
 
@@ -196,16 +219,16 @@
     box-shadow: 6px 12px 4px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
     background-color: #fff;
-    width: 1000px;
-    height: 635px;
-    margin: 0 auto 85px;
+    width: 85%;
+    height: 500px;
+    margin: 0 auto 7%;
 
     display: flex;
 }
 
 .createEvent_div_choosePhotoL{
     // border: 1px solid pink;
-    flex-grow: 11;
+    flex-grow: 6;
 
     h3{
         border: 5px solid rgba(0, 0, 0, 0.3);
@@ -213,7 +236,7 @@
         border-radius: 34px 3px 34px 3px;
         color: #2F4858;
         font-weight: bold;
-        line-height: 110px;
+        line-height: 80px;
         text-align: center;
     }
 
@@ -230,18 +253,18 @@
 
 .createEvent_div_photoZone{
     border-radius: 50%;
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     margin: 35px auto;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background-image: url('../images/backgroundimg/createEvent_presetimg1.webp');
 }
 
 
-
 .createEvent_div_choosePhotoR{
     // border: 1px solid purple;
-    flex-grow: 2;
+    padding: 2% 5%;
+    flex-grow: 4;
 
     img{
         width: 100%;
@@ -249,10 +272,12 @@
 
     ul{
         margin: 5% auto;
-        padding: 0;
         overflow-y: auto;
-        width: 90%;
+        // overflow-x: hidden;
+        width: 95%;
         height: 95%;
+        // border: 1px solid #000;
+        padding-left: 2%;
 
         //捲軸主體
         &::-webkit-scrollbar {
@@ -271,8 +296,8 @@
         }
     }
     li{
-        width: 250px;
-        height: 200px;
+        width: 200px;
+        height: 160px;
         display: block;
         overflow: hidden;
         border-radius: 40px;
@@ -286,12 +311,9 @@
 
 
 
-
-
-
 .createEvent_section_note{
-    width: 785px;
-    height: 205px;
+    width: 65%;
+    height: 10%;
     border: 5px dashed #F2BF61;
     border-radius: 30px;
     margin: 0 auto 115px;
@@ -307,4 +329,5 @@
 
 .createEvent_btn_submitCreate{
     margin: 0 auto 30px;
+    font-family: $fontFamily;
 }

@@ -95,7 +95,10 @@ $p-top: 20px;
     width: 1000px;
     margin: 0 auto;
     margin-top: 160px;
-    
+    .crossBtn{
+        &:before{}
+        &:after{}
+    }
     .ybirdSmall{}
     .ybirdBig{}
 

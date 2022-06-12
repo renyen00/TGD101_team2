@@ -1,0 +1,166 @@
+.bgcBlue{
+    background-color: map-get($Mapcolor, 'blue');
+}
+
+.bgcYellow{
+    background-color: map-get($Mapcolor, 'yellow');
+}
+
+.textWhite{
+    color: map-get($Mapcolor, 'white');
+}
+
+.textBlue{
+    color: map-get($Mapcolor, 'blue');
+}
+// ==========================================================
+
+#orderCompleted_body{
+    margin: 0 auto;
+    height: 1400px;
+
+    .orderCompleted_header{
+        width: 100vw;
+        height: 600px;
+        margin: 0 auto;
+
+        .oc_div_headerWrapper{
+            // border: 1px solid pink;
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+
+            .orderCompleted_logo{
+            width: 120px;
+            position: absolute;
+            top: 115px;
+            left: 50%;
+            transform: translateX(-50%);
+            };
+
+            .orderCompleted_h1{
+            font-weight: bold;
+            position: absolute;
+            top: 293px;
+            left: 50%;
+            transform: translateX(-50%);
+            };
+
+            .orderCompleted_line{
+            height: 5px;
+            width: 600px;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+            };
+            .orderCompleted_circleL{
+            font-size: 2.4rem;
+            line-height: 2.5;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            top: 70%;
+            left: 24%;
+            };
+            .orderCompleted_circleC{
+            font-size: 2.4rem;
+            line-height: 2.5;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            };
+            .orderCompleted_circleR{
+            font-size: 2.4rem;
+            line-height: 2.5;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            top: 70%;
+            right: 24%;
+            };
+            #orderCompleted_icon_greyBird{
+            position: absolute;
+            top: 63%;
+            right: 24.7%;
+            };
+            .orderCompleted_h4_shoppingCart{
+            position: absolute;
+            top: 84%;
+            left: 23.5%;
+            };
+            .orderCompleted_h4_comfireOrder{
+            position: absolute;
+            top: 84%;
+            left: 50%;
+            transform: translateX(-50%);
+            };
+            .orderCompleted_h4_complete{
+            position: absolute;
+            top: 84%;
+            right: 22.5%;
+            };
+        };
+    };
+    // ====== Main ======
+    .orderCompleted_main_detail{
+        // border: 1px solid yellowgreen;
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 100px;
+
+        .orderCompleted_table_detail{
+            width: 90%;
+            font-size: 2.4rem;
+            margin: 0 auto;
+
+            .orderCompleted_tr_th{
+                // border: 1px solid red;
+                text-align: center;
+
+                .oc_th_title{
+                    // border: 1px solid blue;
+                    padding: 10px 20px;
+                    font-weight: bold;
+                };
+            
+            };
+            .orderCompleted_tr_td{
+                text-align: center;
+
+                .oc_td_detail{
+                    // border: 1px solid yellow;
+                    padding: 10px 20px;
+                };
+            };
+        };
+    };
+    // ====== Section ======
+    .orderCompleted_section_btn{
+        // border: 1px solid red;
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 110px;
+        position: relative;
+
+        #orderCompleted_icon_birdFill{
+            display: block;
+            position: absolute;
+            top: 30%;
+            left: 38%;
+        };
+        .orderCompleted_a_backToPre{
+            margin: 0 auto;
+        };
+    };
+};

@@ -74,14 +74,15 @@
                 <img src="./images/store/cap.png" class="productPic">
                 <h4 class="producNm textWhite">嶼商鋪-踏上回憶的旅程</h4>
                 <ul class="productColor">
-                    <li class="bgcWhite"></li>
-                    <li class="bgcPink"></li>
-                    <li class="bgcYellow"></li>
+                    <li class="productColorLi bgcWhite"></li>
+                    <li class="productColorLi bgcPink"></li>
+                    <li class="productColorLi bgcYellow"></li>
                 </ul>
                 <div class="productBtn">
                     <button class="pay btnL_w">直接結帳</button>
                     <button class="addToCart btnL_y">加入購物車</button>
                 </div>
+
             </div>
             @@include('./layout/product.html')
             @@include('./layout/product.html')
@@ -91,12 +92,18 @@
             @@include('./layout/product.html')
             @@include('./layout/product.html')
             @@include('./layout/product.html')
+            <span id="hidden"></span>
+            <section class="store_section_moreBtn">
+                <span id="birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="60" data-height="60" data-flip="horizontal"></span>
+                <button class="moreBtn btnXL_w">更多商品</button>
+            </section>
         </main>
+        <span id="more" class="store_main_product">
+            @@include('./layout/product.html')
+            @@include('./layout/product.html')
+            @@include('./layout/product.html')
+        </span>
 
-        <section class="store_section_moreBtn">
-            <span id="birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="60" data-height="60" data-flip="horizontal"></span>
-            <button class="moreBtn btnXL_w">更多商品</button>
-        </section>
         
         
         <!-- @@include('./layout/footer.html') --> 

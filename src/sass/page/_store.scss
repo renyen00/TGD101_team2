@@ -225,14 +225,14 @@
             left: 50%;
             transform: translateX(-50%);
 
-            li{
+            .productColorLi{
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
                 border: 1px solid map-get($Mapcolor, 'white');
                 display: inline-block;
                 margin-left: 8%;
-                margin-right: 8%;
+                margin-right: 7%;
                 cursor: pointer;
                 z-index: 4;
             };
@@ -247,22 +247,24 @@
             left: 3%;
         };
     };
-};
-
-.store_section_moreBtn{
-    // border: 1px solid white;
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 96px;
-    position: relative;
-
-    #birdBold{
-        position: absolute;
-        bottom: 29%;
-        right: 40%;
-    };
-
-    .moreBtn{
+    .store_section_moreBtn{
+        border: 1px solid white;
+        width: 1200px;
         margin: 0 auto;
+        padding-top: 96px;
+        position: relative;
+    
+        #birdBold{
+            position: absolute;
+            bottom: 29%;
+            right: 40%;
+        };
+    
+        .moreBtn{
+            margin: 0 auto;
+        };
     };
+    // #more{
+    //     // display: hidden;
+    // };
 };

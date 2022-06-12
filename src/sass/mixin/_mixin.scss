@@ -13,7 +13,7 @@
 
         @if($bgc == white){
             background-color: $bgc;
-            color:#000000;
+            color:invert($bgc);
         }@else{
             background-color: $bgc;
             color:lighten($bgc,100);
@@ -28,8 +28,8 @@
         &:hover{
             
             @if($bgc == white){
-                background-color: invert($bgc);
-                border: 3px solid invert($bgc);
+                background-color: rgba(0,0,0,0);
+                border: 3px solid $bgc;
                 color:$bgc;
             }@else{
                 background-color: lighten($bgc, 100);

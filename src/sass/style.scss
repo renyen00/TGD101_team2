@@ -3,7 +3,7 @@
 @import 'base/fontSet';
 @import 'mixin/mixin';
 @import 'component/btn';
-@import 'page/createEvent';
+@import 'page/createEvent';  // Betty
 @import 'page/store';
 @import 'page/orderCompleted';
 @import 'page/createEventConfirm';
@@ -17,6 +17,8 @@
 @import 'page/about'; // jiang
 @import 'page/activity'; // jiang
 
+
+
 *{
     box-sizing: border-box;
 }
@@ -24,4 +26,5 @@ html{
     font-size: map-get($fontSize,'type-4');
     background-color: #333;
     font-family: $fontFamily;
+
 }

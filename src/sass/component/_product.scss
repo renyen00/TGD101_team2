@@ -1,0 +1,85 @@
+.store_main_product{
+    // border: 1px solid yellow;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 14.25px;
+    padding: 0 14.25px;
+    padding-top: 2%;
+    
+    .productWrapper{
+        // border: 1px solid purple;
+        box-sizing: border-box;
+        width: 379px;
+        height: 582px;
+        position: relative;
+        margin-bottom: 3%;
+
+        .productFrame{
+            border: 5px solid map-get($Mapcolor, 'white');
+            width: 360px;
+            height: 480px;
+            border-radius: 50px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        };
+
+        .productCircle{
+            width: 235px;
+            height: 235px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 0;
+        };
+
+        .productPic{
+            position: absolute;
+            top: 13%;
+            left: 10%;
+            z-index: 3;
+        };
+
+        .producNm{
+            width: 251px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+        };
+
+        .productColor{
+            list-style-type: none;
+            width: 186px;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .productColorLi{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 1px solid map-get($Mapcolor, 'white');
+                display: inline-block;
+                margin-left: 8%;
+                margin-right: 7%;
+                cursor: pointer;
+                z-index: 4;
+            };
+        };
+
+        .productBtn{
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 80%;
+            left: 3%;
+        };
+    };
+};

@@ -1,0 +1,115 @@
+// 首頁背景
+.index_body{
+    background-color: #2F4858;
+    font-family: $fontFamily;
+    color: white;
+  
+}
+// 首頁標題
+.index_top_title{
+    width: 100vw;
+    height: 100vh;
+    // border: 1px red solid;
+    display: flex;
+    display: flex;
+
+    z-index: 0;
+    .index_h1_before{
+        font-size: 96px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -280px;
+    }
+    img{
+        display: block;
+        // border: 1px red solid;
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -80px;
+    }
+    .index_h1_after{
+        font-size: 96px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: 40px;
+    }
+ }
+
+// 首頁雲
+.index_top_cloud{
+    height: 100vh;
+    perspective: 1000px;
+    overflow: hidden;
+    // 雲
+    .index_cloud_1{
+        display: block;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        margin-top: -100px;
+        margin-left: -150px;
+        z-index: -2;
+    }
+    
+    .index_cloud_2{
+        display: block;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 70%;
+        left: 0%;
+        margin-top: -100px;
+        margin-left: -150px;
+        z-index: -3;
+    }
+    .index_cloud_3{
+        display: block;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 30%;
+        right: 20%;
+        margin-top: -100px;
+        margin-left: -150px;
+        z-index: -4;
+    }
+    .index_cloud_4{
+
+        display: block;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 80%;
+        left: 20%;
+        margin-top: -100px;
+        margin-left: -150px;
+        z-index: -5;
+    }
+
+    // 字
+    .index_h3_1{
+        color: black;
+        text-align: right;
+    }
+    .index_h3_2{
+        color: black;
+    }
+    .index_h3_3{
+        text-align: right;
+    }
+    .index_h3_4{
+
+    }
+    .index_h3_4{
+
+    }
+    .index_h3_5{
+        text-align: right;
+    }
+}

@@ -1,0 +1,134 @@
+$logo-w: 120px;
+$p-top: 20px;
+
+#allIncluded{
+    width: 1440px;
+    // outline: 5px solid red;
+    background-color: map-get($Mapcolor, 'white');
+    font-family: $fontFamily;
+}
+
+#headerWrapper{
+    width: 100%;
+    height: 700px;
+    background-color: map-get($Mapcolor,'blue');
+    box-sizing: border-box;
+    padding: 120px 120px;
+    #bgimgFrame{
+        width: 1200px;
+        height: 460px;
+        margin: 0 auto;
+        background:{
+            image: url(/images/faq/lake.jpg);
+            position: center;
+            size: cover;
+        }
+        #logoFrame{
+            img{
+                width: $logo-w;
+                display: block;
+                margin: 0 auto;
+                padding-top: $p-top;
+            }
+        }
+        .subtitle{
+            color: map-get($Mapcolor, 'white');
+            padding-top: $p-top;
+            text-align: center;
+        }
+        #faqFrame{
+            width: 480px;
+            height: 135px;
+            margin: 0 auto;
+            margin-top: $p-top;
+            background-color: map-get($Mapcolor,'blue');
+        }
+            text-align: center;
+            .title{
+                color: map-get($Mapcolor,'white');
+                line-height: 135px;
+                font-weight: 700;
+            }
+    }
+}
+
+.breadCrumb{
+    margin-top: 35px;
+    margin-left: 150px;
+    font-size: map-get($fontSize, 'type-1');
+
+    a{
+        
+        color: map-get($Mapcolor, 'blue');
+        text-decoration: none;
+    };
+    span{
+        font:{
+            color: map-get($Mapcolor, 'blue');
+            
+        }
+    }
+    .crumpFaq{
+        color: map-get($Mapcolor, 'blue');
+        display: inline-block;
+    }
+};
+
+.cloudFrame{
+    position: relative;
+    .cloud1{
+        width: 275px;
+        position: absolute;
+        top: -170px;
+        left: 840px;
+    }
+
+    .cloud2{
+        width: 275px;
+        position: absolute;
+        top: -50px;
+        left: 1030px;
+    }
+}
+
+#qnaWrapper{
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 160px;
+    .crossBtn{
+        &:before{}
+        &:after{}
+    }
+    .ybirdSmall{}
+    .ybirdBig{}
+
+    #qnaBox{
+        display: block;
+    }
+    #chuGroup{
+        height: 70px;
+        background-color: map-get($Mapcolor, 'blue');
+        color: white;
+        padding-top: 20px;
+        padding-left: 40px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #makeFriends{
+        height: 70px;
+        background-color: map-get($Mapcolor,'yellow');
+        color: white;
+        padding-top: 20px;
+        padding-left: 40px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #shopping{
+        height: 70px;
+        background-color: map-get($Mapcolor, 'blue');
+        color: white;
+        padding-top: 20px;
+        padding-left: 40px;
+        border-radius: 10px 10px 0px 0px;
+    }
+}

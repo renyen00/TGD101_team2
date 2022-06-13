@@ -5,7 +5,8 @@ $p-top: 20px;
     width: 1440px;
     // outline: 5px solid red;
     background-color: map-get($Mapcolor, 'white');
-    font-family: $fontFamily;
+    margin: 0 auto;
+    
 }
 
 #headerWrapper{
@@ -94,18 +95,42 @@ $p-top: 20px;
 #qnaWrapper{
     width: 1000px;
     margin: 0 auto;
-    margin-top: 160px;
-    .crossBtn{
-        &:before{}
-        &:after{}
+    margin-top: 190px;
+    position: relative;
+    .btn{
+        cursor: pointer;
     }
-    .ybirdSmall{}
-    .ybirdBig{}
+    .accordion{
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        background: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: map-get($Mapcolor, 'white');
+    }
+    .accordion:focus{
+        text-decoration: underline;
+    }
+    }
+    .ybirdSmall{
+        transform: scaleX(-1);
+        width: 48px;
+        margin-right: 8px;
+        position: absolute;
+        top: -33px;
+        left: 140px;
+    }
+    .ybirdBig{
+        position: absolute;
+        top: -59px;
+        left: 206px;
+    }
 
-    #qnaBox{
-        display: block;
-    }
-    #chuGroup{
+    .faq{
         height: 70px;
         background-color: map-get($Mapcolor, 'blue');
         color: white;
@@ -114,21 +139,74 @@ $p-top: 20px;
         border-radius: 10px 10px 0px 0px;
     }
 
-    #makeFriends{
-        height: 70px;
+    .sec{
         background-color: map-get($Mapcolor,'yellow');
-        color: white;
-        padding-top: 20px;
-        padding-left: 40px;
-        border-radius: 10px 10px 0px 0px;
     }
 
-    #shopping{
-        height: 70px;
-        background-color: map-get($Mapcolor, 'blue');
-        color: white;
-        padding-top: 20px;
-        padding-left: 40px;
-        border-radius: 10px 10px 0px 0px;
+    .drawer{
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden; 
+        transition-duration: 400ms; 
+        transition-property: max-height, visibility; 
+        transition-delay: 0, 400ms;
     }
-}
+
+    .drawer.open{
+        visibility: visible; 
+        transition-duration: 400ms; 
+        transition-property: max-height, visibility; 
+        transition-delay: 400ms, 0; 
+    }
+
+    .closed{
+        .vertival{
+            transition: all 0.4s ease-in-out;
+            transform: rotate(-90deg);
+        }
+        .horizontal{
+            transition: all 0.4s ease-in-out;
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+    }
+
+    .active {
+        opacity: 1;
+        .vertical {
+          transition: all 0.4s ease-in-out;
+          transform: rotate(90deg);
+        }
+        .horizontal {
+          transition: all 0.4s ease-in-out;
+          transform: rotate(90deg);
+          opacity: 0;
+        }
+    }
+
+    .circleAnimation{
+        position: relative;
+        flex: 0 0 30px;
+    }
+
+    .circleAnimation .horizontal {
+        position: absolute;
+        background-color: map-get($Mapcolor, 'white');
+        width: 20px;
+        height: 3px;
+        left: 50%;
+        margin-left: -10px;
+        top: 50%;
+        margin-top: -1px;
+      }
+      .circleAnimation .vertical {
+        position: absolute;
+        background-color: map-get($Mapcolor, 'white');
+        width: 3px;
+        height: 20px;
+        left: 50%;
+        margin-left: -1px;
+        top: 50%;
+        margin-top: -10px;
+      }
+

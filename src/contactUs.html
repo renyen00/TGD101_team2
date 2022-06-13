@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".css/style.css">
+    <title>CONTACT US</title>
+    <!-- @@include('./layout/head.html') 未打包 -->
+</head>
+<body>
+    <section id="contactUs_frame">
+        <button class="closeFrame"><img src="./images/contactus/cross.svg" alt=""></button>
+        <h3 class="h3">CONTACT US</h3>
+        <div class="formWrapper">
+            <form action="">
+                <label for="text"><h4 class="h4title">主旨</h4></label>
+                <br>
+                <input type="text" name="" id="text" class="standard" placeholder="請輸入您的問題" required>
+                <br>
+                <label for="email"><h4 class="h4title">Email</h4></label>
+                <br>
+                <input type="email" name="" id="email" class="standard" placeholder="請輸入您的Email" required>
+                <br>
+                <label for="textarea"><h4 class="h4title">訊息內容</h4></label>
+                <br>
+                <textarea name="message" id="textarea" cols="30" rows="10" required placeholder="請詳述您的問題。詢問商品請留下商品名稱，也歡迎留下其他聯繫方式，謝謝!" required></textarea>
+                <input type="button" value="提交" class="sumbitBtn btnL_b">
+            </form>
+        </div>    
+    </section>
+</body>
+</html>

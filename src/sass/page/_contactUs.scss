@@ -1,0 +1,40 @@
+#contactUs_frame{
+    width: 969px;
+    height: 700px;
+    border: 5px solid map-get($Mapcolor, 'blue');
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-top: 68px;
+    text-align: center;
+    position: relative;
+    .closeFrame{
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 26px;
+        right: 22px;
+    }
+
+    .h3{
+        font-weight: 700;
+        margin: 0;
+        margin-top: 42px;
+    }
+
+    .formWrapper{
+        width: 500px;
+        color: map-get($Mapcolor, 'blue');
+    }
+
+    .standard{
+        width: 500px;
+        height: 50px;
+        border: 2px solid map-get($Mapcolor, 'blue');
+        border-radius: 10px;
+    }
+
+    .h4title{
+        margin: 0;
+        width: 500px;
+    }
+}

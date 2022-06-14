@@ -1,0 +1,56 @@
+.shoppingCart_li_list{
+    width: 970px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    margin-top: 5%;
+
+    .pics{
+        // border: 1px solid yellow;
+        width: 385px;
+        position: relative;
+
+        .circle{
+            width: 235px;
+            height: 235px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+        
+        img{
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+        }
+    }
+
+    .detail{
+        // border: 1px solid green;
+        flex-grow: 2;
+
+        .name{
+            display: block;
+            width: 335px;
+            margin: 0 auto;
+        }
+
+        h4{
+            // border: 1px solid rgb(128, 0, 34);
+            text-align: center;
+        }
+
+        .price{
+            width: 140px;
+        }
+    }
+
+}
+
+.dashLine{
+    height: 5px;
+    display: block;
+    margin: 0 auto;
+}

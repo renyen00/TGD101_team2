@@ -1,0 +1,308 @@
+#shoppingCart_body{
+    // border: 1px solid skyblue;
+    
+    .shoppingCart_div_bg{
+        // position: relative;
+        max-width: 100%;
+        
+        .shoppingCart_main_wrapper{
+            max-width: 100%;
+            margin: 0 auto;
+            // position: absolute;
+            background-image: url(../../images/shoppingCart/shoppingCartBg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left bottom;
+
+            .shoppingCart_header{
+                // border: 1px solid pink;
+                width: 1200px;
+                margin: 0 auto;
+                position: relative;
+
+                img{
+                    width: 120px;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                pre{
+                    font-size: 2rem;
+                    font-weight: bold;
+                    width: 520px;
+                    position: absolute;
+                    top: 40%;
+                    left: 29%;
+                }
+            }
+        
+            .shoppingCart_section_breadCrumb{
+                // border: 1px solid red;
+                width: 1200px;
+                margin: 0 auto;
+                padding-bottom: 38px;
+                padding-left: 50px;
+
+                .breadLink{
+                    text-decoration: none;
+                    font-size: 2rem;
+                    display: inline-block;
+                }
+
+                p{
+                    display: inline-block;
+                }
+
+                h5{
+                    display: inline-block;
+                }
+            }
+
+            h3{
+                width: 1100px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 52px 0;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .shoppingCart_section_listWrap{
+                width: 1100px;
+                margin: 0 auto;
+                border: 5px solid map-get($Mapcolor, 'blue');
+                border-radius: 0 0 10px 10px;
+
+                ul{
+                    // border: 1px solid orange;
+                    width: 100%;
+
+                    .shoppingCart_li_list{
+                        // border-bottom: 5px dashed map-get($Mapcolor, 'blue');
+                        width: 970px;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-flow: row;
+                        margin-top: 5%;
+
+                        .pics{
+                            // border: 1px solid yellow;
+                            width: 385px;
+                            position: relative;
+
+                            .circle{
+                                width: 235px;
+                                height: 235px;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: -1;
+                            }
+                            
+                            img{
+                                position: absolute;
+                                bottom: 10%;
+                                left: 10%;
+                            }
+                        }
+
+                        .detail{
+                            // border: 1px solid green;
+                            flex-grow: 2;
+
+                            .name{
+                                display: block;
+                                width: 335px;
+                                margin: 0 auto;
+                            }
+
+                            h4{
+                                // border: 1px solid rgb(128, 0, 34);
+                                text-align: center;
+                            }
+
+                            .price{
+                                width: 140px;
+                            }
+                        }
+
+                    }
+                    
+                    .dashLine{
+                        height: 5px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+
+                .total{
+                    // border: 1px solid red;
+
+                    .steps{
+                        // border: 1px solid black;
+                        height: 280px;
+                        margin: 0 auto;
+                        position: relative;
+
+                        .line{
+                            // display: block;
+                            // margin: 0 auto;
+                            position: absolute;
+                            top: 58%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        .circleL{
+                            font-size: 2.4rem;
+                            line-height: 2.5;
+                            text-align: center;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 48%;
+                            left: 20%;
+                        }
+
+                        .circleC{
+                            font-size: 2.4rem;
+                            line-height: 2.5;
+                            text-align: center;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 48%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        .circleR{
+                            font-size: 2.4rem;
+                            line-height: 2.5;
+                            text-align: center;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 48%;
+                            right: 20%;
+                        }
+
+                        #orderCompleted_icon_greyBird{
+                            position: absolute;
+                            top: 32%;
+                            left: 20.7%;
+                        }
+
+                        .shoppingCart_h4_shoppingCart{
+                            position: absolute;
+                            top: 80%;
+                            left: 19%;
+                            font-weight: bold;
+                        }
+
+                        .shoppingCart_h4_comfireOrder{
+                            position: absolute;
+                            top: 80%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-weight: bold;
+                        }
+
+                        .shoppingCart_h4_complete{
+                            position: absolute;
+                            top: 80%;
+                            right: 19%;
+                            font-weight: bold;
+                        }
+                    }
+
+                    ul{
+                        // border: 1px solid blueviolet;
+                        width: 100%;
+
+                        li{
+                            // border: 1px solid yellow;
+                            width: 440px;
+                            margin: 0 auto;
+                            margin-top: 20px;
+
+                            div{
+                                // border: 1px solid green;
+                                display: inline-block;
+                                font-size: 2.4rem;
+                                font-weight: bold;
+                            }
+
+                            .title{
+                                margin-left: 25px;
+                            }
+
+                            .price{
+                                margin-left: 270px;
+                            }
+                        }
+                        
+                        li:nth-of-type(2){
+                            border-bottom: 2px solid map-get($Mapcolor, 'blue');
+                            padding-bottom: 13px;
+                        }
+                    }
+
+                    .shoppingCart_optionBtn{
+                        // border: 1px solid brown;
+                        width: 448px;
+                        margin: 60px auto;
+
+                        button{
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+
+        // .bgWave{
+        //     display: block;
+        //     margin: 0 auto;
+        //     width: 100%;
+        //     // position: absolute;
+        //     // z-index: -10;
+        //     // bottom: 50%;
+        // }
+        
+        .shoppingCart_section_promoH{
+            margin: 0 auto;
+            // position: absolute;
+            // bottom: 0;
+            
+            .promoWrap{
+                // border: 1px solid pink;
+                width: 1200px;
+                margin: 0 auto;
+                margin-top: -1%;
+            }
+            
+            h1{
+                text-align: center;
+                // margin-top: 115px;
+            }
+            
+            h3{
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 85px;
+            }
+            
+            .promo{
+                display: flex;
+                flex-direction: row;
+                gap: 14.25px;
+            }
+        }
+    }
+    
+    
+}

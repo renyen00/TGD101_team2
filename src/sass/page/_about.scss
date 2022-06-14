@@ -1,0 +1,167 @@
+.about_body{
+    background-color: #2F4858;
+    font-family: $fontFamily;
+}
+// about上面
+.about_header_bg{
+    background-color: white;
+    height: 200px;
+    padding:35px ;
+
+    img{
+        width: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+// about樹
+.about_bg{
+    background-image: url(/src/images/xiaojiang/tree.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    margin: 60px auto;
+    width: 1000px;
+    height: 950px;
+    position: relative;
+}
+
+// about虛線框框
+.about_main{
+    border: dashed 5px white;
+    border-radius: 40px;
+    width: 400px;
+    height: 280px;
+    position: absolute;
+    top:470px;
+    left:300px;
+    h1{
+        text-align: center;
+        margin: 20px;
+    }
+    h4{
+        margin-left: 25px;
+    }
+    .about_main_bottom{
+        display: flex;
+        margin: 25px;
+        justify-content: space-between;
+    }
+}
+// 右邊按鈕
+.about_main_bottom{
+    a{
+        line-height: 25px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    button{
+        line-height: 25px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+}
+
+
+// about成員
+.about_img_yelian img{
+    width: 120px;
+    position:absolute;
+    top:100px;
+    left:120px;
+}
+.about_img_berlin img{
+    width: 120px;
+    position:absolute;
+    top:400px;
+    left:150px;
+}
+.about_img_betty img{
+    width: 120px;
+    position:absolute;
+    top:280px;
+    left:350px;
+}
+.about_img_owen img{
+    width: 120px;
+    position:absolute;
+    top:180px;
+    left:560px;
+}
+.about_img_jiang img{
+    width: 120px;
+    position:absolute;
+    top:400px;
+    left:720px;
+}
+.about_img_renyen img{
+    width: 120px;
+    position:absolute;
+    top:150px;
+    left:800px;
+}
+
+// about燈箱
+.mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+  .popup{
+    width: 800px;
+    height: 550px;
+    padding: 15px;
+    background-color: #2F4858;
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+  }
+    //裡面白線
+  .about_card_out{
+    border: 5px solid white;
+    border-radius: 50px;
+    height: 520px;
+    display: flex;
+    // 左邊頭貼
+    .about_card_left{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin: auto 30px;
+        background-color: white;
+        img{
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+        }
+    }
+    // 右邊文字+按鈕
+    .about_card_right{
+        border: 1px solid red;
+        .about_card_span{
+        }
+        span{
+            width: 200px;
+            border: 1px solid red;
+            margin-top: 30px;    
+            display: flex;
+            color: white;
+            font-size: 24px;
+        }
+    }
+    .about_card_button{
+        margin-top: 150px;
+        display: flex;
+        
+    }
+  }

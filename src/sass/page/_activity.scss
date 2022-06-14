@@ -1,0 +1,187 @@
+.activity_body{
+    font-family: $fontFamily;
+    
+}
+
+// activity背景
+.activity_bg_top svg{
+    position: absolute;
+    z-index: -99;
+    padding-top: 700px;
+}
+
+/* activity_banner */
+.activity_banner{
+    background-image: url(/src/images/xiaojiang/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 700px;
+    display: flex;
+    .activity_banner_inner{
+        border: 3px white solid;
+        width: 850px;
+        height: 350px;
+        margin: auto;
+        color: white;
+        img{    
+            margin: 35px auto;
+            display: block;
+            width: 120px;
+        }  
+        h1{
+            text-align: center;
+            font-size: 60px;
+        }
+        h5{
+            text-align: center;
+            padding-top: 20px;
+        }
+    }
+}
+
+
+
+/* activity與我同行 */
+.activity_main_us {
+    color: white;
+    h1{
+        font-weight: bold;
+        font-size: 80px;
+        padding: 150px 0 50px 200px;
+    }
+    h4{
+        margin: 80px 0 80px 200px;
+        font-weight: bold;
+    }
+    ul{
+        /* border: 1px blue solid; */
+        width: 1000px;
+        margin-left: 200px;
+    }
+    li{
+        display: flex;
+        margin-bottom: 150px;
+        img{
+            border-radius: 50%;
+        }
+        span{
+            font-size: 24px;
+            display: flex;
+            flex-direction:column;
+            line-height: 55px;
+            margin-left: 80px;
+            margin-right: 80px;
+            font-size: 24px;
+        }
+        a{
+            font-size: 20px;
+            line-height: 40px;
+            margin-top: 60px;
+        }
+    }
+    //更多活動按鈕裝飾鳥
+    .activity_button_wb{
+        margin: 0 auto;
+        width: 200px;
+        position: relative;
+        img{
+            position: absolute;
+            top: -50px;
+            left: 160px;
+        }
+        // 更多活動按鈕
+        .activity_more_us{
+        margin: 0 auto;
+        font-size: 20px;
+        }
+    }
+
+}
+
+// activity藍色鳥鳥
+
+.activity_bluebird{
+    width: 600px;
+    margin: 0 auto;
+    // border: 1px solid blue;
+    position: relative;
+    .activity_img_bluebird{
+        display: block;
+        position: absolute;
+        top: -175px;
+        left: 110px;
+        // border: 1px solid red;
+    }
+
+    .activity_img_dialog{
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        // border: 1px solid red;
+    }
+}
+
+
+/* activity嶼友同行 */
+.activity_main_user{
+    color: #2F4858;
+    h1{
+        font-size: 80px;
+        font-weight: bold;
+        padding: 150px 200px 50px 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+    h4{
+        font-weight: bold;
+        margin: 80px 200px 80px 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+    ul{
+        width: 1000px;
+        float: right;
+        margin-right: 200px;
+    }
+    li{
+        display: flex;
+        margin-bottom: 150px;
+        img{
+            border-radius: 50%;
+        }
+        span{
+            font-size: 24px;
+            /* border: 1px green solid; */
+            display: flex;
+            flex-direction:column;
+            line-height: 55px;
+            margin-left: 80px;
+            margin-right: 80px;
+            font-size: 24px;
+        }
+        a{
+            font-size: 20px;
+            line-height: 40px;
+            margin-top: 60px;
+        }
+    }
+    // 更多揪團按鈕裝飾鳥
+    .activity_button_bb{
+        margin: 0 auto;
+        width: 200px;
+        position: relative;
+        clear:both;
+        img{
+            position: absolute;
+            top: -45px;
+        }
+        // 更多揪團按鈕
+        .activity_more_user{
+            margin: 0 auto;
+            font-size: 20px;
+
+        }
+    }
+}
+

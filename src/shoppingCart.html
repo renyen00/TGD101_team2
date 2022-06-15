@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購物車</title>
-    <link rel="stylesheet" href="./css/style.css">
+    @@include('./layout/head.html')
     <script src="./js/vue.min.js"></script>
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 <body id="shoppingCart_body">
-    <div class="shoppingCart_div_bg">
+    <!-- <div class="shoppingCart_div_bg"> -->
         <!-- <img class="bgWave" src="./images/shoppingCart/shoppingCartBg.png"> -->
 
         <main class="shoppingCart_main_wrapper textBlue">
         <header class="shoppingCart_header">
-            <img src="./images/logo/logo_blue_final.svg">
+            <a href="./index.html"><img src="./images/logo/logo_blue_final.svg"></a>
             <pre>NOT JUST MAKE                                  FRIENDS  BUT INTO IT.</pre>
         </header>
 
@@ -38,9 +37,9 @@
                     </div>
 
                     <div class="detail">
-                        <h3 class="name">嶼商鋪-踏上回憶的旅程</h3>
+                        <h3 id="name">嶼商鋪-踏上回憶的旅程</h3>
                         <h4>數量&nbsp&nbsp1</h4>
-                        <h3 class="price">價格&nbsp$495</h3>
+                        <h3 id="price">價格&nbsp$495</h3>
                     </div>
                 </li>
                 <img src="./images/shoppingCart/shoppingCartLing.png" class="dashLine">
@@ -77,8 +76,8 @@
                     </li>
                 </ul>
                 <div class="shoppingCart_optionBtn">
-                    <button class="backToStore btnXL_b--s">繼續購物</button>
-                    <button class="goPay btnXL_y">前往結帳</button>
+                    <a href="./store.html" class="backToStore btnXL_b--s">繼續購物</a>
+                    <a href="./payment.html" class="goPay btnXL_y">前往結帳</a>
                 </div>
             </section>
         </section>
@@ -97,7 +96,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    <!-- </div> -->
     
     
     @@include('./layout/footer.html') 

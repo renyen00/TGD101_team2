@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夏天就要去瀑布</title>
+    @@include('./layout/head.html')
+    <script src="./js/vue.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+</head>
+<body id="officalEvent_body">
+    <header class="officalEvent_header_sliderArea">
+        <div class="parrotBox">
+            <img src="./images/officalEvent/parrot.png" class="parrot">
+            <a href="./page/index.html"><img src="./images/logo/logo_white_final.svg" class="officalEvent_logo"></a>
+            <h5 class="textWhite">NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
+            <!-- 暫時借放 -->
+            <img src="./images/officalEvent/fakePhoto.png" class="fakePhoto">
+        </div>
+        <section id="officalEvent_sliderframe">
+            <ul id="officalEvent_ul_sliderImg">
+                <li class="officalEvent_li_slider">
+                    <img src="./images/officalEvent/sliderImg1.jpg" class="offical_img_slider">
+                </li>
+                <li class="officalEvent_li_slider">
+                    <img src="./images/officalEvent/sliderImg2.jpg" class="offical_img_slider">
+                </li>
+                <li class="officalEvent_li_slider">
+                    <img src="./images/officalEvent/sliderImg3.jpg" class="offical_img_slider">
+                </li>
+            </ul>
+
+            <ul id="officalEvent_ul_sliderBtn">
+                <!-- <li></li>
+                <li></li>
+                <li></li> -->
+            </ul>
+        </section>
+    </header>
+
+    <section class="officalEvent_section_breadCrumb">
+        <a class="breadLink textBlue" href="index.html">首頁</a>
+            <p>&nbsp;&gt;&nbsp;</p>
+            <a class="breadLink textBlue" href="attraction.html">瀑布</a>
+            <p>&nbsp;&gt;&nbsp;</p>
+            <a class="breadLink textBlue" href="activity.html">共語同遊</a>
+            <p>&nbsp;&gt;&nbsp;</p>
+            <h5>夏天就要去瀑布</h5>
+    </section>
+
+    
+    <main class="officalEvent_main">
+        <img src="./images/officalEvent/cloudL.svg" class="cloudL">
+        <img src="./images/officalEvent/cloudS2.svg" class="cloudS2">
+        
+        <div class="officalEvent_div_articleWrap">
+
+            <section class="bird">
+            <span id="birdT" class="iconify" data-icon="icon-park-outline:bird" style="color: #2f4858;" data-width="100" data-height="100" data-flip="horizontal"></span>
+            <span id="birdB" class="iconify" data-icon="icon-park-outline:bird" style="color: #2f4858;" data-width="100" data-height="100" data-flip="horizontal"></span>
+            </section>
+
+            <article class="itsSummer">
+            <h1 class="textBlue">夏天就要去瀑布</h1>
+            <p class="waterfallSummer textBlue">
+                有台灣尼加拉瀑布美稱，超美！而且賞瀑步道平坦好，還有不同角度的觀瀑玻璃平台，但最酷的是途中還經過一個瀑布，以及一座跟鐵路併行的溪谷吊橋。這幾個瀑布都是我們實際走訪過的，難度不高，就算帶小孩也能輕鬆賞到，可以欣賞瀑布之美，呼吸森林芬多精，不管何時出發都可以！還在等甚麼?
+            </p>
+            </article>
+        </div>
+    </main>
+    
+    @@include('./layout/footer.html')
+    
+</body>
+</html>

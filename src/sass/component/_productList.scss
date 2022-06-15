@@ -1,4 +1,4 @@
-.shoppingCart_li_list{
+.product_li_list{
     width: 970px;
     margin: 0 auto;
     display: flex;
@@ -17,7 +17,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            z-index: -1;
+            z-index: 0;
         }
         
         img{
@@ -31,7 +31,8 @@
         // border: 1px solid green;
         flex-grow: 2;
 
-        .name{
+        h3#productName{
+            // border: 1px solid red;
             display: block;
             width: 335px;
             margin: 0 auto;
@@ -42,7 +43,7 @@
             text-align: center;
         }
 
-        .price{
+        h3#productPrice{
             width: 140px;
         }
     }

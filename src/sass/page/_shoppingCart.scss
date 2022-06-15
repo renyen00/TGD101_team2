@@ -1,9 +1,9 @@
 #shoppingCart_body{
     // border: 1px solid skyblue;
     
-    .shoppingCart_div_bg{
-        // position: relative;
-        max-width: 100%;
+    // .shoppingCart_div_bg{
+    //     // position: relative;
+    //     max-width: 100%;
         
         .shoppingCart_main_wrapper{
             max-width: 100%;
@@ -96,7 +96,7 @@
                                 position: absolute;
                                 top: 0;
                                 right: 0;
-                                z-index: -1;
+                                z-index: 0;
                             }
                             
                             img{
@@ -110,7 +110,7 @@
                             // border: 1px solid green;
                             flex-grow: 2;
 
-                            .name{
+                            #name{
                                 display: block;
                                 width: 335px;
                                 margin: 0 auto;
@@ -121,7 +121,7 @@
                                 text-align: center;
                             }
 
-                            .price{
+                            #price{
                                 width: 140px;
                             }
                         }
@@ -256,7 +256,7 @@
                         width: 448px;
                         margin: 60px auto;
 
-                        button{
+                        a{
                             display: inline-block;
                         }
                     }
@@ -302,7 +302,7 @@
                 gap: 14.25px;
             }
         }
-    }
+    // }
     
     
 }

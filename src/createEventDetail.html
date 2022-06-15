@@ -15,7 +15,7 @@
         <div class="createEventDetail_div_container">
             <header>
                 <!-- @@include('./layout/nav.html') -->
-                <div class="createEvent_div_logo"><img src="./images/logo/logo_blue_final.svg"></div>
+                <a href="index.html" class="createEventDetail_div_logo"><img src="./images/logo/logo_blue_final.svg"></a>
                 <h5>NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
 
                 <div class="createEventDetail_div_uploadimg">
@@ -27,7 +27,7 @@
                     <img src="./images/backgroundimg/createConfirm_member.svg">
                 </div>
 
-                <ul class="createEvent_ul_breadcrumb">
+                <ul class="createEventDetail_ul_breadcrumb">
                     <li><a href="#">首頁</a></li>
                     <li>></li>
                     <li><a href="#">景點</a></li>
@@ -100,7 +100,7 @@
                     </ul>
                 </section>
                 <div class="createEventDetail_div_btns">
-                    <input type="button" class="btnXL_y" value="我要報名">
+                    <input id="apply" type="button" class="btnXL_y" value="我要報名">
                 </div>
                 <section class="createEventDetail_section_messageboard">
                     <form action="">
@@ -123,7 +123,15 @@
                 </section>
             </main>
         </div>
+        @@include('./layout/footer.html')
 
     </div>
+    <script>
+        let my_btn = document.getElementById("apply");
+        my_btn.addEventListener("click", function(){
+            alert("報名成功 !  可至會員區查看詳細內容");
+            self.location='activityList.html';
+        });
+    </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 .about_body{
-    background-color: #2F4858;
+    background-color: map-get($Mapcolor, 'blue');;
     font-family: $fontFamily;
+
 }
 // about上面
 .about_header_bg{
@@ -16,7 +17,7 @@
 }
 // about樹
 .about_bg{
-    background-image: url(/src/images/xiaojiang/tree.svg);
+    background-image: url(../images/xiaojiang/tree.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -158,6 +159,15 @@
             color: white;
             font-size: 24px;
         }
+        #pp{
+            border: 1px solid black;
+            margin-top: 30px;  
+            display: inline-block; 
+            width: 200px; 
+            color: white;
+            font-size: 24px;
+        }
+
     }
     .about_card_button{
         margin-top: 150px;
@@ -165,3 +175,4 @@
         
     }
   }
+

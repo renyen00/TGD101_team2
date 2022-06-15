@@ -148,31 +148,25 @@
     }
     // 右邊文字+按鈕
     .about_card_right{
-        border: 1px solid red;
         .about_card_span{
+            color: map-get($Mapcolor, 'white');
+            width: 380px;
         }
         span{
-            width: 200px;
-            border: 1px solid red;
             margin-top: 30px;    
             display: flex;
-            color: white;
             font-size: 24px;
         }
-        #pp{
-            border: 1px solid black;
+        p{  
             margin-top: 30px;  
-            display: inline-block; 
-            width: 200px; 
-            color: white;
             font-size: 24px;
+            height: 200px;
+            // border: 1px solid red;
         }
 
     }
     .about_card_button{
-        margin-top: 150px;
-        display: flex;
-        
+        display: flex;       
     }
   }
 

@@ -7,14 +7,15 @@
     <title>發起揪團</title>
     @@include('./layout/head.html')
 </head>
-<body class="createEventConfirm_body">
+<body>
+    @@include('./layout/header.html')
     
     <div class="createEventConfirm_div_wrapper">
         <div class="marquee">WHERE THE NEW START BEGINS, WHERE THE NEW BEGIN STARTS.</div>
         <div class="createEventConfirm_div_container">
             <header>
                 <!-- @@include('./layout/nav.html') -->
-                <div class="createEvent_div_logo"><img src="./images/logo/logo_blue_final.svg"></div>
+                <a href="index.html" class="createEventConfirm_div_logo"><img src="./images/logo/logo_blue_final.svg"></a>
                 <h5>NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
 
                 <div class="createEventConfirm_div_uploadimg">
@@ -26,12 +27,12 @@
                     <img src="./images/backgroundimg/createConfirm_member.svg">
                 </div>
 
-                <ul class="createEvent_ul_breadcrumb">
+                <ul class="createEventConfirm_ul_breadcrumb">
                     <li><a href="#">首頁</a></li>
                     <li>></li>
-                    <li><a href="#">個人頁面</a></li>
+                    <li><a href="#">發起揪團</a></li>
                     <li>></li>
-                    <li>揪團紀錄</li>
+                    <li>確認頁面</li>
                 </ul>
             </header>
 
@@ -84,26 +85,36 @@
                         與我在夜間探訪橫濱被時間長河掩埋的過往, 再被人遺忘的角落找尋故事的結局以及可能的不期而遇......<br>
                         我們不見不散......
                     </h4>
-                    <!-- <ul>
-                        <li><a href="#" class="applicants">
-                            <span class="iconify" data-icon="ant-design:user-outlined" style="color: #2f4858; font-size: 25px;"></span>
-                        </a></li>
-                        <li><a href="#" class="applicants">
-                            <span class="iconify" data-icon="ant-design:user-outlined" style="color: #2f4858; font-size: 25px;"></span>
-                        </a></li>
-                        <li><a href="#" class="applicants">
-                            <span class="iconify" data-icon="ant-design:user-outlined" style="color: #2f4858; font-size: 25px;"></span>
-                        </a></li>
-                        <li><a href="#" class="applicants_look">10 人報名 ></a></li>
-                    </ul> -->
                 </section>
                 <div class="createEventConfirm_div_btns">
-                    <a href="#">取消揪團</a>
-                    <input type="button" class="btnXL_y" value="返回上一頁">
+                    <a id="cancel" href="">取消揪團</a>
+                    <input id="yes" type="button" class="btnXL_y" value="返回上一頁">
                 </div>
             </main>
         </div>
         @@include('./layout/footer.html')
     </div>
+
+    <script>
+        let my_btn = document.getElementById("yes");
+        let no_btn = document.getElementById("cancel");
+
+        my_btn.addEventListener("click", function(){
+            // alert("揪團成功 !  即將返回揪團頁面");
+            // window.history.back(-1);
+            self.location='personalEvent.html';
+
+        });
+
+        no_btn.addEventListener("click", function(e){
+            var is_confirm = confirm("是否確定要取消？");
+            if (is_confirm) {
+                alert("取消揪團");
+                self.location='personalEvent.html';
+            } else {
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>

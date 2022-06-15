@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <title>單一景點-活動總頁</title>
     @@include('./layout/head.html')
@@ -14,14 +13,19 @@
     <!-- 上面banner -->
     <header class="activity_banner">
         <section class="activity_banner_inner">
-            <img src="./images/logo/logo_white_final.svg" alt="">
+            <a href="./index.html"><img src="./images/logo/logo_white_final.svg" alt=""></a>
             <h1>共語共遊</h1>
             <h5>NOT JUST MAKE FRIENDS BUT INTO IT.</h5>
         </section>
     </header>
     <!-- 藍色背景 -->
     <section class="activity_bg_blue">
-
+        <!-- 麵包屑 -->
+        <ul class="activity_ul_breadcrumb">
+            <li><a href="#">首頁</a></li>
+            <li>></li>
+            <li><a>ACTIVITIES</a></li>
+        </ul>
         <!-- 嶼我同行 -->
         <section class="activity_main_us">
             <h1>嶼我同行</h1>
@@ -36,8 +40,8 @@
                         <span>報名截止： 2022/06/09</span>
                         <span>人數限制： 12人</span>
                     </article>
-                    <article>
-                        <a href="" class="btnXL_w--s">詳細資訊</a>
+                    <article class="activity_a_beside">
+                        <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>
                         <a href="" class="btnXL_y--s">我要報名</a>
                     </article>                   
                 </li>
@@ -50,8 +54,8 @@
                         <span>報名截止： 2022/06/09</span>
                         <span>人數限制： 12人</span>
                     </article>
-                    <article>
-                        <a href="" class="btnXL_w--s">詳細資訊</a>
+                    <article class="activity_a_beside">
+                        <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>
                         <a href="" class="btnXL_y--s">我要報名</a>
                     </article>
                 </li>
@@ -64,25 +68,29 @@
                         <span>報名截止： 2022/06/09</span>
                         <span>人數限制： 12人</span>
                     </article>
-                    <article>
-                        <a href="" class="btnXL_w--s">詳細資訊</a>
+                    <article class="activity_a_beside">
+                        <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>
                         <a href="" class="btnXL_y--s">我要報名</a>
                     </article>
                 </li>
-            </ul>           
+            </ul>  
+            <!-- 按鈕 -->
             <div class="activity_button_wb">
                 <img src="./images/xiaojiang/wb.svg" alt="">
-                <a href="" class="btnXL_w activity_more_us">更多活動</a>
+                <a href="./activityList.html" class="btnXL_w activity_more_us">更多活動</a>
             </div>
         </section>
-
     </section>
+    <!-- 藍色背景下面 -->
+    <section class="activity_bg_bottom"><img  src="./images/xiaojiang/activity_bg.svg" alt="">
+
         <!-- 藍色鳥鳥 -->
         <section class="activity_bluebird">
             <img class="activity_img_bluebird" src="./images/xiaojiang/bluebird.svg" alt="">
-            <img class="activity_img_dialog" src="./images/xiaojiang/dialog.svg" alt="">
+            <a href="./createEvent.html"><img class="activity_img_dialog" src="./images/xiaojiang/dialog.svg" alt=""></a>
         </section>
 
+    </section>    
 
         <!-- 嶼友同行 -->
         <section class="activity_main_user">
@@ -90,8 +98,8 @@
             <h4>嶼友揪團, 與好友相約出遊</h4>
             <ul>
                 <li>
-                    <article>
-                        <a href="" class="btnXL_b--s">詳細資訊</a>
+                    <article class="activity_a_beside">
+                        <a href="./createEventDetail.html" class="btnXL_b--s">詳細資訊</a>
                         <a href="" class="btnXL_y--s">我要報名</a>
                     </article>
                     <article>
@@ -104,8 +112,8 @@
                     <img src="./images/xiaojiang/ex.png" alt="">
                 </li>
                 <li>
-                    <article>
-                        <a href="" class="btnXL_b--s">詳細資訊</a>
+                    <article class="activity_a_beside">
+                        <a href="./createEventDetail.html" class="btnXL_b--s">詳細資訊</a>
                         <a href="" class="btnXL_y--s">我要報名</a>
                     </article>
                     <article>
@@ -120,7 +128,7 @@
             </ul>
             <div class="activity_button_bb">
                 <img src="./images/xiaojiang/bb.svg" alt="">
-                <a href="" class="btnXL_b activity_more_user">更多揪團</a>
+                <a href="./activityList.html" class="btnXL_b activity_more_user">更多揪團</a>
             </div>
         </section>
         @@include('./layout/footer.html')

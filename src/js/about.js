@@ -1,11 +1,10 @@
 // 切換頁面
 $(function () {
-
     $('.about_main').hide();
     $('.about_member').click(function(){
     $(this).children(".about_main").show();
     $('.about_member').not(this).children(".about_main").hide();
-    })     
+    })  
 
 });
 

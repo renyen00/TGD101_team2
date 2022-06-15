@@ -4,7 +4,7 @@
         text-decoration: none;
         width: $w; height: $h;
         margin: 10px;
-        line-height: $h;
+        line-height: calc($h - 3px);
         border: 3px solid $bgc;
         box-shadow: 0px 4px 4px 0px rgba(0,0,0,.25);
         box-sizing: border-box;
@@ -44,7 +44,7 @@
             width: $w;
             height: $h;
             margin: 10px;
-            line-height: $h;
+            line-height: calc($h - 3px);
             text-align: center;
             border: 3px solid $bgc;
             border-radius: $borderR;

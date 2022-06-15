@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="60353520409-vorqrmhferhfum27sactiqdkhd02nknt.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    @@include('./layout/head.html')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="sign_container sign_bg">
+        <main class="sign_wrapper" id="sign_wrapper">
+            <div class="form-cont signUp-cont">
+                <form action="">
+                    <h4>加入鳥語 島嶼</h4>
+                    <input type="text" placeholder="姓名">
+                    <input type="text" placeholder="暱稱">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="密碼">
+                    <input type="password" placeholder="確認密碼">
+                    <input type="tel" placeholder="行動電話">
+                    <input type="date">
+                    <div class="btnGroup">
+                        <input class="btnS_b" type="submit" value="清除">
+                        <input class="btnS_b" type="submit" value="送出">
+                    </div>
+                </form>
+            </div>
+            <div class="form-cont signIn-cont">
+                <form id="logIn" action="">
+                    <h4>登入</h4>
+                    <div class="g-signin2" data-width="300" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
+                    <span class="hr-login">or</span>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="密碼">
+                    <div class="btnGroup">
+                        <input class="btnS_y" type="submit" value="清除">
+                        <input class="btnS_y" type="submit" value="登入">
+                    </div>
+
+                        <a id="missingBtn" href="###">忘記密碼?</a>
+
+                </form>
+                <form id="findPwd" action="">
+                    <h4>忘記密碼</h4>
+
+                    <input type="email" placeholder="Email">
+                    <a href="">重新發送驗證碼</a>
+
+                    <a href="###" id="loginBtn">登入</a>
+                </form>
+            </div>
+            <div class="overlay-cont">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <a class="icon" href="./index.html">
+                            <img src="./images/logo/logo_blue_final.svg" alt="">
+                        </a>
+                        <h4>加入鳥語 島嶼</h4>
+                        <a class="btnXL_w--s" id="signIn">註冊</a>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <a class="icon" href="./index.html">
+                            <img src="./images/logo/logo_white_final.svg" alt="">
+                        </a>
+                        <h4>已經是島語 鳥嶼<br>的成員了?</h4>
+                        <a class="btnXL_y--s" id="signUp">登入</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./js/sign.min.js"></script>
+</body>
+</html>

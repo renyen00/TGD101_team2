@@ -1,0 +1,213 @@
+
+.sign_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    font-family: $fontFamily ;
+    width: 100vw;
+    height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    background-repeat: cover;
+    
+    .sign_wrapper{
+        width: 700px;
+        height: 500px;
+        border-radius: 10px;
+        position:relative;
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0,0,0,.25);
+        .form-cont{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all .5s ease-in-out;
+            form{
+                background-color: #FFFFFF;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 50px;
+                height: 100%;
+                text-align: center;
+                h4{
+                    text-align: justify;
+                    margin-bottom: 20px;
+                }
+                .g-signin2{
+                    font-size: 12px;
+                    border-radius: 10px;
+                }
+                > input{
+                    // background-color: #f0f0f0;
+                    border: 1px solid #aaa;
+                    outline: none;
+                    border-radius: 5px;
+                    margin: 5px 0;
+                    padding-left: 10px;
+                    width: 100%;
+                    height: 35px;
+                    transition: all .2s ease;
+                    &:focus{
+                        background-color: #fff;
+                        box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+                    }
+                }
+                .btnGroup{
+                    width: 100%;
+                    border-radius: 10px;
+                    display: flex;
+                    input{
+                        flex-basis: 50%;
+                    }
+                }
+                .hr-login{
+                    display: block;
+                    margin: 10px 0 30px 0;
+                    text-align: center;
+                }
+                #missingBtn{
+                    margin-top: 50px;
+                    #missingBtn:hover{
+                        color:#000;
+                    }
+                }
+            }
+            #findPwd{
+                padding: 50px;
+                align-items: center;
+                h4,a{
+                    margin: 50px 0;
+                    
+                }
+            }
+        }
+        .signUp-cont{
+            right: 0;
+            width: 50%;
+            opacity:0;
+            z-index: 1;
+        }
+        .signIn-cont{
+            right: 0;
+            width: 50%;
+            z-index: 2;
+        }
+        .overlay-cont{
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 50%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 100;
+            .overlay{
+                background: #f2bf61;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 0 0;
+                color: #FFFFFF;
+                position: relative;
+                left: 0%;
+                height: 100%;
+                width: 200%;
+                transform: translateX(0%);
+                transition: transform 0.6s ease-in-out;
+
+                .overlay-panel {
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content:space-around;
+                    flex-direction: column;
+                    padding: 0 40px;
+                    text-align: center;
+                    top: 0;
+                    height: 100%;
+                    width: 50%;
+                    transform: translateX(0);
+                    transition: transform 0.6s ease-in-out;
+                    overflow: hidden;
+                    a{
+                        cursor: pointer;
+                    }
+                    .icon{
+                        width: 120px;
+                        height: 120px;
+                         // background-color: rgba(0,0,0,0);
+                         cursor: pointer;
+                     }
+                }
+               
+            }
+            .overlay-left {
+                transform: translateX(-20%);
+            }
+        
+            .overlay-right {
+                right: 0;
+                transform: translateX(0);
+                background-color: #2F4858;
+            }
+        }
+    }
+
+    .sign_wrapper.right-panel-active .signIn-cont {
+        transform: translateX(100%);
+    }
+    
+    .sign_wrapper.right-panel-active .overlay-cont{
+        transform: translateX(100%);
+    }
+    
+    .sign_wrapper.right-panel-active .overlay {
+        transform: translateX(-50%);
+    }
+
+
+    .sign_wrapper.right-panel-active .overlay-left {
+        transform: translateX(-200%);
+    }
+
+
+    .sign_wrapper.right-panel-active .overlay-right {
+        transform: translateX(0%);
+    }
+    .sign_wrapper.right-panel-active .signUp-cont {
+        transform: translateX(-100%);
+        opacity: 1;
+        z-index: 5;
+        animation: show 0.6s;
+    }
+}
+.sign_bg{
+    background-image: url('../images/backgroundimg/signIn.svg');
+    transition: .5s;
+}
+.sign_new-bg{
+    background-image: url('../images/backgroundimg/signUp.svg');
+    transition: .5s;
+}
+.sign_new-bg2{
+    background-image: url('../images/backgroundimg/missing.svg');
+    transition: .5s;
+}
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}

@@ -118,9 +118,17 @@
     margin-top: 35px;
     li{
         display: inline-block;
-        color: #fff;
         font-size: 20px;
         margin-right: 5px;
+
+        a{
+            text-decoration: none;
+            color: map-get($Mapcolor, 'white');
+
+            &:hover{
+                color: map-get($Mapcolor, 'yellow');                    
+            }
+        }
     }
 }
 

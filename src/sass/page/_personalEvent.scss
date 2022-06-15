@@ -1,0 +1,70 @@
+.personal_body{
+
+    @import '_personalMod.scss';
+    // =====================main==============
+  
+    .personal_div_wrapper{
+        .personalEvent_main{
+            .personalEvent_nav_change{
+                width: 80%;
+                font-size: 2.4rem;
+                margin: 0 auto;
+                ul{
+                    display: flex;
+                    justify-content: space-around;
+                    height: 160px;
+                    line-height: 160px;
+                    border-bottom: 5px solid $gray;
+                    margin-bottom: 80px;
+                    li{
+                        cursor: pointer;
+                        color: $gray;
+                    }
+                    .li_select{
+                        color: $blue;
+                    }
+                }
+            }
+            .personalEvent_ul_list{
+                >li{
+                    height: 300px;
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 80px;
+                    img{
+                        max-width: 300px;
+                        margin-right: 5%;
+                    }
+                    section{
+                        margin-right: 5%;
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 300px;
+                            box-sizing: border-box;
+                            padding: 30px;  
+                            li{
+                                display: flex;
+                                p{font-size: 2.4rem;}
+                            }
+                        }    
+                    }
+                    div{
+                        text-align: center;
+                        h4{
+                            display: block;
+                            width: 100px;
+                            height: 100px;
+                            background-image: url(../../images/personalEvent_status.jpg);
+                            background-repeat: no-repeat;
+                            line-height: 70px;
+                            margin: 70px auto 30px;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

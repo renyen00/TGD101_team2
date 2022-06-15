@@ -14,12 +14,16 @@
 @import 'page/role'; // jiang
 @import 'page/about'; // jiang
 @import 'page/activity'; // jiang
-
+@import 'page/orderDetails';
+@import 'page/personal';
+@import 'page/personalEvent';
+@import 'page/personalOrder';
+@import 'page/personalNotice';
 *{
     box-sizing: border-box;
 }
 html{
     font-size: map-get($fontSize,'type-4');
-    background-color: #333;
+    // background-color: #333;
     font-family: $fontFamily;
 }

@@ -186,6 +186,7 @@
 }
 //=======================footer sec================//
 footer{
+    
     .footer_info{
         position: relative;
         margin: 0 auto;
@@ -193,11 +194,10 @@ footer{
         display: flex;
         align-items: flex-end;
         padding: 50px;
-        background-image: url('../footer_2.svg');
+        background-image: url('../images/backgroundimg/footer_2.svg');
         background-size:cover;
-        width: 1440px;
-        min-width: 100vw;
-        height: 336px;
+        max-width: 1440px;
+        height: 250px;
         background-repeat:no-repeat;
         span{
             color: white;

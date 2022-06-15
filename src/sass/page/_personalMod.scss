@@ -25,8 +25,17 @@
                 background: url('https://api.iconify.design/bx/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
                 width: 160px;
                 height: 160px;
-                line-height: 195px;
-                text-align: center;
+
+                position: relative;
+                p{
+                    position: absolute;
+                    top:90px;
+                    left:40px;
+                }
+                &:hover{
+                    background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+                    color:$white;
+                }
             }
             .a_nowpage{
                 background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;

@@ -8,6 +8,7 @@
     <title>鳥語鳥嶼會員中心</title>
 </head>
 <body class="personal_body">
+    @@include('./layout/header.html')
     <div class="personal_body1">
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
@@ -15,7 +16,7 @@
         <main class="personalOrder_main">
             <nav class="personalOrder_nav_change">
                 <ul>
-                    <li>目前訂單狀況</li>
+                    <li class="li_select">目前訂單狀況</li>
                     <li>購買紀錄</li>
                 </ul>
             </nav>
@@ -52,7 +53,7 @@
 
                     </ul>
                 </div>
-                <button class="btnXL_b">詳細資訊</button>
+                <a href="./orderDetails.html"  class="btnXL_b">詳細資訊</a>
             </section>
         </main>
     </div>

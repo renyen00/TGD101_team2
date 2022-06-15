@@ -6,8 +6,10 @@
     width: 225px;
     box-sizing: border-box;
     div{
-        padding: 35px;
-        display: flex;
+        a{
+            padding: 35px;
+            display: flex;
+        }
         img{
             width: 40px;
             height: 40px;

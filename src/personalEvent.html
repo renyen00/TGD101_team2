@@ -8,6 +8,8 @@
     <title>鳥語鳥嶼會員中心</title>
 </head>
 <body class="personal_body">
+    @@include('./layout/header.html')
+    <div class="personal_body1">
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 麵包屑以下 -->
@@ -16,7 +18,7 @@
                 <ul>
                     <li>報名中</li>
                     <li>過往報名紀錄</li>
-                    <li>個人揪團紀錄</li>
+                    <li class="li_select">個人揪團紀錄</li>
                 </ul>
             </nav>
             <!-- 內容清單 -->
@@ -49,15 +51,15 @@
                     </section>
                     <div>
                         <h4>報名中</h4>
-                        <button class="btnXL_b">
+                        <a href="./createEventRecord.html" class="btnXL_b">
                             詳細資訊
-                        </button>
+                        </a>
                     </div>
                 </li>
             </ul>
 
         </main>
     </div>
-
+</div>
 </body>
 </html>

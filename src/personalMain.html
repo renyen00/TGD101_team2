@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @@include('./layout/head.html')
+    <script src="https://kit.fontawesome.com/fc393adae9.js" crossorigin="anonymous"></script>
+
     <title>鳥語鳥嶼會員中心</title>
 </head>
 <body class="personal_body">
+    @@include('./layout/header.html')
+    <div class="personal_body1">
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 框框裡面 -->
@@ -71,10 +75,26 @@
 
 
         <div class="personal_div_popup">
-            
+            <h3>修改密碼</h3>
+            <ul>
+                <li>
+                    <h4>舊密碼</h4>
+                    <input type="text" placeholder="請輸入舊密碼">
+                </li>
+                <li>
+                    <h4>新密碼</h4>
+                    <input type="text" placeholder="請輸入新密碼">
+                </li>
+                <li>
+                    <h4>確認密碼</h4>
+                    <input type="text" placeholder="請再次輸入新密碼">
+                </li>
+            </ul>
+            <button class="btnL_b">確定修改</button>
+            <i class="fa-solid fa-x"></i>
         </div>
         
     </div>
-
+</div>
 </body>
 </html>

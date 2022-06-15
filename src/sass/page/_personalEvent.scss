@@ -34,6 +34,7 @@
                     img{
                         max-width: 300px;
                         margin-right: 5%;
+                        border-radius: 50%;
                     }
                     section{
                         margin-right: 5%;
@@ -62,6 +63,12 @@
                             margin: 70px auto 30px;
                             color: $white;
                         }
+                        a{
+                            text-decoration: none;
+                            font-family: $fontFamily;
+                            font-size: 20px;
+                        }
+
                     }
                 }
             }

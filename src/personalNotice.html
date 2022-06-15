@@ -8,13 +8,15 @@
     <title>鳥語鳥嶼會員中心</title>
 </head>
 <body class="personal_body">
+    @@include('./layout/header.html')
+    <div class="personal_body1">
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 麵包屑以下 -->
         <main class="personalNotice_main">
             <nav class="personalNotice_nav_change">
                 <ul>
-                    <li>訊息通知</li>
+                    <li class="li_select">訊息通知</li>
                     <li>廣播通知</li>
                 </ul>
             </nav>
@@ -26,6 +28,6 @@
            </section>
         </main>
     </div>
-
+</div>
 </body>
 </html>

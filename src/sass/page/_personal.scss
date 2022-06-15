@@ -90,5 +90,44 @@
                 }
             }
         }
+        .personal_div_popup{
+            display: none;
+            width: 800px;
+            text-align: center;
+            border: 5px solid $blue;
+            border-radius: 50px;
+            padding: 60px;
+            margin: 0 auto;
+            color: $blue;
+            position: relative;
+            h3{margin-bottom: 80px;}
+            ul{
+                width: 414px;
+                margin: 0 auto;
+            }
+            li{
+                display: flex;
+                margin-bottom: 40px;
+                justify-content: space-between;
+                height: 50px;
+                line-height: 50px;
+                input{
+                    border: 2px solid $blue;
+                    border-radius: 10px;
+                    width: 300px;
+                }
+            }
+            button{
+                margin: 0 auto;
+            }
+            i{
+               font-size: 3rem;
+               position: absolute;
+               right: 30px;top: 30px;
+            }
+        }
+        .personal_show{
+            display: block;
+        }
     }
 }

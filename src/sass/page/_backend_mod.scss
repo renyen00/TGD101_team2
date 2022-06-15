@@ -29,10 +29,12 @@ $block:null;
 html{
     font-family: 'Zen Maru Gothic';
 }
-h1{font-size: $back_h1;}
-h2{font-size: $back_h3;}
-h3{font-size: $back_h4;}
-p{font-size:  $back_h5;}
+.backend_body{
+    h1{font-size: $back_h1;}
+    h2{font-size: $back_h3;}    
+    h3{font-size: $back_h4;}
+    p{font-size:  $back_h5;}
+}
 .back_btnL{
     width: 200px;
     height: 100px;
@@ -89,6 +91,7 @@ p{font-size:  $back_h5;}
     display: flex;
     margin-bottom: 40px;
     li{
+        font-size: $back_h5;
         cursor: pointer;
         margin-right: 30px;
         color: rgba($black,0.5);
@@ -103,7 +106,7 @@ p{font-size:  $back_h5;}
 .backend_btn_add{
     margin-left: auto;;
 }
-table{
+.backend_main table{
     width:100%;
     margin-bottom: 40px;
     tr{
@@ -111,7 +114,7 @@ table{
         color: $blue;
         height: 60px;
         line-height: 60px;
-
+        font-size: $back_h5;
         td{
             button{
                 margin-left: 15px;
@@ -124,6 +127,7 @@ table{
         &:first-child{
             background-color:$blue;
             font-size: $back_h4;
+            color: $white;
         }
     }
 }

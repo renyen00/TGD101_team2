@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>單一景點</title>
     @@include('./layout/head.html')
+
 </head>
 <body>
     <div class="bgcBlue attraction_div_wrapperB">
         <header>
-            <!-- @@include('./layout/nav.html') -->
-            
+            @@include('./layout/header.html')
             <main class="attraction_main_slider">
                 <div class="attraction_div_head">
-                    <img src="./images/logo/logo_white_final.svg">
+                    <a href="index.html"><img src="./images/logo/logo_white_final.svg"></a>
                     <h5 class="textWhite">NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
                 </div>
                 <img class="attraction_img_sliderimg" src="./images/backgroundimg/attraction_A11.jpg">
@@ -49,7 +49,11 @@
     
     <section class="attraction_section_info2">
         <h5>2020年初,疫情突來乍到,影響了人們安穩的生活,人與人之間變得更有距離,但社會還是在前進,身為這諾大世界中小小齒輪的我們,最不能沒有的還是人與人之間的連結,因此我們希望有這麼一個為現代人搭起交友橋梁的平台</h5>
-        <img src="./images/backgroundimg/attraction_A3.jpg">
+        <img class="pic" src="./images/backgroundimg/attraction_A3.jpg">
+        <img class="birdsm" src="./images/backgroundimg/createConfirm_birdY.svg">
+        <img class="birdlg" src="./images/backgroundimg/createConfirm_birdY.svg">
+        <img class="cloud1" src="./images/backgroundimg/attraction_c1.svg">
+        <img class="cloud2" src="./images/backgroundimg/attraction_c2.svg">
     </section>
 
     <section class="attraction_section_morepic">
@@ -65,7 +69,7 @@
                 湖光美景染秋色
                 花香鳥語秋意濃</h4>
             </div>
-        <a href="" class="btnXL_b--s moreEventBtn">查看活動</a>
+        <a href="activity.html" class="btnXL_b--s moreEventBtn">查看活動</a>
         <ul class="attraction_ul_morepicDots">
             <li class="dot dot--now"></li>
             <li class="dot"></li>
@@ -73,5 +77,6 @@
             <li class="dot"></li>
         </ul>
     </section>
+
 </body>
 </html>

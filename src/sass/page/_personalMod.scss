@@ -1,0 +1,61 @@
+.personal_body1{
+    background-image: url('../../images/personaltest.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+}
+.personal_div_wrapper{
+    width: 1100px;
+    margin: 0 auto 0;
+    .personal_logo{
+        max-width: 300px;
+        margin-top: 100px;
+        margin-bottom: 125px;
+    }
+    .personal_nav_top{
+        ul{
+            display: flex;
+            justify-content: space-around;
+            font-size: 2.4rem;
+            margin-bottom: 100px;
+            a{
+                display: block;
+                text-decoration: none;
+                color: $yellow;
+                background: url('https://api.iconify.design/bx/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+                width: 160px;
+                height: 160px;
+
+                position: relative;
+                p{
+                    position: absolute;
+                    top:90px;
+                    left:40px;
+                }
+                &:hover{
+                    background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+                    color:$white;
+                }
+            }
+            .a_nowpage{
+                background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+                p{
+                    color:$white;
+                }
+            }
+        }
+    }
+    .personal_ul_breadCrumbs{
+        display: flex;
+        li{
+            font-size: 2rem;
+            color:$blue;
+            margin: 0 5px;
+        }
+        :nth-child(odd){
+            cursor: pointer;
+        }
+
+    }
+
+}

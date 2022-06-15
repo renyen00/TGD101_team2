@@ -91,6 +91,7 @@
             max-width: 88%;
             height: 30px;
             margin: 0 auto;
+            cursor: pointer;
     
             .dot{
                 width: 14px;
@@ -98,6 +99,10 @@
                 border: 2px solid map-get($Mapcolor, 'yellow');
                 background-color: map-get($Mapcolor, 'white');
                 border-radius: 50%;
+
+                &:hover{
+                    background-color: map-get($Mapcolor, 'yellow');
+                }
                 
                 &--now{
                     background-color: map-get($Mapcolor, 'yellow');
@@ -152,17 +157,52 @@
     gap: 10%;
     max-width: 1440px;
 
+    position: relative;
+
     h5{
         width: 20%;
         color: map-get($Mapcolor, 'blue'); 
         line-height: 40px;
     }
-    img{
+    .pic{
         display: block;
         border-radius: 50px 0 0 50px;
         max-width: 55%;
     }
 
+    .birdsm{
+        position: absolute;
+        width: 4%;
+        top: -16%;
+        left: 66%;
+        transform: scaleX(-1) rotate(-3deg);
+    }
+
+    .birdlg{
+        position: absolute;
+        width: 6%;
+        top: -24.7%;
+        left: 72%;
+        transform: rotate(-4deg);
+    }
+
+    .cloud1{
+        position: absolute;
+        width: 15%;
+        top: 195%;
+        left: -3%;
+        z-index: 5;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }   
+    
+    .cloud2{
+        position: absolute;
+        width: 15%;
+        top: 108%;
+        left: 2%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        z-index: 5;
+    }  
 }
 
 .attraction_section_morepic{
@@ -356,15 +396,51 @@
         
         h5{
             font-size: 1.6rem;
-            margin-bottom: 10%;
             min-width: 80%;
+            order: 2;
         }
         
-        img{
+        .pic{
             min-width: 90%;
+            margin-bottom: 10%;
             align-self: flex-end;
             border-radius: 26px 0 0 26px;
+            order: 1;
         }
+
+        .birdsm{
+            position: absolute;
+            width: 7%;
+            top: -9%;
+            left: 45%;
+            transform: scaleX(-1) rotate(-4deg);
+        }
+    
+        .birdlg{
+            position: absolute;
+            width: 9%;
+            top: -11.6%;
+            left: 56%;
+            transform: rotate(-4deg);
+        }
+
+        .cloud1{
+            position: absolute;
+            width: 25%;
+            top: 156%;
+            left: 75%;
+            z-index: 5;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }   
+        
+        .cloud2{
+            position: absolute;
+            width: 25%;
+            top: 107%;
+            left: 2%;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            z-index: 5;
+        }  
     }
 
     .attraction_section_morepic{

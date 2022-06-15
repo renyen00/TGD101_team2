@@ -1,29 +1,23 @@
 .activity_body{
-    font-family: $fontFamily;
-    
+    font-family: $fontFamily; 
+    width: 100%;
 }
 
-// activity背景
-.activity_bg_top svg{
-    position: absolute;
-    z-index: -99;
-    padding-top: 700px;
-}
 
 /* activity_banner */
 .activity_banner{
-    background-image: url(/src/images/xiaojiang/banner.jpg);
+    background-image: url(../images/xiaojiang/banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 700px;
     display: flex;
     .activity_banner_inner{
-        border: 3px white solid;
+        border: 3px map-get($Mapcolor, 'white') solid;
         width: 850px;
         height: 350px;
         margin: auto;
-        color: white;
+        color: map-get($Mapcolor, 'white');
         img{    
             margin: 35px auto;
             display: block;
@@ -40,15 +34,68 @@
     }
 }
 
+// activity背景
+.activity_bg_blue{
+    // border: 1px solid red;
+    background-color: map-get($Mapcolor, 'blue');
+    width: 100%;             
+}
+.activity_bg_bottom{
+    position: relative; 
+    img{
+    width: 100%;
+    }
+}
+ // activity藍色鳥鳥
+.activity_bluebird{
+    width: 200px;
+    margin: 0 auto;
+    // border: 1px solid blue;
+    // position: relative; 
+    .activity_img_bluebird{
+        width: 150px;
+        display: block;
+        z-index: -50;
+        position: absolute;
+        top: 40%;           
+    }
+
+    .activity_img_dialog{
+        width: 200px;
+        display: block;
+        z-index: -50;
+        position: absolute;
+        cursor: pointer;
+        top: 70%;    
+        left: 35%;
+    }
+}
+// 麵包屑
+.activity_ul_breadcrumb {
+    padding: 70px 0px 100px 150px;
+    color: map-get($Mapcolor, 'white');
+    display: flex;
+    font-size: 20px;
+    li{
+        margin-left: 10px;
+    }
+    a{
+    text-decoration:none;
+    color: map-get($Mapcolor, 'white');
+        &:hover{
+            color: map-get($Mapcolor, 'yellow');                    
+        }
+    }
+}
 
 
 /* activity與我同行 */
 .activity_main_us {
-    color: white;
+    color: map-get($Mapcolor, 'white');
     h1{
         font-weight: bold;
         font-size: 80px;
-        padding: 150px 0 50px 200px;
+        padding: 50px 0 50px 200px;
     }
     h4{
         margin: 80px 0 80px 200px;
@@ -99,33 +146,10 @@
 
 }
 
-// activity藍色鳥鳥
-
-.activity_bluebird{
-    width: 600px;
-    margin: 0 auto;
-    // border: 1px solid blue;
-    position: relative;
-    .activity_img_bluebird{
-        display: block;
-        position: absolute;
-        top: -175px;
-        left: 110px;
-        // border: 1px solid red;
-    }
-
-    .activity_img_dialog{
-        display: block;
-        position: absolute;
-        cursor: pointer;
-        // border: 1px solid red;
-    }
-}
-
 
 /* activity嶼友同行 */
 .activity_main_user{
-    color: #2F4858;
+    color: map-get($Mapcolor, 'blue');   ;
     h1{
         font-size: 80px;
         font-weight: bold;
@@ -185,3 +209,71 @@
     }
 }
 
+// ---------------media query--------------------
+@media (max-width: 575.98px){
+    .activity_banner{
+        width: 100%;
+        .activity_banner_inner{
+            width: 100vw;         
+        }
+    }
+    .activity_bg_blue{
+
+    }
+    .activity_main_us{
+        h1{
+            padding: 0;
+        }
+        h4{
+            margin: 0;
+        }
+        ul{
+            width: 100vw;
+            margin:0;
+        }
+        li{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        span{
+            margin: 0;
+        }
+        img{
+            width: 60vw;
+            height: 60vh;
+        }
+    }
+    .activity_a_beside{
+        margin: 0;
+    }
+    .activity_main_user{
+        h1{
+            padding: 0;
+        }
+        h4{
+            margin: 0;
+        }
+        ul{
+            width: 100vw;
+            flex-wrap: wrap;
+            margin:0;
+        }
+        li{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        img{
+            width: 60vw;
+            height: 60vh;
+        }
+    }
+    .activity_span_content{
+        width: 100%;
+        span{
+            margin:0;
+
+        }
+    }
+}

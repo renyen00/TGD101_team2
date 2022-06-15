@@ -4,31 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
-    <script src="./js/role.js"></script>
+    <script src="../dist/js/role.min.js"></script>
+    <script src="../dist/js/role_carousel.min.js"></script>
     <title>創建角色</title>
+    @@include('./layout/head.html')
 </head>
 <body class="role_body">
-
-    <!-- 背景 -->
-    <section class="role_bg_top">
-        <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 1433 1485" style="enable-background:new 0 0 1433 1485;" xml:space="preserve">
-   <style type="text/css">
-       .st0{fill:#FFFFFF;}
-   </style>
-   <path class="st0" d="M1433,43v1446H-7V218.5C78.6,163.1,181.8,118,297.2,86.3C599.9,3.8,1121.6-36,1433,43z"/>
-   </svg>
+    @@include('./layout/header.html')
+    <!-- 藍色背景 -->
+    <section class="role_bg_blue">
+        <!-- 上面 -->
+        <header class="role_header_top">
+            <a href="./index.html"><img src="./images/logo/logo_white_final.svg" alt=""></a>
+        </header>
     </section>
-
-
-    <!-- 上面 -->
-    <header class="role_header_top">
-        <img src="./images/logo/logo_white_final.svg" alt="">
-    </header>
-
-    <section>
+    <!-- 藍色背景下面 -->
+    <section><img class="role_bg_bottom" src="./images/xiaojiang/role_bg.svg" alt="">
         <!-- 上面選擇鳥類 -->
         <section class="role_section_top">
             <div class="role_bird bird1">
@@ -56,7 +48,7 @@
                 <img src="./images/xiaojiang/b8.svg" alt="">
             </div>
         </section>
-
+    <section>
         <!-- 下面裝飾區 -->
         <section class="role_section_bottom">
 
@@ -149,6 +141,6 @@
 
 
     </section>
-
+    @@include('./layout/footer.html')
 </body>
 </html>

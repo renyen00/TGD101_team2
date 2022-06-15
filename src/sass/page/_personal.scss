@@ -1,0 +1,133 @@
+.personal_body{
+
+    @import '_personalMod.scss';
+    // =====================main==============
+  
+    .personal_div_wrapper{
+        .personal_main{
+            border: 5px solid $blue;
+            border-radius: 50px;
+            text-align: center;
+            padding: 130px;
+            width: 800px;
+            margin: 120px auto 90px;
+            position: relative;
+            ul{
+                margin: 0 auto;
+                width: 414px;
+                :last-child{
+                    h4{
+                        margin: 0px;
+                    }
+                }
+                li{
+                    display: flex;
+                    margin-bottom: 40px;
+                    justify-content: space-between;
+                    height: 50px;
+                    line-height: 50px;
+                    position: relative;
+                    h4{
+                        margin-right: 60px;
+                    }
+                    button{
+                        font-family: $fontFamily;
+                        line-height: 2rem;
+                    }
+                    input{
+                        border: 2px solid $blue;
+                        border-radius: 10px;
+                        width: 300px;
+                    }
+                    textarea{
+                        border: 2px solid $blue;
+                        border-radius: 10px;
+                        width: 300px;
+                        height: 150px;
+                    }
+                    .iconify{
+                        font-size: 4rem;
+                        position: absolute;
+                        right: 20px;
+                        top: -37px;
+                        transform: scaleX(-100%);
+                        color: $blue;
+                        display: none;
+                    }
+                }
+                .li_blur{
+                    margin-top: 60px;
+                    .iconify{
+                        display: block;
+                    }
+                }
+            }
+            #orderCompleted_icon_birdFill{
+                position: absolute;
+                left: 0;
+                top: -70px;
+            }
+            .personal_icon{
+                max-width: 250px;
+                position: absolute;
+                right: -75px;
+                top: -125px;
+            }
+        }
+        .personal_div_doWhat{
+            display: flex;
+            justify-content: center;
+            button{
+                font-family: $fontFamily;
+                line-height: 45px;
+                margin: 0 40px 100px;
+                position: relative;
+                cursor: pointer;
+                .iconify{
+                    position: absolute;
+                    top: -45px;
+                    left: 77px;
+                }
+            }
+        }
+        .personal_div_popup{
+            display: none;
+            width: 800px;
+            text-align: center;
+            border: 5px solid $blue;
+            border-radius: 50px;
+            padding: 60px;
+            margin: 0 auto;
+            color: $blue;
+            position: relative;
+            h3{margin-bottom: 80px;}
+            ul{
+                width: 414px;
+                margin: 0 auto;
+            }
+            li{
+                display: flex;
+                margin-bottom: 40px;
+                justify-content: space-between;
+                height: 50px;
+                line-height: 50px;
+                input{
+                    border: 2px solid $blue;
+                    border-radius: 10px;
+                    width: 300px;
+                }
+            }
+            button{
+                margin: 0 auto;
+            }
+            i{
+               font-size: 3rem;
+               position: absolute;
+               right: 30px;top: 30px;
+            }
+        }
+        .personal_show{
+            display: block;
+        }
+    }
+}

@@ -110,7 +110,11 @@
         color: map-get($Mapcolor, 'white');
         text-decoration: none;
         font-size: 2rem;
-    };
+    }
+
+    p{
+        display: inline-block;
+    }
 
     h5{
         color: map-get($Mapcolor, 'white');
@@ -172,6 +176,8 @@
     gap: 14.25px;
     padding: 0 14.25px;
     padding-top: 2%;
+
+    
     
     .productWrapper{
         // border: 1px solid purple;
@@ -248,7 +254,7 @@
         };
     };
     .store_section_moreBtn{
-        border: 1px solid white;
+        // border: 1px solid white;
         width: 1200px;
         margin: 0 auto;
         padding-top: 96px;
@@ -264,7 +270,5 @@
             margin: 0 auto;
         };
     };
-    // #more{
-    //     // display: hidden;
-    // };
 };
+

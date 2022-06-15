@@ -3,6 +3,7 @@
 @import 'base/fontSet';
 @import 'mixin/mixin';
 @import 'component/btn';
+@import 'component/nav';
 @import 'page/createEvent';
 @import 'page/store';
 @import 'page/orderCompleted';
@@ -19,6 +20,20 @@
 @import 'page/activity'; // jiang
 @import 'page/attraction';
 @import 'page/login'; //yelian
+@import 'page/orderDetails';
+@import 'page/personal';
+@import 'page/personalEvent';
+@import 'page/personalOrder';
+@import 'page/personalNotice';
+@import 'page/landingPage';
+@import 'page/createEventRecord';
+@import 'page/activityList';
+@import 'component/product';
+@import 'component/productList';
+@import 'page/payment';
+@import 'page/shoppingCart';
+@import 'page/officalEvent';
+
 
 *{
     box-sizing: border-box;

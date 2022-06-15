@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@include('./layout/head.html')
+    <title>鳥語鳥嶼會員中心</title>
+</head>
+<body class="personal_body">
+    @@include('./layout/header.html')
+    <div class="personal_body1">
+    <div class="personal_div_wrapper">
+        @@include('./layout/backend/personalTop.html')
+        <!-- 麵包屑以下 -->
+        <main class="personalNotice_main">
+            <nav class="personalNotice_nav_change">
+                <ul>
+                    <li class="li_select">訊息通知</li>
+                    <li>廣播通知</li>
+                </ul>
+            </nav>
+            <!-- 內容清單 -->
+           <section>
+            <p id="personalNotice_content">您好：<br>
+                您的嘉年華活動已報名完成！詳情您可以至揪團紀錄查看，提醒您請務必準時參加，否則可能會被列入黑名單，謝謝。</p>
+            <p id="personalNotice_whoSend">2022/05/21 鳥語・鳥嶼客服 敬上</p>
+           </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>

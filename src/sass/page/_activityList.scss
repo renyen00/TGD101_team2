@@ -1,0 +1,172 @@
+.activityList_body{
+    .activityList_ul_type{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        li{
+            font-size: 2.4rem;
+            height: 7rem;
+            line-height: 7rem;
+            border: 5px $blue solid;
+            width: 150px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            background-color: $white;
+
+        }
+    }
+    .activityList_banner{
+        height: 700px;
+        background-color: $blue;
+        display: flex;
+        .activityList_banner_inner{
+            background-image: url(../images/backgroundimg/activityListTop.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            
+            width: 1200px;
+            height: 460px;
+            margin: auto;
+            color: white;
+            a{  margin: 35px auto;
+                display: block;
+                width: 120px;
+            }
+            h1{
+                text-align: center;
+                background-color: $blue;
+                width: 480px;
+                height: 135px;
+                line-height: 135px;
+                display: block;
+                margin: 0 auto;
+            }
+            h5{
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+    }
+    .activityList_background{
+        background-image: url(../images/backgroundimg/activityList.svg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding-bottom: 50px;
+    }
+    .activityList_wrapper{
+        color: $blue;
+        width: 1050px;
+        margin: 0 auto;
+        button{
+            font-family: $fontFamily;
+            font-size: 2rem;
+        }
+        li{
+            cursor: pointer;
+        }
+        .activityList_ul_breadCrumbs{
+            display: flex;
+            font-size: 2rem;
+            li{
+                margin: 30px 10px 150px 0;
+            }
+        }
+        .activityList_ul_switch{
+            float: right;
+            display: flex;
+            font-size: 2rem;
+            width: 310px;
+            height: 7rem;
+            border: 3px $blue solid;
+            border-radius: 5rem;
+            justify-content: space-between;
+            padding: 0 15px;
+            margin-bottom: 50px;
+            background-color: $white;
+            position: relative;
+            .iconify{
+                position: absolute;
+                color:$blue;
+                top:-65px;
+                right: 0;
+                transform: scaleX(-100%);
+
+            }
+            li{
+                width: 140px;
+                height: 5rem;
+                line-height: 5rem;
+                margin-top: 7.5px;
+                border-radius: 5rem;
+                text-align: center;
+            }
+
+        }
+        .activityList_main{
+            
+            
+            .personalEvent_ul_list{
+                padding: 90px 0;
+                border: 5px solid $blue;
+                border-radius: 0 0 50px 50px;
+                background-color: $white;
+
+                li{cursor: auto;}
+                >li{
+                    height: 300px;
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 60px;
+                    img{
+                        max-width: 300px;
+                        margin-right: 5%;
+                        border-radius:50%;
+                    }
+                    section{
+                        margin-right: 5%;
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 300px;
+                            box-sizing: border-box;
+                            padding: 30px;  
+                            li{
+                                display: flex;
+                                p{font-size: 2.4rem;}
+                            }
+                        }    
+                    }
+                    div{
+                        padding: 20px 0;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        a{
+                            text-decoration: none;
+                            button{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            >p{
+                margin: 50px;
+                font-size: 3.2rem;
+                text-align: center;
+                a{color:$blue }
+            }
+        }
+        ul{
+            .li_now{
+                color:$white;
+                background-color: $blue;
+            }
+        }
+    }
+}

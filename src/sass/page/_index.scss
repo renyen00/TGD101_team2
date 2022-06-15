@@ -64,14 +64,14 @@
     }
     .index_h3_1{
         text-align: right;
-        width: 1000px;
+        width: 1200px;
         margin: 0 auto;
-        padding: 120px;
+        padding: 100px;
     }
     .index_h3_2{
-        width: 1000px;
+        width: 1200px;
         margin: 0 auto;
-        padding: 120px;
+        padding: 100px;
     }
 }
 .index_word_2{
@@ -79,13 +79,13 @@
 
     .index_h3_3{
         text-align: right;
-        width: 1000px;
+        width: 1200px;
         margin: 0 auto;
         padding: 100px;
     }
     .index_h3_4{
 
-        width: 1000px;
+        width: 1200px;
         margin: 0 auto;
         padding: 100px;
     }
@@ -177,28 +177,25 @@
         margin-left: -150px;
         z-index: -5;
     }
-    .index_cloud_7{
+    .index_cloud_loop{
         display: block;
         transform-style: preserve-3d;
         position: absolute;
-        top: 10%;
-        left: 10%;
+        top: 5%;
+        left: 0%;
         margin-top: -100px;
         margin-left: -150px;
         z-index: -7;
     }
-    .index_h3_1{
-        color: black;
-        text-align: right;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -200px;
-        margin-left: 300px;
+    .index_cloud_loop2{
+        display: block;
         transform-style: preserve-3d;
-        z-index: -2;
-        opacity: 0;
+        position: absolute;
+        top: -5%;
+        left: 40%;
+        z-index: -8;
     }
+
 }
 
 //鳥嶼==================================================

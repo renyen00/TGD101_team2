@@ -19,7 +19,11 @@
 @import 'page/activity'; // jiang
 @import 'page/attraction';
 @import 'page/login'; //yelian
-
+@import 'page/orderDetails';
+@import 'page/personal';
+@import 'page/personalEvent';
+@import 'page/personalOrder';
+@import 'page/personalNotice';
 *{
     box-sizing: border-box;
 }

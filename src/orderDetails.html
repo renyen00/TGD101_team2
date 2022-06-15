@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥語鳥嶼</title>
+    @@include('./layout/head.html')
+</head>
+<body class="orderDetails_body">
+    <div class="orderDetails_div_wrapper">
+        <img src="./images/logo/logo_white_final.svg" class="orderDetails_logo">
+        <!-- 麵包屑 -->
+        <ul class="orderDetails_ul_breadCrumbs">
+            <li>首頁</li>
+            <li>></li>
+            <li>個人頁面</li>
+            <li>></li>
+            <li>訂單查詢</li>
+            <li>></li>
+            <li>訂單明細</li>
+        </ul>
+        <!-- 白框的地方 -->
+        <main class="orderDetails_main">
+            <h3>訂單明細</h3>
+            <!-- 上方資訊 -->
+            <div class="orderDetails_div_information_top">
+                <h4>訂單編號</h4>
+                <p>210205033517</p>
+                <h4>處理狀態</h4>
+                <p>處理中</p>
+            </div>
+            <!-- 清單 -->
+            <ol>
+                <li>
+                    <img src="./images/store/t-shirt.png">
+                    <section>
+                        <h4>商品名001</h4>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div>
+                            <div class="orderDetails_div_count">
+                                <h4>數量</h4>
+                                <p>1</p>
+                            </div>
+                            <div class="orderDetails_div_price">
+                                <h3>價格</h3>
+                                <p>$495</p>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="oredrDetails_div_line"></div>
+                </li>
+            </ol>
+            <!-- 下方資訊 -->
+            <table class="orderDetails_div_information_bottom">
+                <tr>
+                    <td>收件人</td>
+                    <td class="orderDetails_name">XXX</td>
+                    <td></td>
+                    <td class="orderDetails_pay">信用卡付款</td>
+                </tr>
+                <tr>
+                    <td>收件人電話</td>
+                    <td class="orderDetails_phone">0912345678</td>
+                    <td>訂單金額</td>
+                    <td class="orderDetails_price">NT$ 49,500</td>
+                </tr>
+                <tr>
+                    <td>收件地址</td>
+                    <td class="orderDetails_address">如果我的地址非常非常非常非常長一串會不會可以斷行</td>
+                    <td>配送方式</td>
+                    <td class="orderDetails_mode">宅配</td>
+                </tr>
+            </table>
+        </main>
+        <!-- 返回按鈕 -->
+        <button class="btnXL_w">
+            <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+            返回
+        </button>
+    </div>
+
+    
+</body>
+</html>

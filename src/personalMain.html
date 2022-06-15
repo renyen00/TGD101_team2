@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@include('./layout/head.html')
+    <title>鳥語鳥嶼會員中心</title>
+</head>
+<body class="personal_body">
+    <div class="personal_div_wrapper">
+        @@include('./layout/backend/personalTop.html')
+        <!-- 框框裡面 -->
+        <main class="personal_main">
+            <img src="./images/icon_test.png" class="personal_icon">
+            <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
+            <ul>
+                <li>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>姓名</h4>
+                    <input type="text" id="personal_name">
+                </li>
+                <li>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>暱稱</h4>
+                    <input type="text" id="personal_nickname">
+
+                </li>
+                <li>
+                    <h4>生日</h4>
+                    <p id="personal_birth">2000年10月10日</p>
+                </li>
+                <li>
+                    <h4>星座</h4>
+                    <p id="personal_sign">天秤座</p>
+                </li>
+                <li>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>Email</h4>
+                    <input type="text" id="personal_email">
+                </li>
+                <li>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>手機</h4>
+                    <input type="text" id="personal_phone">
+                </li>
+                <li>
+                    <h4>密碼</h4>
+                    <p>********</p>
+                    <button id="personal_change" class="btnS_b">修改密碼</button>
+                </li>
+                <li>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>興趣</h4>
+                    <input type="text" id="personal_interest">
+                </li>
+                <li >
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>自我介紹</h4>
+                    <textarea id="personal_introduction" cols="30" rows="10"></textarea>
+                </li>
+            </ul>
+        </main>
+        <div class="personal_div_doWhat">
+            <button class="btnXL_b--s">取消編輯</button>
+            <button class="btnXL_y">
+                <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                確認編輯
+            </button>
+        </div>
+
+
+        <div class="personal_div_popup">
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>

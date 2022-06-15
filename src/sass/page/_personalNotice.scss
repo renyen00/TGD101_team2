@@ -1,0 +1,41 @@
+.personal_body{
+
+    @import '_personalMod.scss';
+    // =====================main==============
+  
+    .personal_div_wrapper{
+        .personalNotice_main{
+            .personalNotice_nav_change{
+                width: 80%;
+                font-size: 2.4rem;
+                margin: 0 auto;
+                ul{
+                    display: flex;
+                    justify-content: space-around;
+                    height: 160px;
+                    line-height: 160px;
+                    border-bottom: 5px solid $gray;
+                    margin-bottom: 80px;
+                    li{
+                        cursor: pointer;
+                        color: $gray;
+                    }
+                    .li_select{
+                        color: $blue;
+                    }
+                }
+            }
+           section{
+            width: 830px;
+            margin: 0 auto 80px;
+            border: 3px $blue solid;
+            border-radius: 40px;
+            padding: 40px 80px 20px;
+            #personalNotice_whoSend{
+                margin-top: 60px;
+                text-align: right;
+            }
+           }
+        }
+    }
+}

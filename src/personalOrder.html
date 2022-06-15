@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@include('./layout/head.html')
+    <title>鳥語鳥嶼會員中心</title>
+</head>
+<body class="personal_body">
+    <div class="personal_div_wrapper">
+        @@include('./layout/backend/personalTop.html')
+        <!-- 麵包屑以下 -->
+        <main class="personalOrder_main">
+            <nav class="personalOrder_nav_change">
+                <ul>
+                    <li>目前訂單狀況</li>
+                    <li>購買紀錄</li>
+                </ul>
+            </nav>
+            <!-- 內容清單 -->
+            <section>
+                <ul>
+                    <h4 id="personalOrder_date">2022/5/22</h4>
+                    <li>
+                        <h4>總金額:</h4>
+                        <h4 id="personalOrder_price">2400元</h4>
+                    </li>
+                </ul>
+                <div>
+                    <ul>
+                        <li>
+                            <h5>訂單成立</h5>
+                            <p>5/22</p>
+                            <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                        </li>
+                        <li>
+                            <h5>撿貨</h5>
+                            <p>5/23</p>
+                            <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                        </li>
+                        <li class="li_now">
+                            <h5>出貨</h5>
+                            <p>5/24</p>
+                            <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                        </li>
+                        <li>
+                            <h5>已送達</h5>
+                            <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                        </li>
+
+                    </ul>
+                </div>
+                <button class="btnXL_b">詳細資訊</button>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

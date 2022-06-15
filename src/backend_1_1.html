@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @@include('./layout/backend/backend_link.html')
-
+    
     <title>鳥語鳥嶼後台管理</title>
 </head>
-<body>
+<body class="backend_body">
     @@include('./layout/backend/backendheader.html')
-    <main>
+    <main class="backend_main">
         <div class="backend_main_top">
             <h1>貼文管理</h1>
             
@@ -116,21 +116,6 @@
             <li>5</li>
         </ul>
     </main>
-    <div class="backend_div_popup">
-        <section>
-            <i class="fa-solid fa-x"></i>
-            <ul>
-                <li><h2>留言位置</h2><h3>慶隆廟</h3></li>
-                <li><h2>留言時間</h2><h3>2022-01-23 12:34:56</h3></li>
-                <li><h2>留言者</h2><h3>account018</h3></li>
-            </ul>
-            <div class="backend_div_content">
-                <p>好想睡覺,好想補課,我要去跑步了!</p>
-                <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
-            </div>
-            <button class="backend_btn_dosomething_red">刪除留言</button>
-            <button class="back_btnM">關閉</button>
-        </section>
-    </div>
+    <script src="./js/backend_fake.min.js"></script>
 </body>
 </html>

@@ -28,6 +28,11 @@
 @import 'page/landingPage';
 @import 'page/createEventRecord';
 @import '_activityList.scss';
+@import 'component/product';
+@import 'component/productList';
+@import 'page/payment';
+@import 'page/shoppingCart';
+@import 'page/officalEvent';
 
 *{
     box-sizing: border-box;

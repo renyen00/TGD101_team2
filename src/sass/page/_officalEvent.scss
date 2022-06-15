@@ -1,0 +1,149 @@
+#officalEvent_body{
+    
+    .officalEvent_header_sliderArea{
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        border: 1px solid black;
+        margin: 0 auto;
+        
+        .parrotBox{
+            border: 1px solid green;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            width: 1440px;
+
+            .parrot{
+                position: absolute;
+                top: 430px;
+                right: 20%;
+                z-index: -1;
+            }
+
+            .officalEvent_logo{
+                width: 120px;
+                position: absolute;
+                top: 270px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            h5{
+                position: absolute;
+                top: 420px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            // Needed to be removed after
+            .fakePhoto{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+       }
+
+        #officalEvent_sliderframe{
+            width: 1440px;
+            display: block;
+            margin: 0 auto;
+
+            // position: absolute;
+            // top: 0;
+            // left: 50%;
+            // transform: translateX(-50%);
+
+            #officalEvent_ul_sliderImg{
+                border: 1px solid rgb(55, 0, 255);
+                width: 100%;
+                height: 700px;
+                overflow: hidden;
+    
+                .officalEvent_li_slider{
+                    display: inline;
+                    margin-right: 175px;
+                    
+                    .offical_img_slider{
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .officalEvent_section_breadCrumb{
+        // border: 1px solid red;
+        width: 1200px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding-bottom: 38px;
+        padding-left: 50px;
+
+        .breadLink{
+            text-decoration: none;
+            font-size: 2rem;
+            display: inline-block;
+        }
+
+        p{
+            display: inline-block;
+        }
+
+        h5{
+            display: inline-block;
+        }
+    }
+
+    .officalEvent_main{
+        border: 1px solid orange;
+        width: 100%;
+        position: relative;
+        
+        .cloudL{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .cloudS2{
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            z-index: -1;
+        }
+
+        .officalEvent_div_articleWrap{
+            border: 1px solid brown;
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+
+            .bird{
+                border: 1px solid darkblue;
+                width: 580px;
+
+            }
+
+            .itsSummer{
+                border: 1px solid darkblue;
+                width: 580px;
+
+                h1{
+                font-weight: bold;
+                text-align: center;
+                }
+
+                .waterfallSummer{
+                line-height: 1.5;
+                font-size: 3.2rem;
+                margin-top: 85px;
+                }
+            }
+        }
+    }
+}

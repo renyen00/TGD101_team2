@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳</title>
+    @@include('./layout/head.html')
+    <script src="./js/vue.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
+</head>
+<body id="payment_body">
+    <main class="payment_main_wrapper textBlue">
+        <header class="payment_header">
+            <a href="./index.html"><img src="./images/logo/logo_blue_final.svg"></a>
+            <pre>NOT JUST MAKE                                  FRIENDS  BUT INTO IT.</pre>
+        </header>
+
+        <section class="payment_section_breadCrumb">
+            <a class="breadLink textBlue" href="index.html">首頁</a>
+            <p>&nbsp;&gt;&nbsp;</p>
+            <a class="breadLink textBlue" href="store.html">大嶼商行</a>
+            <p>&nbsp;&gt;&nbsp;</p>
+            <h5>購物車</h5>
+        </section>
+
+        <h3 class="textWhite bgcBlue">購物車</h3>
+
+        <section class="payment_section_listWrap  bgcWhite">
+            <ul>
+                @@include('./layout/productList.html')
+                @@include('./layout/productList.html')
+                @@include('./layout/productList.html')
+                @@include('./layout/productList.html')
+            </ul>
+
+            <section class="buyerInfoMethod bgcBlue">
+                <h3 class="textWhite">付款方式與配送方式</h3>
+
+                <div class="selectMethod">
+                    <select id="payingMethod" class="textWhite">
+                        <option value="0" selected class="textBlue">選擇付款方式</option>
+                        <option value="1" class="textBlue">貨到付款</option>
+                        <option value="2" class="textBlue">信用卡付款</option>
+                        <option value="3" class="textBlue">電子錢包支付</option>
+                    </select>
+
+                    <select id="deliveryMethod" class="textWhite">
+                        <option value="0" class="textBlue">選擇配送方式</option>
+                        <option value="1" class="textBlue">宅配</option>
+                        <option value="2" class="textBlue">超商取貨</option>
+                    </select>
+                </div>
+
+                <div class="info">
+                    <form class="buyerInfo" method="post" action="#">
+                        <h3 class="buyer textWhite">訂購人資料</h3>
+                        <img src="./images/payment/paymentLing.png">
+                        <ul class="payment_ul_buyerInfo">
+                            <li class="buyerName">
+                                <h4 class="textWhite">姓名</h4>
+                                <input class="w300" type="text" name="buyername" placeholder="Name">
+                            </li>
+                            <li class="buyerGender">
+                                <h4 class="textWhite">性別</h4>
+                                <label class="textWhite"><input type="radio" name="gender" value="female">女性</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="male">男性</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="rainbow">彩虹</label>
+                            </li>
+                            <li class="buyerEmail">
+                                <h4 class="textWhite">Email</h4>
+                                <input class="w300" type="email" name="email" placeholder="xxx@mail.com">
+                            </li>
+                            <li class="buyerAddress">
+                                <h4 class="textWhite">地址</h4>
+                                <div id="twzipcode"></div>
+                                <input class="w300" type="text" name="address" placeholder="Adress">
+                            </li>
+                            <li class="buyerCellphone">
+                                <h4 class="textWhite">行動電話</h4>
+                                <input class="w300" type="number" name="cellphoneNum" placeholder="Cellphone Number">
+                            </li>
+                            <li class="buyerPhone">
+                                <h4 class="textWhite">市內電話</h4>
+                                <input class="w300" type="number" name="cellphoneNum" placeholder="Phone Number">
+                            </li>
+                        </ul>
+                    </form>
+
+                    <form class="receiverInfo" method="post" action="#.php">
+                        <h3 class="receiver textWhite">收件人資料</h3>
+                        <label class="same textWhite"><input type="checkbox" value="sameInfo">同訂購人資料</label>
+                        <img src="./images/payment/paymentLing.png">
+                        <ul class="payment_ul_receiverInfo">
+                            <li class="receiverName">
+                                <h4 class="textWhite">姓名</h4>
+                                <input class="w300" type="text" name="receivername" placeholder="Name">
+                            </li>
+                            <li class="receiverGender">
+                                <h4 class="textWhite">性別</h4>
+                                <label class="textWhite"><input type="radio" name="gender" value="female">女性</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="male">男性</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="rainbow">彩虹</label>
+                            </li>
+                            <li class="receiverEmail">
+                                <h4 class="textWhite">Email</h4>
+                                <input class="w300" type="email" name="email" placeholder="xxx@mail.com">
+                            </li>
+                            <li class="receiverAddress">
+                                <h4 class="textWhite">地址</h4>
+                                <div>
+                                    <select name="" id="">
+                                        <option value="">縣市</option>
+                                        <option value="基隆市">基隆市</option>
+                                        <option value="臺北市">臺北市</option>
+                                        <option value="新北市">新北市</option>
+                                        <option value="宜蘭縣">宜蘭縣</option>
+                                        <option value="新竹市">新竹市</option>
+                                        <option value="新竹縣">新竹縣</option>
+                                        <option value="桃園市">桃園市</option>
+                                        <option value="苗栗縣">苗栗縣</option>
+                                        <option value="臺中市">臺中市</option>
+                                        <option value="彰化縣">彰化縣</option>
+                                        <option value="南投縣">南投縣</option>
+                                        <option value="嘉義市">嘉義市</option>
+                                        <option value="嘉義縣">嘉義縣</option>
+                                        <option value="雲林縣">雲林縣</option>
+                                        <option value="臺南市">臺南市</option>
+                                        <option value="高雄市">高雄市</option>
+                                        <option value="屏東縣">屏東縣</option>
+                                        <option value="臺東縣">臺東縣</option>
+                                        <option value="花蓮縣">花蓮縣</option>
+                                        <option value="金門縣">金門縣</option>
+                                        <option value="連江縣">連江縣</option>
+                                        <option value="澎湖縣">澎湖縣</option>
+                                    </select>
+                                    <select name="" id="">
+                                        <option value="">鄉鎮</option>
+                                    </select>
+                                    <input type="text" placeholder="郵遞區號">
+                                </div>
+                                <input class="w300" type="text" name="address" placeholder="Adress">
+                            </li>
+                            <li class="receiverCellphone">
+                                <h4 class="textWhite">行動電話</h4>
+                                <input class="w300" type="number" name="cellphoneNum" placeholder="Cellphone Number">
+                            </li>
+                            <li class="receiverPhone">
+                                <h4 class="textWhite">市內電話</h4>
+                                <input class="w300" type="number" name="cellphoneNum" placeholder="Phone Number">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+            </section>
+
+            <section class="total">
+                <div class="steps">
+                    <img src="./images/payment/paymentStep.png" class="line">
+                    <div class="circleL bgcBlue textWhite">1</div>
+                    <div class="circleC bgcBlue textWhite">2</div>
+                    <div class="circleR bgcBlue textWhite">3</div>
+                    <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                    <h4 class="payment_h4_shoppingCart textBlue">購物車</h4>
+                    <h4 class="payment_h4_comfireOrder textBlue">填寫資料確認訂單</h4>
+                    <h4 class="payment_h4_complete textBlue">完成訂單</h4>
+                </div>
+
+                <ul>
+                    <li>
+                        <div class="title">小計</div>
+                        <div class="price">$4995</div>
+                    </li>
+                    <li>
+                        <div class="title">運費</div>
+                        <div class="price">$120</div>
+                    </li>
+                    <li>
+                        <div class="title">總計</div>
+                        <div class="price">$5115</div>
+                    </li>
+                </ul>
+                <div class="payment_optionBtn">
+                    <a href="./shoppingCart.html" class="previous btnXL_b--s">上一步</a>
+                    <a class="comfire btnXL_y">確認結帳</a>
+                </div>
+            </section>
+        </section>
+        
+    </main>
+
+    @@include('./layout/footer.html')
+    
+    <script>
+        $("#twzipcode").twzipcode();
+    </script>
+</body>
+</html>

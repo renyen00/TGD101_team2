@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大嶼商行</title>
-    <link rel="stylesheet" href="./css/style.css">
+    @@include('./layout/head.html')
     <script src="./js/vue.min.js"></script>
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     
 </head>
 <body id="store_body" class="bgcBlue">
@@ -34,7 +33,7 @@
                 </ul>
     
                 <div id="store_div_titleSection">
-                    <img src="./images/logo/logo_white_final.svg" class="store_img_logo">
+                    <a href="./index.html"><img src="./images/logo/logo_white_final.svg" class="store_img_logo"></a>
                     <h1 class="store_h1_title">大嶼商行</h1>
                     <h3 class="store_h3_subtitle">嶼人 * 旅人 - 嶼回憶的起始點</h3>
                 </div>
@@ -43,7 +42,8 @@
 
         <section id="store_section_breadCrumb">
             <a href="index.html">首頁</a>
-            <h5>&lt;&nbsp;大嶼商行</h5>
+            <p class="textWhite">&nbsp;&gt;&nbsp;</p>
+            <h5>大嶼商行</h5>
         </section>
 
         <section id="store_section_filterBtn">
@@ -71,7 +71,7 @@
             <div class="productWrapper">
                 <div class="productFrame"></div>
                 <div class="productCircle bgcYellow"></div>
-                <img src="./images/store/cap.png" class="productPic">
+                <a href="./productDetail.html"><img src="./images/store/cap.png" class="productPic"></a>
                 <h4 class="producNm textWhite">嶼商鋪-踏上回憶的旅程</h4>
                 <ul class="productColor">
                     <li class="productColorLi bgcWhite"></li>
@@ -79,10 +79,9 @@
                     <li class="productColorLi bgcYellow"></li>
                 </ul>
                 <div class="productBtn">
-                    <button class="pay btnL_w">直接結帳</button>
+                    <a href="./shoppingCart.html" class="pay btnL_w">直接結帳</a>
                     <button class="addToCart btnL_y">加入購物車</button>
                 </div>
-
             </div>
             @@include('./layout/product.html')
             @@include('./layout/product.html')
@@ -98,15 +97,10 @@
                 <button class="moreBtn btnXL_w">更多商品</button>
             </section>
         </main>
-        <span id="more" class="store_main_product">
-            @@include('./layout/product.html')
-            @@include('./layout/product.html')
-            @@include('./layout/product.html')
-        </span>
 
         
         
-        <!-- @@include('./layout/footer.html') --> 
+        @@include('./layout/footer.html') 
         <script src="./js/store.min.js"></script>
 </body>
 </html>

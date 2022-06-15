@@ -1,14 +1,14 @@
 #officalEvent_body{
     
     .officalEvent_header_sliderArea{
+        // border: 1px solid black;
         width: 100%;
         height: 700px;
         overflow: hidden;
-        border: 1px solid black;
         margin: 0 auto;
         
         .parrotBox{
-            border: 1px solid green;
+            // border: 1px solid green;
             display: block;
             margin: 0 auto;
             position: relative;
@@ -55,7 +55,7 @@
             // transform: translateX(-50%);
 
             #officalEvent_ul_sliderImg{
-                border: 1px solid rgb(55, 0, 255);
+                // border: 1px solid rgb(55, 0, 255);
                 width: 100%;
                 height: 700px;
                 overflow: hidden;
@@ -97,7 +97,7 @@
     }
 
     .officalEvent_main{
-        border: 1px solid orange;
+        // border: 1px solid orange;
         width: 100%;
         position: relative;
         
@@ -116,7 +116,7 @@
         }
 
         .officalEvent_div_articleWrap{
-            border: 1px solid brown;
+            // border: 1px solid brown;
             width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -124,13 +124,25 @@
             gap: 50px;
 
             .bird{
-                border: 1px solid darkblue;
+                // border: 1px solid darkblue;
                 width: 580px;
+                position: relative;
 
+                #birdT{
+                    position: absolute;
+                    top: 90px;
+                    right: 70px;
+                }
+
+                #birdB{
+                    position: absolute;
+                    top: 250px;
+                    right: 190px;
+                }
             }
 
             .itsSummer{
-                border: 1px solid darkblue;
+                // border: 1px solid darkblue;
                 width: 580px;
 
                 h1{
@@ -143,6 +155,145 @@
                 font-size: 3.2rem;
                 margin-top: 85px;
                 }
+            }
+        }
+    }
+
+    #officalEvent_img_bgWave{
+        // margin-top: 5%;
+        position: relative;
+        z-index: -1;
+    }
+
+    .officalEvent_section_eventInfo{
+        width: 100%;
+        margin-top: -9px;
+
+        .yellowFrame{
+            border: 5px dashed map-get($Mapcolor, 'yellow');
+            border-radius: 30px;
+            margin: 0 auto;
+            width: 700px;
+
+            ul{
+                // border: 1px solid skyblue;
+                margin: 5% auto;
+                width: 63%;
+
+                h3{
+                    display: inline-block;
+                    font-weight: bold;
+                    margin-bottom: 5%;
+                }
+
+                pre{
+                    display: inline-block;
+                    font-size: 3.2rem;
+                    margin-left: 25%;
+                }
+
+                select{
+                    height: 50px;
+                    width: 190px;
+                    font-size: 3.2rem;
+                    margin-left: 25%;
+                    border-radius: 10px;
+                }
+            }
+
+            input{
+                margin: 0 auto;
+                margin-bottom: 5%;
+            }
+        }
+    }
+
+    .officalEvent_section_chatB{
+        width: 100%;
+        
+        .chatBwrap{
+            // border: 1px solid teal;
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 70px;
+
+            div{
+                // border: 1px solid pink;
+                width: 780px;
+                margin: 0 auto;
+
+                .talking{
+                    width: 653px;
+                    height: 62px;
+                    border-radius: 10px;
+                    padding-left: 5%;
+                    font-size: 2rem;
+                }
+                
+                .chatSubmitBtn{
+                    background-color: transparent;
+                    display: inline-block;
+                    vertical-align: baseline;
+                }
+                .chatSubmitBtn:hover{
+                    background-color: map-get($Mapcolor, 'white');
+                }
+            }
+
+            ul{
+                border-radius: 10px;
+                width: 800px;
+                margin: 0 auto;
+                margin-top: 50px;
+
+                li{
+                    // border: 1px solid purple;
+                    display: flex;
+
+                    img{
+                        margin: 1%;
+                    }
+
+                    p{
+                        height: 20px;
+                        margin: auto;
+                    }
+
+                    button{
+                        border: none;
+                        margin-right: 1%;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .officalEvent_section_more{
+        width: 100%;
+
+        div{
+            // border: 1px solid teal;
+            width: 1200px;
+            padding-top: 20%;
+            margin: 0 auto;
+            position: relative;
+
+            #officalEvent_bird{
+                position: absolute;
+                top: 5%;
+                right: 10%;
+            }
+
+            .showMoreChat{
+                color: map-get($Mapcolor, 'yellow');
+                text-decoration: underline;
+                border: none;
+                font-size: 2rem;
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     }

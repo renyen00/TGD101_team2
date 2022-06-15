@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body id="officalEvent_body">
+    @@include('./layout/header.html')
+
     <header class="officalEvent_header_sliderArea">
         <div class="parrotBox">
             <img src="./images/officalEvent/parrot.png" class="parrot">
@@ -53,7 +55,7 @@
     <main class="officalEvent_main">
         <img src="./images/officalEvent/cloudL.svg" class="cloudL">
         <img src="./images/officalEvent/cloudS2.svg" class="cloudS2">
-        
+
         <div class="officalEvent_div_articleWrap">
 
             <section class="bird">
@@ -69,8 +71,90 @@
             </article>
         </div>
     </main>
+
+    <img src="./images/officalEvent/bgiWave.svg" id="officalEvent_img_bgWave">
+
+    <section class="officalEvent_section_eventInfo bgcBlue textWhite">
+        <div class="yellowFrame">
+            <ul>
+                <li>
+                    <h3>本場活動</h3>
+                    <pre>NT  $599 / 人</pre>
+                </li>
+                <li>
+                    <h3>活動地點</h3>
+                    <pre>甲府升仙峽</pre>
+                </li>
+                <li>
+                    <h3>活動日期</h3>
+                    <pre>2022/07/16</pre>
+                </li>
+                <li>
+                    <h3>活動時間</h3>
+                    <pre>10 A.M.</pre>
+                </li>
+                <li>
+                    <h3>報名人數</h3>
+                    <select name="people" id="numOfPpl" class="textBlue">
+                        <option value="0">人數</option>
+                        <option value="1">1人</option>
+                        <option value="2">2人</option>
+                        <option value="3">3人</option>
+                        <option value="4">4人</option>
+                        <option value="5">5人</option>
+                        <option value="6">6人</option>
+                        <option value="7">7人</option>
+                        <option value="8">8人</option>
+                        <option value="9">9人</option>
+                        <option value="10">10人</option>
+                    </select>
+                </li>
+            </ul>
+            <input type="submit" class="btnXL_y" value="我要報名" onclick="registerEvent()">
+        </div>
+    </section>
+
+    <section class="officalEvent_section_chatB bgcBlue">
+        <div class="chatBwrap">
+            <div>
+                <input type="text" value="Message" class="talking">
+                <input type="submit" value="留言" class="chatSubmitBtn btnM_w--s">
+            </div>
+
+            <ul class="bgcWhite">
+                <li>
+                    <img src="./images/officalEvent/betty.png" class="headshot">
+                    <p class="textBlue">走啊!走啊!一起玩!</p>
+                    <button>
+                        <span class="iconify" data-icon="ep:warning" style="color: #2f4858;" data-width="24" data-height="24" data-flip="horizontal"></span>
+                    </button>
+                </li>
+                <li>
+                    <img src="./images/officalEvent/berlin.png" class="headshot">
+                    <p class="textBlue">海邊吃龍蝦!</p>
+                    <button>
+                        <span class="iconify" data-icon="ep:warning" style="color: #2f4858;" data-width="24" data-height="24" data-flip="horizontal"></span>
+                    </button>
+                </li>   
+            </ul>
+        </div>
+    </section>
+    
+    <section class="officalEvent_section_more bgcBlue">
+       <div>
+            <span id="officalEvent_bird" class="iconify" data-icon="icon-park-outline:bird" style="color: white;" data-width="100" data-height="100" data-flip="horizontal"></span>
+            <button class="showMoreChat">更多留言</button>
+       </div>
+    </section>
     
     @@include('./layout/footer.html')
+
+    <!-- Needed to be moved -->
+    <script>
+        function registerEvent(){
+            alert('報名成功 !  可至會員區查看詳細內容');
+        }
+    </script>
     
 </body>
 </html>

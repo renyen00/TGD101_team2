@@ -1,6 +1,7 @@
 .role_body{
-    background-color:#2F4858;
+    // background-color:#2F4858;
     font-family: $fontFamily;
+
 }
 // role背景
 .role_bg_top svg{
@@ -79,6 +80,7 @@
         height: 300px;
         left: 420px;
         top: 160px;
+        border: red 1px solid;
         .role_show_bird img{
             position: absolute;
             display: block;

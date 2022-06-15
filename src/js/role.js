@@ -11,7 +11,7 @@ $(function () {
 $(function () {
 
     $('.role_glasses').click(function(){
-        $('.role_show_glasses').children('img').attr('src', $(this).children('img').attr('src'));     
+        $('.role_show_glasses').children('img').attr('src', $(this).children('img').attr('src')).draggable();     
     });
     
 })
@@ -20,7 +20,7 @@ $(function () {
 $(function () {
 
     $('.role_hat').click(function(){
-        $('.role_show_hat').children('img').attr('src', $(this).children('img').attr('src'));     
+        $('.role_show_hat').children('img').attr('src', $(this).children('img').attr('src')).draggable();     
     });
     
 })
@@ -29,7 +29,7 @@ $(function () {
 $(function () {
 
     $('.role_other').click(function(){
-        $('.role_show_other').children('img').attr('src', $(this).children('img').attr('src'));     
+        $('.role_show_other').children('img').attr('src', $(this).children('img').attr('src')).draggable();     
     });
     
 })

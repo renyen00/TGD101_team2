@@ -381,7 +381,10 @@ for(let i = 0 ;i < page.length;i++){
             <li>全部↓</li>
             <li>帳號↓</li>
             <li>停權↓</li>
-            <input class='backend_input_search'type="text" placeholder="search">
+            <div class="backend_ul_right">
+                <input class='backend_input_search'type="text" placeholder="search">
+                <button class="backend_btn_add back_btnS">新增</button>
+            </div>
         </ul>
         <table class="backend_table_special">
             <tr>

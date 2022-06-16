@@ -4,6 +4,7 @@
 @import 'mixin/mixin';
 @import 'component/btn';
 @import 'component/nav';
+@import 'component/footer';
 @import 'page/createEvent';
 @import 'page/store';
 @import 'page/orderCompleted';
@@ -27,12 +28,13 @@
 @import 'page/personalNotice';
 @import 'page/landingPage';
 @import 'page/createEventRecord';
-@import '_activityList.scss';
+@import 'page/activityList';
 @import 'component/product';
 @import 'component/productList';
 @import 'page/payment';
 @import 'page/shoppingCart';
 @import 'page/officalEvent';
+
 
 *{
     box-sizing: border-box;

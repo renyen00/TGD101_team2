@@ -31,17 +31,24 @@
     }
 
     .createEventConfirm_div_container{
-        width: 1200px;
+        max-width: 1200px;
         // border: 1px solid #F99090;
         margin: 0 auto;
         padding-top: 60px;
         position: relative;
+
+        .createEventConfirm_div_logo{
+            display: block;
+            width: 10%;
+            margin: 0 auto;
+        }
 
         h5{
             color: map-get($Mapcolor, 'blue');
             font-weight: bold;
             text-align: center;
             margin: 40px 0;
+            // display: inline-block;
         }
 
         .createEventConfirm_div_member{
@@ -57,12 +64,12 @@
             img{
                 width: 80%;
                 display: block;
-                // margin: 10% auto;
                 margin: 8% auto;
             }
         }
 
-        .createEvent_ul_breadcrumb{
+        .createEventConfirm_ul_breadcrumb{
+            display: flex;
             a{
                 text-decoration: none;
                 color: map-get($Mapcolor, 'white');
@@ -79,9 +86,7 @@
     width: 500px;
     height: 500px;
     margin: 0 auto 135px;
-    // margin: 0 auto 105px;
-    // border: 1px solid #000;
-    // overflow: hidden;
+    
     img{
         width: 100%;
         border-radius: 50%;
@@ -96,10 +101,6 @@
     padding: 35px;
     width: 700px;
     height: 480px;
-    // margin: 68px auto 76px;
-    // padding: 28px;
-    // width: 560px;
-    // height: 384px;
 
     position: relative;
 
@@ -197,3 +198,215 @@
 }
 
 
+// ----------------media query-------------------------
+
+@media (max-width: 575.98px){
+    
+    .createEventConfirm_div_wrapper{
+        background-image: url('../images/backgroundimg/createConfirmbg.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 70%;
+        background-color: map-get($Mapcolor, 'blue');
+        // width: 1263px;
+        max-width: 1440px;
+        // border: 1px solid #000;
+        margin: 0 auto;
+        color: map-get($Mapcolor, 'white');
+
+        position: relative;
+        z-index: 2;
+
+        .marquee{
+            width: 100%;
+            // border: 1px solid blue;
+            color: map-get($Mapcolor, 'blue');
+            font-size: 7rem;
+            line-height: 100px;
+            // line-height: 80px;
+            font-weight: bold;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            position: absolute;
+            top: 18%;
+            z-index: -2;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .createEventConfirm_div_container{
+            max-width: 1200px;
+            // border: 1px solid #F99090;
+            margin: 0 auto;
+            padding-top: 40px;
+            position: relative;
+
+            .createEventConfirm_div_logo{
+                display: block;
+                width: 30%;
+                margin: 0 auto;
+            }
+
+            h5{
+                color: map-get($Mapcolor, 'blue');
+                font-weight: bold;
+                text-align: center;
+                margin: 40px 0;
+                display: block;
+                // border: 1px solid #000;
+            }
+
+            .createEventConfirm_div_member{
+                width: 100px;   //
+                height: 100px;  //
+                border-radius: 50%;
+                border: 8px solid map-get($Mapcolor, 'yellow');
+
+                position: absolute;
+                top: 25%;
+                left: 20%;
+
+                img{
+                    width: 80%;
+                    display: block;
+                    margin: 8% auto;
+                }
+            }
+
+            .createEventConfirm_ul_breadcrumb{
+                display: flex;
+                a{
+                    text-decoration: none;
+                    color: map-get($Mapcolor, 'white');
+
+                    &:hover{
+                        color: map-get($Mapcolor, 'yellow');                    
+                    }
+                }
+            }
+        }
+    }
+
+    .createEventConfirm_div_uploadimg{
+        width: 300px;   //
+        height: 300px;  //
+        margin: 0 auto 50px;    //
+        
+        img{
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+
+    .createEventConfirm_section_eventDetail{
+        border: 5px dashed map-get($Mapcolor, 'yellow');
+        border-radius: 30px;
+        margin: 35px auto 50px;
+        padding: 35px;
+        width: 90%; //
+        height: auto;   //
+
+        position: relative;
+
+        ul{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // border: 1px solid #ccc;
+
+            li{
+                margin-bottom: 15px;
+            }
+
+            h4:first-child{
+                width: 200px;
+                // width: 160px;
+                font-weight: bold;
+                display: inline-block;
+            }
+            h4:last-child{
+                width: 265px;
+                // width: 212px;
+                display: inline-block;
+            }
+        }
+
+        // little elements
+        .iconifyB{
+            position: absolute;
+            top: 79%;
+            left: 80%;
+        }
+
+        .createEventConfirm_icon_cloud1{
+            width: 35%;
+            position: absolute;
+            top: -25%;
+            left: 71%;
+        }
+
+        .createEventConfirm_icon_cloud2{
+            width: 35%;
+            position: absolute;
+            top: 6%;
+            left: 66%;  //
+        }
+
+        .createEventConfirm_icon_birdY{
+            position: absolute;
+            top: -2%;
+            left: 73%;  //`
+            z-index: -1;
+            width: 20%; //`
+        }
+        .iconifyY{
+            position: absolute;
+            top: 210%;
+            left: 70%;
+        }
+    }
+
+    .createEventConfirm_section_eventContent{
+        margin: 0 auto 50px;
+        padding: 35px;
+        width: 90%; //
+        height: auto;   //
+        // border: 1px solid #000;
+
+        h4:first-child{
+            font-weight: bold;
+            margin-bottom: 30px;
+            // margin-bottom: 24px;
+        }
+        h4:last-child{
+            line-height: 1.7;
+            // line-height: 1.36;
+        }
+    }
+
+    .createEventConfirm_div_btns{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+        margin: 0 auto;
+        a{
+            display: inline-block;
+            // text-decoration: none;
+            color: map-get($Mapcolor, 'white');
+            font-size: 2rem;
+            margin-right: 10px;
+            &:hover{
+                color: map-get($Mapcolor, 'yellow');
+            }
+        }
+        input{
+            display: inline-block;
+        }
+        
+    }
+
+
+
+}

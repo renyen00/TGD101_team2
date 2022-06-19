@@ -49,11 +49,14 @@
         display: flex;
         li{
             font-size: 2rem;
-            color:$blue;
+            color:$gray;
             margin: 0 5px;
-        }
-        :nth-child(odd){
-            cursor: pointer;
+            &:nth-child(odd){
+                cursor: pointer;
+            }
+            &:last-child{
+                color:$blue;
+            }
         }
 
     }

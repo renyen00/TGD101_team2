@@ -13,8 +13,15 @@
             display: flex;
             font-size: 2rem;
             margin-bottom: 30px;
+            color: $gray;
             li{
                 margin: 5px;
+                &:nth-child(odd){
+                    cursor: pointer;
+                }
+                &:last-child{
+                    color: $white;
+                }
             }
         }
         .orderDetails_main{

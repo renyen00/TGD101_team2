@@ -1,7 +1,8 @@
 .main-header {
     position: fixed;
+    right: 0;
     height: 65px;
-    width: 100vw;
+    width: 10vw;
     padding: 0 10vw;
     color: #000;
     z-index: 9999;
@@ -9,7 +10,6 @@
         display: flex;
         flex-direction: column;
         margin-top: 50px;
-        align-items:flex-end;
         a{
             text-decoration: none;
             color: inherit;
@@ -18,7 +18,7 @@
             margin: 0;
             position: absolute;
             top: 0;
-            left: 0;
+            left: -80vw;
             opacity: 0;
             display: flex;
             flex-direction: column;

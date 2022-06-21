@@ -4,40 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>發起揪團</title>
+    <title>揪團紀錄</title>
     @@include('./layout/head.html')
 </head>
 <body>
-    @@include('./layout/header.html')
+    <!-- @@include('./layout/header.html') -->
     
-    <div class="createEventConfirm_div_wrapper">
+    <div class="createEventRecord_div_wrapper">
         <div class="marquee">WHERE THE NEW START BEGINS, WHERE THE NEW BEGIN STARTS.</div>
-        <div class="createEventConfirm_div_container">
-            <header>
-                <!-- @@include('./layout/nav.html') -->
-                <a href="index.html" class="createEventConfirm_div_logo"><img src="./images/logo/logo_blue_final.svg"></a>
-                <h5>NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
+        <header>
+            <!-- @@include('./layout/nav.html') -->
+            <a href="index.html" class="createEventRecord_div_logo"><img src="./images/logo/logo_blue_final.svg"></a>
+            <h5>NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
+            
+            <div class="createEventRecord_div_uploadimg">
+                <img src="./images/backgroundimg/createConfirmuploadimg.jpg">
+                <!-- <div class="createEventRecord_div_circleimg"></div> -->
+            </div>
+            
+            <div class="createEventRecord_div_member">
+                <img src="./images/backgroundimg/createConfirm_member.svg">
+            </div>
+        </header>
+    </div>
 
-                <div class="createEventConfirm_div_uploadimg">
-                    <img src="./images/backgroundimg/createConfirmuploadimg.jpg">
-                    <!-- <div class="createEventConfirm_div_circleimg"></div> -->
-                </div>
-
-                <div class="createEventConfirm_div_member">
-                    <img src="./images/backgroundimg/createConfirm_member.svg">
-                </div>
-
-                <ul class="createEventConfirm_ul_breadcrumb">
-                    <li><a href="#">首頁</a></li>
+    <img class="createEventConfirm_div_bg" src="./images/backgroundimg/createEventConfirm_bg.svg">
+      
+    <div class="createEventRecord_div_wrapperB">
+        <div class="createEventRecord_div_container">
+                <ul class="createEventRecord_ul_breadcrumb">
+                    <li><a href="index.html">首頁</a></li>
                     <li>></li>
-                    <li><a href="#">發起揪團</a></li>
+                    <li><a href="personalMain.html">個人頁面</a></li>
                     <li>></li>
-                    <li>確認頁面</li>
+                    <li>揪團紀錄</li>
                 </ul>
-            </header>
 
             <main>
-                <section class="createEventConfirm_section_eventDetail">
+                <section class="createEventRecord_section_eventDetail">
                     <ul>
                         <li>
                             <h4>活動主題</h4>
@@ -73,22 +77,23 @@
                         </li>
                     </ul>
                     <span class="iconify iconifyB" data-icon="emojione-v1:bird" style="color: #f2bf61; font-size: 100px;"></span>
-                    <img src="./images/backgroundimg/createEvent_cloud.svg" class="createEventConfirm_icon_cloud1">
-                    <img src="./images/backgroundimg/createEvent_cloud.svg" class="createEventConfirm_icon_cloud2">
-                    <img src="./images/backgroundimg/createConfirm_birdY.svg" class="createEventConfirm_icon_birdY">
+                    <img src="./images/backgroundimg/attraction_c1.svg" class="createEventRecord_icon_cloud1">
+                    <img src="./images/backgroundimg/attraction_c1.svg" class="createEventRecord_icon_cloud2">
+                    <img src="./images/backgroundimg/createConfirm_birdY.svg" class="createEventRecord_icon_birdY">
                     <span class="iconify iconifyY" data-icon="fa-solid:kiwi-bird" style="color: #f2bf61; font-size: 60px;" data-flip="horizontal"></span>
                 </section>
-                <section class="createEventConfirm_section_eventContent">
+                <section class="createEventRecord_section_eventContent">
                     <h4>活動內容描述</h4>
                     <h4>橫濱港歷史悠久, 處處是古老的足跡以及沾滿塵囂的建築。如
                         果現實真的與歷史重疊, 可曾想過身旁不經意擦肩而過的, 究竟是同個維度的生人, 還是能捲起蕭索西風的往生者......
                         與我在夜間探訪橫濱被時間長河掩埋的過往, 再被人遺忘的角落找尋故事的結局以及可能的不期而遇......<br>
                         我們不見不散......
                     </h4>
+                    @@include('./layout/applicants.html')
                 </section>
-                <div class="createEventConfirm_div_btns">
+                <div class="createEventRecord_div_btns">
                     <a id="cancel" href="">取消揪團</a>
-                    <input id="yes" type="button" class="btnXL_y" value="返回上一頁">
+                    <input id="yes" type="button" class="btnXL_y" value="確定揪團">
                 </div>
             </main>
         </div>

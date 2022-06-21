@@ -62,8 +62,8 @@
 
             #store_div_titleSection{
                 border: 5px solid map-get($Mapcolor, 'white');
-                width: 700px;
-                height: 700px;
+                width: 500px;
+                height: 580px;
                 position: absolute;
                 top: 273px;
                 left: 50%;
@@ -82,7 +82,7 @@
                     font-weight: bold;
                     color: map-get($Mapcolor, 'white');
                     position: absolute;
-                    top: 440px;
+                    top: 380px;
                     left: 50%;
                     transform: translateX(-50%);
                 };
@@ -91,7 +91,7 @@
                     color: map-get($Mapcolor, 'white');
                     width: 419px;
                     position: absolute;
-                    top: 586px;
+                    top: 500px;
                     left: 50%;
                     transform: translateX(-50%);
                 }
@@ -127,7 +127,7 @@
     width: 1200px;
     margin: 0 auto;
     padding: 0 180px;
-    padding-top: 400px;
+    padding-top: 250px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -138,16 +138,23 @@
     .store_btn_filter_All{
         width: 120px;
         height: 120px;
-        background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+        background: url('https://api.iconify.design/bx/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
         border: none;
         margin: 0 auto;
         cursor: pointer;
+        &:hover{
+            background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+        }
 
         h4{
             text-align: center;
             line-height: 5.5;
-            color: map-get($Mapcolor,'white');
+            color: map-get($Mapcolor,'yellow');
             font-weight: bold;
+
+            &:hover{
+                color: map-get($Mapcolor,'white');
+                }
         };
     };
     .store_btn_filter{
@@ -158,11 +165,19 @@
         margin: 0 auto;
         cursor: pointer;
 
+        &:hover{
+            background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
+        }
+
         h4{
             text-align: center;
             line-height: 5.5;
             color: map-get($Mapcolor,'yellow');
             font-weight: bold;
+
+            &:hover{
+            color: map-get($Mapcolor,'white');
+            }
         };
     };
 };

@@ -200,13 +200,84 @@
 
 //鳥嶼==================================================
 
+    // 動畫設定
 
-.island{
-    width: 1440px;
-    height: 1357px;
-    margin: 0 auto;
-    // outline: 1px solid red;
-    position: relative;
+    @keyframes tree {
+        from{
+            margin-left: -.5px;
+        }
+        to{
+            margin-left: .5px;
+        }
+    }
+    // @keyframes cloud {
+    //     from{
+    //         margin-left: -10px;
+    //     }
+    //     to{
+    //         margin-left: 10px;
+    //     }
+    // }
+
+    .treeA{
+            animation: {
+                name: tree;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-out;
+                direction: alternate;
+            }
+    }
+
+    .treeB{
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
+    .treeC{
+        animation: {
+            name: tree;
+            duration: 1s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
+    .treeD{
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
+    .bush{
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
+    .island{
+        width: 1440px;
+        height: 1357px;
+        margin: 0 auto;
+        // outline: 1px solid red;
+        position: relative;
 
 
     .birdIsland{
@@ -239,6 +310,7 @@
         top: 30%;
         left: 47.1%;
         height: 105px;
+        z-index: 1;
     }
 
     // 熱氣球==========================
@@ -246,16 +318,39 @@
         position: absolute;
         top: 6.4%;
         left: 54%;
+        animation: {
+            name: tree;
+            duration: 1s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
     .baWhite{
         position: absolute;
         top: 12.6%;
         left: 58%;
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .4s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
     .baYellow{
         position: absolute;
         top: 11.6%;
         left: 50%;
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .8s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
 
     // 鬼屋============================
@@ -274,6 +369,14 @@
         position: absolute;
         top: 9%;
         left: 22%;
+        animation: {
+            name: cloud;
+            duration: 5s;
+            delay: 1s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
 
     .pinkCloud{
@@ -282,6 +385,13 @@
         top: 10.5%;
         left: 31.3%;
         z-index: 1;
+        animation: {
+            name: cloud;
+            duration: 5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
 
     .snowMoutain{
@@ -403,12 +513,28 @@
         position: absolute;
         top: 27.8%;
         left: 68.9%;
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
     .ct2{
         position: absolute;
         top: 31.3%;
         left: 78.6%;
         transform: scaleX(-1);
+        animation: {
+            name: tree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
 
     .b1{

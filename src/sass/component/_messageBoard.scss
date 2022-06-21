@@ -1,0 +1,153 @@
+
+.messageboard{
+    width: 65%;
+    margin: 0 auto 5%;
+    form{
+        margin-bottom: 5%;
+        display: flex;
+        align-items: center;
+
+        input{
+            border: none;
+            font-size: 2rem;
+            outline: none;
+            padding: 10px;
+            color: map-get($Mapcolor, 'blue');
+            width: 80%;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 4%;
+        }
+
+        a{
+            font-size: 2.4rem;
+            display: inline-block;
+        }
+    }
+    
+    ul{
+        border: 1px solid rgb(130, 174, 240);
+        background-color: map-get($Mapcolor, 'white');
+        color: map-get($Mapcolor, 'blue');
+        border-radius: 10px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        li{
+            // border: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5%;
+            a{
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                border: 5px solid map-get($Mapcolor, 'yellow');
+            }
+            h4{
+                flex-grow: 4;
+            }
+            .iconify{
+                color: map-get($Mapcolor, 'blue');
+                font-size: 24px;
+                &:hover{
+                    color: map-get($Mapcolor, 'yellow');
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .moreMessage{
+        display: block;
+        margin-top: 25px;
+        color: map-get($Mapcolor, 'white');
+        font-size: 2rem;
+        text-align: center;
+
+        &:hover{
+            color: map-get($Mapcolor, 'yellow');           
+        }
+    }
+}
+
+
+// ----------------media query-------------------------
+
+@media (max-width: 575.98px){
+    .messageboard{
+        width: 90%;
+        margin: 0 auto 5%;
+        form{
+            margin-bottom: 5%;
+            display: flex;
+            align-items: center;
+    
+            input{
+                border: none;
+                font-size: 2rem;
+                outline: none;
+                padding: 10px;
+                color: map-get($Mapcolor, 'blue');
+                width: 80%;
+                height: 60px;
+                border-radius: 10px;
+                margin-right: 4%;
+            }
+    
+            a{
+                font-size: 2.4rem;
+                display: inline-block;
+            }
+        }
+        
+        ul{
+            border: 1px solid rgb(130, 174, 240);
+            background-color: map-get($Mapcolor, 'white');
+            color: map-get($Mapcolor, 'blue');
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+            li{
+                // border: 1px solid #000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5%;
+                a{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    border: 5px solid map-get($Mapcolor, 'yellow');
+                }
+                h4{
+                    flex-grow: 4;
+                }
+                .iconify{
+                    color: map-get($Mapcolor, 'blue');
+                    font-size: 24px;
+                    &:hover{
+                        color: map-get($Mapcolor, 'yellow');
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .moreMessage{
+            display: block;
+            margin-top: 25px;
+            color: map-get($Mapcolor, 'white');
+            font-size: 2rem;
+            text-align: center;
+    
+            &:hover{
+                color: map-get($Mapcolor, 'yellow');           
+            }
+        }
+    }
+}

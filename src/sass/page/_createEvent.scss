@@ -1,4 +1,22 @@
 
+.ui-datepicker{
+    width: 300px;
+    a{
+        font-size: 2rem;
+    }
+    .ui-datepicker-prev, .ui-datepicker-next{
+        font-size: 1.3rem;
+    }
+}
+
+.ui-timepicker{
+    height: auto;
+}
+
+.ui-timepicker-container{
+    border-radius: 5px;
+}
+
 .createEvent_div_wrapperB{
     width: 100%;
     // border: 1px solid #000;
@@ -90,7 +108,35 @@
                 outline: none;
                 padding: 10px;
             }
-        
+
+            #eventDate{
+                background: url('https://api.iconify.design/uil/calender.svg?color=%23f8f8f8&height=40') no-repeat 95% center / 35px;
+                cursor: pointer;
+            }
+
+            #eventTimeStart{
+                width: 120px;
+                margin-right: 15px;
+                cursor: pointer;
+                background: url('https://api.iconify.design/ic/round-navigate-next.svg?color=white&height=40&rotate=90deg') no-repeat 95% center / 20px;
+            }
+
+            #eventTimeEnd{
+                width: 120px;
+                margin-left: 15px;
+                cursor: pointer;
+                background: url('https://api.iconify.design/ic/round-navigate-next.svg?color=white&height=40&rotate=90deg') no-repeat 95% center / 20px;
+
+            }
+
+            select{
+                /*移除箭頭樣式*/
+                appearance:none;
+                -moz-appearance:none;
+                -webkit-appearance:none;
+                background: url('https://api.iconify.design/ic/round-navigate-next.svg?color=white&height=40&rotate=90deg') no-repeat 95% center / 20px;            
+            }
+
             option{
                 text-align: center;
                 font-size: 1.5rem;
@@ -217,16 +263,16 @@
                 flex-grow: 6;
             
                 h3{
-                    // border: 5px solid rgba(0, 0, 0, 0.3);
+                    border: 5px solid rgba(0, 0, 0, 0.3);
                     border-width: 2px 5px 5px 2px;
-                    border-radius: 34px 3px 34px 34px;  //
-                    color: #2F4858;
+                    border-radius: 34px 3px 34px 3px;
+                    color: map-get($Mapcolor, 'blue');
                     font-weight: bold;
                     line-height: 80px;
                     text-align: center;
 
-                    font-size: 2rem;  //
                 }
+                
             
                 label{
                     font-weight: bold;
@@ -241,12 +287,13 @@
             
             .createEvent_div_photoZone{
                 border-radius: 50%;
-                width: 200px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
                 margin: 35px auto;
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
                 background-image: url('../images/backgroundimg/createEvent_presetimg1.webp');
             }
+            
             
             
             .createEvent_div_choosePhotoR{
@@ -492,7 +539,7 @@
                 width: 15%;
                 position: absolute;
                 top: 43%;
-                left: 14%;
+                left: 6%; //
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             }
             .createEvent_icon_arrow{
@@ -511,14 +558,14 @@
             .createEvent_icon_cloud4{
                 width: 15%;
                 position: absolute;
-                top: 103%;
+                top: 101%;  //
                 left: 44%;
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             }
     
             .btnbird{
                 position: absolute;
-                top: 155%;
+                top: 158%;  //
                 left: 27%;
             }
         
@@ -540,7 +587,7 @@
                 border-radius: 40px;
                 background-color: #fff;
                 width: 85%;
-                height: 500px;
+                height: 500px;  //
                 margin: -25% auto 7%;
                 position: relative;
     
@@ -550,16 +597,17 @@
     
                 .createEvent_div_choosePhotoL{
                     // border: 1px solid pink;
-                    flex-grow: 6;
+                    flex-grow: 3;   //
                 
                     h3{
                         border: 5px solid rgba(0, 0, 0, 0.3);
                         border-width: 2px 5px 5px 2px;
-                        border-radius: 34px 34px 3px 3px;   //
-                        color: #2F4858;
+                        border-radius: 34px 34px 3px 3px;  //
+                        color: map-get($Mapcolor, 'blue');
                         font-weight: bold;
-                        line-height: 80px;
+                        line-height: 60px;
                         text-align: center;
+                        font-size: 2rem;  //
                     }
                 
                     label{
@@ -575,9 +623,9 @@
                 
                 .createEvent_div_photoZone{
                     border-radius: 50%;
-                    width: 250px;
-                    height: 250px;
-                    margin: 35px auto;
+                    width: 200px;
+                    height: 200px;
+                    margin: 20px auto;
                     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
                     background-image: url('../images/backgroundimg/createEvent_presetimg1.webp');
                 }
@@ -585,9 +633,11 @@
                 
                 .createEvent_div_choosePhotoR{
                     // border: 1px solid purple;
-                    display: none; //
+                    // display: none; 
                     padding: 2% 5%;
-                    flex-grow: 4;
+                    flex-grow: 1;
+                    order: 1;
+
                 
                     img{
                         width: 100%;
@@ -595,12 +645,15 @@
                 
                     ul{
                         margin: 5% auto;
-                        overflow-y: auto;
+                        // overflow-x: auto; //
                         // overflow-x: hidden;
-                        width: 95%;
-                        height: 95%;
+                        width: 100%;
+                        // height: inherit;
                         // border: 1px solid #000;
                         padding-left: 2%;
+
+                        display: flex;
+                        gap: 4px;
                 
                         //捲軸主體
                         &::-webkit-scrollbar {
@@ -618,13 +671,16 @@
                             border-radius: 40px;
                         }
                     }
+                    
+
+
                     li{
-                        width: 200px;
-                        height: 160px;
+                        width: 70px;    //
+                        height: 70px;   //
                         display: block;
-                        overflow: hidden;
-                        border-radius: 40px;
-                        margin-bottom: 35px;
+                        // overflow: hidden;
+                        border-radius: 20px;
+                        margin-bottom: 0px;
                         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
                         cursor: pointer;
                     }

@@ -185,50 +185,53 @@
     width: 600px;
 }
 //=======================footer sec================//
-footer{
-    
     .footer_info{
         position: relative;
         margin: 0 auto;
         z-index: 2;
         display: flex;
-        align-items: flex-end;
+        align-items:flex-end;
         padding: 50px;
-        background-image: url('../images/backgroundimg/footer_2.svg');
+        background-image: url('../images/backgroundimg/footer.svg');
         background-size:cover;
-        max-width: 1440px;
+        // max-width: 1440px;
         height: 250px;
         background-repeat:no-repeat;
-        span{
-            color: white;
-        }    
-        .attend{
-        width: 500px;
-        flex-grow: 1;
-        color: white;
-
-        }
-        .social_link{
+        .footer_wrap{
+            margin: 0px auto;
             display: flex;
-            justify-content: center;
-            flex-grow: 2;
-            ul{
+            align-items:center;
+            width: 1200px;
+            span{
+                color: white;
+            }    
+            .attend{
+            flex-grow: 1;
+            color: white;
+    
+            }
+            .social_link{
                 display: flex;
                 justify-content: center;
-                flex-grow: 1;
-                li{
-                    text-align: center;
-                    flex-grow: .1;
-                    a{
-                        font-size: 24px;
-                        cursor: pointer;
-                        color: white;
+                flex-grow: 2;
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    flex-grow: 1;
+                    li{
+                        text-align: center;
+                        flex-grow: .1;
+                        a{
+                            font-size: 24px;
+                            cursor: pointer;
+                            color: white;
+                        }
                     }
                 }
             }
         }
     }
-}
+
 .active{
         height: 200px !important;
         transition: .5s;

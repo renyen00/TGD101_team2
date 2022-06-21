@@ -117,7 +117,7 @@
     // 雲
     .index_cloud_1{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 50%;
         right: -10%;
@@ -128,7 +128,7 @@
     
     .index_cloud_2{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 70%;
         left: 50%;
@@ -139,7 +139,7 @@
     }
     .index_cloud_3{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 30%;
         right: 20%;
@@ -149,7 +149,7 @@
     }
     .index_cloud_4{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 80%;
         left: 20%;
@@ -159,7 +159,7 @@
     }
     .index_cloud_5{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 20%;
         left: 40%;
@@ -169,7 +169,7 @@
     }
     .index_cloud_6{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 50%;
         left: 30%;
@@ -179,7 +179,7 @@
     }
     .index_cloud_loop{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: 5%;
         left: 0%;
@@ -189,7 +189,7 @@
     }
     .index_cloud_loop2{
         display: block;
-        transform-style: preserve-3d;
+        // transform-style: preserve-3d;
         position: absolute;
         top: -5%;
         left: 40%;
@@ -204,10 +204,13 @@
 
     @keyframes tree {
         from{
-            margin-left: -.5px;
+            // margin-left: -.5px;
+            transform: translateX(-1px);
         }
         to{
-            margin-left: .5px;
+            // margin-left: .5px;
+            transform: translateX(1px);
+
         }
     }
     // @keyframes cloud {

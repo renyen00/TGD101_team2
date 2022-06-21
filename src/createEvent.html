@@ -5,11 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>發起揪團</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+    <!-- datepicker -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script> -->
+    
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     @@include('./layout/head.html')
+    <script src="./js/createEvent.min.js"></script>
 
 </head>
 <body>
-    @@include('./layout/header.html')
+    <!-- @@include('./layout/header.html') -->
     <div class="bgcBlue createEvent_div_wrapperB">
         <div class="createEvent_div_container">
             <header>
@@ -26,13 +43,13 @@
             <span class="iconify birdy" data-icon="icon-park-outline:bird" style="color: #f2bf61;" data-width="90" data-flip="horizontal"></span>
 
             <main>
-                <img src="../images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud1">
-                <img src="../images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud2">
+                <img src="./images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud1">
+                <img src="./images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud2">
                 <section class="createEvent_section_rule">
                     <h3>如何發起</h3>
                     <h4>揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制</h4>
                 </section>
-                <img src="../images/backgroundimg/createEvent_arrow.svg" class="createEvent_icon_arrow">
+                <img src="./images/backgroundimg/createEvent_arrow.svg" class="createEvent_icon_arrow">
                 <div class="createEvent_div_createForm">
                     <ul class="createEvent_ul_formR">
                         <li>
@@ -41,11 +58,14 @@
                         </li>
                         <li>
                             <h4>活動日期</h4>
-                            <input type="text">
+                            <input type="text" id="eventDate">
                         </li>
                         <li>
                             <h4>活動時間</h4>
-                            <input type="text">
+                            <input type="text" id="eventTimeStart" readonly>
+                             ~ 
+                            <input type="text" id="eventTimeEnd" readonly>
+                            
                         </li>
                         <li>
                             <h4>參加年齡</h4>
@@ -82,8 +102,8 @@
                         <span class="iconify edit" data-icon="bi:pencil" style="color: #2f4858;" data-width="24"></span>
                     </div>
                 </section>
-                <img src="../images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud3">
-                <img src="../images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud4">
+                <img src="./images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud3">
+                <img src="./images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud4">
                 <span class="iconify btnbird" data-icon="fa-solid:kiwi-bird" style="color: #2f4858;" data-width="60"></span>
             </main>
 
@@ -120,6 +140,6 @@
         </div>
     </div>
     @@include('./layout/footer.html')
-        
+   
 </body>
 </html>

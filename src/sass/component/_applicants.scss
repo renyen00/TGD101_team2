@@ -1,0 +1,42 @@
+
+.applicants_ul_check{
+    margin-top: 8%;
+    width: 40%;
+    // border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+
+    .applicants{
+        background-color: map-get($Mapcolor, "yellow");
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+        .iconify{
+            margin: 0 auto;
+            // border: 1px solid #000;
+            display: block;
+        }
+    }
+
+    .applicants_a_look{
+        text-decoration: none;
+        font-size: 2rem;
+        color: map-get($Mapcolor, "white");
+        font-weight: bold;
+        line-height: 30px;
+        &:hover{
+            color: map-get($Mapcolor, "yellow");
+        }
+    }
+}
+
+// ----------------media query-------------------------
+
+@media (max-width: 575.98px){
+    
+    .applicants_ul_check{
+        width: 65%;     //
+    }
+}

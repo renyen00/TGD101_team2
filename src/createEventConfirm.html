@@ -4,37 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>發起揪團</title>
+    <title>一同去揪遊</title>
     @@include('./layout/head.html')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+
+
 </head>
 <body>
-    @@include('./layout/header.html')
+    <!-- @@include('./layout/header.html') -->
     
     <div class="createEventConfirm_div_wrapper">
         <div class="marquee">WHERE THE NEW START BEGINS, WHERE THE NEW BEGIN STARTS.</div>
+        <header>
+            <!-- @@include('./layout/nav.html') -->
+            <a href="index.html" class="createEventConfirm_div_logo"><img src="./images/logo/logo_blue_final.svg"></a>
+            <h5>NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
+            
+            <div class="createEventConfirm_div_uploadimg">
+                <img src="./images/backgroundimg/createConfirmuploadimg.jpg">
+                <!-- <div class="createEventConfirm_div_circleimg"></div> -->
+            </div>
+            
+            <div class="createEventConfirm_div_member">
+                <img src="./images/backgroundimg/createConfirm_member.svg">
+            </div>
+        </header>
+    </div>
+
+    <img class="createEventConfirm_div_bg" src="./images/backgroundimg/createEventConfirm_bg.svg">
+      
+    <div class="createEventConfirm_div_wrapperB">
         <div class="createEventConfirm_div_container">
-            <header>
-                <!-- @@include('./layout/nav.html') -->
-                <a href="index.html" class="createEventConfirm_div_logo"><img src="./images/logo/logo_blue_final.svg"></a>
-                <h5>NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
-
-                <div class="createEventConfirm_div_uploadimg">
-                    <img src="./images/backgroundimg/createConfirmuploadimg.jpg">
-                    <!-- <div class="createEventConfirm_div_circleimg"></div> -->
-                </div>
-
-                <div class="createEventConfirm_div_member">
-                    <img src="./images/backgroundimg/createConfirm_member.svg">
-                </div>
-
                 <ul class="createEventConfirm_ul_breadcrumb">
-                    <li><a href="#">首頁</a></li>
+                    <li><a href="index.html">首頁</a></li>
                     <li>></li>
-                    <li><a href="#">發起揪團</a></li>
+                    <li><a href="createEvent.html">一同去揪遊</a></li>
                     <li>></li>
                     <li>確認頁面</li>
                 </ul>
-            </header>
 
             <main>
                 <section class="createEventConfirm_section_eventDetail">
@@ -73,8 +80,8 @@
                         </li>
                     </ul>
                     <span class="iconify iconifyB" data-icon="emojione-v1:bird" style="color: #f2bf61; font-size: 100px;"></span>
-                    <img src="./images/backgroundimg/createEvent_cloud.svg" class="createEventConfirm_icon_cloud1">
-                    <img src="./images/backgroundimg/createEvent_cloud.svg" class="createEventConfirm_icon_cloud2">
+                    <img src="./images/backgroundimg/attraction_c1.svg" class="createEventConfirm_icon_cloud1">
+                    <img src="./images/backgroundimg/attraction_c1.svg" class="createEventConfirm_icon_cloud2">
                     <img src="./images/backgroundimg/createConfirm_birdY.svg" class="createEventConfirm_icon_birdY">
                     <span class="iconify iconifyY" data-icon="fa-solid:kiwi-bird" style="color: #f2bf61; font-size: 60px;" data-flip="horizontal"></span>
                 </section>
@@ -94,6 +101,11 @@
         </div>
         @@include('./layout/footer.html')
     </div>
+    <div id="app2">
+        
+        <my-counter></my-counter>
+    </div>
+    
 
     <script>
         let my_btn = document.getElementById("yes");
@@ -112,6 +124,7 @@
                 e.preventDefault();
             }
         });
+
     </script>
 </body>
 </html>

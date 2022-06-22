@@ -36,6 +36,14 @@ function mvimages() {
 
 exports.mving = mvimages;
 
+function mvallphp() {
+    // 將 '檔案夾中所有檔案' 通過通道 到 '目錄位置' 目錄下
+    // /*.* => 將 所有檔案
+    return src('./src/php/*.php').pipe(dest('dist/php'));
+}
+
+exports.mvphp = mvallphp;
+
 
 //改名:打包完後改名字
 const rename = require('gulp-rename');
@@ -155,6 +163,7 @@ function browser(done) {
     watch(['./src/*.html', './src/layout/*.html' ], series(includeHTML)).on('change',reload); //html
     watch('src/js/*.js',miniJs).on('change',reload); //js
     watch(['./src/images/*.*','./src/images/**/*.*'],mvimages).on('change',reload); //image
+    watch('./src/php/*.php',mvallphp).on('change',reload); //php
     done();
 }
 const imagemin = require('gulp-imagemin');
@@ -189,6 +198,6 @@ exports.clearS = clear;
 
 
 //開發所使用的打包
-exports.default = series(parallel(stylesass,includeHTML,miniJs,mvimages),browser);
+exports.default = series(parallel(stylesass,includeHTML,miniJs,mvimages,mvallphp),browser);
 //上線所使用的打包
-exports.package = series(clear,parallel(stylesass,includeHTML,miniJs,min_images))
+exports.package = series(clear,parallel(stylesass,includeHTML,miniJs,min_images,mvallphp))

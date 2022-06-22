@@ -5,22 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>單一景點</title>
-    @@include('./layout/head.html')
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+@@include('./layout/head.html')
 </head>
 <body>
     @@include('./layout/header.html')
     <div class="bgcBlue attraction_div_wrapperB">
         <header>
-            <main class="attraction_main_slider">
+            <main id="attraction_info" class="attraction_main_slider">
                 <div class="attraction_div_head">
                     <a href="index.html"><img src="./images/logo/logo_white_final.svg"></a>
                     <h5 class="textWhite">NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
                 </div>
                 <img class="attraction_img_sliderimg" src="./images/backgroundimg/attraction_A11.jpg">
                 <img class="attraction_img_slidermask" src="./images/backgroundimg/attractionbgmask.svg">
-                <div class="attraction_div_title">
-                    <h1>甲府瀑布</h1>
+                <div class="attraction_div_title" v-if="attraction_list[3]">
+                    <!-- <h1>甲府瀑布</h1>
+                    <h5>#adventure #funny #exciting</h5> -->
+                    <h1>{{attraction_list[3][1]}}</h1>
                     <h5>#adventure #funny #exciting</h5>
                 </div>  
                 <a class="attraction_a_nextSpotBtn" href="#">
@@ -65,8 +71,8 @@
         </ul>
 
         <div class="morepic_block">
-            <h4> 天涼好個秋 
-                湖光美景染秋色
+            <h4> 天涼好個秋<br>
+                湖光美景染秋色<br>
                 花香鳥語秋意濃</h4>
             </div>
         <a href="activity.html" class="btnXL_b--s moreEventBtn">查看活動</a>
@@ -78,7 +84,17 @@
         </ul>
     </section>
     @@include('./layout/footer.html')
+    <script src="./js/attraction.min.js"></script>
 
+    <script>
+        $('.attraction_section_morepic .ul_sliderpic').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+        });
+        </script>
 
 </body>
 </html>

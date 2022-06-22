@@ -23,6 +23,75 @@
 
 }
 
+// 黃色問號
+.role_out_top{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    .role_question_yellow{
+        width: 100px;
+        position: absolute;
+        animation: Q1 1s infinite both;
+    }
+}
+@keyframes Q1 {
+    0% {
+      transform: none;
+    }
+    15% {
+      transform: translate3d(-15%,0,0) rotate3d(0,0,1,-5deg);
+    }
+    30% {
+      transform: translate3d(10%,0,0) rotate3d(0,0,1,3deg);
+    }
+    45% {
+      transform: translate3d(-15%,0,0) rotate3d(0,0,1,-3deg);
+    }
+    60% {
+      transform: translate3d(10%,0,0) rotate3d(0,0,1,2deg);
+    }
+    75% {
+      transform: translate3d(-5%,0,0) rotate3d(0,0,1,-1deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
+// 藍色問號
+.role_out_bottom{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    .role_question_blue{
+        width: 100px;
+        position: absolute;
+        right: 0;
+        animation: Q2 1s infinite both;
+    }
+}
+@keyframes Q2 {
+    0% {
+      transform: none;
+    }
+    15% {
+      transform: translate3d(-15%,0,0) rotate3d(0,0,1,-5deg);
+    }
+    30% {
+      transform: translate3d(10%,0,0) rotate3d(0,0,1,3deg);
+    }
+    45% {
+      transform: translate3d(-15%,0,0) rotate3d(0,0,1,-3deg);
+    }
+    60% {
+      transform: translate3d(10%,0,0) rotate3d(0,0,1,2deg);
+    }
+    75% {
+      transform: translate3d(-5%,0,0) rotate3d(0,0,1,-1deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
 
 // role選擇鳥類
 .role_section_top{
@@ -85,7 +154,7 @@
         height: 300px;
         left: 420px;
         top: 160px;
-        border: red 1px solid;
+        // border: red 1px solid;
         .role_show_bird img{
             position: absolute;
             display: block;

@@ -16,15 +16,17 @@
     @@include('./layout/header.html')
     <div class="bgcBlue attraction_div_wrapperB">
         <header>
-            <main class="attraction_main_slider">
+            <main id="attraction_info" class="attraction_main_slider">
                 <div class="attraction_div_head">
                     <a href="index.html"><img src="./images/logo/logo_white_final.svg"></a>
                     <h5 class="textWhite">NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
                 </div>
                 <img class="attraction_img_sliderimg" src="./images/backgroundimg/attraction_A11.jpg">
                 <img class="attraction_img_slidermask" src="./images/backgroundimg/attractionbgmask.svg">
-                <div class="attraction_div_title">
-                    <h1>甲府瀑布</h1>
+                <div class="attraction_div_title" v-if="attraction_list[3]">
+                    <!-- <h1>甲府瀑布</h1>
+                    <h5>#adventure #funny #exciting</h5> -->
+                    <h1>{{attraction_list[3][1]}}</h1>
                     <h5>#adventure #funny #exciting</h5>
                 </div>  
                 <a class="attraction_a_nextSpotBtn" href="#">
@@ -82,7 +84,7 @@
         </ul>
     </section>
     @@include('./layout/footer.html')
-
+    <script src="./js/attraction.min.js"></script>
 
     <script>
         $('.attraction_section_morepic .ul_sliderpic').slick({
@@ -92,7 +94,7 @@
             autoplaySpeed: 2000,
             dots: true,
         });
-    </script>
+        </script>
 
 </body>
 </html>

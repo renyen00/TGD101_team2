@@ -1,7 +1,6 @@
 // 首頁背景
 .index_body{
     background-color: #2F4858;
-    font-family: $fontFamily;
     color: map-get($Mapcolor, 'white');;
   
 }
@@ -36,7 +35,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -170px;
+        margin-top: -180px;
         margin-left: 120px;
         // border: 1px red solid;
     }
@@ -110,93 +109,7 @@
 
 
 // 首頁雲
-.index_cloud_top{
-    height: 100vh;
-    perspective: 1000px;
-    overflow: hidden;
-    // 雲
-    .index_cloud_1{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 50%;
-        right: -10%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -2;
-    }
-    
-    .index_cloud_2{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -3;
 
-    }
-    .index_cloud_3{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 30%;
-        right: 20%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -4;
-    }
-    .index_cloud_4{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 80%;
-        left: 20%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -5;
-    }
-    .index_cloud_5{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 20%;
-        left: 40%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -5;
-    }
-    .index_cloud_6{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -5;
-    }
-    .index_cloud_loop{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: 5%;
-        left: 0%;
-        margin-top: -100px;
-        margin-left: -150px;
-        z-index: -7;
-    }
-    .index_cloud_loop2{
-        display: block;
-        // transform-style: preserve-3d;
-        position: absolute;
-        top: -5%;
-        left: 40%;
-        z-index: -8;
-    }
-
-}
 
 //鳥嶼==================================================
 

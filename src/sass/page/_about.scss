@@ -36,7 +36,7 @@
     width: 400px;
     height: 280px;
     position: absolute;
-    top:470px;
+    top:120px;
     left:300px;
     h1{
         text-align: center;
@@ -72,9 +72,10 @@
 .about_img_yelian img{
     width: 120px;
     position:absolute;
-    top:100px;
-    left:120px;
+    top:150px;
+    left:100px;
     cursor: pointer;
+    animation: yelian 1s infinite both;
 }
 .about_img_berlin img{
     width: 120px;
@@ -86,14 +87,14 @@
 .about_img_betty img{
     width: 120px;
     position:absolute;
-    top:280px;
+    top:480px;
     left:350px;
     cursor: pointer;
 }
 .about_img_owen img{
     width: 120px;
     position:absolute;
-    top:180px;
+    top:480px;
     left:560px;
     cursor: pointer;
 }

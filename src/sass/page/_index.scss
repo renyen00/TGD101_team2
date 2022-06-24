@@ -113,36 +113,111 @@
 
 //鳥嶼==================================================
 
-    // 動畫設定
-
+    // 動畫影格設定
     @keyframes tree {
         from{
-            // margin-left: -.5px;
-            transform: translateX(-1px);
+            transform: translateX(-.5px);
         }
         to{
-            // margin-left: .5px;
-            transform: translateX(1px);
-
+            transform: translateX(.5px);
         }
     }
-    // @keyframes cloud {
-    //     from{
-    //         margin-left: -10px;
-    //     }
-    //     to{
-    //         margin-left: 10px;
-    //     }
-    // }
 
+    @keyframes cloud {
+        from{
+            transform: translateX(-5px);
+        }
+        to{
+            transform: translateX(5px);
+        }
+    }
+
+    @keyframes ballon_blue {
+        0%{
+            left: 58%;
+            transform: rotateX(40deg);
+        }
+        20%{
+            transform: rotateX(20deg);
+        }
+        40%{
+            transform: rotateX(40deg);
+        }
+        60%{
+            transform: rotateX(20deg);
+        }
+        100%{
+            left: 50%;
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes ballon_white {
+        0%{
+            left: 64%;
+            transform: rotateX(40deg);
+        }
+        20%{
+            transform: rotateX(20deg);
+        }
+        40%{
+            transform: rotateX(40deg);
+        }
+        60%{
+            transform: rotateX(20deg);
+        }
+        100%{
+            left: 52%;
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes ballon_typhoon {
+        0%{
+            left: 48%;
+            transform: rotateX(40deg);
+        }
+        20%{
+            transform: rotateX(20deg);
+        }
+        40%{
+            transform: rotateX(40deg);
+        }
+        60%{
+            transform: rotateX(20deg);
+        }
+        100%{
+            left: 60%;
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes coconuttree {
+        from{
+            transform: rotateX(20deg);
+        }        
+        to{
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes streetlight {
+        from{
+            transform: rotateX(15deg);
+        }        
+        to{
+            transform: rotateX(0deg);
+        }
+    }
+    //================================================== 
     .treeA{
-            animation: {
-                name: tree;
-                duration: 1s;
-                iteration-count: infinite;
-                timing-function: ease-out;
-                direction: alternate;
-            }
+        animation: {
+        name: tree;
+        duration: 1s;
+        iteration-count: infinite;
+        timing-function: ease-out;
+        direction: alternate;
+        }    
     }
 
     .treeB{
@@ -177,16 +252,16 @@
         }
     }
 
-    .bush{
-        animation: {
-            name: tree;
-            duration: 1s;
-            delay: .5s;
-            iteration-count: infinite;
-            timing-function: ease-out;
-            direction: alternate;
-        }
-    }
+    // .bush{
+    //     animation: {
+    //         name: tree;
+    //         duration: 1s;
+    //         delay: .5s;
+    //         iteration-count: infinite;
+    //         timing-function: ease-out;
+    //         direction: alternate;
+    //     }
+    // }
 
     .island{
         width: 1440px;
@@ -200,16 +275,31 @@
         display: block;
         margin: 0 auto;
         width: 1180px;
+        position: absolute;
+        top: 32.6%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -999;
     }
     
     // 馬丘比丘======================
     .machuPicchu{
         // display: block;
+        // position: absolute;
+        // top: 1.5%;
+        // left: 31%;
+        width: 160px;
+        height: 110px;
+    }
+    .atagHover{
+        display: block;
         position: absolute;
         top: 1.5%;
         left: 31%;
-        width: 160px;
-        height: 110px;
+        transition: 1s;
+        &:hover{
+            transition: .5s;
+            transform: scale(1.1);}
     }
 
     .river{
@@ -217,6 +307,7 @@
         top: 3.2%;
         left: 13%;
         width: 880px;
+        z-index: -1;
     }
 
     // 商店========================
@@ -235,10 +326,11 @@
         top: 6.4%;
         left: 54%;
         animation: {
-            name: tree;
-            duration: 1s;
+            name: ballon_blue;
+            duration: 4s;
+            delay: 2s;
             iteration-count: infinite;
-            timing-function: ease-out;
+            timing-function: ease-in-out;
             direction: alternate;
         }
     }
@@ -247,11 +339,10 @@
         top: 12.6%;
         left: 58%;
         animation: {
-            name: tree;
-            duration: 1s;
-            delay: .4s;
+            name: ballon_white;
+            duration: 4s;
             iteration-count: infinite;
-            timing-function: ease-out;
+            timing-function: ease-in-out;
             direction: alternate;
         }
     }
@@ -260,11 +351,11 @@
         top: 11.6%;
         left: 50%;
         animation: {
-            name: tree;
-            duration: 1s;
-            delay: .8s;
+            name: ballon_typhoon;
+            duration: 4s;
+            delay: .5s;
             iteration-count: infinite;
-            timing-function: ease-out;
+            timing-function: ease-in-out;
             direction: alternate;
         }
     }
@@ -390,6 +481,14 @@
         top: 13%;
         left: 34%;
         z-index: 1;
+        animation: {
+            name: coconuttree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
     .br2{
         width: 70px;
@@ -398,6 +497,14 @@
         top: 28.4%;
         left: 41.1%;
         z-index: 1;
+        animation: {
+            name: coconuttree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
 
     // 噴水池=============================
@@ -430,7 +537,7 @@
         top: 27.8%;
         left: 68.9%;
         animation: {
-            name: tree;
+            name: coconuttree;
             duration: 1s;
             delay: .5s;
             iteration-count: infinite;
@@ -444,7 +551,18 @@
         left: 78.6%;
         transform: scaleX(-1);
         animation: {
-            name: tree;
+            name: coconuttree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
+    .bush{
+        animation: {
+            name: coconuttree;
             duration: 1s;
             delay: .5s;
             iteration-count: infinite;
@@ -511,6 +629,17 @@
     }
 
     // 路燈================================
+    .streetLight{
+        animation: {
+            name: streetlight;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
     .st1{
         width: 9px;
         height: 56px;

@@ -38,12 +38,14 @@
                         border: 2px solid $blue;
                         border-radius: 10px;
                         width: 300px;
+                        display: none;
                     }
                     textarea{
                         border: 2px solid $blue;
                         border-radius: 10px;
                         width: 300px;
                         height: 150px;
+                        display: none;
                     }
                     .iconify{
                         font-size: 4rem;
@@ -53,6 +55,18 @@
                         transform: scaleX(-100%);
                         color: $blue;
                         display: none;
+                    }
+
+                    &.revise{
+                        p{
+                            display: none;
+                        }
+                        input,textarea{
+                            display: block;
+                        }
+                        .personal_show{
+                            display: block;
+                        }
                     }
                 }
                 .li_blur{
@@ -78,7 +92,6 @@
             display: flex;
             justify-content: center;
             button{
-                // font-family: $fontFamily;
                 line-height: 45px;
                 margin: 0 40px 100px;
                 position: relative;
@@ -88,6 +101,9 @@
                     top: -45px;
                     left: 77px;
                 }
+            }
+            &.revise{
+                
             }
         }
         .personal_div_popup{
@@ -128,6 +144,9 @@
         }
         .personal_show{
             display: block;
+        }
+        .personal_hide{
+            display: none;
         }
     }
 }

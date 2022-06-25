@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @@include('./layout/head.html')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
     <script src="https://kit.fontawesome.com/fc393adae9.js" crossorigin="anonymous"></script>
 
     <title>鳥語鳥嶼會員中心</title>
@@ -15,62 +16,72 @@
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 框框裡面 -->
-        <main class="personal_main">
+        <main class="personal_main" id="vmain">
             <img src="./images/icon_test.png" class="personal_icon">
             <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
             <ul>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>姓名</h4>
-                    <input type="text" id="personal_name">
+                    <p>{{name}}</p>
+                    <new :value.sync="name">
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>暱稱</h4>
-                    <input type="text" id="personal_nickname">
-
+                    <p>{{nickname}}</p>
+                    <new :value="nickname">
+                </li>
+                <li>
+                    <h4>密碼</h4>
+                    <p>******</p>
+                    <button id="personal_change" class="btnS_b">修改密碼</button>
                 </li>
                 <li>
                     <h4>生日</h4>
-                    <p id="personal_birth">2000年10月10日</p>
+                    <p>{{birth}}</p>
                 </li>
                 <li>
                     <h4>星座</h4>
-                    <p id="personal_sign">天秤座</p>
+                    <p>{{sign}}</p>
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>Email</h4>
-                    <input type="text" id="personal_email">
+                    <p>{{email}}</p>
+                    <new :value="email">
+
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>手機</h4>
-                    <input type="text" id="personal_phone">
-                </li>
-                <li>
-                    <h4>密碼</h4>
-                    <p>********</p>
-                    <button id="personal_change" class="btnS_b">修改密碼</button>
+                    <p>{{phone}}</p>
+                    <new :value="phone">
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>興趣</h4>
-                    <input type="text" id="personal_interest">
+                    <p>{{interest}}</p>
+                    <new :value="interest">
                 </li>
                 <li >
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>自我介紹</h4>
-                    <textarea id="personal_introduction" cols="30" rows="10"></textarea>
+                    <p>{{introduction}}</p>
+                    <textarea :value="introduction" cols="30" rows="10"></textarea>
                 </li>
+
+
             </ul>
         </main>
-        <div class="personal_div_doWhat">
-            <button class="btnXL_b--s">取消編輯</button>
-            <button class="btnXL_y">
+        <div class="personal_div_doWhat" id="vbtn">
+            <button class="btnXL_b" @click="toggle">編輯</button>
+            <button class="btnXL_b--s personal_hide" @click="back">取消編輯</button>
+            <button class="btnXL_y personal_hide" @click="sure">
                 <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
                 確認編輯
             </button>
+            
         </div>
 
 
@@ -98,5 +109,80 @@
 </div>
 @@include('./layout/footer.html')
 
+
+<script>
+    Vue.component('new',{
+        props:['newname'],
+        data(){
+            return{
+                name:this.newname,
+            }
+        },
+        template:`<input>`,
+        methods:{
+            update(){
+                this.$emit('update:newname',this.name)
+            }
+        }
+    })
+
+    new Vue({
+        el:'#vmain',
+        data:{
+            information:[],
+
+            name:'12345',
+            nickname:'',
+            birth:'2000年10月10日',
+            sign:'天秤座',
+            email:'',
+            phone:'',
+            interest:'',
+            introduction:'oouyoyoy',
+        },
+        methods:{
+           
+        },
+        created() {
+                const url = './php/personal_main.php';
+                fetch(url)
+                    .then(response => response.json())
+                    .then(text => this.information = text);
+                    // .then(text=>console.log(text))
+            },
+
+    });
+    // onclick 之後 function 把input.value塞進vue陣列
+    // 做成Vue.component
+    new Vue({
+        el:'#vbtn',
+  
+        methods: {
+            toggle(){
+                let li = document.querySelector('#vmain').querySelectorAll('li')
+                for(let i of li){
+                    i.classList.toggle('revise')
+                }
+                let revise = document.querySelector('#vbtn').querySelectorAll('button')
+                for(let j of revise){
+                    j.classList.toggle('personal_hide')
+                }
+                
+            },
+            sure(){
+
+                this.toggle()
+            },
+            back(){
+                
+                this.toggle()
+            },
+        },
+    });
+
+
+    
+
+</script>
 </body>
 </html>

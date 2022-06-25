@@ -62,8 +62,11 @@
         margin-bottom: 40px;
         color: $blue;
         h1{flex-grow: 1;}
-        i{line-height: 40px;
-        margin-right: 20px;}
+        i{
+            font-size: $back_h4;
+            line-height: 40px;
+            margin-right: 20px;
+        }
         h2{line-height: 40px;}
     }
 

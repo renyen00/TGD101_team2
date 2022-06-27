@@ -85,6 +85,10 @@ html{
     display: flex;
     justify-content: space-around;
     margin-bottom: 40px;
+    .nowpage{
+        background-color: $blue;
+        color:$white;
+    }
 }
 .backend_ul_sort{
     display: flex;

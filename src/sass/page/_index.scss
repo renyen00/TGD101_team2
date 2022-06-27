@@ -6,12 +6,11 @@
 }
 // 首頁標題
 .index_title_top{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     // border: 1px red solid;
     display: flex;
     display: flex;
-
     z-index: 0;
     .index_h1_before{
         font-size: 96px;
@@ -28,7 +27,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -100px;
+        margin-top: -120px;
         margin-left: -80px;
     }
     .index_img_yb{
@@ -52,6 +51,7 @@
 // 首頁字
 .index_word_1{
     color: black;
+
     img{
         width: 100%;
         display: block;
@@ -80,13 +80,12 @@
         text-align: right;
         width: 1200px;
         margin: 0 auto;
-        padding: 100px;
+        padding: 50px;
     }
     .index_h3_4{
-
         width: 1200px;
         margin: 0 auto;
-        padding: 100px;
+        padding: 50px;
     }
 }
 .index_word_3{
@@ -102,13 +101,61 @@
     }
     .index_h3_5{
         text-align: right;
-        width: 1000px;
+        width: 1200px;
         margin: 0 auto;
     }
 }
 
 
 // 首頁雲
+.index_cloud{
+    width: 100%;
+    height: 100vw;
+    position: relative;
+    img{
+        display: block;
+        position: absolute;
+        // border: 1px solid red;
+        z-index: 10;
+    }
+    .index_cloud_1{
+        width: 30vw;
+        top: 5%;
+        left: 0%;
+    }
+    .index_cloud_2{
+        width: 50vw;
+        top: -5%;
+        left: 20%;
+    }
+    .index_cloud_3{
+        width: 30vw;
+        top: 5%;
+        left: 60%;
+    }
+    .index_cloud_4{
+        width: 60vw;
+        top: 22%;
+        left: 50%;
+        
+    }
+    .index_cloud_5{
+        width: 50vw;
+        top: 5%;
+        left: 35%;
+    }
+    .index_cloud_6{
+        width: 30vw;
+        top: -10%;
+        left: 50%;
+    }
+    .index_cloud_7{
+        width: 30vw;
+        top: 20%;
+        left: 30%;
+    }
+   
+}
 
 
 //鳥嶼==================================================
@@ -957,5 +1004,5 @@
     width: 120px;
     display: block;
     margin: 0 auto;
-    margin-top: -666px;
+    margin-top: -600px;
 }    

@@ -1,7 +1,6 @@
 .about_body{
     background-color: map-get($Mapcolor, 'blue');
     font-family: $fontFamily;
-
 }
 // about上面
 .about_header_bg{
@@ -45,25 +44,15 @@
     h4{
         margin-left: 25px;
     }
+    // 右邊按鈕
     .about_main_bottom{
         display: flex;
         margin: 25px;
         justify-content: space-between;
-    }
-}
-// 右邊按鈕
-.about_main_bottom{
-    a{
-        line-height: 25px;
-        margin-left: 30px;
-        margin-bottom: 20px;
-        font-size: 16px;
-    }
-    button{
-        line-height: 25px;
-        margin-left: 30px;
-        margin-bottom: 20px;
-        font-size: 16px;
+        a,button{
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -75,7 +64,7 @@
     top:150px;
     left:100px;
     cursor: pointer;
-    animation: yelian 1s infinite both;
+    animation: yelian .5s  infinite ;
 }
 .about_img_berlin img{
     width: 120px;
@@ -83,6 +72,7 @@
     top:400px;
     left:150px;
     cursor: pointer;
+    animation: berlin .4s  infinite;
 }
 .about_img_betty img{
     width: 120px;
@@ -90,6 +80,7 @@
     top:480px;
     left:350px;
     cursor: pointer;
+    animation: betty .6s  infinite;
 }
 .about_img_owen img{
     width: 120px;
@@ -97,6 +88,7 @@
     top:480px;
     left:560px;
     cursor: pointer;
+    animation: owen .4s  infinite;
 }
 .about_img_jiang img{
     width: 120px;
@@ -104,6 +96,7 @@
     top:400px;
     left:720px;
     cursor: pointer;
+    animation: jiang .6s  infinite;
 }
 .about_img_renyen img{
     width: 120px;
@@ -111,6 +104,56 @@
     top:150px;
     left:800px;
     cursor: pointer;
+    animation: renyen .5s  infinite;
+}
+// about成員動畫
+@keyframes yelian {
+    0% {
+        top:150px;
+    }
+    100% {
+        top:140px;
+    }
+}
+@keyframes berlin {
+    0% {
+        top:400px;
+    }
+    100% {
+        top:390px;
+    }
+}
+@keyframes betty {
+    0% {
+        top:480px;
+    }
+    100% {
+        top:470px;
+    }
+}
+@keyframes owen {
+    0% {
+        top:480px;
+    }
+    100% {
+        top:470px;
+    }
+}
+@keyframes jiang {
+    0% {
+        top:400px;
+    }
+    100% {
+        top:390px;
+    }
+}
+@keyframes renyen {
+    0% {
+        top:150px;
+    }
+    100% {
+        top:140px;
+    }
 }
 
 // about燈箱
@@ -136,7 +179,7 @@
     box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
   }
     //裡面白線
-  .about_card_out{
+.about_card_out{
     border: 5px solid white;
     border-radius: 50px;
     height: 520px;
@@ -154,7 +197,7 @@
             margin: 40px auto;
         }
     }
-    // 右邊文字+按鈕
+    // 右邊文字
     .about_card_right{
         .about_card_span{
             color: map-get($Mapcolor, 'white');
@@ -173,25 +216,82 @@
         }
 
     }
+    // 按鈕
     .about_card_button{
         display: flex;       
     }
   }
 
-// ---------------media query--------------------
+// about---------------media query--------------------
 @media (max-width: 575.98px){
     .about_bg{
         background-image:none;
         width:100%;
+        height: auto;
 
         img{
             position: static;
-            // border: 1px solid red;
             display: block;
             margin: 50px auto;
         }
-        .about_member{
-            
-        }
     }
+    //虛線框框
+    .about_main{
+        position: static;
+        width: 360px;
+        margin: 0 auto;
+    }
+    // 彈窗
+    .popup{
+        width: 360px;
+        height: 300px;
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    .about_card_out{
+        border-radius: 30px;
+        height: 280px;
+        // 頭貼
+        .about_card_left{
+            width: 140px;
+            height: 140px;
+            margin: auto 10px;
+            img{
+                width: 100px;
+                margin: 10px auto;
+            }
+        }
+        // 文字
+        .about_card_right{
+            width: 170px;
+            .about_card_span{
+                width: 170px;
+            }
+            span{
+                margin-top: 15px;
+                font-size: 14px;
+            }
+            p{
+                margin-top: 15px;
+                font-size: 14px;
+                height: 120px;
+            }
+        }
+        // 按鈕
+        .about_card_button{
+            a,button{
+                width: 120px;
+                height: 30px;
+                line-height: 25px;
+                margin: 5px;
+                font-size: 12px;
+            }
+        }
+
+    }
+
+
 }
+
+// about---------------media query--------------------

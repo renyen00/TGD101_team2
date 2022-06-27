@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">   
     <title>首頁</title>
     @@include('./layout/head.html')
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
 </head>
 
 
@@ -24,7 +24,7 @@
          <div class="index_word_1">
             <img src="./images/xiaojiang/index_bg_top.svg" alt="">
             <div class="index_word_bg">
-                <h3 class="index_h3_1">
+                <h3 class="index_h3_1" data-aos="zoom-in" data-aos-duration="3000">
                     傳聞, 在雨過天晴後,
                     <br>
                     遠方的天空會有些許艷雲飄散著
@@ -33,7 +33,7 @@
                     <br>
                     名叫鳥語鳥嶼...
                 </h3>
-                <h3 class="index_h3_2">
+                <h3 class="index_h3_2" data-aos="zoom-in" data-aos-duration="3000">
                     不是每個人都可以一親芳澤
                     <br>
                     但如果想要前往一探究竟,
@@ -47,7 +47,7 @@
         </div>
 
          <div class="index_word_2">
-            <h3 class="index_h3_3">
+            <h3 class="index_h3_3" data-aos="zoom-in" data-aos-duration="3000">
                 振翅!升空,加把勁,再用力!
                 <br>
                 那是一直都嚮往的地方呀!
@@ -64,7 +64,7 @@
                 <br>
                 終於看到了雲後的...
             </h3>
-            <h3 class="index_h3_4">
+            <h3 class="index_h3_4" data-aos="zoom-in" data-aos-duration="3000">
                 歡迎來到鳥嶼的國度
                 <br>
                 我是管理一切島上事務的鳥-泰澤
@@ -79,7 +79,7 @@
         <div class="index_word_3">
             <img src="./images/xiaojiang/index_bg2_top.svg" alt="">
             <div class="index_word_bg2">
-            <h3 class="index_h3_5">
+            <h3 class="index_h3_5" data-aos="zoom-in" data-aos-duration="3000">
                 初次到訪,一定對我們鳥語鳥嶼有許多的不熟悉
                 <br>
                 為此請容許我來介紹我們島上的特色:
@@ -102,6 +102,7 @@
             <img src="./images/xiaojiang/index_bg2_bottom.svg" alt="">
         </div> 
     </section>
+<<<<<<< HEAD
     <!-- 雲 -->
     <!-- <section class="index_cloud_top">
         <img class="index_cloud_1" src="./images/xiaojiang/cloud.svg" alt="">
@@ -113,10 +114,25 @@
         <img class="index_cloud_loop" src="./images/xiaojiang/cloud_loop.svg" alt="">
         <img class="index_cloud_loop2" src="./images/xiaojiang/cloud_loop2.svg" alt="">
     </section> -->
+=======
+    
+>>>>>>> xiaojiang
 
     <!-- 島的部份 -->
     <div id="islandWrapper">
         <div class="island">
+
+             <!-- 雲 -->
+            <div class="index_cloud">
+                <img class="index_cloud_1" src="./images/xiaojiang/cloud1.svg" alt="">
+                <img class="index_cloud_2" src="./images/xiaojiang/cloud2.svg" alt="">
+                <img class="index_cloud_3" src="./images/xiaojiang/cloud3.svg" alt="">
+                <img class="index_cloud_4" src="./images/xiaojiang/cloud4.svg" alt="">
+                <img class="index_cloud_5" src="./images/xiaojiang/cloud5.svg" alt="">
+                <img class="index_cloud_6" src="./images/xiaojiang/cloud6.svg" alt="">
+                <img class="index_cloud_7" src="./images/xiaojiang/cloud7.svg" alt="">
+            </div>
+
             <!-- 鳥嶼本體(兩個) -->
             <img src="./images/index_kao/bird_island.svg" class="birdIsland ">
             <!-- <img src="./images/index_kao/bird_island.svg" class="birdIsland grey"> -->
@@ -236,9 +252,16 @@
         
     </div>
 
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
-    <script src="../dist/js/index.min.js"></script>
+    <script src="./js/index.min.js"></script>
 
 </body>
 </html>

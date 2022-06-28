@@ -9,70 +9,24 @@
 
     <title>鳥語鳥嶼後台管理</title>
 </head>
-<body>
-    @@include('./layout/backend/backendheader.html')
-    <main class="backend_main">
+<body class="backend_body">
+    <div id="left">
+        <backheader @chg="change"></backheader>
+    </div>
+    <main class="backend_main" id="app">
         <div class="backend_main_top">
-            <h1>貼文管理</h1>
-            
+            <h1>{{title}}</h1>              
             <i class="fa-regular fa-bell click"></i>
-            <h2 class="click">登出</h3>
+            <h3 class="click">登出</h3>
         </div>
         <ul class="backend_ul_page">
-            <li class="back_btnL">貼文管理</li>
-            <li class="back_btnL">會員詢問</li>
-            <li class="back_btnL">官方公告</li>
-            <li class="back_btnL">智慧客服</li>
+            <li class="back_btnL" data-n="backa1" @click="change">貼文管理</li>
+            <li class="back_btnL" data-n="backa2" @click="change">會員詢問</li>
+            <li class="back_btnL" data-n="backa3" @click="change">官方公告</li>
+            <li class="back_btnL" data-n="backa4" @click="change">智慧客服</li>
         </ul>
-        <ul class="backend_ul_sort">
-            <li>全部↓</li>
-            <li>最新↓</li>
-            <li>區域↓</li>
-        </ul>
-        <table>
-            <tr>
-                <td>文章編號</td>
-                <td>貼文位置</td>
-                <td>發文帳號</td>
-                <td>發文時間</td>
-                <td>詳細</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <ul class="backend_ul_more">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-        </ul>
+
+        <component :is='content'></component>
     </main>
     <!-- 
     <div class="backend_div_popup">
@@ -101,5 +55,81 @@
         </section>
     </div>
     -->
+    <script src="./js/backend1.min.js"></script>
+    <script src="./js/backendheader.min.js"></script>
+    <script>
+        
+        // $('.backend_header ul li').click(function(){
+        //     $(this).closest('ul').find('.backend_header_now').removeClass('backend_header_now');
+        //     $(this).addClass('backend_header_now')
+        // })
+        
+        Vue.component('back1',{
+                props:[''],
+                template:`
+                    <div>
+                        <div class="backend_main_top">
+                            <h1>貼文管理</h1>              
+                            <i class="fa-regular fa-bell click"></i>
+                            <h3 class="click">登出</h3>
+                        </div>
+                        <btn></btn>
+
+                        <component :is='content'></component>
+                    </div>
+                    `,
+                })
+       
+       
+        Vue.component('btn',{
+            drop:['content'],
+            template:`
+            <ul class="backend_ul_page">
+                <li class="back_btnL" @click="content='backa1'">貼文管理</li>
+                <li class="back_btnL" @click="content='backa2'">會員詢問</li>
+                <li class="back_btnL" @click="content='backa3'">官方公告</li>
+                <li class="back_btnL" @click="content='backa4'">智慧客服</li>
+            </ul>
+            `,
+            methods:{
+                change(){
+                    this.$emit('chg')
+                }
+            },
+        })
+        
+        
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                content:'',
+                datalist:[],
+                list:[],
+                title:'貼文管理',
+
+            },
+            methods: {
+                change(e){
+                    $('.backend_ul_page').find('.nowpage').removeClass('nowpage');
+                    e.target.classList.add('nowpage')
+                    let page = e.target.dataset.n
+                    this.content = page
+                }
+            },
+        });
+        new Vue({
+            el:'#left',
+            data:{
+                page:'',
+            },
+            methods:{
+                change(e,n){
+                    $('.backend_header').find('.backend_header_now').removeClass('backend_header_now');
+                        e.classList.add('backend_header_now')
+                    this.page = n
+                }
+            }
+        })
+    </script>
 </body>
 </html>

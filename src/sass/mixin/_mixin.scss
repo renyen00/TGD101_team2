@@ -3,6 +3,7 @@
         display: block;
         text-decoration: none;
         width: $w; height: $h;
+        font-size: 2rem;
         margin: 10px;
         line-height: calc($h - 3px);
         border: 3px solid $bgc;
@@ -41,8 +42,8 @@
         &--s{
             display: block;
             text-decoration: none;
-            width: $w;
-            height: $h;
+            width: $w; height: $h;
+            font-size: 2rem;
             margin: 10px;
             line-height: calc($h - 3px);
             text-align: center;

@@ -1,115 +1,97 @@
-
 gsap.registerPlugin(ScrollTrigger);
 
 // 雲
-gsap.fromTo(".index_cloud_1",{y: 10, z:-500, duration: 1} , {           
-    z: 2000,
-    duration:20 ,
+gsap.to(".index_cloud_1", {           
+    x:-1000,
+    duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud_top",
+        pin: ".island",
     }       
 })
 
-gsap.fromTo(".index_cloud_2",{y: 10, z:-800, duration: 1} , {              
-    z: 4500,
-    duration:20 ,
+gsap.to(".index_cloud_2" , {           
+    x:-1000,
+    duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud_top",
+        pin: ".island",
+    }       
+})
+gsap.to(".index_cloud_3" , {           
+    x:1000,
+    duration: 5,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0,    
+        // markers: true,
+        pin: ".island",
+    }       
+})
+gsap.to(".index_cloud_4" , {           
+    x:1000,
+    duration: 5,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0,    
+        // markers: true,
+        pin: ".island",
+    }       
+})
+gsap.to(".index_cloud_5" , {           
+    x:1000,
+    duration: 5,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0 ,    
+        // markers: true,
+        pin: ".island",
+    }       
+})
+gsap.to(".index_cloud_6" , {           
+    x:1000,
+    duration: 5,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0,    
+        // markers: true,
+        pin: ".island",
     }       
 })
 
-gsap.fromTo(".index_cloud_3",{y: 10, z:-700, duration: 1} , {              
-    z: 4000,
-    duration:20 ,
+gsap.to(".index_cloud_7" , {           
+    x:-1000,
+    duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
+        trigger: ".island",     
+        start: "top top", 
+        end:"+=1500",   
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud_top",
+        pin: ".island",
     }       
 })
-
-gsap.fromTo(".index_cloud_4",{y: 10, z:-600, duration: 1} , {              
-    z: 3000,
-    duration:10 ,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
-        // markers: true,
-        pin: ".index_cloud_top",
-    }       
-})
-gsap.fromTo(".index_cloud_5",{y: 10, z:-400, duration: 1} , {              
-    z: 2000,
-    duration:10 ,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
-        // markers: true,
-        pin: ".index_cloud_top",
-    }       
-})
-
-gsap.fromTo(".index_cloud_6",{y: 10, z:-300, duration: 1} , {              
-    z: 3000,
-    duration:10 ,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
-        // markers: true,
-        pin: ".index_cloud_top",
-    }       
-})
-gsap.fromTo(".index_cloud_loop",{y: 10, z:-100, duration: 1} , {              
-    z: 1000,
-    duration:10 ,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
-        // markers: true,
-        pin: ".index_cloud_top",
-    }       
-})
-
-gsap.fromTo(".index_cloud_loop2",{y: 10, z:-200, duration: 1} , {              
-    z: 3000,
-    duration:10 ,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".index_cloud_top",     
-        start: "top top",    
-        scrub:1,
-        toggleActions: "play none none none",       
-        // markers: true,
-        pin: ".index_cloud_top",
-    }       
-})
-
 

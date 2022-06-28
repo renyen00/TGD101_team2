@@ -24,7 +24,6 @@ $block:null;
     border: 5px solid $blue;
     cursor: pointer;
     transition: .2s;
-
 }
 html{
     // font-family: 'Zen Maru Gothic';
@@ -86,6 +85,10 @@ html{
     display: flex;
     justify-content: space-around;
     margin-bottom: 40px;
+    .nowpage{
+        background-color: $blue;
+        color:$white;
+    }
 }
 .backend_ul_sort{
     display: flex;
@@ -134,8 +137,10 @@ html{
 .backend_ul_more{
     display: flex;
     justify-content: center;
-    li{margin: 0 5px;}
-    display: none;
+    font-size: $back_h5;
+    
+    li{margin: 0 5px;cursor: pointer;}
+    // display: none;
 }
   /* The switch - the box around the slider */
   .backend_switch {

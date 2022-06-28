@@ -20,6 +20,7 @@
     width: 100%;
     z-index: -99;
     position: absolute;
+    display: block;
 
 }
 
@@ -29,47 +30,51 @@
     margin: 0 auto;
     position: relative;
     .role_question_yellow{
+        background-image: url(../images/xiaojiang/Q1.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
         width: 100px;
+        height: 100px;
         position: absolute;
-        animation: Q1 1s infinite both;
+        animation: Q 1s infinite both;
+        &:hover{
+            background-image: url(../images/xiaojiang/QH1.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 150px;
+            height: 150px;
+            left: -5%;
+            animation: Q none;
+        }
     }
 }
-@keyframes Q1 {
-    0% {
-      transform: none;
-    }
-    15% {
-      transform: translate3d(-15%,0,0) rotate3d(0,0,1,-5deg);
-    }
-    30% {
-      transform: translate3d(10%,0,0) rotate3d(0,0,1,3deg);
-    }
-    45% {
-      transform: translate3d(-15%,0,0) rotate3d(0,0,1,-3deg);
-    }
-    60% {
-      transform: translate3d(10%,0,0) rotate3d(0,0,1,2deg);
-    }
-    75% {
-      transform: translate3d(-5%,0,0) rotate3d(0,0,1,-1deg);
-    }
-    100% {
-      transform: none;
-    }
-  }
+
 // 藍色問號
 .role_out_bottom{
     width: 1200px;
     margin: 0 auto;
     position: relative;
     .role_question_blue{
+        background-image: url(../images/xiaojiang/Q2.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
         width: 100px;
+        height: 100px;
         position: absolute;
         right: 0;
-        animation: Q2 1s infinite both;
+        animation: Q 1s infinite both;
+        &:hover{
+            background-image: url(../images/xiaojiang/QH2.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 150px;
+            height: 150px;
+            right: -5%;
+            animation: Q none;
+        }
     }
 }
-@keyframes Q2 {
+@keyframes Q {
     0% {
       transform: none;
     }
@@ -115,21 +120,21 @@
     // 黃色格子    
     }
     .bird1,.bird3,.bird6,.bird8{
-        background-color: #F2BF61;
+        background-color: map-get($Mapcolor, 'yellow');
         margin-left: 20px;
         margin-top: 20px;
     }
     // 藍色格子
     .bird2,.bird4,.bird5,.bird7{
-        background-color: #2F4858;
+        background-color: map-get($Mapcolor, 'blue');
         margin-left: 20px;
         margin-top: 20px;
     }
 }
 
-// role下面展示區
+// role下面需線部分
 .role_section_bottom{
-    border:  dashed 7px #F2BF61;
+    border:  dashed 7px map-get($Mapcolor, 'yellow');
     border-radius: 50px;
     width: 900px;
     height: 600px;
@@ -137,29 +142,35 @@
     position: relative;
     // 燈光
     .role_light{
+        width: 80px;
+        display: block;
         position: absolute;
         left:535px;
     }
     .role_light_center{
+        width: 350px;
+        display: block;
         position: absolute;
         left: 400px;
         top: 20px;
         z-index: -10;
     }
-
+}
+.role_show_out{
+    position: relative;
     // 展示區
     .role_show_area{
         position: absolute;
         width: 280px;
-        height: 300px;
+        height: 280px;
         left: 420px;
         top: 160px;
-        // border: red 1px solid;
+        // 鳥類
         .role_show_bird img{
             position: absolute;
             display: block;
             width: 220px;
-            top: 25%;
+            top: 15%;
         }
         // 眼鏡
         .role_show_glasses img{
@@ -184,42 +195,16 @@
             left: 50%;
         }
     }
-    //顏色
-    .role_section_colors{
-        width: 100px;
-        position: absolute;
-        right: 50px;
-        top: 100px;
-        li{
-            width: 70px;
-            margin: 20px auto;
-        }      
-    button{
-        margin: 0;
-        padding: 0;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        margin: 0 auto;
-        display: block;
-        cursor: pointer;
-    }
-}
-
 
     // 放大縮小
     .role_button_cloud{
         display: flex;
         position: absolute;
+        width: 200px;
         left: 470px;
         top: 480px;
-        
-        .role_minus img{
-            margin: 15px;
-            width: 70px;
-            cursor: pointer;
-        }
-        .role_plus img{
+        border: 1px solid red;
+        .role_minus img,.role_plus img{
             margin: 15px;
             width: 70px;
             cursor: pointer;
@@ -227,11 +212,17 @@
     }
 }
 
-// role飾品區
-.role_section_accessory{
-    display: flex;
+//顏色
+.role_section_colors{
+    width: 100px;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    li{
+        width: 70px;
+        margin: 20px auto;
+    }      
     button{
-        margin: 0;
         padding: 0;
         border: none;
         outline: none;
@@ -240,41 +231,121 @@
         display: block;
         cursor: pointer;
     }
-    // 黃色
-    .accessory{
-        // border: 1px solid red;
+}
+
+
+// role飾品區
+.role_section_accessory{
+    display: flex;
+    button{
+        padding: 0;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin: 0 auto;
+        display: block;
+        cursor: pointer; 
+    }
+    // 眼鏡
+    .role_glasses{
         width: 100px;
-        margin-top: 100px;
-        margin-left: 30px;
+        height: 400px;
+        margin: 100px 15px;
+        box-sizing: border-box;
+    }
+    .role_accessory_glasses{
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        height: 280px;
+        width: 70px;
+        margin: 30px auto;
+
+        border: 1px solid blue;
+        ul{
+            position: absolute;
+            transition: all .7s;
+            margin: 0 auto;
+        }
         li{ 
-            background-color: #F2BF61;
+            list-style: none;
+            background-color: map-get($Mapcolor, 'yellow');
             width: 70px;
             height: 70px;
             border-radius: 50%;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             margin: 20px auto;
         }   
-        .role_glasses img,.role_other img{
+        img{
             width: 70px;
         }    
     }
-    // 藍色
-    .accessory2{
-        // border: 1px solid red;
+    // 帽子
+    .role_hat{
         width: 100px;
-        margin-top: 50px;
-        margin-left: 30px;
+        height: 500px;
+        margin: 50px 10px;
+        box-sizing: border-box;
+    }
+    .role_accessory_hat{
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        height: 370px;
+        width: 70px;
+        margin: 30px auto;
+        border: 1px solid red;
+        ul{
+            position: absolute;
+            transition: all .7s;
+            margin: 0 auto;
+        }
         li{ 
-            background-color: #2F4858;
+            list-style: none;
+            background-color: map-get($Mapcolor, 'blue');
             width: 70px;
             height: 70px;
             border-radius: 50%;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             margin: 20px auto;
-        } 
-        .role_hat img{
+        }   
+        img{
             width: 70px;
-        }          
+        }    
+    }
+
+    // 飾品
+    .role_other{
+        width: 100px;
+        height: 400px;
+        margin: 100px 15px;
+        box-sizing: border-box;
+    }
+    .role_accessory_other{
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        height: 280px;
+        width: 70px;
+        margin: 30px auto;
+        border: 1px solid red;
+        ul{
+            position: absolute;
+            transition: all .7s;
+            margin: 0 auto;
+        }
+        li{ 
+            list-style: none;
+            background-color: map-get($Mapcolor, 'yellow');
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            margin: 20px auto;
+        }   
+        img{
+            width: 70px;
+        }    
     }
 }
 
@@ -282,10 +353,113 @@
 
 // role最下面按鈕
 .role_button_bottom{
-    font-size: 20px;
     display: flex;
     margin: 0 auto;
     width: 400px;
     justify-content: space-between;
 
 }
+
+// role---------------media query--------------------
+@media (max-width: 575.98px){
+    // 背景
+    .role_bg_blue{
+        .role_header_top{
+            padding: 20px;
+            // LOGO
+            img{
+            }
+            
+        }
+    }
+    // 黃色問號
+    .role_out_top{
+        padding: 100px 0;
+        width: 100%;
+        .role_question_yellow{
+            position: static;
+            margin: 10px;
+            &:hover{
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+    // 藍色問號
+    .role_out_bottom{
+        width: 100%;
+        .role_question_blue{
+            float: right;
+            position: static;
+            margin: 10px;
+            &:hover{
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+    // 選擇鳥類區
+    .role_section_top{
+        width:100vw;
+        height: auto;
+        div{
+            width: 150px;
+            height: 150px;
+            img{
+                width: 100px;
+                margin: 20px;
+                
+            }
+        }
+        .bird1,.bird3,.bird6,.bird8{
+            margin: 15px auto;
+        }
+        .bird2,.bird4,.bird5,.bird7{
+            margin: 15px auto;
+        }
+
+    }
+    // 下面需線部分
+    .role_section_bottom{
+        clear: both;
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        position: relative;
+        // 燈光
+        .role_light{
+            position: static;
+            margin: 0 auto;
+        }
+        .role_light_center{
+            position: static;
+            margin: 0 auto;
+        }
+        // 飾品區
+        .role_section_accessory{
+
+        }
+    }
+    .role_show_out{
+        position: absolute;
+        top: 0;
+        left: 0;
+        // 展示區
+        .role_show_area{
+            top: 180px;
+            left: 50px;
+        }
+        // 放大縮小
+        .role_button_cloud{
+            top: 500px;
+            left: 80px;
+        }
+    }
+
+    //最下面按鈕
+    .role_button_bottom{
+       width: 300px;
+    }
+}
+
+// role---------------media query--------------------

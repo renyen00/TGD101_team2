@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="./js/role.min.js"></script>
     <script src="./js/role_carousel.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <title>創建角色</title>
     @@include('./layout/head.html')
 </head>
@@ -81,7 +82,7 @@
 
             <section class="role_show_out">
                 <!-- 打扮區 -->
-                <section class="role_show_area">
+                <section id="capture" class="role_show_area">
                     <!-- 鳥區 -->
                     <div class="role_show_bird">
                         <img src="" alt="">
@@ -203,11 +204,6 @@
             </section>
             <!-- 全部飾品 -->
 
-
-
-
-
-
             <!-- 顏色 -->
             <!-- <section class="role_section_colors">
                 <button class="role_color_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
@@ -227,11 +223,22 @@
     <!-- 按鈕 -->
         <section class="role_button_bottom">
             <button class="btnL_b--s role_button_reset">重設</button>
-            <button class="btnL_y  role_button_sure">確定</button>
+            <button onclick="block_capture()" class="btnL_y  role_button_sure">確定</button>
         </section>
     <!-- 按鈕 -->
     
     </section>
     @@include('./layout/footer.html')
+
+    <script>
+        function block_capture() {
+            html2canvas(document.querySelector("#capture")).then(function (canvas) {
+                a = document.createElement('a');
+                a.href = canvas.toDataURL("image/png", 0.92).replace("image/png", "image/octet-stream");
+                a.download = 'image.png';
+                a.click();
+            });
+        }
+    </script>
 </body>
 </html>

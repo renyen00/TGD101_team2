@@ -2,96 +2,96 @@ gsap.registerPlugin(ScrollTrigger);
 
 // 雲
 gsap.to(".index_cloud_1", {           
-    x:-700,
+    x:-1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_1",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:true,    
-        markers: true,
-        pin: ".index_cloud",
+        scrub: !0,    
+        // markers: true,
+        pin: ".island",
     }       
 })
 
 gsap.to(".index_cloud_2" , {           
-    x:-700,
+    x:-1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_2",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:1,    
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud",
+        pin: ".island",
     }       
 })
 gsap.to(".index_cloud_3" , {           
-    x:700,
+    x:1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_3",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:1,    
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud",
+        pin: ".island",
     }       
 })
 gsap.to(".index_cloud_4" , {           
-    x:700,
+    x:1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_4",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:1,    
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud",
+        pin: ".island",
     }       
 })
 gsap.to(".index_cloud_5" , {           
-    x:700,
+    x:1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_5",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:1,    
+        scrub: !0 ,    
         // markers: true,
-        pin: ".index_cloud",
+        pin: ".island",
     }       
 })
 gsap.to(".index_cloud_6" , {           
-    x:700,
+    x:1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_6",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:1,    
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud",
+        pin: ".island",
     }       
 })
 
 gsap.to(".index_cloud_7" , {           
-    x:-700,
+    x:-1000,
     duration: 5,
     ease: "none",
     scrollTrigger: {
-        trigger: ".index_cloud_7",     
+        trigger: ".island",     
         start: "top top", 
         end:"+=1500",   
-        scrub:1,    
+        scrub: !0,    
         // markers: true,
-        pin: ".index_cloud",
+        pin: ".island",
     }       
 })
 

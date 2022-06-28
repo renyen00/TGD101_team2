@@ -33,13 +33,14 @@
             <h4>官方揪團, 與我們一起同行</h4>
             <ul id="activity_info">
                 <li>
+                    <!-- <img :src="activity_imgs[0]" alt=""> -->
                     <img src="./images/xiaojiang/ex.png" alt="">
                     <article v-for="activity in activity_list">
-                        <span>{{activity_list[1]}}</span>
-                        <span>{{activity_list[2]}}</span>
-                        <span>{{activity_list[3]}}</span>
-                        <span>{{activity_list[4]}}</span>
-                        <span>{{activity_list[5]}}</span>
+                        <span>活動主題： {{activity_list[1]}}</span>
+                        <span>活動地點： {{activity_list[2]}}</span>
+                        <span>活動日期： {{activity_list[3]}}</span>
+                        <span>報名截止： {{activity_list[4]}}</span>
+                        <span>人數限制： {{activity_list[5]}}</span>
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>

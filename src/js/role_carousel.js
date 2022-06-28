@@ -1,4 +1,4 @@
-// 眼鏡
+// 眼鏡------------------------------------
 $(function(){
 $('#role_glasses_banner1').css('top', '-360px');
 $('#role_glasses_banner2').css('top', '0px');
@@ -43,7 +43,8 @@ $('#role_glasses_next').click(function(){
 });
 
 });
-// 帽子
+
+// 帽子------------------------------------
 $(function(){
   $('#role_hat_banner1').css('top', '-360px');
   $('#role_hat_banner2').css('top', '0px');
@@ -89,7 +90,7 @@ $(function(){
   
   });
 
-// 飾品
+// 飾品------------------------------------
 $(function(){
   $('#role_other_banner1').css('top', '-360px');
   $('#role_other_banner2').css('top', '0px');

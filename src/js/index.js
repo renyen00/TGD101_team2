@@ -95,3 +95,27 @@ gsap.to(".index_cloud_7" , {
     }       
 })
 
+//鳥
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+
+gsap.to(".index_bird",{          
+    duration:8,
+    scrollTrigger: {
+        trigger:"#motionPath",
+        start:"top top",
+        // end: "+=6000",
+        scrub: true,           
+        markers: true,
+        pin: "#motionPath",        
+    },
+    motionPath: {
+    path: "#motionPath",
+    align: "#motionPath",
+    ease: "none",
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true, 
+    start: 0,
+    end: 1,
+  }
+});
+

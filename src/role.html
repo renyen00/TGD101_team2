@@ -30,8 +30,7 @@
         <section class="role_out_top">
 
             <!-- 黃色問號 -->
-            <section class="role_question_yellow">
-            </section>
+            <section class="role_question_yellow"></section>
             <!-- 黃色問號 -->
 
                 <!-- 上面選擇鳥類 -->
@@ -66,11 +65,10 @@
     <section>
     <!-- 藍色背景下面 -->
 
-    <section class="role_out_bottom"> 
 
+    <section class="role_out_bottom"> 
         <!-- 藍色問號 -->
-        <section class="role_question_blue">
-        </section>
+        <section class="role_question_blue"></section>
         <!-- 藍色問號 -->
 
         <!-- 下面裝飾區 -->
@@ -88,15 +86,15 @@
                         <img src="" alt="">
                     </div>
                     <!-- 眼鏡 -->
-                    <div class="role_show_glasses">
+                    <div id="show" class="role_show_glasses">
                         <img src="" alt="">
                     </div>
                     <!-- 帽子 -->
-                    <div class="role_show_hat">
+                    <div id="show" class="role_show_hat">
                         <img src="" alt="">
                     </div>
                     <!-- 飾品 -->
-                    <div class="role_show_other">
+                    <div id="show" class="role_show_other">
                         <img src="" alt="">
                     </div>
                 </section>
@@ -104,8 +102,8 @@
 
                 <!-- 放大縮小 -->
                 <section class="role_button_cloud">
-                    <div class="role_minus"><img src="./images/xiaojiang/minus.svg" alt=""></div>
-                    <div class="role_plus"><img src="./images/xiaojiang/plus.svg" alt=""></div>
+                    <div class="role_minus_glasses role_minus_hat role_minus_other"><img src="./images/xiaojiang/minus.svg" alt=""></div>
+                    <div class="role_plus_glasses role_plus_hat role_minus_other"><img src="./images/xiaojiang/plus.svg" alt=""></div>
                 </section>
                 <!-- 放大縮小 -->
             </section>
@@ -145,7 +143,7 @@
 
                 <!-- 帽子 -->
                 <article class="role_hat">
-                    <button class="role_hat_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
+                    <button id="role_hat_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
 
                     <div class="role_accessory_hat">
                         <ul id="role_hat_banner1">
@@ -170,13 +168,13 @@
                             <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
                         </ul>
                     </div>
-                    <button class="role_hat_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
+                    <button id="role_hat_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
                 </article>
                  <!-- 帽子 -->
                 
                 <!-- 飾品 -->
                 <article class="role_other">
-                    <button class="role_other_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
+                    <button id="role_other_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
                     <div class="role_accessory_other">
                         <ul id="role_other_banner1">
                             <li class="role_other"><img src="./images/xiaojiang/a1.svg" alt=""></li>
@@ -197,27 +195,14 @@
                             <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
                         </ul>
                     </div>
-                    <button class="role_other_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
+                    <button id="role_other_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
                 </article>
                 <!-- 飾品 -->
 
             </section>
             <!-- 全部飾品 -->
-
-            <!-- 顏色 -->
-            <!-- <section class="role_section_colors">
-                <button class="role_color_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
-                <ul>
-                    <li><img src="./images/xiaojiang/blue.svg" alt=""></li>
-                    <li><img src="./images/xiaojiang/pink.svg" alt=""></li>
-                    <li><img src="./images/xiaojiang/yellow.svg" alt=""></li>
-                </ul>
-                <button class="role_color_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
-            </section> -->
-    
-
         </section>
-
+        <!-- 下面裝飾區 -->
     </section> 
 
     <!-- 按鈕 -->
@@ -234,7 +219,7 @@
         function block_capture() {
             html2canvas(document.querySelector("#capture")).then(function (canvas) {
                 a = document.createElement('a');
-                a.href = canvas.toDataURL("image/png", 0.92).replace("image/png", "image/octet-stream");
+                a.href = canvas.toDataURL("image/png", 1).replace("image/png", "image/octet-stream");
                 a.download = 'image.png';
                 a.click();
             });

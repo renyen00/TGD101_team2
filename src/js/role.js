@@ -6,7 +6,7 @@ $(function () {
         $('.role_show_bird').children('img').attr('src', $(this).children('img').attr('src'));     
     });
 
-})
+});
 
 // 眼鏡
 $(function () {
@@ -16,7 +16,7 @@ $(function () {
             containment: ".role_show_area"});     
     });
     
-})
+});
 
 // 帽子
 $(function () {
@@ -26,7 +26,7 @@ $(function () {
             containment: ".role_show_area"});     
     });
     
-})
+});
 
 // 飾品
 $(function () {
@@ -36,64 +36,79 @@ $(function () {
             containment: ".role_show_area"});     
     });
     
-})
-
+});
 
 
 // 大小
 
-function doFirst() {
-     
-	let glassesscale = 1; //原始尺吋1
-    let hatscale = 1; //原始尺吋1
-	let otherscale =1; //原始尺吋1
+    // 眼鏡
+    $(function(){
+        let glasses = $(".role_show_glasses img");
+        // 減
+        $(".role_minus_glasses").click(function(){        
+            if (glasses.width() > 60){
+            glasses.css({width: '-=5px'});
+            }
+        });
+        // 加
+        $(".role_plus_glasses").click(function(){
+            if (glasses.width() < 120){
+            glasses.css({ width: '+=5px'});
+            }
+        });
+    });
 
-	document.getElementsByClassName('role_plus').addEventListener('click',plus);
-	document.getElementsByClassName('role_minus').addEventListener('click',minus);
-	glassess = document.querySelector('.role_show_glasses');
-	hat = document.querySelector('.role_show_hat');
-	other = document.querySelector('.role_show_other');
-}
-//加
-function plus(){
-	if($('.role_accessory_glasses').is('li')){
-		glassesscale+=0.25; //先判斷在加
-		glassess.style.transform = "scale(" + glassesscale +")";
-	}
-	if($('.role_accessory_hat').is('li')){
-		hatscale+=0.25;
-		hat.style.transform = "scale(" + hatscale +")";
-	}
-	if($('.role_accessory_other').is('li')){
-		otherscale+=0.25;
-		other.style.transform = "scale(" + otherscale +")";
-	}
-}
-// //減
-function minus(){
-	if($('.role_accessory_glasses').is('li')){
-		glassesscale-=0.25; //先判斷在減
-		glassess.style.transform = "scale(" + glassesscale +")";
-	}
-	if($('.role_accessory_hat').is('li')){
-		hatscale-=0.25;
-		hat.style.transform = "scale(" + hatscale +")";
-	}
-	if($('.role_accessory_other').is('li')){
-		otherscale-=0.25;
-		other.style.transform = "scale(" + otherscale +")";
-	}
-}
+    // 帽子
+    $(function(){
+        let hat = $(".role_show_hat img");
+        // 減
+            $(".role_minus_hat").click(function(){        
+            if (hat.width() > 60){
+            hat.css({width: '-=5px'});
+            }
+        });
+        
+        // 加
+        $(".role_plus_hat").click(function(){
+            if (hat.width() < 120){
+            hat.css({ width: '+=5px'});
+            }
+        });
+    });
 
-  window.addEventListener('load', doFirst);
+    // 飾品
+    $(function(){
+        let other = $(".role_show_other img");
+        // 減
+        $(".role_minus_other").click(function(){        
+            if (other.width() > 60){
+            other.css({width: '-=5px'});
+            }
+        });
+        // 加
+        $(".role_plus_other").click(function(){
+            if (other.width() < 120){
+            other.css({ width: '+=5px'});
+            }
+        });
+    });
+
+
+
 
 // 重設
-// $(function () {    
-//     $('role_button_reset').click(function(){
-        
-//     })
+$(function () {    
+    $('.role_button_reset').click(function(){
+        $( ".role_show_bird img" ).attr('src',''),
+        $( "#show img" ).attr('src','');
+    });
 
-// });
+});
 
 
-  // --------------------資料連接----------------------
+// --------------------資料連接----------------------
+
+
+
+
+// --------------------資料連接----------------------

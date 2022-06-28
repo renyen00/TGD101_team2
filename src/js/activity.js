@@ -1,5 +1,4 @@
 gsap.registerPlugin(ScrollTrigger);
-// console.log(123);
 // 藍色鳥鳥
 gsap.fromTo(".activity_img_bluebird",{y:-10} ,{           
     y:250,
@@ -28,6 +27,28 @@ gsap.to(".activity_img_dialog" ,{
     }       
 })
 
+// 按鈕
+$(".activity_button_more img").hide();
+$(".activity_button_more a").mouseover(function(){
+    $(".activity_button_more img").show();
+  });
+$(".activity_button_more a").mouseout(function(){
+    $(".activity_button_more img").hide();
+});
+
+$(".activity_button_more2 img").hide();
+$(".activity_button_more2 a").mouseover(function(){
+    $(".activity_button_more2 img").show();
+  });
+$(".activity_button_more2 a").mouseout(function(){
+    $(".activity_button_more2 img").hide();
+});
+
+
+
+
+
+
 
 // -----------------RWD---------------
 // ScrollTrigger.matchMedia({
@@ -44,6 +65,11 @@ new Vue({
     data: {     // 變數放這裡！           
         activity_list:[],
         activity_imgs:[],
+        title:'',
+        place:'',
+        time:'',
+        timeEnd:'',
+        people:'',
 
     },
     methods: {
@@ -58,8 +84,16 @@ new Vue({
             fetch(url)
                 .then(response => response.json())
                 // .then(text => this.console.log(text));
+                .then(data => {
+                    this.activity_imgs = (data[0]['PICTURE']);
+                    this.title = data[0]['TITLE'];
+                    this.place = data[0]['PLACE_ID'];
+                    this.time = data[0]['EVENTDATE'];
+                    this.timeEnd = data[0][''];
+                    this.people = data[0]['MAX'];
 
-                .then(text => this.activity_list = text);
+                    this.activity_list = data;
+                    })
     },
     mounted() {},
     updated() {},

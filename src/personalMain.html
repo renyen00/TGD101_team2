@@ -17,20 +17,20 @@
         @@include('./layout/backend/personalTop.html')
         <!-- 框框裡面 -->
         <main class="personal_main" id="vmain">
-            <img src="./images/icon_test.png" class="personal_icon">
+            <img :src="'./images/' + information[0][7]" class="personal_icon">
             <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
             <ul>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>姓名</h4>
-                    <p>{{name}}</p>
-                    <new :value.sync="name">
+                    <p>{{information[0][0]}}</p>
+                    <new :value="information[0][0]">
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>暱稱</h4>
-                    <p>{{nickname}}</p>
-                    <new :value="nickname">
+                    <p>{{information[0][1]}}</p>
+                    <new :value="information[0][1]">
                 </li>
                 <li>
                     <h4>密碼</h4>
@@ -39,36 +39,36 @@
                 </li>
                 <li>
                     <h4>生日</h4>
-                    <p>{{birth}}</p>
+                    <p>{{information[0][2]}}</p>
                 </li>
                 <li>
                     <h4>星座</h4>
-                    <p>{{sign}}</p>
+                    <p>{{information[0][2]}}</p>
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>Email</h4>
-                    <p>{{email}}</p>
-                    <new :value="email">
+                    <p>{{information[0][3]}}</p>
+                    <new :value="information[0][3]">
 
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>手機</h4>
-                    <p>{{phone}}</p>
-                    <new :value="phone">
+                    <p>0{{information[0][4]}}</p>
+                    <new :value="information[0][4]">
                 </li>
                 <li>
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>興趣</h4>
-                    <p>{{interest}}</p>
-                    <new :value="interest">
+                    <p>{{information[0][5]}}</p>
+                    <new :value="information[0][5]">
                 </li>
                 <li >
                     <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
                     <h4>自我介紹</h4>
-                    <p>{{introduction}}</p>
-                    <textarea :value="introduction" cols="30" rows="10"></textarea>
+                    <p>{{information[0][6]}}</p>
+                    <textarea :value="information[0][6]" cols="30" rows="10"></textarea>
                 </li>
 
 
@@ -130,15 +130,6 @@
         el:'#vmain',
         data:{
             information:[],
-
-            name:'12345',
-            nickname:'',
-            birth:'2000年10月10日',
-            sign:'天秤座',
-            email:'',
-            phone:'',
-            interest:'',
-            introduction:'oouyoyoy',
         },
         methods:{
            

@@ -16,73 +16,19 @@
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 框框裡面 -->
-        <main class="personal_main" id="vmain">
-            <img :src="'./images/' + information[0][7]" class="personal_icon">
-            <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
-            <ul>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>姓名</h4>
-                    <p>{{information[0][0]}}</p>
-                    <new :value="information[0][0]">
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>暱稱</h4>
-                    <p>{{information[0][1]}}</p>
-                    <new :value="information[0][1]">
-                </li>
-                <li>
-                    <h4>密碼</h4>
-                    <p>******</p>
-                    <button id="personal_change" class="btnS_b">修改密碼</button>
-                </li>
-                <li>
-                    <h4>生日</h4>
-                    <p>{{information[0][2]}}</p>
-                </li>
-                <li>
-                    <h4>星座</h4>
-                    <p>{{information[0][2]}}</p>
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>Email</h4>
-                    <p>{{information[0][3]}}</p>
-                    <new :value="information[0][3]">
-
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>手機</h4>
-                    <p>0{{information[0][4]}}</p>
-                    <new :value="information[0][4]">
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>興趣</h4>
-                    <p>{{information[0][5]}}</p>
-                    <new :value="information[0][5]">
-                </li>
-                <li >
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>自我介紹</h4>
-                    <p>{{information[0][6]}}</p>
-                    <textarea :value="information[0][6]" cols="30" rows="10"></textarea>
-                </li>
-
-
-            </ul>
-        </main>
-        <div class="personal_div_doWhat" id="vbtn">
-            <button class="btnXL_b" @click="toggle">編輯</button>
-            <button class="btnXL_b--s personal_hide" @click="back">取消編輯</button>
-            <button class="btnXL_y personal_hide" @click="sure">
-                <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
-                確認編輯
-            </button>
-            
+        <div id="vmain">
+            <pmain v-if="information.length > 0" :infor="information" :a="forwatch" ></pmain>
+            <div class="personal_div_doWhat">
+                <button class="btnXL_b" @click="toggle">編輯</button>
+                <button class="btnXL_b--s personal_hide" @click="toggle">取消編輯</button>
+                <button class="btnXL_y personal_hide" @click="sure">
+                    <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                    確認編輯
+                </button>
+                
+            </div>
         </div>
+
 
 
         <div class="personal_div_popup">
@@ -112,64 +58,179 @@
 
 <script>
     Vue.component('new',{
-        props:['newname'],
+        props:['value'],
         data(){
             return{
-                name:this.newname,
+                name:'',
             }
         },
-        template:`<input>`,
+        template:`<input :value='value' @blur='update'>`,
         methods:{
-            update(){
-                this.$emit('update:newname',this.name)
-            }
+            update(e){
+                this.name = e.target.value
+                let count = e.target.closest('li').dataset.count
+                this.$emit('newdate',count,this.name)
+            },
         }
     })
+    Vue.component('new2',{
+        props:['value'],
+        data(){
+            return{
+                name:'',
+            }
+        },
+        template:`<textarea :value='value' cols="30" rows="10" @blur='update'></textarea>`,
+        methods:{
+            update(e){
+                this.name = e.target.value
+                let count = e.target.closest('li').dataset.count
+                this.$emit('newdate',count,this.name)
+            },
+        }
+    })
+    Vue.component('pmain',{
+        props:['infor','a'],
+        data(){
+            return{
+                newarr:[],
+            }
+        },
+        template:`
+        <main class="personal_main">
+            <img src="./images/icon_test.png" class="personal_icon">
+            <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
+            <ul>
+                <li data-count='0'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>姓名</h4>
+                    <p>{{infor[0][0]}}</p>
+                    <new :value="infor[0][0]"  @newdate="update2"/>
+                </li>
+                <li data-count='1'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>暱稱</h4>
+                    <p>{{infor[0][1]}}</p>
+                    <new :value="infor[0][1]" @newdate="update2"/>
+                </li>
+                <li data-count='2'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>Email</h4>
+                    <p>{{infor[0][2]}}</p>
+                </li>
+                <li>
+                    <h4>密碼</h4>
+                    <p>******</p>
+                    <button id="personal_change" class="btnS_b">修改密碼</button>
+                </li>
+                <li>
+                    <h4>生日</h4>
+                    <p>{{infor[0][3]}}</p>
+                </li>
+                <li>
+                    <h4>星座</h4>
+                    <p>{{infor[0][3]}}</p>
+                </li>
+                <li data-count='4'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>手機</h4>
+                    <p>{{infor[0][4]}}</p>
+                    <new :value="infor[0][4]" @newdate="update2"/>
+                </li>
+                <li data-count='5'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>興趣</h4>
+                    <p>{{infor[0][5]}}</p>
+                    <new :value="infor[0][5]" @newdate="update2"/>
+                </li>
+                <li data-count='6'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>自我介紹</h4>
+                    <p>{{infor[0][6]}}</p>
+                    <new2 :value="infor[0][6]" @newdate="update2" cols="30" rows="10"></new2>
+                </li>
 
+
+            </ul>
+        </main>
+        `,
+        methods:{
+            update2(a,b){
+                this.newarr.splice(a,1,b)
+            },
+        },
+        mounted(){
+            
+            this.newarr = this.infor[0].slice(0)
+        },
+        watch:{
+            a(){
+
+
+                this.infor[0].splice(0,1,this.newarr[0]);
+                this.infor[0].splice(1,1,this.newarr[1]);
+                this.infor[0].splice(2,1,this.newarr[2]);
+                this.infor[0].splice(3,1,this.newarr[3]);
+                this.infor[0].splice(4,1,this.newarr[4]);
+                this.infor[0].splice(5,1,this.newarr[5]);
+                this.infor[0].splice(6,1,this.newarr[6]);
+                
+
+                },
+        },
+        
+    })
     new Vue({
         el:'#vmain',
         data:{
             information:[],
+<<<<<<< HEAD
+=======
+            forwatch:0,
+>>>>>>> itsme
         },
         methods:{
-           
-        },
-        created() {
-                const url = './php/personal_main.php';
-                fetch(url)
-                    .then(response => response.json())
-                    .then(text => this.information = text);
-                    // .then(text=>console.log(text))
-            },
-
-    });
-    // onclick 之後 function 把input.value塞進vue陣列
-    // 做成Vue.component
-    new Vue({
-        el:'#vbtn',
-  
-        methods: {
             toggle(){
                 let li = document.querySelector('#vmain').querySelectorAll('li')
                 for(let i of li){
                     i.classList.toggle('revise')
                 }
-                let revise = document.querySelector('#vbtn').querySelectorAll('button')
+                let revise = document.querySelector('.personal_div_doWhat').querySelectorAll('button')
                 for(let j of revise){
                     j.classList.toggle('personal_hide')
                 }
                 
             },
             sure(){
-
+                this.forwatch +=1; 
                 this.toggle()
-            },
-            back(){
                 
-                this.toggle()
+                let name =this.information[0][0]
+                let nickname =this.information[0][1]
+                let phone =this.information[0][4]
+                let hobby =this.information[0][5]
+                let intro =this.information[0][6]
+                
+                
+
+                // const url = `./php/personal_main.php?name=${name}&nickname=${nickname}&phone=${phone}&hobby=${hobby}&intro=${intro}`;
+                // fetch(url)
+
             },
         },
+        created() {
+                const url = './php/personal_main.php';
+                fetch(url)
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.information = text
+                        // console.log(text);
+                    } );
+
+            },
+
     });
+
 
 
     

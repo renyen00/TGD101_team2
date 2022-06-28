@@ -1,5 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
-console.log(123);
+// console.log(123);
 // 藍色鳥鳥
 gsap.fromTo(".activity_img_bluebird",{y:-10} ,{           
     y:250,
@@ -30,10 +30,10 @@ gsap.to(".activity_img_dialog" ,{
 
 
 // -----------------RWD---------------
-ScrollTrigger.matchMedia({
-    // 跟設定css 一樣  如果畫面不小於 575.98px 執行
-    "(min-width:575.98px)": () => { 執行內容 },
-  });
+// ScrollTrigger.matchMedia({
+//     // 跟設定css 一樣  如果畫面不小於 575.98px 執行
+//     "(min-width:575.98px)": () => { 執行內容 },
+//   });
 // -----------------RWD---------------
 
 
@@ -43,9 +43,15 @@ new Vue({
 
     data: {     // 變數放這裡！           
         activity_list:[],
+        activity_imgs:[],
+
     },
-    methods: {},
-    computed: {},
+    methods: {
+        
+    },
+    computed: {
+
+    },
     watch: {},
     created() {
         const url = './php/activity.php';

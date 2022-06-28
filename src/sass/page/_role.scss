@@ -30,7 +30,7 @@
     margin: 0 auto;
     position: relative;
     .role_question_yellow{
-        background-image: url(/src/images/xiaojiang/Q1.svg);
+        background-image: url(../images/xiaojiang/Q1.svg);
         background-repeat: no-repeat;
         background-size: contain;
         width: 100px;
@@ -38,7 +38,7 @@
         position: absolute;
         animation: Q 1s infinite both;
         &:hover{
-            background-image: url(/src/images/xiaojiang/QH1.svg);
+            background-image: url(../images/xiaojiang/QH1.svg);
             background-repeat: no-repeat;
             background-size: contain;
             width: 150px;
@@ -55,7 +55,7 @@
     margin: 0 auto;
     position: relative;
     .role_question_blue{
-        background-image: url(/src/images/xiaojiang/Q2.svg);
+        background-image: url(../images/xiaojiang/Q2.svg);
         background-repeat: no-repeat;
         background-size: contain;
         width: 100px;
@@ -64,7 +64,7 @@
         right: 0;
         animation: Q 1s infinite both;
         &:hover{
-            background-image: url(/src/images/xiaojiang/QH2.svg);
+            background-image: url(../images/xiaojiang/QH2.svg);
             background-repeat: no-repeat;
             background-size: contain;
             width: 150px;
@@ -134,7 +134,7 @@
 
 // role下面需線部分
 .role_section_bottom{
-    border:  dashed 7px #F2BF61;
+    border:  dashed 7px map-get($Mapcolor, 'yellow');
     border-radius: 50px;
     width: 900px;
     height: 600px;
@@ -157,22 +157,20 @@
     }
 }
 .role_show_out{
-    border: 1px solid red;
     position: relative;
     // 展示區
     .role_show_area{
         position: absolute;
         width: 280px;
-        height: 300px;
+        height: 280px;
         left: 420px;
         top: 160px;
-        border: red 1px solid;
         // 鳥類
         .role_show_bird img{
             position: absolute;
             display: block;
             width: 220px;
-            top: 25%;
+            top: 15%;
         }
         // 眼鏡
         .role_show_glasses img{

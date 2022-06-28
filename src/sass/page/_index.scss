@@ -116,10 +116,12 @@
     // 動畫影格設定
     @keyframes tree {
         from{
-            transform: translateX(-.5px);
+            transform-origin: center bottom;
+            transform: translate(-20deg);
         }
         to{
-            transform: translateX(.5px);
+            transform-origin: center bottom;
+            transform: translate(20deg);
         }
     }
 
@@ -209,6 +211,17 @@
             transform: rotateX(0deg);
         }
     }
+
+    @keyframes landscapeHoverAnimation {
+        from{
+            transform-origin: center bottom;
+            transform: rotate(6deg);
+        }
+        to{
+            transform-origin: center bottom;
+            transform: rotate(-6deg);
+        }
+    }
     //================================================== 
     .treeA{
         animation: {
@@ -262,6 +275,14 @@
     //         direction: alternate;
     //     }
     // }
+    // scrollmagic=======================================
+    .islandSceneObject{
+        position: relative;
+        margin: auto;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }    
 
     .island{
         width: 1440px;
@@ -291,15 +312,22 @@
         width: 160px;
         height: 110px;
     }
-    .atagHover{
+    .atagHoverMachuPicchu{
         display: block;
         position: absolute;
         top: 1.5%;
         left: 31%;
-        transition: 1s;
+        opacity: .5;
+        transition: 5s;
         &:hover{
-            transition: .5s;
-            transform: scale(1.1);}
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
     }
 
     .river{
@@ -313,11 +341,25 @@
     // 商店========================
     .store{
         width: 100px;
+        
+    }
+    .atagHoverStore{
         position: absolute;
         top: 30%;
         left: 47.1%;
+        opacity: .5;
         height: 105px;
         z-index: 1;
+        transition: 1s;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }   
     }
 
     // 熱氣球==========================
@@ -364,10 +406,23 @@
     .ghostHouse{
         width: 140px;
         height: 162px;
+    }
+    .atagHoverGhostHouse{
         position: absolute;
         top: 6.8%;
-        z-index: 2;
         left: 23%;
+        opacity: 0.2;
+        z-index: 2;
+        transition: 1s;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
     }
 
     .yellowCloud{
@@ -403,18 +458,41 @@
 
     .snowMoutain{
         width: 160px;
+        
+    }
+    .atagHoverSnowMoutain{
         position: absolute;
         top: 11.8%;
         left: 40%;
         z-index: 3;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
     }
     
     .waterfall{
         width: 110px;
+    }
+    .atagHoverWaterfall{
         position: absolute;
         top: 18.1%;
         left: 39.4%;
         z-index: 4;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
     }
 
     // 動物園===========================
@@ -438,6 +516,17 @@
         position: absolute;
         top: 28.9%;
         left: 37.2%;
+    }
+    .atagHoverZoo{
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
     }
 
     // 燈塔============================
@@ -471,6 +560,17 @@
         position: absolute;
         top: 26%;
         left: 51.4%;
+    }
+    .atagHoverPark{
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
     }
 
     // 橋哦 有兩座=========================

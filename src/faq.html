@@ -205,32 +205,34 @@
     </div>
 
     <script>
-        const acc = document.getElementsByClassName("accordion");
-        let i;
+        // const acc = document.getElementsByClassName("accordion");
+        // let i;
 
-        for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            const drawer = this.nextElementSibling;
-            if (drawer.style.maxHeight) {
-            drawer.style.maxHeight = null;
-            drawer.classList.remove("open");
-            this.setAttribute('aria-expanded',"false")
-            } else {
-            let active = document.querySelectorAll(".accordion.active");
-            for(let j = 0; j < active.length; j++){
-                active[j].classList.remove("active");
-                active[j].setAttribute('aria-expanded',"false")
-                active[j].nextElementSibling.style.maxHeight = null;
-                active[j].nextElementSibling.classList.remove("open");
-            }
-            drawer.style.maxHeight = drawer.scrollHeight + "px";
-            drawer.classList.add("open");
-            this.setAttribute('aria-expanded',"true")
-            }
-            this.classList.toggle("active");
+        // for (i = 0; i < acc.length; i++) {
+        // acc[i].addEventListener("click", function() {
+        //     const drawer = this.nextElementSibling;
+        //     if (drawer.style.maxHeight) {
+        //     drawer.style.maxHeight = null;
+        //     drawer.classList.remove("open");
+        //     this.setAttribute('aria-expanded',"false")
+        //     } else {
+        //     let active = document.querySelectorAll(".accordion.active");
+        //     for(let j = 0; j < active.length; j++){
+        //         active[j].classList.remove("active");
+        //         active[j].setAttribute('aria-expanded',"false")
+        //         active[j].nextElementSibling.style.maxHeight = null;
+        //         active[j].nextElementSibling.classList.remove("open");
+        //     }
+        //     drawer.style.maxHeight = drawer.scrollHeight + "px";
+        //     drawer.classList.add("open");
+        //     this.setAttribute('aria-expanded',"true")
+        //     }
+        //     this.classList.toggle("active");
             
-        });
-        }
+        // });
+        // }
+
+        
     </script>
 </body>
 </html>

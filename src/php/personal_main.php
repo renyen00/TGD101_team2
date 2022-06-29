@@ -6,9 +6,9 @@
     session_start();
 //     $acc = $_SESSION['UserID']
     $acc = 'Client@gmail.com';
-//     $acc = 'admin@123.com';
+    // $acc = 'admin@123.com';
     //建立SQL語法
-    $sql = "SELECT NAME,NICKNAME,EMAIL,BIRTH,PHONE,HOBBY,INTRODUCTION,AVATAR FROM MEMBER
+    $sql = "SELECT NAME,NICKNAME,EMAIL,BIRTH,PHONE,HOBBY,INTRODUCTION,AVATAR,PASSWORD FROM MEMBER
     where EMAIL = :acc ";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料

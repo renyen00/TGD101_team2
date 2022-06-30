@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="./js/vue.min.js"></script>
     <script src="./js/role.min.js"></script>
     <script src="./js/role_carousel.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <title>創建角色</title>
     @@include('./layout/head.html')
 </head>
@@ -208,7 +210,9 @@
     <!-- 按鈕 -->
         <section class="role_button_bottom">
             <button class="btnL_b--s role_button_reset">重設</button>
-            <button onclick="block_capture()" class="btnL_y  role_button_sure">確定</button>
+
+            <button type="submit" id="Rolecreate" class="btnL_y  role_button_sure">確定</button>            
+
         </section>
     <!-- 按鈕 -->
     
@@ -216,14 +220,34 @@
     @@include('./layout/footer.html')
 
     <script>
-        function block_capture() {
-            html2canvas(document.querySelector("#capture")).then(function (canvas) {
-                a = document.createElement('a');
-                a.href = canvas.toDataURL("image/png", 1).replace("image/png", "image/octet-stream");
-                a.download = 'image.png';
-                a.click();
+
+        $(function create_img() { 
+            $("#Rolecreate").click(function() { 
+
+                html2canvas(document.querySelector("#capture"))
+                    .then(function(canvas) {
+
+                    var data1 = canvas.toDataURL("image/png , 1");
+                    //display 64bit image
+                    var image = new Image();
+                    image.src = data1;
+                        console.log(data1);
+                        $.ajax({
+                            url: './php/role.php',
+                            type: 'post',
+                            data: data1,
+                            dataType: 'text',
+                            contentType: "application/upload",
+                            success:function(res){console.log(res)},
+                            error:function(err){console.log(err)},
+
+                        });
+                        
+                    });
             });
-        }
+
+         });
+
     </script>
 </body>
 </html>

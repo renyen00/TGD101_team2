@@ -1,0 +1,66 @@
+.mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+  .popup{
+    
+    width: 800px;
+    height: 550px;
+    padding: 15px;
+    background-color: map-get($Mapcolor, 'blue');
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+  }
+    //裡面白線
+    .personal_card_out{
+    border: 5px solid map-get($Mapcolor, 'white');
+    border-radius: 50px;
+    height: 520px;
+    display: flex;
+    // 左邊頭貼
+    .personal_card_left{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin: auto 30px;
+        background-color: map-get($Mapcolor, 'white');
+        img{
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+        }
+    }
+    // 右邊文字
+    .personal_card_right{
+        
+        .personal_card_span{
+            color: map-get($Mapcolor, 'white');
+            width: 380px;
+        }
+        span{
+            margin-top: 30px;    
+            display: flex;
+            font-size: 24px;
+        }
+        p{  
+            margin-top: 30px;  
+            font-size: 24px;
+            height: 200px;
+            // border: 1px solid red;
+        }
+
+    }
+    // 按鈕
+    .personal_card_button{
+        display: flex;       
+    }
+  }

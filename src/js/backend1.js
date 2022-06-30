@@ -1,5 +1,53 @@
+Vue.component('back1',{
+    props:['h1'],
+    data(){
+        return{
+            content:''
+        }
+    },
+    template:`
+        <main class="backend_main">
+            <div class="backend_main_top">
+                <h1>{{h1}}</h1>              
+                <h3 class="click">登出</h3>
+            </div>
+            <btn @chg='change'></btn>
+
+            <component :is='content'></component>
+            
+        </main>
+        `,
+    methods:{
+        change(e,page){
+            $('.backend_ul_page').find('.nowpage').removeClass('nowpage');
+            e.classList.add('nowpage')
+            this.content = page
+        },
+    }
+    })
+
+
+Vue.component('btn',{
+data(){
+    return{
+        con:['貼文管理','會員詢問','官方公告','智慧客服']
+    }
+},
+template:`
+<ul class="backend_ul_page">
+    <li class="back_btnL"  v-for="(value,i) in con" :data-n="'backa'+ (i+1)" @click="change">{{value}}</li>
+</ul>
+`,
+methods:{
+    change(e){
+        let btn = e.target.closest('li')
+        let n = btn.dataset.n
+        this.$emit('chg',btn,n)
+    }
+},
+})
+
 Vue.component('backa1',{
-    props:['content'],
     template:`
         <div>
             <ul class="backend_ul_sort">

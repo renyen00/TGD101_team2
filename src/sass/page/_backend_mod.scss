@@ -122,6 +122,14 @@ html{
             button{
                 margin-left: 15px;
             }
+            input{
+                height: 35px;
+            }
+        }
+        
+        p{
+            cursor: pointer;
+            color: #7A86F1;
         }
         
         &:nth-child(odd){

@@ -14,36 +14,11 @@
         <backheader @chg="changeleft"></backheader>
        
         <!-- <back1 :h1="title"></back1> -->
-        <component :is="page" :h1="title"></component>>
+        <component :is="page" :h1="title"></component>
     </div>
-    <!-- 
-    <div class="backend_div_popup">
-        <section>
-            <i class="fa-solid fa-x"></i>
-            <ul>
-                <li><h2>發文人</h2><h3>account018</h3></li>
-                <h2>被檢舉內容</h2>
-            </ul>
-            <div class="backend_div_content">
-                <p>我要去跑步了!</p>
-                <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
-            </div>
-            <ul>
-                <li><h2>檢舉人</h2><h3>account_18</h3></li>
-                <li><h2>檢舉原因</h2></li>
-            </ul>
-            <div class="backend_div_content">
-                <p>好想睡覺</p>
-            </div>
-            <div class="backend_pass">
-                <input type="radio" name="pass">通過
-                <input type="radio" name="pass">駁回
-            </div>
-            <button class="back_btnM">關閉</button>
-        </section>
-    </div>
-    -->
-    <script src="./js/backend1.min.js"></script>
+    
+
+    <script src="./js/backend.min.js"></script>
     <script src="./js/backend2.min.js"></script>
     <script src="./js/backend3.min.js"></script>
     <script src="./js/backend4.min.js"></script>
@@ -52,11 +27,63 @@
     <script src="./js/backend7.min.js"></script>
     <script src="./js/backendheader.min.js"></script>
     <script>
+        Vue.component('back1',{
+            props:['h1'],
+            data(){
+                return{
+                    content:'',
+                    php:[],
+                    php2:[],
+                    php3:[],
+                    php4:[],
+                }
+            },
+            template:`
+                <main class="backend_main">
+                    <div class="backend_main_top">
+                        <h1>{{h1}}</h1>              
+                        <h3 class="click">登出</h3>
+                    </div>
+                    <btn @chg='change'></btn>
 
-        
-        
-        
-        
+                    <component :is='content'  :infor='php' :infor2='php2' :infor3='php3' :infor4='php4'></component>
+                    
+                </main>
+                `,
+            methods:{
+                change(e,page){
+                    $('.backend_ul_page').find('.nowpage').removeClass('nowpage');
+                    e.classList.add('nowpage')
+                    this.content = page
+                },
+            },
+            created() {
+                const url1 = './php/backend1_1.php';
+                fetch(url1)
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.php = text
+                    } );
+                const url2 = './php/backend1_2.php';
+                fetch(url2)
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.php2 = text
+                    } );
+                const url3 = './php/backend1_3.php';
+                fetch(url3)
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.php3 = text
+                    } );
+                const url4 = './php/backend1_4.php';
+                fetch(url4)
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.php4 = text
+                    } ); 
+            },
+        })
         let vm = new Vue({
             el:'#app',
             data:{
@@ -67,7 +94,6 @@
                 page:'back1',
             },
             methods: {
-                
                 changeleft(e,n,v){
                     $('.backend_header').find('.backend_header_now').removeClass('backend_header_now');
                         e.classList.add('backend_header_now')

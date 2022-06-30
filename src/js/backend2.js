@@ -7,10 +7,10 @@ Vue.component('back2',{
     },
     template:`
         <main class="backend_main">
-        <div class="backend_main_top">
-            <h1>{{h1}}</h1>            
-            <h3 class="click">登出</h3>
-        </div>
+            <div class="backend_main_top">
+                <h1>{{h1}}</h1>            
+                <h3 class="click">登出</h3>
+            </div>
             <btn2 @chg='change'></btn2>
 
             <component :is='content'></component>

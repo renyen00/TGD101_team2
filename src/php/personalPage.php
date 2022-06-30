@@ -6,12 +6,7 @@
 
     //建立SQL語法
     $sql = 
-    "SELECT a.PICTURE,a.TITLE,p.NAME,a.EVENTDATE,a.MAX,m.AVATAR,m.ID
-    FROM TGD101team2.ACTIVITY a 
-    JOIN TGD101team2.PLACE p
-    on a.PLACE_ID = p.ID
-    JOIN TGD101team2.MEMBER m
-    on a.MAIN_ID = m.ID;";
+    "SELECT NICKNAME,BIRTH,HOBBY,INTRODUCTION,AVATAR FROM TGD101team2.MEMBER;";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->query($sql);

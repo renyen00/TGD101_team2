@@ -1,37 +1,57 @@
 <?php
-
     include("Connection_server.php");
 
     //---------------------------------------------------
 
-    //建立SQL語法
-    $sql = "";
+    // session_start();
+    // //如果沒有登入Session值 或是 Session值為空
 
-    //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
-    $statement = $pdo->query($sql);
+    // if(!isset($_SESSION[“loginMember"]) || ($_SESSION[“loginMember"]=="")){
 
-    //抓出全部且依照順序封裝成一個二維陣列
-    $data = $statement->fetchAll();
+    // //前往登入頁面
+    
+    // header(“Location: login.php");
+    
+    // }else{
+    
+    // //若使用者已經是登入狀態擁有SESSION值，則前往以下網頁
+    
+     
+    
+    // header(“Location: index.html");
+    
+    // }
 
-    // print_r($data);
+    //判斷是否上傳成功
+    if($_FILES["profile"]["error"] > 0){
+        echo "上傳失敗: 錯誤代碼".$_FILES["profile"]["error"];
+    }else{
+        //取得上傳的檔案資訊=======================================
+        $fileName = $_FILES["profile"]["name"];    //檔案名稱含副檔名        
+        $filePath_Temp = $_FILES["profile"]["tmp_name"];   //Server上的暫存檔路徑含檔名        
+        $fileType = $_FILES["profile"]["type"];    //檔案種類        
+        $fileSize = $_FILES["profile"]["size"];    //檔案尺寸
+        //=======================================================
 
-    $process_data = [];
-    //將二維陣列取出顯示其值
-    foreach($data as $index => $row){
-            $temp = [];
-
-            for($i=0; $i<(count($row)/2); $i++){
-                    
-                    array_push($temp, $row[$i]);
-            }
-
-            array_push($process_data, $temp);
+        //Web根目錄真實路徑
+        $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
+        
+        //檔案最終存放位置
+        $filePath = $ServerRoot."/RoleCreate/".$fileName;
+  
+        //將暫存檔搬移到正確位置
+        move_uploaded_file($filePath_Temp, $filePath);
     }
 
-    // print_r($process_data[0]);
-    echo json_encode($process_data);
+    print_r($_FILES["profile"]);
 
+    //取得檔案副檔名
+    function getExtensionName($filePath){
+        $path_parts = pathinfo($filePath);
+        return $path_parts["extension"];
+    }
 
-
+    //建立SQL語法
+    $sql = "INSERT INTO TGD101team2.MEMBER(AVATAR) VALUES ($filePath)";
 
 ?>

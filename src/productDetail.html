@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductDetail</title>
+    @@include('./layout/head.html')
+</head>
+<body class="product_wrap">
+    @@include('./layout/header.html')
+    <div class="prd_wrapper">
+        <main class="prd_cont">
+            <section class="prd_item">
+                <header class="proD_logo">
+                    <a href="./index.html"><img src="./images/logo/logo_white_final.svg"></a>
+                </header>
+                <div class="title">
+                    <h3>
+                        首頁 > 大嶼商行 > 啾啾T
+                    </h3>
+                </div>
+                <section class="pro">
+                    <div class="k1">
+                        <div class="toolbar">
+                            <div id="myColorSelector" class="colorSelector">
+                                <label class="kindT resize">
+                                    <a class="color1">-</a>
+                                </label>
+                                <label class="quar">
+                                    1
+                                </label>
+                                <label class="kindR resize">
+                                    <a class="color1">+</a>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <div class="toolbar">
+                            <div id="myColorSelector" class="colorSelector">
+                                <label class="kindT">
+                                    <div class="color1">顏色</div>
+                                </label>
+                                <label class="buttonContainer">
+                                    <input type="radio" name="color" value="color1" checked>
+                                    <div class="productOption color1"></div>
+                                </label>
+                                <label class="buttonContainer">
+                                    <input type="radio" name="color" value="color2" >
+                                    <div class="productOption color2"></div>
+                                </label>
+                                <label class="buttonContainer">
+                                    <input type="radio" name="color" value="color3" >
+                                    <div class="productOption color3"></div>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <div class="toolbar">
+                            <div id="myColorSelector" class="colorSelector">
+                            <label class="kindT ">
+                                <div class="color1">尺寸</div>
+                            </label>
+                            <label class="buttonContainer">
+                                <input type="radio" name="colorf" value="color1" checked>
+                                <div class="productOption Size1">XL</div>
+                            </label>
+                            <label class="buttonContainer">
+                                <input type="radio" name="colorf" value="color2" >
+                                <div class="productOption Size2">L</div>
+                            </label>
+                            <label class="buttonContainer">
+                                <input type="radio" name="colorf" value="color3" >
+                                <div class="productOption Size3">M</div>
+                            </label>
+                            <label class="buttonContainer">
+                                <input type="radio" name="colorf" value="color4" >
+                                <div class="productOption Size4">S</div>
+                            </label>
+                            </div>
+                        </div>
+                        <div class="proD_optionBtn">
+                            <a href="./store.html" class="btnL_w--s">直接結帳</a>
+                            <a href="./payment.html" class="goPay btnL_y">加入購物車</a>
+                        </div>
+                    </div>
+                    <div class="k2">
+                        <div class="img_s">
+                            <img class="line4" src="./images/store/t-shirt.png" alt="">
+                            <div class="pro_name">
+                                <h4>鳥語Tshirt</h4>
+                                <h1>啾啾T</h1>
+                                <h3>$495</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="prd_text">
+                <div class="text">
+                    <h1>商品簡介</h1>
+                    <p>採用純棉且高成本的生態友善編織工法,成就了我們的鳥嶼揪揪透氣涼感T,簡約且明瞭的商標名稱直接傳達了鳥語鳥嶼這裡的島嶼氛圍-我們就是要你更融入,而且沒有壓力</p>
+                </div>
+                <div class="box_s">
+                    <div class="title">
+                        <h2>商品規格</h2>
+                    </div>
+                    <div class="prop">
+                        <div>
+                            規格 
+                        </div>
+                        <div>
+                            材質 100%純棉
+                        </div>
+                        <div>
+                            顏色 白 綠 藍
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="innnn">
+                <h1>推薦</h1>
+                <p>購買此商品的人也購買了</p>
+                <div class="cue">
+                    <div>@@include('./layout/product.html')</div>
+                    <div>@@include('./layout/product.html')</div>
+                    <div>@@include('./layout/product.html')</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    @@include('./layout/footer.html') 
+</body>
+</html>

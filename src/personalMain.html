@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @@include('./layout/head.html')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script> -->
     <script src="https://kit.fontawesome.com/fc393adae9.js" crossorigin="anonymous"></script>
 
     <title>鳥語鳥嶼會員中心</title>
@@ -15,66 +17,23 @@
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 框框裡面 -->
-        <main class="personal_main">
-            <img src="./images/icon_test.png" class="personal_icon">
-            <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
-            <ul>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>姓名</h4>
-                    <input type="text" id="personal_name">
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>暱稱</h4>
-                    <input type="text" id="personal_nickname">
-
-                </li>
-                <li>
-                    <h4>生日</h4>
-                    <p id="personal_birth">2000年10月10日</p>
-                </li>
-                <li>
-                    <h4>星座</h4>
-                    <p id="personal_sign">天秤座</p>
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>Email</h4>
-                    <input type="text" id="personal_email">
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>手機</h4>
-                    <input type="text" id="personal_phone">
-                </li>
-                <li>
-                    <h4>密碼</h4>
-                    <p>********</p>
-                    <button id="personal_change" class="btnS_b">修改密碼</button>
-                </li>
-                <li>
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>興趣</h4>
-                    <input type="text" id="personal_interest">
-                </li>
-                <li >
-                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
-                    <h4>自我介紹</h4>
-                    <textarea id="personal_introduction" cols="30" rows="10"></textarea>
-                </li>
-            </ul>
-        </main>
-        <div class="personal_div_doWhat">
-            <button class="btnXL_b--s">取消編輯</button>
-            <button class="btnXL_y">
-                <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
-                確認編輯
-            </button>
+        <div id="vmain">
+            <pmain v-if="information.length > 0" :infor="information" :a="forwatch" ></pmain>
+            <div class="personal_div_doWhat">
+                <button class="btnXL_b" @click="toggle">編輯</button>
+                <button class="btnXL_b--s personal_hide" @click="toggle">取消編輯</button>
+                <button class="btnXL_y personal_hide" @click="sure">
+                    <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                    確認編輯
+                </button>
+                
+            </div>
         </div>
 
-
-        <div class="personal_div_popup">
+        
+    </div>
+    <div class="personal_div_popup">
+        <section>
             <h3>修改密碼</h3>
             <ul>
                 <li>
@@ -90,13 +49,229 @@
                     <input type="text" placeholder="請再次輸入新密碼">
                 </li>
             </ul>
+            <P class="personal_hide">輸入不正確</P>
             <button class="btnL_b">確定修改</button>
             <i class="fa-solid fa-x"></i>
-        </div>
-        
+        </section>
     </div>
 </div>
 @@include('./layout/footer.html')
 
+
+<script>
+    let arr;
+    const url = './php/personal_main.php';
+            fetch(url)
+                .then(response => response.json())
+                .then((text) =>{
+                arr = text[0]
+                } );
+
+    $('.personal_div_popup i').click(close)
+    $('.personal_div_popup button').click(function(){
+        
+        let popli = document.querySelector('.personal_div_popup').querySelectorAll('li')
+        let old = popli[0].querySelector('input').value
+        let newpass = popli[1].querySelector('input').value
+        let confirm = popli[2].querySelector('input').value
+        let error = document.querySelector('.personal_div_popup').querySelector('p')
+
+        
+        if(newpass == confirm && old == arr[8]){
+            error.classList.add('personal_hide')
+            
+            const url2 = `./php/personal_newpsw.php?password=${newpass}`;
+            fetch(url2)
+            alert('密碼修改成功')
+            close();
+        }else{
+            error.classList.remove('personal_hide')
+            
+        }
+    })
+    
+
+
+    Vue.component('new',{
+        props:['value'],
+        data(){
+            return{
+                name:'',
+            }
+        },
+        template:`<input :value='value' @blur='update'>`,
+        methods:{
+            update(e){
+                this.name = e.target.value
+                let count = e.target.closest('li').dataset.count
+                this.$emit('newdate',count,this.name)
+            },
+        }
+    })
+    Vue.component('new2',{
+        props:['value'],
+        data(){
+            return{
+                name:'',
+            }
+        },
+        template:`<textarea :value='value' cols="30" rows="10" @blur='update'></textarea>`,
+        methods:{
+            update(e){
+                this.name = e.target.value
+                let count = e.target.closest('li').dataset.count
+                this.$emit('newdate',count,this.name)
+            },
+        }
+    })
+    Vue.component('pmain',{
+        props:['infor','a'],
+        data(){
+            return{
+                newarr:[],
+            }
+        },
+        template:`
+        <main class="personal_main">
+            <img :src="'./images/'+ infor[0][7]" class="personal_icon">
+            <span id="orderCompleted_icon_birdFill" class="iconify" data-icon="ph:bird-fill" style="color: #2f4858;" data-width="80" data-height="80"></span>
+            <ul>
+                <li data-count='0'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>姓名</h4>
+                    <p>{{infor[0][0]}}</p>
+                    <new :value="infor[0][0]"  @newdate="update2"/>
+                </li>
+                <li data-count='1'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>暱稱</h4>
+                    <p>{{infor[0][1]}}</p>
+                    <new :value="infor[0][1]" @newdate="update2"/>
+                </li>
+                <li data-count='2'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>Email</h4>
+                    <p class='personal_show'>{{infor[0][2]}}</p>
+                </li>
+                <li>
+                    <h4>密碼</h4>
+                    <p class='personal_show'>******</p>
+                    <button class="btnS_b" @click='show'>修改密碼</button>
+                </li>
+                <li>
+                    <h4>生日</h4>
+                    <p class='personal_show'>{{infor[0][3]}}</p>
+                </li>
+                <li>
+                    <h4>星座</h4>
+                    <p class='personal_show'>{{infor[0][3]}}</p>
+                </li>
+                <li data-count='4'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>手機</h4>
+                    <p>{{infor[0][4]}}</p>
+                    <new :value="infor[0][4]" @newdate="update2"/>
+                </li>
+                <li data-count='5'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>興趣</h4>
+                    <p>{{infor[0][5]}}</p>
+                    <new :value="infor[0][5]" @newdate="update2"/>
+                </li>
+                <li data-count='6'>
+                    <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
+                    <h4>自我介紹</h4>
+                    <p>{{infor[0][6]}}</p>
+                    <new2 :value="infor[0][6]" @newdate="update2" cols="30" rows="10"></new2>
+                </li>
+
+
+            </ul>
+        </main>
+        `,
+        methods:{
+            update2(a,b){
+                this.newarr.splice(a,1,b)
+            },
+            show(){
+                let popup = document.querySelector('.personal_div_popup')
+                popup.classList.add('personal_show')
+
+            }
+        },
+        mounted(){
+            
+            this.newarr = this.infor[0].slice(0)
+        },
+        watch:{
+            a(){
+                this.infor[0].splice(0,1,this.newarr[0]);
+                this.infor[0].splice(1,1,this.newarr[1]);
+                this.infor[0].splice(2,1,this.newarr[2]);
+                this.infor[0].splice(3,1,this.newarr[3]);
+                this.infor[0].splice(4,1,this.newarr[4]);
+                this.infor[0].splice(5,1,this.newarr[5]);
+                this.infor[0].splice(6,1,this.newarr[6]);
+
+                let name =this.infor[0][0]
+                let nickname =this.infor[0][1]
+                let phone =this.infor[0][4]
+                let hobby =this.infor[0][5]
+                let intro =this.infor[0][6]
+                console.log(name,nickname,phone,hobby,intro);
+                
+
+                const url = `./php/personal_new.php?name=${name}&nickname=${nickname}&phone=${phone}&hobby=${hobby}&intro=${intro}`;
+                fetch(url)
+                alert('資料修改成功');
+                },
+        },
+        
+    })
+    new Vue({
+        el:'#vmain',
+        data:{
+            information:[],
+            forwatch:0,
+        },
+        methods:{
+            toggle(){
+                let li = document.querySelector('#vmain').querySelectorAll('li')
+                for(let i of li){
+                    i.classList.toggle('revise')
+                }
+                let revise = document.querySelector('.personal_div_doWhat').querySelectorAll('button')
+                for(let j of revise){
+                    j.classList.toggle('personal_hide')
+                }
+                
+            },
+            sure(){
+                this.forwatch +=1; 
+                this.toggle()
+                
+            },
+        },
+        created() {
+                const url = './php/personal_main.php';
+                fetch(url)
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.information = text
+                        // console.log(text);
+                    } );
+
+            },
+
+    });
+
+
+    
+
+    function close(){
+        $('.personal_div_popup').removeClass('personal_show');
+        console.log(arr);
+    }
+</script>
 </body>
 </html>

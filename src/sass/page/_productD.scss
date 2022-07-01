@@ -1,0 +1,594 @@
+.product_wrap{
+    overflow-x: hidden;
+}
+.prd_wrapper{
+    h1{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    h3{
+        color: white;
+    }
+    p{
+        text-align: center;
+    }
+    .prd_cont{
+        margin: 0 auto;
+        min-width: 100vw;
+        // background-color: black;
+        .title{
+            h3{
+                color: white;
+            }
+        }
+        .prd_item,.prd_text,.innnn{
+            width:100%;
+        }
+        .prd_item{
+            width:100%;
+            padding: 20px 50px 100px 50px;
+            height: auto;
+            background-color: #2F4858;
+            .proD_logo{
+                width: 800px;
+                margin: 0 auto;
+                position: relative;
+                > a {
+                    img{
+                    width: 120px;
+                    display: block;
+                    margin: 0 auto;
+                    }
+                    &::before{
+                        font-size: 2rem;
+                        font-weight: bold;
+                        position: absolute;
+                        top: 45%;
+                        left: 18%;
+                        content: 'NOT JUST MAKE';
+                        color:white;
+                    }
+                    &::after{
+                        font-size: 2rem;
+                        font-weight: bold;
+                        bottom: 40%;
+                        right: 10%;
+                        position: absolute;
+                        content: 'FRIENDS  BUT INTO IT.';
+                        color:white;
+                    }
+                }
+                // > pre{
+                //     font-size: 2rem;
+                //     font-weight: bold;
+                //     width: 520px;
+                //     position: absolute;
+                //     top: 40%;
+                //     left: 29%;
+                //     color: white;
+                // }
+            }
+            .title{
+                flex-grow: .2;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 商品圖 商品樣式選擇
+.pro{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    transition: .5s;
+    .k1{
+        .toolbar {
+            width: 250px;
+
+            padding: 5px 0px;
+            border-radius: 80px;
+            border: 1.5px solid white;
+            margin: 10px auto;
+            .colorSelector {
+                width: 100%;
+                height: 35px;
+                padding-right: 5px;
+                display: flex;
+                align-items: center;
+                justify-content:space-between;
+                .kindT {
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 50px 10px 10px 50px;
+                    margin-left: 5px;
+                    height: 35px;
+                    padding: 0px 10px;
+                    background: white;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 35px;
+                    
+        
+                }
+                .kindR{
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 10px 50px 50px 10px;
+                    height: 35px;
+                    padding: 0px 10px;
+                    background: white;
+                    font-weight: bold;
+                    font-size: 32px;
+                    line-height: 35px;
+                }
+                .resize{
+                    width: 60px;
+                    cursor: pointer;
+                }
+                .quar{
+                    font-size: 32px;
+                    color:white;
+
+                }
+                .buttonContainer {
+                    display: inline-block;
+        
+                    .productOption {
+                        text-align: center;
+                        height: 35px;
+                        width: 35px;
+                        border-radius: 50%;
+                        box-shadow: 0px 0px 0px 2px map-get($Mapcolor , 'white');
+                        transition: all 0.15s ease;
+                        margin: 0 5px;
+                        font-size: 24px;
+                        line-height: 35px;
+                        color: white;
+                        &:hover {
+                                cursor: pointer;
+                                transform: scale(1.2);
+                        }
+                        &.color1 {
+                            background: map-get($Mapcolor, 'blue');
+                        }
+        
+                        &.color2 {
+                            background: map-get($Mapcolor, 'yellow');
+                        }
+        
+                        &.color3 {
+                            background: map-get($Mapcolor, 'white');
+                        }
+                    }
+                }
+        
+                input[type="radio"] {
+                    display: none;
+                    height: 0;
+                    width: 0;
+        
+                    &:checked {
+                        ~.productOption {
+                            text-align: center;
+                            box-shadow: 0 0 0 3px map-get($Mapcolor, 'yellow');
+                        }
+                    }
+                }
+            }
+        }
+        .proD_optionBtn{
+            display: flex;
+            margin-top: 10px;
+            justify-content: center;
+        }
+    }
+    .k2{
+        .img_s{
+            position: relative;
+            display: flex;
+            img{
+                position: relative;
+                width: 300px;
+            }
+            &::before{
+                position: absolute;
+                top:80px;
+                left: 100px;
+                content: '';
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background-color: #F2BF61;
+            }
+            .pro_name{
+                position: absolute;
+                bottom: 10px;
+                right: -30px;
+                font-size: 24px;
+                color: white;
+                letter-spacing: 5px;
+                text-shadow: 0px 0px 5px rgba(0,0,0,.5);
+            }
+            .line4{
+                transform: scale(.5);
+                animation-name: a1;
+                animation-duration: 1.2s;
+                transition-timing-function:linear;
+                animation-fill-mode: forwards;
+            }
+    
+        }
+    }
+}
+
+.prd_text{
+    height: auto;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        transform: translate(0px,-50%);
+        border-radius: 50%;
+        width: 100%;
+        height: 200px;
+        background-color: #2F4858;
+        transition: .5s;
+    }
+    .text{
+        border: 1px solid #000;
+        margin: 0 auto;
+        width: 60%;
+        letter-spacing: 5px;
+    }
+    .box_s{
+        padding: 20px;
+        flex-grow: 1;
+        align-items: center;
+        margin:  auto;
+        width: 600px;
+        max-width: 100%;
+        height: auto;
+        margin-top: 50px;
+        border-radius: 15px;
+        background-color: #2F4858;
+        transition: .3s;
+
+        .title{
+            flex-grow: .2;
+            color: #fff;
+        }
+        .prop{
+            flex-grow: 1;
+            display: flex;
+            
+            align-content: space-around;
+            >div{
+                flex-grow: 1;
+                margin: 10px 0;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.innnn{
+    display: block;
+    .cue{
+        margin: 0 auto;
+        display: flex;
+        overflow-x: scroll;
+        >div{
+            flex-grow: 1;
+            margin: 30px;
+        }
+    }
+}
+
+
+
+@media screen and (max-width:1199.98px)  {
+
+    .box_s{
+        width: 1000px;
+    }
+}
+@media screen and (max-width:991.98px)  {
+    .prd_text::after{
+    width: 100%;
+    height: 150px;
+    }
+    .box_s{
+        width: 800px;
+    }
+}
+@media screen and (max-width:767.98px)  {
+    .prd_text::after{
+    width: 100%;
+    height: 100px;
+}
+.box_s{
+        width: 600px;
+    }
+
+}
+@media screen and (max-width:575.98px)  {
+    .prd_text::after{
+        width: 100%;
+        height: 80px;
+        
+        }
+    .pro{
+        
+        justify-content:space-evenly;
+        align-items: center;
+        .k1{
+            .toolbar {
+                width: 200px;
+                padding: 5px 0px;
+                border-radius: 80px;
+                border: 1.5px solid white;
+                margin: 10px;
+                .colorSelector {
+                    width: 100%;
+                    height: 20px;
+                    padding-right: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content:space-between;
+                    .kindT {
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 50px 10px 10px 50px;
+                        margin-left: 5px;
+                        height: 25px;
+                        padding: 0px 10px;
+                        background: white;
+                        font-weight: bold;
+                        font-size: 12px;
+                        line-height: 25px;
+                        
+            
+                    }
+                    .kindR{
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 10px 50px 50px 10px;
+                        height: 25px;
+                        padding: 0px 10px;
+                        background: white;
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 25px;
+                    }
+                    .resize{
+                        width: 30px;
+                        cursor: pointer;
+                    }
+                    .quar{
+                        font-size: 18px;
+                        color:white;
+    
+                    }
+                    .buttonContainer {
+                        display: inline-block;
+            
+                        .productOption {
+                            text-align: center;
+                            height: 25px;
+                            width: 25px;
+                            border-radius: 50%;
+                            transition: all 0.15s ease;
+                            margin: 0 5px;
+                            font-size: 24px;
+                            line-height: 25px;
+                            color: white;
+                            &:hover {
+                                    cursor: pointer;
+                                    transform: scale(1.2);
+                            }
+                            &.color1 {
+                                background: #87CEEB;
+                            }
+            
+                            &.color2 {
+                                background: #90EE90;
+                            }
+            
+                            &.color3 {
+                                background: #00008B;
+                            }
+                        }
+                    }
+            
+                    input[type="radio"] {
+                        display: none;
+                        height: 0;
+                        width: 0;
+            
+                        &:checked {
+                            ~.productOption {
+                                text-align: center;
+                                box-shadow: 0 0 0 3px rgba(255, 255, 255, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .k2{
+            .img_s{
+                transition: .5s;
+                .line4{
+                    position: relative;
+                    width: 200px;
+            
+                }
+                .pro_name{
+                    left:60px;
+                    bottom: -50px;
+                    font-size: 16px;
+                }
+                &::before{
+                    top:30px;
+                    left: 30px;
+                    width: 160px;
+                    height: 160px;
+                }
+            }
+        }
+    }
+
+
+    .box_s{
+            width: 100%;
+            border-radius: 0;
+        }
+
+}
+@media screen and (max-width:427.98px) {
+    .prd_wrapper{
+        h1{
+            text-align:left;
+        }
+        h3{
+            color: white;
+        }
+        p{
+            text-align: center;
+        }
+        .prd_cont{
+            margin: 0 auto;
+            min-width: 100vw;
+            // background-color: black;
+            
+            .title{
+                h3{
+                    color: white;
+                }
+            }
+            .prd_item,.prd_text,.innnn{
+                width:100%;
+            }
+            .prd_item{
+                width:100%;
+                padding: 50px;
+                height: auto;
+                background-color: #2F4858;
+                .proD_logo{
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 30px;
+                    position: relative;
+                    > a {
+                        img{
+                        width: 60px;
+                        display: block;
+                        margin: 0 auto;
+                        }
+                        &::before{
+                            display: none;
+                            // font-size: 1.2rem;
+                            // font-weight: bold;
+                            // position: absolute;
+                            // top: 45%;
+                            // left: 18%;
+                            // content: 'NOT JUST MAKE';
+                            // color:white;
+                        }
+                        &::after{
+                            display: none;
+                            // font-size: 1.2rem;
+                            // font-weight: bold;
+                            // bottom: 40%;
+                            // right: 10%;
+                            // position: absolute;
+                            // content: 'FRIENDS  BUT INTO IT.';
+                            // color:white;
+                        }
+                    }
+
+                }
+                .title{
+                    h3{
+
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .pro{
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+        .k1{
+            order: 2;
+            .toolbar{
+                width: 100%;
+                margin: 5px auto;
+            }
+            .proD_optionBtn{
+                background-color:map-get($Mapcolor, 'blue');
+                box-shadow: 0px -1px 1px rgba(0,0,0,.25);
+                position:fixed;
+                z-index: 9998;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .k2{
+            order:1;
+            
+                    .img_s{
+                    margin-bottom: 40px;
+                    transition: .5s;
+                    flex-wrap: wrap;
+                    .line4{
+                        margin: 0 auto;
+                        position: relative;
+
+                    }
+                    .pro_name{
+                        flex-basis: 100%;
+                        bottom: -30px;
+                        font-size: 12px;
+
+                        h1{
+                            font-size: 3rem;
+                        }
+                        h3{
+                            color: white;
+                        }
+                    }
+                    &::before{
+                        top:20px;
+                        left: 20px;
+                        width: 220px;
+                        height: 220px;
+                    }
+        
+                }
+        }
+    }
+}
+
+
+
+@keyframes a1 {
+    from {
+        opacity: 0;
+        transform: scale(0);
+
+    }
+    to {
+        opacity:1;
+        transform: scale(1);
+
+    }
+}

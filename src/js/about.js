@@ -1,11 +1,11 @@
 // 切換頁面
 $(function () {
-    $('.about_main').hide();
+
+  $('.about_main').hide();
     $('.about_member').click(function(){
     $(this).children(".about_main").show();
     $('.about_member').not(this).children(".about_main").hide();
     })  
-
 });
 
 // 組員燈箱
@@ -23,7 +23,7 @@ $(function(){
     e.stopPropagation();
     console.log(e.eventPhase);
   })
-})       
+});       
 
 $(function(){
   $('.about_a_introduce2').click(function(){
@@ -39,7 +39,7 @@ $(function(){
      e.stopPropagation();
      console.log(e.eventPhase);
    })
- })  
+ });  
 
  $(function(){
   $('.about_a_introduce3').click(function(){
@@ -55,7 +55,7 @@ $(function(){
      e.stopPropagation();
      console.log(e.eventPhase);
    })
- })  
+ });  
 
  $(function(){
   $('.about_a_introduce4').click(function(){
@@ -71,7 +71,7 @@ $(function(){
      e.stopPropagation();
      console.log(e.eventPhase);
    })
- })   
+ });   
 
  $(function(){
   $('.about_a_introduce5').click(function(){
@@ -87,7 +87,7 @@ $(function(){
      e.stopPropagation();
      console.log(e.eventPhase);
    })
- })   
+ });   
 
  $(function(){
   $('.about_a_introduce6').click(function(){
@@ -103,4 +103,4 @@ $(function(){
      e.stopPropagation();
      console.log(e.eventPhase);
    })
- }) 
+ }); 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="./js/vue.min.js"></script>
+    <title>個人頁面</title>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- 外面mask -->
+    <!-- <section class="personal_mask_user mask"> -->
+        <!-- 彈跳視窗 -->
+        <section class="personal_popup_user popup" id="personalPage_info">
+            <!-- 白線 -->
+            <div class="personal_card_out">
+                <!-- 頭像 -->
+                <div class="personal_card_left">
+                    <img src="personalPage[0][4]" alt="">
+                </div>
+                <!-- 右邊介紹 -->
+                <div class="personal_card_right">
+                    <div class="personal_card_span">
+                        <span>名稱：{{personalPage[0][0]}}</span>
+                        <span>興趣：{{personalPage[0][1]}}</span>
+                        <span>星座：{{personalPage[0][2]}}</span>
+                        <p>自我介紹：
+                            {{personalPage[0][3]}}                            
+                        </p>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="personal_card_button">
+                        <a href="reportForm.html" class="btnL_w--s">檢舉鳥友</a>
+                        <button class="btnL_y">成為鳥友</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>              
+    <!-- </section> -->
+
+    <script>
+        $(function(){
+        // 點擊啟動
+        $('').click(function(){
+            $('.personal_mask_user').css('display', 'block');
+        })
+
+        $('.personal_mask_user').click(function(e){
+            $(this).removeAttr('style');
+            console.log(e.eventPhase);
+        })
+
+        $('.personal_popup_user').click(function(e){
+            e.stopPropagation();
+            console.log(e.eventPhase);
+        })
+        }); 
+        
+        
+
+        // --------------------資料連接----------------------
+        new Vue({
+    el: '#personalPage_info',
+
+    data: {     // 變數放這裡！              
+        personalPage:[],
+    },
+    methods: {
+        
+    },
+    computed: {
+
+    },
+    watch: {},
+    created() {
+        const url = './php/personalPage.php';
+            fetch(url)
+                .then(response => response.json())
+                // .then(text => this.console.log(text));
+                .then(text => {
+                    this.personalPage = text;
+                    })
+    },
+    mounted() {},
+    updated() {},
+
+})
+
+
+
+
+        // --------------------資料連接----------------------
+
+    </script>
+</body>
+</html>

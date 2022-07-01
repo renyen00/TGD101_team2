@@ -208,19 +208,21 @@
             .attend{
             flex-grow: 1;
             color: white;
-    
+                p{
+                    margin: 10px;
+                }
             }
             .social_link{
                 display: flex;
                 justify-content: center;
-                flex-grow: 2;
+                flex-grow: 1;
                 ul{
                     display: flex;
                     justify-content: center;
                     flex-grow: 1;
                     li{
                         text-align: center;
-                        flex-grow: .1;
+                        flex-grow: 1;
                         a{
                             font-size: 24px;
                             cursor: pointer;
@@ -231,7 +233,32 @@
             }
         }
     }
+@media screen and (max-width:427.98px) {
+    .footer_info{
+        padding: 0;
+        background-position:center;
+        padding-bottom: 10px;
+        .footer_wrap{
+            flex-wrap: wrap;
+            .attend{
+                flex-basis: 100%;
+            }
+            .social_link{
+                flex-basis: 100%;
+                ul{
+                    li{
+                        a{
+                            font-size: 36px;
+                            cursor: pointer;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
+}
 .active{
         height: 200px !important;
         transition: .5s;

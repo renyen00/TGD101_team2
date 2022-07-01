@@ -1,18 +1,35 @@
 // 首頁背景
 .index_body{
-    background-color: #2F4858;
-    color: map-get($Mapcolor, 'white');;
-  
+    background-color: map-get($Mapcolor, 'blue');
+    color: map-get($Mapcolor, 'white');
+    font-family: $fontFamily;
+    position: relative;
 }
-// 首頁標題
-.index_title_top{
-    width: 100vw;
-    height: 100vh;
-    // border: 1px red solid;
-    display: flex;
-    display: flex;
+// 首頁鳥
+#index_out{
+    width: 100%;
+    z-index: 99;
+    .index_bird_out{
+    position: absolute;
+    }
+    .index_bird{
+        width: 200px;
 
-    z-index: 0;
+    }
+}
+
+// 首頁標題
+.index_title_out{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    .index_title_top{
+        width: 600px;
+        margin: 0 auto;       
+    }
     .index_h1_before{
         font-size: 96px;
         position: absolute;
@@ -28,7 +45,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -100px;
+        margin-top: -120px;
         margin-left: -80px;
     }
     .index_img_yb{
@@ -37,7 +54,6 @@
         left: 50%;
         margin-top: -180px;
         margin-left: 120px;
-        // border: 1px red solid;
     }
     .index_h1_after{
         font-size: 96px;
@@ -55,11 +71,13 @@
     img{
         width: 100%;
         display: block;
+        border: 1px solid red;
     }
     .index_word_bg{
-        background-color: white;
+        background-color: map-get($Mapcolor, 'white');
         width: 100%;
         height: 600px;
+        border: 1px solid red;
     }
     .index_h3_1{
         text-align: right;
@@ -80,13 +98,12 @@
         text-align: right;
         width: 1200px;
         margin: 0 auto;
-        padding: 100px;
+        padding: 50px;
     }
     .index_h3_4{
-
         width: 1200px;
         margin: 0 auto;
-        padding: 100px;
+        padding: 50px;
     }
 }
 .index_word_3{
@@ -96,53 +113,177 @@
         display: block;
     }
     .index_word_bg2{
-        background-color: white;
+        background-color: map-get($Mapcolor, 'white');
         width: 100%;
         height: 300px;
     }
     .index_h3_5{
         text-align: right;
-        width: 1000px;
+        width: 1200px;
         margin: 0 auto;
     }
 }
 
 
 // 首頁雲
+.index_cloud{
+    width: 100%;
+    height: 100vw;
+    position: relative;
+    img{
+        display: block;
+        position: absolute;
+        // border: 1px solid red;
+        z-index: 10;
+    }
+    .index_cloud_1{
+        width: 30vw;
+        top: 5%;
+        left: 0%;
+    }
+    .index_cloud_2{
+        width: 50vw;
+        top: -5%;
+        left: 20%;
+    }
+    .index_cloud_3{
+        width: 40vw;
+        top: 5%;
+        left: 58%;
+    }
+    .index_cloud_4{
+        width: 50vw;
+        top: 25%;
+        left: 45%; 
+    }
+    .index_cloud_5{
+        width: 55vw;
+        top: 5%;
+        left: 20%;
+
+    }
+    .index_cloud_6{
+        width: 30vw;
+        top: -10%;
+        left: 50%;
+
+    }
+    .index_cloud_7{
+        width: 40vw;
+        top: 20%;
+        left: 10%;   
+    }
+   
+}
 
 
 //鳥嶼==================================================
 
-    // 動畫設定
-
+    // 動畫影格設定
     @keyframes tree {
         from{
-            // margin-left: -.5px;
-            transform: translateX(-1px);
+            transform: translateX(-.5px);
         }
         to{
-            // margin-left: .5px;
-            transform: translateX(1px);
-
+            transform: translateX(.5px);
         }
     }
-    // @keyframes cloud {
-    //     from{
-    //         margin-left: -10px;
-    //     }
-    //     to{
-    //         margin-left: 10px;
-    //     }
-    // }
 
+    @keyframes cloud {
+        from{
+            transform: translateX(-5px);
+        }
+        to{
+            transform: translateX(5px);
+        }
+    }
+
+    @keyframes ballon_blue {
+        0%{
+            left: 58%;
+            transform: rotateX(40deg);
+        }
+        20%{
+            transform: rotateX(20deg);
+        }
+        40%{
+            transform: rotateX(40deg);
+        }
+        60%{
+            transform: rotateX(20deg);
+        }
+        100%{
+            left: 50%;
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes ballon_white {
+        0%{
+            left: 64%;
+            transform: rotateX(40deg);
+        }
+        20%{
+            transform: rotateX(20deg);
+        }
+        40%{
+            transform: rotateX(40deg);
+        }
+        60%{
+            transform: rotateX(20deg);
+        }
+        100%{
+            left: 52%;
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes ballon_typhoon {
+        0%{
+            left: 48%;
+            transform: rotateX(40deg);
+        }
+        20%{
+            transform: rotateX(20deg);
+        }
+        40%{
+            transform: rotateX(40deg);
+        }
+        60%{
+            transform: rotateX(20deg);
+        }
+        100%{
+            left: 60%;
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes coconuttree {
+        from{
+            transform: rotateX(20deg);
+        }        
+        to{
+            transform: rotateX(40deg);
+        }
+    }
+
+    @keyframes streetlight {
+        from{
+            transform: rotateX(15deg);
+        }        
+        to{
+            transform: rotateX(0deg);
+        }
+    }
+    //================================================== 
     .treeA{
-            animation: {
-                name: tree;
-                duration: 1s;
-                iteration-count: infinite;
-                timing-function: ease-out;
-                direction: alternate;
-            }
+        animation: {
+        name: tree;
+        duration: 1s;
+        iteration-count: infinite;
+        timing-function: ease-out;
+        direction: alternate;
+        }    
     }
 
     .treeB{
@@ -177,16 +318,16 @@
         }
     }
 
-    .bush{
-        animation: {
-            name: tree;
-            duration: 1s;
-            delay: .5s;
-            iteration-count: infinite;
-            timing-function: ease-out;
-            direction: alternate;
-        }
-    }
+    // .bush{
+    //     animation: {
+    //         name: tree;
+    //         duration: 1s;
+    //         delay: .5s;
+    //         iteration-count: infinite;
+    //         timing-function: ease-out;
+    //         direction: alternate;
+    //     }
+    // }
 
     .island{
         width: 1440px;
@@ -200,16 +341,31 @@
         display: block;
         margin: 0 auto;
         width: 1180px;
+        position: absolute;
+        top: 32.6%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -999;
     }
     
     // 馬丘比丘======================
     .machuPicchu{
         // display: block;
+        // position: absolute;
+        // top: 1.5%;
+        // left: 31%;
+        width: 160px;
+        height: 110px;
+    }
+    .atagHover{
+        display: block;
         position: absolute;
         top: 1.5%;
         left: 31%;
-        width: 160px;
-        height: 110px;
+        transition: 1s;
+        &:hover{
+            transition: .5s;
+            transform: scale(1.1);}
     }
 
     .river{
@@ -217,6 +373,7 @@
         top: 3.2%;
         left: 13%;
         width: 880px;
+        z-index: -1;
     }
 
     // 商店========================
@@ -235,10 +392,11 @@
         top: 6.4%;
         left: 54%;
         animation: {
-            name: tree;
-            duration: 1s;
+            name: ballon_blue;
+            duration: 4s;
+            delay: 2s;
             iteration-count: infinite;
-            timing-function: ease-out;
+            timing-function: ease-in-out;
             direction: alternate;
         }
     }
@@ -247,11 +405,10 @@
         top: 12.6%;
         left: 58%;
         animation: {
-            name: tree;
-            duration: 1s;
-            delay: .4s;
+            name: ballon_white;
+            duration: 4s;
             iteration-count: infinite;
-            timing-function: ease-out;
+            timing-function: ease-in-out;
             direction: alternate;
         }
     }
@@ -260,11 +417,11 @@
         top: 11.6%;
         left: 50%;
         animation: {
-            name: tree;
-            duration: 1s;
-            delay: .8s;
+            name: ballon_typhoon;
+            duration: 4s;
+            delay: .5s;
             iteration-count: infinite;
-            timing-function: ease-out;
+            timing-function: ease-in-out;
             direction: alternate;
         }
     }
@@ -390,6 +547,14 @@
         top: 13%;
         left: 34%;
         z-index: 1;
+        animation: {
+            name: coconuttree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
     .br2{
         width: 70px;
@@ -398,6 +563,14 @@
         top: 28.4%;
         left: 41.1%;
         z-index: 1;
+        animation: {
+            name: coconuttree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
     }
 
     // 噴水池=============================
@@ -430,7 +603,7 @@
         top: 27.8%;
         left: 68.9%;
         animation: {
-            name: tree;
+            name: coconuttree;
             duration: 1s;
             delay: .5s;
             iteration-count: infinite;
@@ -444,7 +617,18 @@
         left: 78.6%;
         transform: scaleX(-1);
         animation: {
-            name: tree;
+            name: coconuttree;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
+    .bush{
+        animation: {
+            name: coconuttree;
             duration: 1s;
             delay: .5s;
             iteration-count: infinite;
@@ -511,6 +695,17 @@
     }
 
     // 路燈================================
+    .streetLight{
+        animation: {
+            name: streetlight;
+            duration: 1s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
+
     .st1{
         width: 9px;
         height: 56px;
@@ -828,5 +1023,123 @@
     width: 120px;
     display: block;
     margin: 0 auto;
-    margin-top: -666px;
-}    
+    margin-top: -600px;
+}   
+
+// index---------------media query--------------------
+@media (max-width: 575.98px){
+    // 首頁標題
+    .index_title_out{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        display: flex;
+        position: relative;
+        z-index: 10;
+        .index_title_top{
+            width: 100%;
+            height: 200px;
+            margin: 300px auto;
+            position: relative;       
+        }
+        .index_h1_before{
+            font-size: 60px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin-top: 0px;
+            margin-left: -170px;
+        }
+        .index_img_title{
+            display: block;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top:0;
+            bottom:0;        
+            left:0;        
+            right:0;       
+            margin: auto;
+       
+        }
+        .index_img_yb{
+            width: 60px;
+            position: absolute;
+            top: 13%;
+            left: 50%;
+            margin-top: 0px;
+            margin-left: 105px;
+        }
+        .index_h1_after{
+            font-size: 60px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin-top: 0px;
+            margin-left: 50px;
+        }
+    }
+    // 首頁字
+    .index_word_1{
+        color: black;
+
+        img{
+            width: 100%;
+            display: block;
+        }
+        .index_word_bg{
+            background-color: map-get($Mapcolor, 'white');
+            width: 100%;
+            height: 300px;
+        }
+        .index_h3_1{
+            font-size: 22px;
+            text-align: right;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+        .index_h3_2{
+            font-size: 22px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+    }
+    .index_word_2{
+        height: 600px;
+        .index_h3_3{
+            font-size: 22px;
+            text-align: right;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+        .index_h3_4{
+            font-size: 22px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+    }
+    .index_word_3{
+        color: black;
+        img{
+            width: 100%;
+            display: block;
+        }
+        .index_word_bg2{
+            background-color: map-get($Mapcolor, 'white');
+            width: 100%;
+            height: 400px;
+        }
+        .index_h3_5{
+            font-size: 22px;
+            text-align: right;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+    }
+
+}

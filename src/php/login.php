@@ -20,11 +20,15 @@
     foreach($data as $index => $row){
         $_SESSION['UserN'] = $row["NAME"];//欄位名稱
         //    echo $row["NAME"];   
-            echo " / ";
         $_SESSION['UserNN'] = $row["NICKNAME"];    //欄位名稱
-            echo " / ";
         $_SESSION['UserNB'] = $row["AVATAR"];    //欄位名稱	
-            echo "<br>";       
+        // $_SESSION[''] = $row[""];
+        // $_SESSION[''] = $row[""]; 
+        // $_SESSION[''] = $row[""]; 
+        // $_SESSION[''] = $row[""]; 
+        // $_SESSION[''] = $row[""]; 
+        // $_SESSION[''] = $row[""]; 
+        // $_SESSION[''] = $row[""];    
     }
     header("location:../index.html");
     }else{

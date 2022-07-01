@@ -9,6 +9,7 @@
         a{
             padding: 35px;
             display: flex;
+            text-decoration: none;
         }
         img{
             width: 40px;
@@ -43,13 +44,14 @@
                 &:hover{
                     color: $white;
                 }
-            }
-            .backend_header_now{
-                color: $yellow;
-                font-weight: bold;
-                .iconify{
-                    display: block;       
+                &.backend_header_now{
+                    color: $yellow;
+                    font-weight: bold;
+                    .iconify{
+                        display: block;       
+                    }
                 }
+
             }
         }
     }
@@ -62,8 +64,10 @@
         margin-bottom: 40px;
         color: $blue;
         h1{flex-grow: 1;}
-        i{line-height: 40px;
-        margin-right: 20px;}
+        i{
+            font-size: $back_h4;
+            margin-right: 20px;
+        }
         h2{line-height: 40px;}
     }
 

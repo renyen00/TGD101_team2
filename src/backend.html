@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include('./layout/backend/backend_link.html')
+
+    <title>鳥語鳥嶼後台管理</title>
+</head>
+<body class="backend_body">
+    <div id="app">
+        <backheader @chg="changeleft"></backheader>
+       
+        <!-- <back1 :h1="title"></back1> -->
+        <component :is="page" :h1="title"></component>>
+    </div>
+    <!-- 
+    <div class="backend_div_popup">
+        <section>
+            <i class="fa-solid fa-x"></i>
+            <ul>
+                <li><h2>發文人</h2><h3>account018</h3></li>
+                <h2>被檢舉內容</h2>
+            </ul>
+            <div class="backend_div_content">
+                <p>我要去跑步了!</p>
+                <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
+            </div>
+            <ul>
+                <li><h2>檢舉人</h2><h3>account_18</h3></li>
+                <li><h2>檢舉原因</h2></li>
+            </ul>
+            <div class="backend_div_content">
+                <p>好想睡覺</p>
+            </div>
+            <div class="backend_pass">
+                <input type="radio" name="pass">通過
+                <input type="radio" name="pass">駁回
+            </div>
+            <button class="back_btnM">關閉</button>
+        </section>
+    </div>
+    -->
+    <script src="./js/backend.min.js"></script>
+    <script src="./js/backend2.min.js"></script>
+    <script src="./js/backend3.min.js"></script>
+    <script src="./js/backend4.min.js"></script>
+    <script src="./js/backend5.min.js"></script>
+    <script src="./js/backend6.min.js"></script>
+    <script src="./js/backend7.min.js"></script>
+    <script src="./js/backendheader.min.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                content:'',
+                datalist:[],
+                list:[],
+                title:'貼文管理',
+                page:'back1',
+            },
+            methods: {
+                changeleft(e,n,v){
+                    $('.backend_header').find('.backend_header_now').removeClass('backend_header_now');
+                        e.classList.add('backend_header_now')
+                    this.page = n
+                    this.title=v
+                }
+            },
+        });
+    </script>
+</body>
+</html>

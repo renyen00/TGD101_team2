@@ -38,12 +38,14 @@
                         border: 2px solid $blue;
                         border-radius: 10px;
                         width: 300px;
+                        display: none;
                     }
                     textarea{
                         border: 2px solid $blue;
                         border-radius: 10px;
                         width: 300px;
                         height: 150px;
+                        display: none;
                     }
                     .iconify{
                         font-size: 4rem;
@@ -53,6 +55,18 @@
                         transform: scaleX(-100%);
                         color: $blue;
                         display: none;
+                    }
+
+                    &.revise{
+                        p{
+                            display: none;
+                        }
+                        input,textarea{
+                            display: block;
+                        }
+                        .personal_show{
+                            display: block;
+                        }
                     }
                 }
                 .li_blur{
@@ -78,7 +92,6 @@
             display: flex;
             justify-content: center;
             button{
-                // font-family: $fontFamily;
                 line-height: 45px;
                 margin: 0 40px 100px;
                 position: relative;
@@ -89,45 +102,63 @@
                     left: 77px;
                 }
             }
+            &.revise{
+                
+            }
         }
-        .personal_div_popup{
-            display: none;
-            width: 800px;
+    }
+    .personal_div_popup{
+        display: none;
+        position: fixed;
+        width: 100vw;
+        
+        color: $blue;
+        top: 10vh;
+        section{
+            position: relative;
+            width: 600px;
+            background-color: $white;
             text-align: center;
             border: 5px solid $blue;
             border-radius: 50px;
             padding: 60px;
             margin: 0 auto;
-            color: $blue;
-            position: relative;
-            h3{margin-bottom: 80px;}
-            ul{
-                width: 414px;
-                margin: 0 auto;
-            }
-            li{
-                display: flex;
-                margin-bottom: 40px;
-                justify-content: space-between;
-                height: 50px;
-                line-height: 50px;
-                input{
-                    border: 2px solid $blue;
-                    border-radius: 10px;
-                    width: 300px;
-                }
-            }
-            button{
-                margin: 0 auto;
-            }
-            i{
-               font-size: 3rem;
-               position: absolute;
-               right: 30px;top: 30px;
+        }
+        h3{margin-bottom: 80px;}
+        ul{
+            width: 414px;
+            margin: 0 auto;
+        }
+        li{
+            display: flex;
+            margin-bottom: 40px;
+            justify-content: space-between;
+            height: 50px;
+            line-height: 50px;
+            input{
+                border: 2px solid $blue;
+                border-radius: 10px;
+                width: 300px;
             }
         }
-        .personal_show{
-            display: block;
+        button{
+            margin: 0 auto;
         }
+        p{
+            color:red;
+            margin: -20px auto 20px;
+        }
+        i{
+           font-size: 3rem;
+           position: absolute;
+           right: 30px;top: 30px;
+           cursor: pointer;
+        }
+    }
+    .personal_show{
+        display: block;
+    }
+    .personal_hide{
+        display: none;
     }
 }

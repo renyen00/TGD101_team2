@@ -2,13 +2,15 @@
     background-image: url('../images/personaltest.svg');
     background-repeat: no-repeat;
     background-size: contain;
+    // background-size: 100vw 700px;
     background-position: top center;
+    // width: 100vw;
 }
 .personal_div_wrapper{
     width: 1100px;
     margin: 0 auto 0;
     .personal_logo{
-        max-width: 300px;
+        width: 20.84vw;
         margin-top: 100px;
         margin-bottom: 125px;
     }

@@ -144,6 +144,7 @@
 
             .nav-link{
                 opacity: 1;
+                margin: 10px;
                 transform: translateX(0);
                 transition: opacity .4s ease-in-out 1s
                     // transform .6s cubic-bezier(
@@ -161,6 +162,27 @@
                 // &:nth-last-of-type(4){
                 //     transition-delay: .8s;
                 // }
+                .social_link{
+                    display: flex;
+                    justify-content: center;
+                    flex-grow: 1;
+                    ul{
+                        display: flex;
+                        justify-content:space-evenly;
+                        flex-grow: 1;
+                        li{
+                            text-align: center;
+                            a{
+                                font-size: 48px;
+                                cursor: pointer;
+                                color: white;
+                                &:hover{
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         .menu-btn:checked +.menu-icon{
@@ -222,5 +244,56 @@
     }
     100%{
         transform: translateY(0px) rotate(90deg);
+    }
+}
+// 顯示會員名稱
+.main-header{
+    .navItem{
+        .menu-icon{
+            .bird{
+                position: absolute;
+                right: -5px;
+                top: -5px;
+                display: block;
+                z-index: 10000;
+                cursor:default;
+                #memberInfo{
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content:space-around;
+                    background-color:transparent;
+                    border-radius: 30px;
+                    transition: .3s;
+                    overflow: hidden;
+                    span,a{
+                        display: none;
+                        transition: 1s;
+                        color: map-get($Mapcolor, 'blue' );
+                    }
+                    img{
+                        width: 50px;
+                        border-radius: 50%;
+                    }
+                    &:hover{
+                        position: relative;
+                        top: 0;
+                        padding-right: 10px;
+                        background-color: #fff;
+                        width: 240px;
+                        height: 50px;
+                        outline: 3px solid map-get($Mapcolor,'yellow');
+                        border-radius: 30px;
+                        span,a{
+                            display: inline-block;
+                            line-height: 50px;
+                            margin-left: 10px;
+                            transition: 1s;
+
+                        }
+                    }
+                }
+            }
+        }
     }
 }

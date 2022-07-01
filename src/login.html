@@ -15,15 +15,15 @@
     <div class="sign_container sign_bg">
         <main class="sign_wrapper" id="sign_wrapper">
             <div class="form-cont signUp-cont">
-                <form action="">
+                <form action="./php/createAcc.php" method="POST">
                     <h4>加入鳥語 島嶼</h4>
-                    <input type="text" placeholder="姓名">
-                    <input type="text" placeholder="暱稱">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="密碼">
+                    <input type="text" placeholder="姓名" name="NAME">
+                    <input type="text" placeholder="暱稱" name="NICKNAME">
+                    <input type="email" placeholder="Email" name="EMAIL">
+                    <input type="password" placeholder="密碼" name="PASSWORD">
                     <input type="password" placeholder="確認密碼">
-                    <input type="tel" placeholder="行動電話">
-                    <input type="date">
+                    <input type="tel" placeholder="行動電話" name="PHONE">
+                    <input type="date" name="BIRTH">
                     <div class="btnGroup">
                         <input class="btnS_b" type="submit" value="清除">
                         <input class="btnS_b" type="submit" value="送出">
@@ -31,12 +31,12 @@
                 </form>
             </div>
             <div class="form-cont signIn-cont">
-                <form id="logIn" action="">
+                <form id="logIn" action="./php/login.php" method="POST">
                     <h4>登入</h4>
                     <div class="g-signin2" data-width="300" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
                     <span class="hr-login">or</span>
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="密碼">
+                    <input type="email" placeholder="Email" name="EMAIL">
+                    <input type="password" placeholder="密碼" name="PASSWORD">
                     <div class="btnGroup">
                         <input class="btnS_y" type="submit" value="清除">
                         <input class="btnS_y" type="submit" value="登入">

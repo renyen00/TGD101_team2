@@ -1,4 +1,60 @@
+Vue.component('back1',{
+    props:['h1'],
+    data(){
+        return{
+            content:'',
+            php:[],
+            php2:[],
+            php3:[],
+            php4:[],
+        }
+    },
+    template:`
+        <main class="backend_main">
+            <div class="backend_main_top">
+                <h1>{{h1}}</h1>              
+                <h3 class="click">登出</h3>
+            </div>
+            <btn @chg='change'></btn>
 
+            <component :is='content'  :infor='php' :infor2='php2' :infor3='php3' :infor4='php4'></component>
+            
+        </main>
+        `,
+    methods:{
+        change(e,page){
+            $('.backend_ul_page').find('.nowpage').removeClass('nowpage');
+            e.classList.add('nowpage')
+            this.content = page
+        },
+    },
+    mounted() {
+        const url1 = './php/backend1_1.php';
+        fetch(url1)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php = text
+            } );
+        const url2 = './php/backend1_2.php';
+        fetch(url2)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php2 = text
+            } );
+        const url3 = './php/backend1_3.php';
+        fetch(url3)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php3 = text
+            } );
+        const url4 = './php/backend1_4.php';
+        fetch(url4)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php4 = text
+            } ); 
+    },
+})
 
 Vue.component('btn',{
     data(){
@@ -171,8 +227,8 @@ Vue.component('backa4',{
             </tr>
             <tr>
                 <td></td>
-                <td><input placeholder="關鍵字"></td>
-                <td><input placeholder="回覆內容"></td>
+                <td><input placeholder="關鍵字" class='back_a4'></td>
+                <td><input placeholder="回覆內容" class='back_a4'></td>
                 <td>
                     <button class="back_btnS">新增</button>
                     <button class="back_btnS">刪除</button>

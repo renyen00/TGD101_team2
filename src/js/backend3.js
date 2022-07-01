@@ -23,6 +23,11 @@ Vue.component('back3',{
     })
 
 Vue.component('backc',{
+    data(){
+        return{
+            php:[],
+        }
+    },
     template:`
         <div>
             <ul class="backend_ul_sort">
@@ -59,4 +64,12 @@ Vue.component('backc',{
             </table> 
         </div>
         `,
+        mounted() {
+            const url1 = './php/backend3.php';
+            fetch(url1)
+                .then(response => response.json())
+                .then((text) =>{
+                    this.php = text
+                } );
+        },
     })

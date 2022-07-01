@@ -16,6 +16,33 @@
         <!-- <back1 :h1="title"></back1> -->
         <component :is="page" :h1="title"></component>
     </div>
+    <div class="backend_div_popup backend_show">
+        <section>
+            <i class="fa-solid fa-x"></i>
+            <div class="backend_product">
+                <ul>
+                    <li><h2>編號</h2><h3>01</h3></li>
+                    <li><h2>品名</h2><h3>這是名</h3></li>
+                    <li><h2>價格</h2><h3>$1000</h3></li>
+                    <input type="radio" name="onsell">上架
+                    <input type="radio" name="onsell">下架
+    
+                </ul>
+                <h3>顏色</h3>
+                <ul>
+                    <li><input type="file"></li>
+                    <li><input type="file"></li>
+                    <li><input type="file"></li>
+                </ul>
+            </div>
+            <div class="backend_div_content ">
+                <p>好想睡覺,好想補課,我要去跑步了!</p>
+                <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
+            </div>
+            <button class="backend_btn_dosomething_red">刪除留言</button>
+            <button class="back_btnM">關閉</button>
+        </section>
+    </div>
     
 
     <script src="./js/backend.min.js"></script>
@@ -27,63 +54,7 @@
     <script src="./js/backend7.min.js"></script>
     <script src="./js/backendheader.min.js"></script>
     <script>
-        Vue.component('back1',{
-            props:['h1'],
-            data(){
-                return{
-                    content:'',
-                    php:[],
-                    php2:[],
-                    php3:[],
-                    php4:[],
-                }
-            },
-            template:`
-                <main class="backend_main">
-                    <div class="backend_main_top">
-                        <h1>{{h1}}</h1>              
-                        <h3 class="click">登出</h3>
-                    </div>
-                    <btn @chg='change'></btn>
-
-                    <component :is='content'  :infor='php' :infor2='php2' :infor3='php3' :infor4='php4'></component>
-                    
-                </main>
-                `,
-            methods:{
-                change(e,page){
-                    $('.backend_ul_page').find('.nowpage').removeClass('nowpage');
-                    e.classList.add('nowpage')
-                    this.content = page
-                },
-            },
-            created() {
-                const url1 = './php/backend1_1.php';
-                fetch(url1)
-                    .then(response => response.json())
-                    .then((text) =>{
-                        this.php = text
-                    } );
-                const url2 = './php/backend1_2.php';
-                fetch(url2)
-                    .then(response => response.json())
-                    .then((text) =>{
-                        this.php2 = text
-                    } );
-                const url3 = './php/backend1_3.php';
-                fetch(url3)
-                    .then(response => response.json())
-                    .then((text) =>{
-                        this.php3 = text
-                    } );
-                const url4 = './php/backend1_4.php';
-                fetch(url4)
-                    .then(response => response.json())
-                    .then((text) =>{
-                        this.php4 = text
-                    } ); 
-            },
-        })
+        
         let vm = new Vue({
             el:'#app',
             data:{

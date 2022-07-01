@@ -24,13 +24,22 @@
 
 // };
 new Vue({
-    el:'',
+    el:'#memberInfo',
     data:{
         php:[],
     },
+    template:{
+        
+    }
+    ,
     mounted(){
         const url =`../php/checkLogin.php`;
-        
+        fetch(url)
+        .then(resp => resp.json())
+        .then(member => {
+            nickname.textContent =`Hi! ${member.nickname} 歡迎回來`;
+
+        });
 
     }
 })

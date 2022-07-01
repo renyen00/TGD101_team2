@@ -145,26 +145,28 @@
         width: 80px;
         display: block;
         position: absolute;
-        left:535px;
+        left:600px;
     }
     .role_light_center{
-        width: 350px;
+        width: 330px;
         display: block;
         position: absolute;
-        left: 400px;
-        top: 20px;
+        left: 465px;
+        top: 50px;
         z-index: -10;
+
     }
 }
 .role_show_out{
     position: relative;
-    // 展示區
+    // 打扮區
     .role_show_area{
         position: absolute;
         width: 280px;
         height: 280px;
-        left: 420px;
-        top: 160px;
+        left: 480px;
+        top: 200px;
+        
         // 鳥類
         .role_show_bird img{
             position: absolute;
@@ -186,6 +188,7 @@
             width: 120px;
             top: 15%;
             left: 30%;
+
         }
         // 飾品
         .role_show_other img{
@@ -196,19 +199,6 @@
         }
     }
 
-    // 放大縮小
-    .role_button_cloud{
-        display: flex;
-        position: absolute;
-        width: 200px;
-        left: 470px;
-        top: 480px;
-        img{
-            margin: 15px;
-            width: 70px;
-            cursor: pointer;
-        }
-    }
 }
 
 // role飾品區
@@ -227,7 +217,7 @@
     .role_glasses{
         width: 100px;
         height: 400px;
-        margin: 100px 15px;
+        margin: 100px 50px;
         box-sizing: border-box;
     }
     .role_accessory_glasses{
@@ -259,7 +249,7 @@
     .role_hat{
         width: 100px;
         height: 500px;
-        margin: 50px 10px;
+        margin: 50px 0;
         box-sizing: border-box;
     }
     .role_accessory_hat{
@@ -292,7 +282,7 @@
     .role_other{
         width: 100px;
         height: 400px;
-        margin: 100px 15px;
+        margin: 100px 50px;
         box-sizing: border-box;
     }
     .role_accessory_other{
@@ -403,18 +393,32 @@
             position: static;
             margin: 0 auto;
         }
-        // 飾品區
-        .role_section_accessory{
-
+    }
+    // 飾品區
+    .role_section_accessory{
+        display: flex;
+        margin: 0 auto;
+        // 眼鏡
+        .role_glasses{
+            margin: 100px 30px;
         }
+        // 帽子
+        .role_hat{
+            margin: 50px auto;
+        }
+        // 飾品
+        .role_other{
+            margin: 100px 30px;
+        }
+   
     }
     .role_show_out{
         position: absolute;
         top: 0;
         left: 0;
-        // 展示區
+        // 打扮區
         .role_show_area{
-            top: 180px;
+            top: 250px;
             left: 50px;
         }
         // 放大縮小

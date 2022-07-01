@@ -58,7 +58,7 @@ $(function(){
           if($($('.role_accessory_hat ul')[i]).css('top') == '-630px'){
               $($('.role_accessory_hat ul')[i]).css('display','none');
               setTimeout(function(){
-                  $($('.role_accessory_hat ul')[i]).css('top','270px');
+                  $($('.role_accessory_hat ul')[i]).css('top','360px');
                   $($('.role_accessory_hat ul')[i]).css('display','block');
               }, 700)
           }
@@ -77,7 +77,7 @@ $(function(){
           if($($('.role_accessory_hat ul')[i]).css('top') == '630px'){
               $($('.role_accessory_hat ul')[i]).css('display','none');
               setTimeout(function(){
-                  $($('.role_accessory_hat ul')[i]).css('top','-270px');
+                  $($('.role_accessory_hat ul')[i]).css('top','-360px');
                   $($('.role_accessory_hat ul')[i]).css('display','block');
               }, 700)
           }

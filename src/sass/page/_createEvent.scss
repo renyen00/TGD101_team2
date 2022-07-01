@@ -17,6 +17,10 @@
     border-radius: 5px;
 }
 
+.swal2-actions button{
+    font-size: 1.6em;
+}
+
 .createEvent_div_wrapperB{
     width: 100%;
     // border: 1px solid #000;
@@ -94,6 +98,7 @@
         
             h4{
                 font-weight: bold;
+                
             }
         
             input, select, textarea{
@@ -107,6 +112,14 @@
                 font-size: 2rem;
                 outline: none;
                 padding: 10px;
+            }
+
+            .--requiredInput{
+                border: 2px solid #FF0202;
+            }
+
+            .--requiredSpan{
+                color: #FF0202;
             }
 
             #eventDate{
@@ -143,17 +156,23 @@
                 border-radius: 30px;
                 color: map-get($Mapcolor, 'blue');
             }
-        
-            span{
-                color: red;
-                font-weight: bold;
-                margin-left: 10px;
-            }
         }
+
         
-        .createEvent_ul_formL li textarea{
-            height: 180px;
-            resize: none;
+        .createEvent_ul_formL{
+            li textarea{
+                height: 180px;
+                resize: none;
+            }
+            li select{
+                width: 147px;
+            }
+            .numOfPeople{
+                h5{
+                    display: inline-block;
+                }
+            }
+            
         }
         
         .createEvent_section_feeAndDeadline{
@@ -168,7 +187,6 @@
         
             span{
                 margin-left: 5%;
-                font-size: 2rem;
             }
 
             div{
@@ -293,6 +311,7 @@
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
                 background-image: url('../images/backgroundimg/createEvent_presetimg1.webp');
                 overflow: hidden;
+                cursor: pointer;
 
                 img{
                     width: 300px;
@@ -473,6 +492,7 @@
                     font-size: 2rem;
                     outline: none;
                     padding: 10px;
+                    
                 }
             
                 option{
@@ -483,15 +503,25 @@
                 }
             
                 span{
-                    color: red;
-                    font-weight: bold;
                     margin-left: 10px;
                 }
             }
             
-            .createEvent_ul_formL li textarea{
-                height: 180px;
-                resize: none;
+            .createEvent_ul_formL{
+                li textarea{
+                    height: 180px;
+                    resize: none;
+                }
+                li select{
+                    width: 143px;
+                }
+                .numOfPeople{
+                    h5{
+                        font-size: 1.6rem;
+                        display: inline-block;
+                    }
+                }
+                
             }
             
             .createEvent_section_feeAndDeadline{
@@ -502,11 +532,11 @@
                     text-align: center;
                     font-weight: bold;
                     margin-bottom: 2%;
+                    font-size: 2rem;
                 }
             
                 span{
                     margin-left: 5%;
-                    font-size: 2rem;
                 }
     
                 div{
@@ -550,7 +580,7 @@
             .createEvent_icon_arrow{
                 width: 20%; //
                 position: absolute;
-                top: 34%;   //
+                top: 35%;   //
                 left: 75%;  //
             }
             .createEvent_icon_cloud3{

@@ -8,7 +8,7 @@
 
     //建立SQL語法
 //     $sql = "SELECT * FROM TGD101team2.PLACE;";
-    $sql = "SELECT * FROM TGD101team2.PLACE where TYPE_ID = :typeid";
+    $sql = "SELECT * FROM PLACE where TYPE_ID = :typeid";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(":typeid", $typeid['typeid']); // 第幾個問號
     $statement->execute();

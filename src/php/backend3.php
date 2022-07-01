@@ -5,7 +5,8 @@
 
 
     //建立SQL語法
-    $sql = "";
+    $sql = "SELECT a.ID,a.NAME,a.PRICE,a.TEXT,a.STATUS,b.TYPE,a.MATERIAL,a.PIC,a.PIC2,a.PIC3 FROM PRODUCT a
+    join PRODUCT_TYPE b on a.TYPE = b.ID";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);

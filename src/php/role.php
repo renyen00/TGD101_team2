@@ -27,7 +27,7 @@
         $r = file_put_contents($imageSrc, $data);
                
         //建立SQL語法
-        $sql = "INSERT INTO TGD101team2.MEMBER(AVATAR) 
+        $sql = "UPDATE INTO TGD101team2.MEMBER(AVATAR) 
         VALUES (:AVATAR)
         ";
 

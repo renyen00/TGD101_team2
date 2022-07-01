@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大嶼商行</title>
     @@include('./layout/head.html')
-    <script src="./js/vue.min.js"></script>
+    <!-- <script src="./js/vue.min.js"></script> -->
+    <!-- <script src="./js/nav.min.js"></script> -->
     
 </head>
 <body id="store_body" class="bgcBlue">
@@ -52,56 +53,61 @@
                 <h4>{{couldBtn}}</h4>
             </button> -->
 
-            <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="70" data-height="70"></span>
-
-            <button class="store_btn_filter_All">
+            
+            <button class="store_btn_filter" id="store_filter_all">
+                <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="70" data-height="70"></span>
                 <h4>ALL</h4>
             </button>
-            <button class="store_btn_filter">
+            <button class="store_btn_filter" id="store_filter_1">
+                <span id="store_icon_birdT1" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="70" data-height="70"></span>
                 <h4>服飾</h4>
             </button>
-            <button class="store_btn_filter">
+            <button class="store_btn_filter" id="store_filter_2">
+                <span id="store_icon_birdT2" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="70" data-height="70"></span>
                 <h4>配件</h4>
             </button>
-            <button class="store_btn_filter">
+            <button class="store_btn_filter" id="store_filter_3">
+                <span id="store_icon_birdT3" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="70" data-height="70"></span>
                 <h4>其他</h4>
             </button>
         </section>
 
-        <main class="store_main_product">
-            <div class="productWrapper">
+        <main class="store_main_product" id="productInformation">
+            <!-- <component :is="countent" :productinfo="productinfo"></component> -->
+            <div class="productWrapper" :data-type="product[2]" v-for="product in render_list">
                 <div class="productFrame"></div>
                 <div class="productCircle bgcYellow"></div>
-                <a href="./productDetail.html"><img src="./images/store/t-shirt.png" class="productPic"></a>
-                <h4 class="producNm textWhite">嶼商鋪-踏上回憶的旅程</h4>
+                <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
+                <p class="producNm textWhite">{{product[1]}}</p>
                 <ul class="productColor">
-                    <li class="productColorLi bgcWhite"></li>
-                    <li class="productColorLi bgcPink"></li>
-                    <li class="productColorLi bgcYellow"></li>
+                    <li class="productColorLi bgcWhite" :data-img="product[0]" @click="changeImg"></li>
+                    <li class="productColorLi bgcYellow" :data-img="product[3]" @click="changeImg"></li>
+                    <li class="productColorLi bgcBlue" :data-img="product[4]" @click="changeImg"></li>
                 </ul>
                 <div class="productBtn">
-                    <a href="./shoppingCart.html" class="pay btnL_w">直接結帳</a>
-                    <button class="addToCart btnL_y">加入購物車</button>
+                    <a href="./payment.html" class="pay btnS_w">直接結帳</a>
+                    <button class="addToCart btnS_y" @click="addToCart2" :data-id="product">加入購物車</button>
                 </div>
             </div>
+            <!-- @@include('./layout/product.html')
             @@include('./layout/product.html')
             @@include('./layout/product.html')
             @@include('./layout/product.html')
             @@include('./layout/product.html')
             @@include('./layout/product.html')
             @@include('./layout/product.html')
-            @@include('./layout/product.html')
-            @@include('./layout/product.html')
-            <span id="hidden"></span>
-            <section class="store_section_moreBtn">
-                <span id="birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="60" data-height="60" data-flip="horizontal"></span>
-                <button class="moreBtn btnXL_w">更多商品</button>
-            </section>
+            @@include('./layout/product.html') -->
         </main>
+        <span id="hidden"></span>
+        <section class="store_section_moreBtn">
+            <span id="birdBold" class="iconify" data-icon="ph:bird-bold" style="color: white;" data-width="60" data-height="60" data-flip="horizontal"></span>
+            <button class="store_moreBtn btnXL_w">更多商品</button>
+        </section>
 
         
         
         @@include('./layout/footer.html') 
         <script src="./js/store.min.js"></script>
+        <!-- <script src="./js/nav.min.js"></script> -->
 </body>
 </html>

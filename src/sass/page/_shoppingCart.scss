@@ -8,11 +8,12 @@
         .shoppingCart_main_wrapper{
             max-width: 100%;
             margin: 0 auto;
+            padding-top: 2%;
             // position: absolute;
-            background-image: url(../../images/shoppingCart/shoppingCartBg.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: left bottom;
+            // background-image: url(../images/shoppingCart/shoppingCartBg.png);
+            // background-repeat: no-repeat;
+            // background-size: contain;
+            // background-position: left bottom;
 
             .shoppingCart_header{
                 // border: 1px solid pink;
@@ -69,7 +70,7 @@
             .shoppingCart_section_listWrap{
                 width: 1100px;
                 margin: 0 auto;
-                border: 5px solid map-get($Mapcolor, 'blue');
+                border: 5px solid map-get($Mapcolor, 'yellow');
                 border-radius: 0 0 10px 10px;
 
                 ul{
@@ -77,7 +78,6 @@
                     width: 100%;
 
                     .shoppingCart_li_list{
-                        // border-bottom: 5px dashed map-get($Mapcolor, 'blue');
                         width: 970px;
                         margin: 0 auto;
                         display: flex;
@@ -86,12 +86,12 @@
 
                         .pics{
                             // border: 1px solid yellow;
-                            width: 385px;
+                            width: 269px;
                             position: relative;
 
                             .circle{
-                                width: 235px;
-                                height: 235px;
+                                width: 185px;
+                                height: 185px;
                                 border-radius: 50%;
                                 position: absolute;
                                 top: 0;
@@ -101,8 +101,8 @@
                             
                             img{
                                 position: absolute;
-                                bottom: 10%;
-                                left: 10%;
+                                bottom: 0;
+                                left: 0;
                             }
                         }
 
@@ -112,20 +112,33 @@
 
                             #name{
                                 display: block;
-                                width: 335px;
-                                margin: 0 auto;
+                                width: 100%;
+                                text-align: center;
+                                font-size: 3.2rem;
+                                padding: 30px 0;
                             }
 
                             h4{
                                 // border: 1px solid rgb(128, 0, 34);
                                 text-align: center;
+                                // display: block;
                             }
 
                             #price{
-                                width: 140px;
+                                // border: 1px solid orangered;
+                                width: 100%;
+                                font-size: 3.2rem;
+                                padding: 30px 0;
+                                text-align: center;
                             }
                         }
-
+                        #shoppingCart_icon_trash{
+                            border: none;
+                            height: 42px;
+                            position: relative;
+                            bottom: -145px;
+                            cursor: pointer;
+                        }
                     }
                     
                     .dashLine{
@@ -263,31 +276,22 @@
                 }
             }
         }
-
-        // .bgWave{
-        //     display: block;
-        //     margin: 0 auto;
-        //     width: 100%;
-        //     // position: absolute;
-        //     // z-index: -10;
-        //     // bottom: 50%;
-        // }
         
         .shoppingCart_section_promoH{
             margin: 0 auto;
-            // position: absolute;
-            // bottom: 0;
+            width: 1100px;
+            // padding-bottom: 20%;
             
             .promoWrap{
                 // border: 1px solid pink;
-                width: 1200px;
+                width: 1100px;
                 margin: 0 auto;
-                margin-top: -1%;
+                // margin-top: -1%;
             }
             
             h1{
                 text-align: center;
-                // margin-top: 115px;
+                padding-top: 10%;
             }
             
             h3{
@@ -296,10 +300,14 @@
                 margin-bottom: 85px;
             }
             
-            .promo{
+            #productInformation{
                 display: flex;
-                flex-direction: row;
+                flex-flow: row wrap;
                 gap: 14.25px;
+                width: 930px;
+                height: 450px;
+                overflow: hidden;
+                margin: 0 auto;
             }
         }
     // }

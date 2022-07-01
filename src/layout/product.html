@@ -1,15 +1,68 @@
-<div class="productWrapper">
+
+
+<!-- <div class="productWrapper"  v-for="product in productInfo">
     <div class="productFrame"></div>
     <div class="productCircle bgcYellow"></div>
-    <a href="../productDetail.html"><img src="./images/store/cap.png" class="productPic"></a>
-    <h4 class="producNm textWhite">嶼商鋪-踏上回憶的旅程</h4>
+    <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
+    <p class="producNm textWhite">{{product[1]}}</p>
     <ul class="productColor">
         <li class="productColorLi bgcWhite"></li>
         <li class="productColorLi bgcPink"></li>
         <li class="productColorLi bgcYellow"></li>
     </ul>
     <div class="productBtn">
-        <a href="../shoppingCart.html" class="pay btnL_w">直接結帳</a>
-        <button class="addToCart btnL_y">加入購物車</button>
+        <a href="./shoppingCart.html" class="pay btnS_w">直接結帳</a>
+        <button class="addToCart btnS_y">加入購物車</button>
     </div>
+</div> -->
+
+<div id="productInformation">
+    <div class="productWrapper" :data-type="product[2]" v-for="product in render_list">
+        <div class="productFrame"></div>
+        <div class="productCircle bgcYellow"></div>
+        <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
+        <p class="producNm textWhite">{{product[1]}}</p>
+        <ul class="productColor">
+            <li class="productColorLi bgcWhite" :data-img="product[0]" @click="changeImg"></li>
+            <li class="productColorLi bgcYellow" :data-img="product[3]" @click="changeImg"></li>
+            <li class="productColorLi bgcBlue" :data-img="product[4]" @click="changeImg"></li>
+        </ul>
+        <div class="productBtn">
+            <a href="./payment.html" class="pay btnS_w">直接結帳</a>
+            <button class="addToCart btnS_y">加入購物車</button>
+        </div>
+    </div>
+    
+    <!-- <div class="productWrapper" :data-type="product[2]" v-for="product in render_list">
+        <div class="productFrame"></div>
+        <div class="productCircle bgcYellow"></div>
+        <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
+        <p class="producNm textWhite">{{product[1]}}</p>
+        <ul class="productColor">
+            <li class="productColorLi bgcWhite"></li>
+            <li class="productColorLi bgcYellow"></li>
+            <li class="productColorLi bgcBlue"></li>
+        </ul>
+        <div class="productBtn">
+            <a href="./shoppingCart.html" class="pay btnS_w">直接結帳</a>
+            <button class="addToCart btnS_y">加入購物車</button>
+        </div>
+    </div>
+
+    <div class="productWrapper" :data-type="product[2]" v-for="product in render_list">
+        <div class="productFrame"></div>
+        <div class="productCircle bgcYellow"></div>
+        <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
+        <p class="producNm textWhite">{{product[1]}}</p>
+        <ul class="productColor">
+            <li class="productColorLi bgcWhite"></li>
+            <li class="productColorLi bgcYellow"></li>
+            <li class="productColorLi bgcBlue"></li>
+        </ul>
+        <div class="productBtn">
+            <a href="./shoppingCart.html" class="pay btnS_w">直接結帳</a>
+            <button class="addToCart btnS_y">加入購物車</button>
+        </div>
+    </div> -->
 </div>
+

@@ -42,13 +42,13 @@
                 <th class="oc_th_title">訂單金額</th>
             </tr>
 
-            <tr class="orderCompleted_tr_td textBlue" id="oc_orderInfo">
-                <td class="oc_td_detail">2022-05-26</td>
-                <td class="oc_td_detail">210205033517</td>
-                <td class="oc_td_detail">處理中</td>
-                <td class="oc_td_detail">2022-06-20</td>
-                <td class="oc_td_detail">信用卡付款</td>
-                <td class="oc_td_detail">NTD5115</td>
+            <tr class="orderCompleted_tr_td textBlue" id="oc_orderInfo" v-if="orderInfo[0]">
+                <td class="oc_td_detail">{{orderInfo[0][0]}}</td>
+                <td class="oc_td_detail">Pd-{{orderInfo[0][1]}}</td>
+                <td class="oc_td_detail">{{orderInfo[0][2]}}</td>
+                <td class="oc_td_detail">{{deliveryTime}}</td>
+                <td class="oc_td_detail">{{orderInfo[0][3]}}</td>
+                <td class="oc_td_detail">{{orderInfo[0][4]}}</td>
             </tr>
         </table>
     </main>
@@ -60,6 +60,7 @@
     </section>
 
     @@include('./layout/footer.html')
+    <script src="./js/orderCompleted.min.js"></script>
     
 </body>
 </html>

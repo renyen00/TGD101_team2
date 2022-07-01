@@ -8,28 +8,28 @@
     @@include('./layout/head.html')
     <script src="./js/vue.min.js"></script>
 </head>
-<body id="shoppingCart_body">
+<body id="shoppingCart_body" class="bgcBlue">
     <!-- <div class="shoppingCart_div_bg"> -->
         <!-- <img class="bgWave" src="./images/shoppingCart/shoppingCartBg.png"> -->
         @@include('./layout/header.html')
 
         <main class="shoppingCart_main_wrapper textBlue">
         <header class="shoppingCart_header">
-            <a href="./index.html"><img src="./images/logo/logo_blue_final.svg"></a>
-            <pre>NOT JUST MAKE                                  FRIENDS  BUT INTO IT.</pre>
+            <a href="./index.html"><img src="./images/logo/logo_white_final.svg"></a>
+            <pre class="textWhite">NOT JUST MAKE                                  FRIENDS  BUT INTO IT.</pre>
         </header>
 
         <section class="shoppingCart_section_breadCrumb">
-            <a class="breadLink textBlue" href="index.html">首頁</a>
-            <p>&nbsp;&gt;&nbsp;</p>
-            <a class="breadLink textBlue" href="store.html">大嶼商行</a>
-            <p>&nbsp;&gt;&nbsp;</p>
-            <h5>購物車</h5>
+            <a class="breadLink textWhite" href="index.html">首頁</a>
+            <p class="textWhite">&nbsp;&gt;&nbsp;</p>
+            <a class="breadLink textWhite" href="store.html">大嶼商行</a>
+            <p class="textWhite">&nbsp;&gt;&nbsp;</p>
+            <h5 class="textWhite">購物車</h5>
         </section>
 
-        <h3 class="textWhite bgcBlue">購物車</h3>
+        <h3 class="textWhite bgcYellow">購物車</h3>
 
-        <section class="shoppingCart_section_listWrap  bgcWhite">
+        <section class="shoppingCart_section_listWrap  bgcWhite" id="shoppingCart_V">
             <ul>
                 <li class="shoppingCart_li_list">
                     <div class="pics">
@@ -38,16 +38,17 @@
                     </div>
 
                     <div class="detail">
-                        <h3 id="name">嶼商鋪-踏上回憶的旅程</h3>
+                        <p id="name">商品名</p>
                         <h4>數量&nbsp&nbsp1</h4>
-                        <h3 id="price">價格&nbsp$495</h3>
+                        <p id="price">價格&nbsp$499</p>
                     </div>
+                    <button id="shoppingCart_icon_trash" ><span class="iconify" data-icon="fa-solid:trash-alt" style="color: #2f4858;" data-width="33" data-height="41"></span></button>
                 </li>
                 <img src="./images/shoppingCart/shoppingCartLing.png" class="dashLine">
 
+                <!-- @@include('./layout/productList.html')
                 @@include('./layout/productList.html')
-                @@include('./layout/productList.html')
-                @@include('./layout/productList.html')
+                @@include('./layout/productList.html') -->
             </ul>
 
             <section class="total">
@@ -62,24 +63,26 @@
                     <h4 class="shoppingCart_h4_complete textBlue">完成訂單</h4>
                 </div>
 
-                <ul>
-                    <li>
-                        <div class="title">小計</div>
-                        <div class="price">$4995</div>
-                    </li>
-                    <li>
-                        <div class="title">運費</div>
-                        <div class="price">$120</div>
-                    </li>
-                    <li>
-                        <div class="title">總計</div>
-                        <div class="price">$5115</div>
-                    </li>
-                </ul>
-                <div class="shoppingCart_optionBtn">
-                    <a href="./store.html" class="backToStore btnXL_b--s">繼續購物</a>
-                    <a href="./payment.html" class="goPay btnXL_y">前往結帳</a>
-                </div>
+                <form class="shoppingCart_form_total" action="../src/php/shoppingCart.php" method="post">
+                    <ul>
+                        <li>
+                            <div class="title">小計</div>
+                            <div class="price">$4995</div>
+                        </li>
+                        <li>
+                            <div class="title">運費</div>
+                            <div class="price">$120</div>
+                        </li>
+                        <li>
+                            <div class="title">總計</div>
+                            <div class="price">$5115</div>
+                        </li>
+                    </ul>
+                    <div class="shoppingCart_optionBtn">
+                        <a href="./store.html" class="backToStore btnXL_b--s">繼續購物</a>
+                        <a href="./payment.html" class="goPay btnXL_y">前往結帳</a>
+                    </div>
+                </form>
             </section>
         </section>
         
@@ -92,8 +95,8 @@
     
                 <div class="promo">
                     @@include('./layout/product.html')
-                    @@include('./layout/product.html')
-                    @@include('./layout/product.html')
+                    <!-- @@include('./layout/product.html')
+                    @@include('./layout/product.html') -->
                 </div>
             </div>
         </section>
@@ -101,5 +104,8 @@
     
     
     @@include('./layout/footer.html') 
+    <script src="./js/store.min.js"></script>
+    <script src="./js/nav.min.js"></script>
+    <script src="./js/shoppingCart.min.js"></script>
 </body>
 </html>

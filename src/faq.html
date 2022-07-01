@@ -4,9 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <title>FAQ</title>
-    <!-- @@include('./layout/head.html') 未打包 -->
+    @@include('./layout/head.html')
+    <script src="./js/accordin.min.js"></script>
+    <style>
+        /*!
+ * jQuery Accordion 0.0.1
+ * (c) 2014 Victor Fernandez <victor@vctrfrnndz.com>
+ * MIT Licensed.
+ */
+
+/* Requirements */
+
+[data-accordion] [data-content] {
+    overflow: hidden;
+    max-height: 0;
+}
+
+/* Basic Theme */
+
+[data-accordion] {
+    line-height: 1;
+}
+
+[data-control],
+[data-content] > * {
+    border-bottom: 1px solid #888;
+    padding: 10px;
+}
+
+[data-content] [data-accordion] {
+    border: 0;
+    padding: 0;
+}
+
+[data-accordion] [data-control] {
+    position: relative;
+    padding-right: 40px;
+}
+
+[data-accordion] > [data-control]:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 25px;
+    font-weight: 200;
+    color: #444;
+    height: 15px;
+    width: 24px;
+    background: url('../images/down.png') center center no-repeat;
+    background-size: 50%;
+}
+
+[data-accordion].open > [data-control]:after {
+    -webkit-transform: rotate(-180deg); 
+    -ms-transform: rotate(-180deg); 
+    transform: rotate(-180deg); 
+}
+    </style>
 </head>
 <body>
     <div id="allIncluded">
@@ -36,7 +92,6 @@
         <main id="qnaWrapper">
             <img src="./images/faq/yellowBird.svg" class="ybirdSmall">
             <img src="./images/faq/yellowBird.svg" class="ybirdBig">
-            
             <!-- 第一個問答 -->
             <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
@@ -47,52 +102,11 @@
                     </div>
                 </button>
                 <div class="drawer">
-                    <!-- 第一個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第二個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第三個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
+                    123test
                 </div>
             </div>
             <!-- 第二個問答 -->
-            <div class="faq sec">
+            <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">交友</span>
                     <div class="circleAnimation closed">
@@ -101,48 +115,7 @@
                     </div>
                 </button>
                 <div class="drawer">
-                    <!-- 第一個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第二個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第三個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
+                    123test
                 </div>
             </div>
             <!-- 第三個問答 -->
@@ -154,85 +127,92 @@
                         <div class="vertical"></div>
                     </div>
                 </button>
+
                 <div class="drawer">
-                    <!-- 第一個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第二個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第三個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
+                    123testrkgkr
+                    <br>
+                    fheifje
+                    <br>
+                    lgjrjgr
+                    <br>
+                    123testrkgkr
+                    <br>
+                    fheifje
+                    <br>
+                    lgjrjgr
+                    <br>
                 </div>
             </div>
-                
-
         </main>
     </div>
 
+    <div id="multiple " data-accordion-group>
+        <div class="accordion" data-accordion>
+            <div data-control>Control</div>
+            <div data-content>
+                <div>Row</div>
+                <div>Row</div>
+                <div>Row</div>
+            </div>
+        </div>
+        <div class="accordion" data-accordion>
+            <div data-control>Control</div>
+            <div data-content>
+                <div>Row</div>
+                <div>Row</div>
+                <div>Row</div>
+            </div>
+        </div>
+    </div>
+    @@include('./layout/footer.html')
+    
     <script>
         // const acc = document.getElementsByClassName("accordion");
-        // let i;
-
-        // for (i = 0; i < acc.length; i++) {
-        // acc[i].addEventListener("click", function() {
-        //     const drawer = this.nextElementSibling;
-        //     if (drawer.style.maxHeight) {
-        //     drawer.style.maxHeight = null;
-        //     drawer.classList.remove("open");
-        //     this.setAttribute('aria-expanded',"false")
-        //     } else {
-        //     let active = document.querySelectorAll(".accordion.active");
-        //     for(let j = 0; j < active.length; j++){
-        //         active[j].classList.remove("active");
-        //         active[j].setAttribute('aria-expanded',"false")
-        //         active[j].nextElementSibling.style.maxHeight = null;
-        //         active[j].nextElementSibling.classList.remove("open");
-        //     }
-        //     drawer.style.maxHeight = drawer.scrollHeight + "px";
-        //     drawer.classList.add("open");
-        //     this.setAttribute('aria-expanded',"true")
-        //     }
-        //     this.classList.toggle("active");
-            
-        // });
+        // for (let i = 0; i < acc.length; i++) {
+        //     console.log(i);
+        //     acc[i].addEventListener("click", function() {
+        //         let faq = document.getElementsByClassName('faq');
+        //         for(let j=0; j<faq.length; j++){
+        //         faq[j].removeAttribute("style");
+        //         }
+        //         const drawer = this.nextElementSibling;
+        //         var drawerSH = drawer.scrollHeight;
+        //         faq[i].setAttribute("style",`height:${drawerSH}px;`);
+        //         if (drawer.style.maxHeight) {
+        //         drawer.style.maxHeight = null;
+        //         drawer.classList.remove("open");
+        //         this.setAttribute('aria-expanded',"false")
+        //         } else {
+        //         let active = document.querySelectorAll(".accordion.active");
+        //         for(let j = 0; j < active.length; j++){
+        //             active[j].classList.remove("active");
+        //             active[j].setAttribute('aria-expanded',"false")
+        //             active[j].nextElementSibling.style.maxHeight = null;
+        //             active[j].nextElementSibling.classList.remove("open");
+        //         }
+        //         drawer.style.maxHeight = drawerSH + "px";
+        //         drawer.classList.add("open");
+        //         this.setAttribute('aria-expanded',"true")
+        //         }
+        //         this.classList.toggle("active");
+        //     });
         // }
 
+        // ==================================================================
         
+        $(document).ready(function() {
+
+
+        $('#multiple [data-accordion]').accordion({
+            transitionSpeed: 300,
+            transitionEasing: 'ease',
+            controlElement: '[data-control]',
+            contentElement: '[data-content]',
+            groupElement: '[data-accordion-group]',
+            singleOpen: false
+        });
+
+      });
     </script>
 </body>
 </html>

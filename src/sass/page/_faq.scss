@@ -2,7 +2,7 @@ $logo-w: 120px;
 $p-top: 20px;
 
 #allIncluded{
-    width: 1440px;
+    width: 100%;
     // outline: 5px solid red;
     background-color: map-get($Mapcolor, 'white');
     margin: 0 auto;
@@ -15,8 +15,9 @@ $p-top: 20px;
     background-color: map-get($Mapcolor,'blue');
     box-sizing: border-box;
     padding: 120px 120px;
+    position: relative;
     #bgimgFrame{
-        width: 1200px;
+        width: 100%;
         height: 460px;
         margin: 0 auto;
         background:{
@@ -38,8 +39,8 @@ $p-top: 20px;
             text-align: center;
         }
         #faqFrame{
-            width: 480px;
-            height: 135px;
+            width: 52.8%;
+            height: 29.4%;
             margin: 0 auto;
             margin-top: $p-top;
             background-color: map-get($Mapcolor,'blue');
@@ -54,6 +55,7 @@ $p-top: 20px;
 }
 
 .breadCrumb{
+    width: 120px;
     margin-top: 35px;
     margin-left: 150px;
     font-size: map-get($fontSize, 'type-1');
@@ -76,26 +78,25 @@ $p-top: 20px;
 };
 
 .cloudFrame{
-    position: relative;
+    height: 220px;
     .cloud1{
         width: 275px;
         position: absolute;
-        top: -170px;
-        left: 840px;
+        top: 588px;
+        left: 700px;
     }
 
     .cloud2{
         width: 275px;
         position: absolute;
-        top: -50px;
-        left: 1030px;
+        top: 710px;
+        left: 904px
     }
 }
 
 #qnaWrapper{
     width: 1000px;
     margin: 0 auto;
-    margin-top: 190px;
     position: relative;
     .btn{
         cursor: pointer;
@@ -115,28 +116,33 @@ $p-top: 20px;
     .accordion:focus{
         text-decoration: underline;
     }
+    #tabTitleDimensionstab{
+        display: block;
+        line-height: 70px;
     }
+}
     .ybirdSmall{
         transform: scaleX(-1);
         width: 48px;
         margin-right: 8px;
         position: absolute;
-        top: -33px;
-        left: 140px;
+        top: -72px;
+        left: 86px;
     }
     .ybirdBig{
         position: absolute;
-        top: -59px;
-        left: 206px;
+        top: -98px;
+        left: 166px;
     }
 
     .faq{
-        height: 70px;
         background-color: map-get($Mapcolor, 'blue');
         color: white;
-        padding-top: 20px;
         padding-left: 40px;
         border-radius: 10px 10px 0px 0px;
+        height: 70px;
+        overflow: hidden;
+        transition: all 1s;
     }
 
     .sec{
@@ -144,9 +150,9 @@ $p-top: 20px;
     }
 
     .drawer{
-        max-height: 0;
-        overflow: hidden;
-        visibility: hidden; 
+        // max-height: 0;
+        // overflow: hidden;
+        // visibility: hidden; 
         transition-duration: 400ms; 
         transition-property: max-height, visibility; 
         transition-delay: 0, 400ms;
@@ -209,4 +215,6 @@ $p-top: 20px;
         top: 50%;
         margin-top: -10px;
       }
+
+
 

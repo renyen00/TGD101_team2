@@ -10,94 +10,24 @@
     <title>鳥語鳥嶼後台管理</title>
 </head>
 <body class="backend_body">
-    <div id="left">
-        <backheader @chg="change"></backheader>
+    <div id="app">
+        <backheader @chg="changeleft"></backheader>
+       
+        <!-- <back1 :h1="title"></back1> -->
+        <component :is="page" :h1="title"></component>
     </div>
-    <main class="backend_main" id="app">
-        <div class="backend_main_top">
-            <h1>{{title}}</h1>              
-            <i class="fa-regular fa-bell click"></i>
-            <h3 class="click">登出</h3>
-        </div>
-        <ul class="backend_ul_page">
-            <li class="back_btnL" data-n="backa1" @click="change">貼文管理</li>
-            <li class="back_btnL" data-n="backa2" @click="change">會員詢問</li>
-            <li class="back_btnL" data-n="backa3" @click="change">官方公告</li>
-            <li class="back_btnL" data-n="backa4" @click="change">智慧客服</li>
-        </ul>
 
-        <component :is='content'></component>
-    </main>
-    <!-- 
-    <div class="backend_div_popup">
-        <section>
-            <i class="fa-solid fa-x"></i>
-            <ul>
-                <li><h2>發文人</h2><h3>account018</h3></li>
-                <h2>被檢舉內容</h2>
-            </ul>
-            <div class="backend_div_content">
-                <p>我要去跑步了!</p>
-                <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
-            </div>
-            <ul>
-                <li><h2>檢舉人</h2><h3>account_18</h3></li>
-                <li><h2>檢舉原因</h2></li>
-            </ul>
-            <div class="backend_div_content">
-                <p>好想睡覺</p>
-            </div>
-            <div class="backend_pass">
-                <input type="radio" name="pass">通過
-                <input type="radio" name="pass">駁回
-            </div>
-            <button class="back_btnM">關閉</button>
-        </section>
-    </div>
-    -->
-    <script src="./js/backend1.min.js"></script>
+    
+
+    <script src="./js/backend.min.js"></script>
+    <script src="./js/backend2.min.js"></script>
+    <script src="./js/backend3.min.js"></script>
+    <script src="./js/backend4.min.js"></script>
+    <script src="./js/backend5.min.js"></script>
+    <script src="./js/backend6.min.js"></script>
+    <script src="./js/backend7.min.js"></script>
     <script src="./js/backendheader.min.js"></script>
     <script>
-        
-        // $('.backend_header ul li').click(function(){
-        //     $(this).closest('ul').find('.backend_header_now').removeClass('backend_header_now');
-        //     $(this).addClass('backend_header_now')
-        // })
-        
-        Vue.component('back1',{
-                props:[''],
-                template:`
-                    <div>
-                        <div class="backend_main_top">
-                            <h1>貼文管理</h1>              
-                            <i class="fa-regular fa-bell click"></i>
-                            <h3 class="click">登出</h3>
-                        </div>
-                        <btn></btn>
-
-                        <component :is='content'></component>
-                    </div>
-                    `,
-                })
-       
-       
-        Vue.component('btn',{
-            drop:['content'],
-            template:`
-            <ul class="backend_ul_page">
-                <li class="back_btnL" @click="content='backa1'">貼文管理</li>
-                <li class="back_btnL" @click="content='backa2'">會員詢問</li>
-                <li class="back_btnL" @click="content='backa3'">官方公告</li>
-                <li class="back_btnL" @click="content='backa4'">智慧客服</li>
-            </ul>
-            `,
-            methods:{
-                change(){
-                    this.$emit('chg')
-                }
-            },
-        })
-        
         
         let vm = new Vue({
             el:'#app',
@@ -106,30 +36,17 @@
                 datalist:[],
                 list:[],
                 title:'貼文管理',
-
+                page:'back1',
             },
             methods: {
-                change(e){
-                    $('.backend_ul_page').find('.nowpage').removeClass('nowpage');
-                    e.target.classList.add('nowpage')
-                    let page = e.target.dataset.n
-                    this.content = page
-                }
-            },
-        });
-        new Vue({
-            el:'#left',
-            data:{
-                page:'',
-            },
-            methods:{
-                change(e,n){
+                changeleft(e,n,v){
                     $('.backend_header').find('.backend_header_now').removeClass('backend_header_now');
                         e.classList.add('backend_header_now')
                     this.page = n
+                    this.title=v
                 }
-            }
-        })
+            },
+        });
     </script>
 </body>
 </html>

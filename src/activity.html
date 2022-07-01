@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script src="./js/vue.min.js"></script>
     <title>單一景點-活動總頁</title>
     @@include('./layout/head.html')
@@ -19,11 +20,12 @@
             <h5>NOT JUST MAKE FRIENDS BUT INTO IT.</h5>
         </section>
     </header>
+<section id="activity_info">
     <!-- 藍色背景 -->
-    <section class="activity_bg_blue">
+    <section class="activity_bg_blue" >
         <!-- 麵包屑 -->
         <ul class="activity_ul_breadcrumb">
-            <li><a href="#">首頁</a></li>
+            <li><a href="./index.html">首頁</a></li>
             <li>></li>
             <li><a>ACTIVITIES</a></li>
         </ul>
@@ -31,70 +33,72 @@
         <section class="activity_main_us">
             <h1>嶼我同行</h1>
             <h4>官方揪團, 與我們一起同行</h4>
-            <ul id="activity_info">
+            <ul >
                 <li>
-                    <!-- <img :src="activity_imgs[0]" alt=""> -->
-                    <img src="./images/xiaojiang/ex.png" alt="">
-                    <article v-for="activity in activity_list">
-                        <span>活動主題： {{activity_list[1]}}</span>
-                        <span>活動地點： {{activity_list[2]}}</span>
-                        <span>活動日期： {{activity_list[3]}}</span>
-                        <span>報名截止： {{activity_list[4]}}</span>
-                        <span>人數限制： {{activity_list[5]}}</span>
+                    <img :src="activity_list[0][0]" alt="">
+                    <article>
+                        <span>活動主題： {{activity_list[1][1]}}</span>
+                        <span>活動地點： {{activity_list[1][1]}}</span>
+                        <span>活動日期： {{activity_list[1][1]}}</span>
+                        <span>報名截止： {{activity_list[1][1]}}</span>
+                        <span>人數限制： {{activity_list[1][1]}}</span>
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>
-                        <a href="" class="btnXL_y--s">我要報名</a>
+                        <a @click="member" href="" class="btnXL_y--s">我要報名</a>
                     </article>                   
                 </li>
                 <li>
-                    <img src="./images/xiaojiang/ex.png" alt="">
+                    <img :src="activity_list[0][0]" alt="">
                     <article>
-                        <span>活動主題： 膽大包天</span>
-                        <span>活動地點： 鬼屋鬼屋</span>
-                        <span>活動日期： 2022/06/12</span>
-                        <span>報名截止： 2022/06/09</span>
-                        <span>人數限制： 12人</span>
+                        <span>活動主題： {{activity_list[1][1]}}</span>
+                        <span>活動地點： {{activity_list[1][1]}}</span>
+                        <span>活動日期： {{activity_list[1][1]}}</span>
+                        <span>報名截止： {{activity_list[1][1]}}</span>
+                        <span>人數限制： {{activity_list[1][1]}}</span>
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>
-                        <a href="" class="btnXL_y--s">我要報名</a>
+                        <a @click="member" href="" class="btnXL_y--s">我要報名</a>
                     </article>
                 </li>
                 <li>
-                    <img src="./images/xiaojiang/ex.png" alt="">
+                    <img :src="activity_list[0][0]" alt="">
                     <article>
-                        <span>活動主題： 膽大包天</span>
-                        <span>活動地點： 鬼屋鬼屋</span>
-                        <span>活動日期： 2022/06/12</span>
-                        <span>報名截止： 2022/06/09</span>
-                        <span>人數限制： 12人</span>
+                        <span>活動主題： {{activity_list[1][1]}}</span>
+                        <span>活動地點： {{activity_list[1][1]}}</span>
+                        <span>活動日期： {{activity_list[1][1]}}</span>
+                        <span>報名截止： {{activity_list[1][1]}}</span>
+                        <span>人數限制： {{activity_list[1][1]}}</span>
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html" class="btnXL_w--s">詳細資訊</a>
-                        <a href="" class="btnXL_y--s">我要報名</a>
+                        <a @click="member" href="" class="btnXL_y--s">我要報名</a>
                     </article>
                 </li>
             </ul>  
             <!-- 按鈕 -->
-            <div class="activity_button_wb">
+            <div class="activity_button_more">
                 <img src="./images/xiaojiang/wb.svg" alt="">
-                <a href="./activityList.html" class="btnXL_w activity_more_us">更多活動</a>
+                <a href="./activityList.html" class="btnXL_w activity_more_us">更多活動
+                </a>    
             </div>
         </section>
     </section>
-    <!-- 藍色背景下面 -->
-    <section class="activity_bg_bottom">
-        <img  src="./images/xiaojiang/activity_bg.svg" alt="">
+        <!-- 藍色背景下面 -->
+        <section class="activity_bg_bottom">
 
-        <!-- 藍色鳥鳥 -->
-        <section class="activity_bluebird">
-            <img class="activity_img_bluebird" src="./images/xiaojiang/bluebird.svg" alt="">
-            <a href="./createEvent.html">
-                <img class="activity_img_dialog" src="./images/xiaojiang/dialog.svg" alt="">
-            </a>
-        </section>
-    </section>    
+            <img  src="./images/xiaojiang/activity_bg.svg" alt="">
+
+            <!-- 藍色鳥鳥 -->
+            <section class="activity_bluebird">
+                <img class="activity_img_bluebird" src="./images/xiaojiang/bluebird.svg" alt="">
+                <a href="./createEvent.html">
+                    <img class="activity_img_dialog" src="./images/xiaojiang/dialog.svg" alt="">
+                </a>
+            </section>
+
+        </section>    
 
         <!-- 嶼友同行 -->
         <section class="activity_main_user">
@@ -104,47 +108,60 @@
                 <li>
                     <article class="activity_a_beside">
                         <a href="./createEventDetail.html" class="btnXL_b--s">詳細資訊</a>
-                        <a href="" class="btnXL_y--s">我要報名</a>
+                        <a @click="member" href="" class="btnXL_y--s">我要報名</a>
                     </article>
                     <article>
-                        <span>活動主題： 膽大包天</span>
-                        <span>活動地點： 鬼屋鬼屋</span>
-                        <span>活動日期： 2022/06/12</span>
-                        <span>報名截止： 2022/06/09</span>
-                        <span>人數限制： 12人</span>
+                        <span>活動主題： {{activity_list[0][1]}}</span>
+                        <span>活動地點： {{activity_list[0][2]}}</span>
+                        <span>活動日期： {{activity_list[0][3]}}</span>
+                        <span>報名截止： {{activity_list[0][1]}}</span>
+                        <span>人數限制： {{activity_list[0][4]}}</span>
                     </article>
                     <article class="activity_right_avatar">
-                    <a href="" id="avatar"></a>
-                    <img src="./images/xiaojiang/ex.png" alt="">
+                    <!-- 頭像 -->
+                    <a href="" id="avatar" ><img :src="activity_list[0][5]" alt=""></a>
+                    <!-- 圖片 -->
+                    <img :src="activity_list[0][0]" alt="">
                     </article>
                 </li>
                 <li>
                     <article class="activity_a_beside">
                         <a href="./createEventDetail.html" class="btnXL_b--s">詳細資訊</a>
-                        <a href="" class="btnXL_y--s">我要報名</a>
+                        <a @click="member" href="" class="btnXL_y--s">我要報名</a>
                     </article>
-                    <article>
-                        <span>活動主題： 膽大包天</span>
-                        <span>活動地點： 鬼屋鬼屋</span>
-                        <span>活動日期： 2022/06/12</span>
-                        <span>報名截止： 2022/06/09</span>
-                        <span>人數限制： 12人</span>
+                    <article >
+                        <span>活動主題： {{activity_list[1][1]}}</span>
+                        <span>活動地點： {{activity_list[1][2]}}</span>
+                        <span>活動日期： {{activity_list[1][3]}}</span>
+                        <span>報名截止： {{activity_list[1][1]}}</span>
+                        <span>人數限制： {{activity_list[1][4]}}</span>
                     </article>
                     <article class="activity_right_avatar">
-                        <a href="" id="avatar"></a>
-                        <img src="./images/xiaojiang/ex.png" alt="">
+                        <!-- 頭像 -->
+                        <a href="" id="avatar" ><img :src="activity_list[1][5]" alt=""></a>
+                        <!-- 圖片 -->
+                        <img :src="activity_list[0][0]" alt="">
                     </article>
                 </li>
             </ul>
-            <div class="activity_button_bb">
+
+            <!-- 按鈕 -->
+            <div class="activity_button_more2">
                 <img src="./images/xiaojiang/bb.svg" alt="">
                 <a href="./activityList.html" class="btnXL_b activity_more_user">更多揪團</a>
             </div>
         </section>
+</section>
+
         @@include('./layout/footer.html')
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
     <script src="./js/activity.min.js"></script>
+<script>
+
+</script>
+
 </body>
 </html>

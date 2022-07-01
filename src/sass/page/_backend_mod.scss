@@ -101,10 +101,13 @@ html{
     }
     .backend_ul_right{
         margin-left: auto;
+        display: flex;
     }
 }
 .backend_input_search{
     margin-left: auto;
+    // height: 35px;
+    margin-right: 15px;
 }
 .backend_btn_add{
     margin-left: auto;;
@@ -122,6 +125,14 @@ html{
             button{
                 margin-left: 15px;
             }
+            .back_a4{
+                height: 30px;
+            }
+        }
+        
+        p{
+            cursor: pointer;
+            color: #7A86F1;
         }
         
         &:nth-child(odd){
@@ -237,4 +248,3 @@ html{
           cursor: pointer;
       }
   }
-  

@@ -1,5 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
-// console.log(123);
+
 // 藍色鳥鳥
 gsap.fromTo(".activity_img_bluebird",{y:-10} ,{           
     y:250,
@@ -11,9 +11,9 @@ gsap.fromTo(".activity_img_bluebird",{y:-10} ,{
         end:"+=500",   
         scrub:true,    
         // markers: true,
+       
     }       
 })
-
 // 揪團去
 gsap.to(".activity_img_dialog" ,{           
     opacity: 1,
@@ -28,6 +28,28 @@ gsap.to(".activity_img_dialog" ,{
     }       
 })
 
+// 按鈕
+$(".activity_button_more img").hide();
+$(".activity_button_more a").mouseover(function(){
+    $(".activity_button_more img").show();
+  });
+$(".activity_button_more a").mouseout(function(){
+    $(".activity_button_more img").hide();
+});
+
+$(".activity_button_more2 img").hide();
+$(".activity_button_more2 a").mouseover(function(){
+    $(".activity_button_more2 img").show();
+  });
+$(".activity_button_more2 a").mouseout(function(){
+    $(".activity_button_more2 img").hide();
+});
+
+
+
+
+
+
 
 // -----------------RWD---------------
 // ScrollTrigger.matchMedia({
@@ -37,32 +59,66 @@ gsap.to(".activity_img_dialog" ,{
 // -----------------RWD---------------
 
 
-// --------------------資料連接----------------------
-new Vue({
-    el: '#activity_info',
+    // --------------------資料連接----------------------
+    new Vue({
+        el: '#activity_info',
+    
+        data: {     // 變數放這裡！              
+            activity_list:[],
+        },
+        methods: {
+            member() {
+                $.ajax({
+                    method: 'POST',
+                    url: '.php/login.php',
+                    dataType: 'text',
+                    data: {},
+                    success: function(res) {
+                        if(res == "") {
+                            alert('請先登入');
+                            location.href = './login.html';
+                        }
+                        else {
+                            $.ajax({
+                                method: 'POST',
+                                url: '',
+                                data: {
+                                    name: parseInt($('#name').val()),
+                                    ITUNERARYID: localStorage.getItem('getID'),
+                                },
+                                dataType: 'text',
+                                success: function(res) {
+                                    if(res == ""){
+                                        alert('');
+                                    } else {
+                                        alert("");
+                                    }                        
+                                },
+                                error: function (exception) {
+                                    alert("數據載入失敗: " + exception.status);
+                                },
+                            });
+                        }
+                    },
 
-    data: {     // 變數放這裡！           
-        activity_list:[],
-        activity_imgs:[],
-
-    },
-    methods: {
-        
-    },
-    computed: {
-
-    },
-    watch: {},
-    created() {
-        const url = './php/activity.php';
-            fetch(url)
-                .then(response => response.json())
-                // .then(text => this.console.log(text));
-
-                .then(text => this.activity_list = text);
-    },
-    mounted() {},
-    updated() {},
-
-})
-// --------------------資料連接----------------------
+                });
+            }
+        },
+        computed: {
+    
+        },
+        watch: {},
+        created() {
+            const url = './php/activity.php';
+                fetch(url)
+                    .then(response => response.json())
+                    // .then(text => this.console.log(text));
+                    .then(text => {
+                        this.activity_list = text;
+                        })
+        },
+        mounted() {},
+        updated() {},
+    
+    })
+    // --------------------資料連接----------------------

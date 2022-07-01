@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="./js/vue.min.js"></script>
     <script src="./js/role.min.js"></script>
     <script src="./js/role_carousel.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <title>創建角色</title>
     @@include('./layout/head.html')
 </head>
@@ -30,8 +33,7 @@
         <section class="role_out_top">
 
             <!-- 黃色問號 -->
-            <section class="role_question_yellow">
-            </section>
+            <section class="role_question_yellow"></section>
             <!-- 黃色問號 -->
 
                 <!-- 上面選擇鳥類 -->
@@ -66,11 +68,10 @@
     <section>
     <!-- 藍色背景下面 -->
 
-    <section class="role_out_bottom"> 
 
+    <section class="role_out_bottom"> 
         <!-- 藍色問號 -->
-        <section class="role_question_blue">
-        </section>
+        <section class="role_question_blue"></section>
         <!-- 藍色問號 -->
 
         <!-- 下面裝飾區 -->
@@ -88,26 +89,19 @@
                         <img src="" alt="">
                     </div>
                     <!-- 眼鏡 -->
-                    <div class="role_show_glasses">
+                    <div id="show" class="role_show_glasses">
                         <img src="" alt="">
                     </div>
                     <!-- 帽子 -->
-                    <div class="role_show_hat">
+                    <div id="show" class="role_show_hat">
                         <img src="" alt="">
                     </div>
                     <!-- 飾品 -->
-                    <div class="role_show_other">
+                    <div id="show" class="role_show_other">
                         <img src="" alt="">
                     </div>
                 </section>
                 <!-- 打扮區 -->
-
-                <!-- 放大縮小 -->
-                <section class="role_button_cloud">
-                    <div class="role_minus"><img src="./images/xiaojiang/minus.svg" alt=""></div>
-                    <div class="role_plus"><img src="./images/xiaojiang/plus.svg" alt=""></div>
-                </section>
-                <!-- 放大縮小 -->
             </section>
 
             <!-- 全部飾品 -->
@@ -145,7 +139,7 @@
 
                 <!-- 帽子 -->
                 <article class="role_hat">
-                    <button class="role_hat_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
+                    <button id="role_hat_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
 
                     <div class="role_accessory_hat">
                         <ul id="role_hat_banner1">
@@ -170,13 +164,13 @@
                             <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
                         </ul>
                     </div>
-                    <button class="role_hat_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
+                    <button id="role_hat_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
                 </article>
                  <!-- 帽子 -->
                 
                 <!-- 飾品 -->
                 <article class="role_other">
-                    <button class="role_other_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
+                    <button id="role_other_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
                     <div class="role_accessory_other">
                         <ul id="role_other_banner1">
                             <li class="role_other"><img src="./images/xiaojiang/a1.svg" alt=""></li>
@@ -197,33 +191,22 @@
                             <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
                         </ul>
                     </div>
-                    <button class="role_other_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
+                    <button id="role_other_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
                 </article>
                 <!-- 飾品 -->
 
             </section>
             <!-- 全部飾品 -->
-
-            <!-- 顏色 -->
-            <!-- <section class="role_section_colors">
-                <button class="role_color_prev"><img src="./images/xiaojiang/prev.svg" alt=""></button>
-                <ul>
-                    <li><img src="./images/xiaojiang/blue.svg" alt=""></li>
-                    <li><img src="./images/xiaojiang/pink.svg" alt=""></li>
-                    <li><img src="./images/xiaojiang/yellow.svg" alt=""></li>
-                </ul>
-                <button class="role_color_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
-            </section> -->
-    
-
         </section>
-
+        <!-- 下面裝飾區 -->
     </section> 
 
     <!-- 按鈕 -->
         <section class="role_button_bottom">
             <button class="btnL_b--s role_button_reset">重設</button>
-            <button onclick="block_capture()" class="btnL_y  role_button_sure">確定</button>
+
+            <button type="submit" id="Rolecreate" class="btnL_y  role_button_sure">確定</button>          
+
         </section>
     <!-- 按鈕 -->
     
@@ -231,14 +214,44 @@
     @@include('./layout/footer.html')
 
     <script>
-        function block_capture() {
-            html2canvas(document.querySelector("#capture")).then(function (canvas) {
-                a = document.createElement('a');
-                a.href = canvas.toDataURL("image/png", 0.92).replace("image/png", "image/octet-stream");
-                a.download = 'image.png';
-                a.click();
+
+        $(function create_img() { 
+            $("#Rolecreate").click(function() { 
+
+                html2canvas(document.querySelector("#capture"))
+                    .then(function(canvas) {
+
+                    var AVATAR = canvas.toDataURL("image/png , 1");
+                    // var base = encodeURIComponent(img); //轉碼        
+                    console.log(AVATAR);
+
+                    const url = './php/role.php';    
+                        fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                img: AVATAR
+                            })
+                        });
+                        // $.ajax({
+                        //     url: './php/role.php',
+                        //     type: 'post',
+                        //     async: true,
+                        //     data: {AVATAR:AVATAR},
+                        //     dataType: 'json',
+                        //     contentType: "application/upload",
+                        //     success:function(yes){console.log(yes)},
+                        //     error:function(no){console.log(no)},
+
+                        // });
+                        
+                    });
             });
-        }
+
+         });
+
     </script>
 </body>
 </html>

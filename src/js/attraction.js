@@ -90,7 +90,7 @@ let vm = new Vue({
     mounted() { 
         // console.log(this.attraction_imgs);
         
-        $('.slick-dots button').text('');
+        $('.slick-dots li button').text('');
 
         // $('.ul_sliderpic .slick-track li').data('slick-index', '-2').children().attr('src', $('.ul_sliderpic li img.2').attr('src'));
         //         // let a = $('.ul_sliderpic li img.2').attr(':src');
@@ -132,7 +132,7 @@ let vm = new Vue({
             ]
         });
       
-        $('.slick-dots button').text('');
+        $('.slick-dots li button').text('');
     },
 
 });

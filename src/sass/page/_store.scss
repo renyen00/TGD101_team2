@@ -27,7 +27,7 @@
 #store_body{
     // border: 2px solid aquamarine;
     // max-width: 1440px;
-    height: 3654px;
+    // height: 3654px;
     // background-color: map-get($Mapcolor,'blue');
     margin: 0 auto;
 
@@ -132,10 +132,7 @@
     flex-direction: row;
     position: relative;
     
-    #store_icon_birdBold{
-        position: absolute;
-    };
-    .store_btn_filter_All{
+    #store_filter_all{
         width: 120px;
         height: 120px;
         background: url('https://api.iconify.design/bx/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
@@ -145,6 +142,13 @@
         &:hover{
             background: url('https://api.iconify.design/bxs/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
         }
+
+        #store_icon_birdBold{
+            display: none;
+            position: absolute;
+            top: 65%;
+            left: 17%;
+        };
 
         h4{
             text-align: center;
@@ -179,33 +183,57 @@
             color: map-get($Mapcolor,'white');
             }
         };
+
+        #store_icon_birdT1{
+            display: none;
+            position: absolute;
+            top: 65%;
+            left: 34.5%;
+        };
+
+        #store_icon_birdT2{
+            display: none;
+            position: absolute;
+            top: 65%;
+            left: 52%;
+        };
+
+        #store_icon_birdT3{
+            display: none;
+            position: absolute;
+            top: 65%;
+            left: 69.5%;
+        }
     };
 };
 
+
+
 .store_main_product{
     // border: 1px solid yellow;
-    width: 1200px;
+    width: 930px;
+    height: 1000px;
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
     gap: 14.25px;
     padding: 0 14.25px;
     padding-top: 2%;
-
+    overflow: hidden;
     
     
     .productWrapper{
         // border: 1px solid purple;
         box-sizing: border-box;
-        width: 379px;
-        height: 582px;
+        width: 289.13px;
+        height: 450px;
         position: relative;
         margin-bottom: 3%;
 
         .productFrame{
             border: 5px solid map-get($Mapcolor, 'white');
-            width: 360px;
-            height: 480px;
+            width: 278.67px;
+            height: 371.13px;
             border-radius: 50px;
             position: absolute;
             bottom: 0;
@@ -214,8 +242,8 @@
         };
 
         .productCircle{
-            width: 235px;
-            height: 235px;
+            width: 182px;
+            height: 182px;
             border-radius: 50%;
             position: absolute;
             top: 0;
@@ -225,30 +253,35 @@
 
         .productPic{
             position: absolute;
+            width: 180px;
             top: 13%;
-            left: 10%;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 3;
         };
 
         .producNm{
-            width: 251px;
+            font-size: 1.6rem;
+            // width: 166px;
+            display: block;
             position: absolute;
-            top: 60%;
+            top: 65%;
             left: 50%;
             transform: translateX(-50%);
         };
 
         .productColor{
+            // display: none;
             list-style-type: none;
-            width: 186px;
+            width: 133px;
             position: absolute;
-            top: 70%;
+            top: 75%;
             left: 50%;
             transform: translateX(-50%);
 
             .productColorLi{
-                width: 30px;
-                height: 30px;
+                width: 22px;
+                height: 22px;
                 border-radius: 50%;
                 border: 1px solid map-get($Mapcolor, 'white');
                 display: inline-block;
@@ -264,26 +297,27 @@
             display: flex;
             flex-direction: row;
             position: absolute;
-            top: 80%;
-            left: 3%;
+            top: 83%;
+            left: 50%;
+            transform: translateX(-52%)
         };
     };
-    .store_section_moreBtn{
-        // border: 1px solid white;
-        width: 1200px;
+};
+.store_section_moreBtn{
+    // border: 1px solid white;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 96px;
+    position: relative;
+
+    #birdBold{
+        position: absolute;
+        bottom: 29%;
+        right: 40%;
+    };
+
+    .store_moreBtn{
         margin: 0 auto;
-        padding-top: 96px;
-        position: relative;
-    
-        #birdBold{
-            position: absolute;
-            bottom: 29%;
-            right: 40%;
-        };
-    
-        .moreBtn{
-            margin: 0 auto;
-        };
     };
 };
 

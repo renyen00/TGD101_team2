@@ -80,7 +80,7 @@ window.addEventListener('load', function(){
                 }
                 this.message = '';
                 // $('html, body').animate({
-                //     scrollTop: ($('div.overlay ul').offset().top),
+                //     scrollTop: ($('div.messageboardoverlay ul').offset().top),
                 // }, 700);
             },
 
@@ -130,12 +130,12 @@ window.addEventListener('load', function(){
                 }
             },
             moreMessage(e){
-                $('.controlpop').addClass('overlay').fadeIn();
-                $('div.overlay').on("click", () => {
-                    $('.controlpop').removeClass('overlay');
-                    $("div.overlay").fadeOut();
+                $('.controlpop').addClass('messageboardoverlay').fadeIn();
+                $('div.messageboardoverlay').on("click", () => {
+                    $('.controlpop').removeClass('messageboardoverlay');
+                    $("div.messageboardoverlay").fadeOut();
                 })
-                $("div.overlay > .messageboard").on("click", function(e){
+                $("div.messageboardoverlay > .messageboard").on("click", function(e){
                     e.stopPropagation();
                 });
             },

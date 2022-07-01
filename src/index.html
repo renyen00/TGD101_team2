@@ -5,39 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首頁</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @@include('./layout/head.html')
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
 </head>
 
 
 <body class="index_body">
     @@include('./layout/header.html')
-    <section id="index_out">
     <!-- 首頁標題 -->
-    <div class="index_title_out">
-        <div class="index_title_top">
-            <h1 class="index_h1_before">鳥語</h1>
-            <img class="index_img_title" src="./images/logo/logo_white_final.svg" alt="">
-            <img class="index_img_yb" src="./images/xiaojiang/yb.svg" alt="">
-            <h1 class="index_h1_after">鳥嶼</h1>
-        </div>
+    <div class="index_title_top">
+        <h1 class="index_h1_before">鳥語</h1>
+        <img class="index_img_title" src="./images/logo/logo_white_final.svg" alt="">
+        <img class="index_img_yb" src="./images/xiaojiang/yb.svg" alt="">
+        <h1 class="index_h1_after">鳥嶼</h1>
     </div>
-    <!-- 首頁鳥 -->
-    <div class="index_bird_out">
-        <!-- 路線 -->
-    <svg viewBox="0 0 1440 4500" style="enable-background:new 0 0 1440 4500; height:4500px; width:auto;">
-        <path id="motionPath" d="M1083.5,309.5c0,0-231,321.9-387,429.5c-197.1,135.9-321.4,239.9-397,467c-169.6,509.6,993.2,554,859,1074
-            c-99.8,386.6-710.1,266.5-840,644C168,3361.5,284,4078,727,4014.5c157.5-22.6,318-151.5,263.5-296.5c-35.3-94-151.3-125-243-84
-            c-117.5,52.5-132,212-43,314c197.7,226.6,685,103.5,685,103.5"/>
-    </svg>
-    <img class="index_bird" src="../src/images/xiaojiang/index_bird.png" alt="">
-    </div>
-<!-- 字 -->
+    <!-- 字 -->
     <section>
          <div class="index_word_1">
             <img src="./images/xiaojiang/index_bg_top.svg" alt="">
             <div class="index_word_bg">
-                <h3 class="index_h3_1" data-aos="zoom-in" data-aos-duration="3000">
+                <h3 class="index_h3_1" data-aos="zoom-in" data-aos-duration="1200">
                     傳聞, 在雨過天晴後,
                     <br>
                     遠方的天空會有些許艷雲飄散著
@@ -46,7 +33,7 @@
                     <br>
                     名叫鳥語鳥嶼...
                 </h3>
-                <h3 class="index_h3_2" data-aos="zoom-in" data-aos-duration="3000">
+                <h3 class="index_h3_2" data-aos="zoom-in" data-aos-duration="1200">
                     不是每個人都可以一親芳澤
                     <br>
                     但如果想要前往一探究竟,
@@ -60,7 +47,7 @@
         </div>
 
          <div class="index_word_2">
-            <h3 class="index_h3_3" data-aos="zoom-in" data-aos-duration="3000">
+            <h3 class="index_h3_3" data-aos="zoom-in" data-aos-duration="1200">
                 振翅!升空,加把勁,再用力!
                 <br>
                 那是一直都嚮往的地方呀!
@@ -77,7 +64,7 @@
                 <br>
                 終於看到了雲後的...
             </h3>
-            <h3 class="index_h3_4" data-aos="zoom-in" data-aos-duration="3000">
+            <h3 class="index_h3_4" data-aos="zoom-in" data-aos-duration="1200">
                 歡迎來到鳥嶼的國度
                 <br>
                 我是管理一切島上事務的鳥-泰澤
@@ -92,7 +79,7 @@
         <div class="index_word_3">
             <img src="./images/xiaojiang/index_bg2_top.svg" alt="">
             <div class="index_word_bg2">
-            <h3 class="index_h3_5" data-aos="zoom-in" data-aos-duration="3000">
+            <h3 class="index_h3_5" data-aos="zoom-in" data-aos-duration="1200">
                 初次到訪,一定對我們鳥語鳥嶼有許多的不熟悉
                 <br>
                 為此請容許我來介紹我們島上的特色:
@@ -117,32 +104,30 @@
     </section>
 
     <!-- 島的部份 -->
-    <div id="islandWrapper"></div>
+    <div class="triggerIsland"></div>
     <div id="islandWrapper" class="islandSceneObject">
     <div class="islandItself islandAnimationObject">
-                            <!-- 雲  -->
-                            <!-- <div class="index_cloud">
-                                <img class="index_cloud_1" src="./images/xiaojiang/cloud1.svg">
-                                <img class="index_cloud_2" src="./images/xiaojiang/cloud2.svg">
-                                <img class="index_cloud_3" src="./images/xiaojiang/cloud3.svg">
-                                <img class="index_cloud_4" src="./images/xiaojiang/cloud4.svg">
-                                <img class="index_cloud_5" src="./images/xiaojiang/cloud5.svg">
-                                <img class="index_cloud_6" src="./images/xiaojiang/cloud6.svg">
-                                <img class="index_cloud_7" src="./images/xiaojiang/cloud7.svg">
-                            </div>  -->
+                    <!-- 雲  -->
+                    <!-- <div class="index_cloud">
+                        <img class="index_cloud_1" src="./images/xiaojiang/cloud1.svg">
+                        <img class="index_cloud_2" src="./images/xiaojiang/cloud2.svg">
+                        <img class="index_cloud_3" src="./images/xiaojiang/cloud3.svg">
+                        <img class="index_cloud_4" src="./images/xiaojiang/cloud4.svg">
+                        <img class="index_cloud_5" src="./images/xiaojiang/cloud5.svg">
+                        <img class="index_cloud_6" src="./images/xiaojiang/cloud6.svg">
+                        <img class="index_cloud_7" src="./images/xiaojiang/cloud7.svg">
+                    </div>  -->
 
             <!-- 鳥嶼本體(兩個) -->
             <img src="./images/index_kao/bird_island.svg" class="birdIsland ">
-            <!-- <img src="./images/index_kao/bird_island.svg" class="birdIsland grey"> -->
-        
 
             <!-- 各種主要景點 -->
             
             <!-- 馬丘比丘 -->
-            <a href="" class="atagHover"><img src="./images/index_kao/Machu_Picchu.svg" class="machuPicchu"></a>
+            <a href="" class="atagHoverMachuPicchu"><img src="./images/index_kao/Machu_Picchu.svg" class="machuPicchu"></a>
             
             <!-- 鳥嶼商店 -->
-            <a href=""><img src="./images/index_kao/store.svg" class="store"></a>
+            <a href="" class="atagHoverStore"><img src="./images/index_kao/store.svg" class="store"></a>
 
             <!-- 熱氣球 -->
             <img src="./images/index_kao/hot_air_ballon_blue.svg" class="baBlue">
@@ -150,23 +135,25 @@
             <img src="./images/index_kao/hot_air_ballon_yellow.svg" class="baYellow">
             <!-- 鬼屋 -->
             <section class=" landscape_hover">
-            <a href=""><img src="./images/index_kao/ghosthouse.svg" class="ghostHouse"></a>
-            <img src="./images/index_kao/pinkcloud.svg" class="pinkCloud">
-            <img src="./images/index_kao/yellowcloud.svg" class="yellowCloud">
+                <a href="" class="atagHoverGhostHouse"><img src="./images/index_kao/ghosthouse.svg" class="ghostHouse"></a>
+                <img src="./images/index_kao/pinkcloud.svg" class="pinkCloud">
+                <img src="./images/index_kao/yellowcloud.svg" class="yellowCloud">
             </section>
 
-            <a href=""><img src="./images/index_kao/snowmoutain.svg" class="snowMoutain"></a>
-            <a href=""><img src="./images/index_kao/waterfall.svg" class="waterfall"></a>
+            <a href="" class="atagHoverSnowMoutain"><img src="./images/index_kao/snowmoutain.svg" class="snowMoutain"></a>
+            <a href="" class="atagHoverWaterfall"><img src="./images/index_kao/waterfall.svg" class="waterfall"></a>
             <!-- <a href=""><img src="./images/index_kao/"></a> -->
-            <a href=""><img src="./images/index_kao/elephant.svg" class="elephant"></a>
-            <a href=""><img src="./images/index_kao/giraffe.svg" class="giraffe"></a>
-            <a href=""><img src="./images/index_kao/panda.svg" class="panda"></a>
+            <a href="" class="atagHoverZoo">
+                <img src="./images/index_kao/elephant.svg" class="elephant">
+                <img src="./images/index_kao/giraffe.svg" class="giraffe">
+                <img src="./images/index_kao/panda.svg" class="panda">
+            </a>
 
-            <a href=""><img src="./images/index_kao/light_house.svg" class="lightHouse"></a>
+            <a href="" class="atagHoverLighthouse"><img src="./images/index_kao/light_house.svg" class="lightHouse"></a>
 
             <!-- 遊樂園 -->
             <section class="amusemenPark">
-            <a href="">
+            <a href="" class="atagHoverPark">
             <img src="./images/index_kao/ferry_wheel.svg" class="ferryWheel">
             <img src="./images/index_kao/roller_coaster.svg" class="rollerCoaster">
             <img src="./images/index_kao/carousel.svg" class="carousel">
@@ -246,23 +233,116 @@
             <img src="./images/index_kao/river.svg" class="river">
         </div>
 
-        <img src="./images/logo/logo_white_final.svg" class="logoWhy">
-        
+            <img src="./images/logo/logo_white_final.svg" class="logoWhy">
     </div>
-    </section>
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script>
         AOS.init();
     </script>
-
     <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/MotionPathPlugin.min.js"></script>
     <script src="./js/index.min.js"></script>
+    
 
+    <script>
+    // =======================================================================
+//     navbar();
+//     popUpShow();
+
+// function navbar() {
+//     var scrolltop = new Array();
+//     var index = 0;
+//     scrolltop[0] = 0;
+//     $(document).scroll(function () {
+//         index++;
+//         scrolltop[index] = $(document).scrollTop();
+//         if (scrolltop[index] > scrolltop[index - 1]) {
+//             $('.navbar').fadeOut()
+//         } else {
+//             $('.navbar').fadeIn()
+//         };
+//     })
+// }
+
+// function scroll() {
+//     $(document).on('scroll resize', function () {
+//         $('.about_street').css({
+//             width: '100%',
+//             height: '100%',
+//         })
+//     })
+// }
+
+// //滑鼠滾動判斷navbar出現/消失
+// function popUpShow() {
+//     var scrolltop = new Array();
+//     var index = 0;
+//     let winHeight = $(window).height();
+//     scrolltop[0] = 0;
+
+
+//     $(document).scroll(function () {
+//         index++;
+//         scrolltop[index] = $(document).scrollTop();
+//         let indexHeight = (scrolltop[index] / winHeight).toFixed(2)
+//         console.log(indexHeight);
+
+//         if (scrolltop[index] > scrolltop[index - 1]) {
+//             // console.log(scrolltop[index].toFixed(0));
+//         } else {
+//             // console.log(scrolltop[index].toFixed(0));
+//         };
+
+//         //介紹一
+//         if (indexHeight > .95 && indexHeight < 2.00) {
+//             $('.about_history').fadeIn();
+//         } else {
+//             $('.about_history').fadeOut();
+//         }
+
+//         //介紹二
+//         if (indexHeight > 2.5 && indexHeight < 3.4) {
+//             $('.about_brand').fadeIn();
+//         } else {
+//             $('.about_brand').fadeOut();
+//         }
+
+//         //小農一
+//         if (indexHeight > 7.25 && indexHeight < 8.25) {
+//             $('.about_place1').fadeIn();
+//         } else {
+//             $('.about_place1').fadeOut();
+//         }
+
+//         //小農二
+//         if (indexHeight > 9.04 && indexHeight < 10.04) {
+//             $('.about_place2').fadeIn();
+//         } else {
+//             $('.about_place2').fadeOut();
+//         }
+
+//         //小農三
+//         if (indexHeight > 11 && indexHeight < 11.6) {
+//             $('.about_place3').fadeIn();
+//         } else {
+//             $('.about_place3').fadeOut();
+//         }
+
+//         //小農四
+//         if (indexHeight > 12.6 && indexHeight < 13.6) {
+//             $('.about_place4').fadeIn();
+//         } else {
+//             $('.about_place4').fadeOut();
+//         }
+
+//     })
+// }
+
+        </script>
 </body>
 </html>

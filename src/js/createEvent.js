@@ -36,7 +36,7 @@ new Vue({
         validationOk(){
             $('.validation').each(function() {
                 $('.validation').bind("input propertychange",function() {
-                    console.log($(this).removeClass('--requiredInput').parent().children().children());
+                    // console.log($(this).removeClass('--requiredInput').parent().children().children());
                     $(this).removeClass('--requiredInput').parent().children().children().remove(".--requiredSpan");
                 });
             }) 

@@ -5,6 +5,7 @@
         // border: 1px solid darkgrey;
         max-width: 100%;
         margin: 0 auto;
+        padding-top: 2%;
         
         .payment_header{
             // border: 1px solid pink;
@@ -61,7 +62,7 @@
         .payment_section_listWrap{
             width: 1100px;
             margin: 0 auto;
-            border: 5px solid map-get($Mapcolor, 'blue');
+            border: 5px solid map-get($Mapcolor, 'yellow');
             border-radius: 0 0 10px 10px;
 
             ul{
@@ -72,6 +73,8 @@
             }
 
             .buyerInfoMethod{
+                border-bottom: 5px solid map-get($Mapcolor, 'yellow');
+                border-top: 5px solid map-get($Mapcolor, 'yellow');
                 width: 100%;
                 margin: 0 auto;
                 margin-top: 10%;
@@ -175,8 +178,9 @@
                                 background-color: transparent;
                                 display: inline-block;
                                 font-size: 2rem;
-                                padding-left: 1%;
+                                padding-left: 3%;
                                 margin-bottom: 15px;
+                                color: map-get($Mapcolor, "white");
                             }
 
                             .buyerName > h4{
@@ -203,6 +207,10 @@
 
                                 input.w300{
                                     width: 407px;
+                                }
+
+                                div > input{
+                                    color: map-get($Mapcolor, "white");
                                 }
                             }
 
@@ -270,7 +278,7 @@
                                     border: 2px solid map-get($Mapcolor, 'white');
                                     color: map-get($Mapcolor, 'white');
                                     margin-bottom: 15px;
-                                    margin-right: 2px;
+                                    margin-right: 5px;
 
                                     option{
                                         color: map-get($Mapcolor, 'blue');
@@ -287,8 +295,9 @@
                                 background-color: transparent;
                                 display: inline-block;
                                 font-size: 2rem;
-                                padding-left: 1%;
+                                padding-left: 3%;
                                 margin-bottom: 15px;
+                                color: map-get($Mapcolor, "white");
                             }
 
                             .receiverName > h4{
@@ -311,6 +320,10 @@
 
                                 input.w300{
                                     width: 407px;
+                                }
+
+                                div > input{
+                                    color: map-get($Mapcolor, "white");
                                 }
                             }
 
@@ -384,8 +397,11 @@
                     #orderCompleted_icon_greyBird{
                         position: absolute;
                         top: 32%;
-                        left: 50%;
-                        transform: translateX(-50%);
+                        left: 20.7%;
+                        // position: absolute;
+                        // top: 32%;
+                        // left: 50%;
+                        // transform: translateX(-50%);
                     }
 
                     .payment_h4_shoppingCart{
@@ -443,12 +459,26 @@
                     }
                 }
 
+                .shoppingCart_optionBtn{
+                    // border: 1px solid brown;
+                    width: 448px;
+                    margin: 60px auto;
+
+                    a{
+                        display: inline-block;
+                    }
+                }
+
                 .payment_optionBtn{
                     // border: 1px solid brown;
                     width: 448px;
                     margin: 60px auto;
 
                     a{
+                        display: inline-block;
+                    }
+
+                    input{
                         display: inline-block;
                     }
                 }

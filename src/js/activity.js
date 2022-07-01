@@ -70,7 +70,7 @@ $(".activity_button_more2 a").mouseout(function(){
             member() {
                 $.ajax({
                     method: 'POST',
-                    url: './Frontend/LoginCheck.php',
+                    url: '.php/login.php',
                     dataType: 'text',
                     data: {},
                     success: function(res) {
@@ -81,7 +81,7 @@ $(".activity_button_more2 a").mouseout(function(){
                         else {
                             $.ajax({
                                 method: 'POST',
-                                url: './Frontend/getShoppingID.php',
+                                url: '',
                                 data: {
                                     name: parseInt($('#name').val()),
                                     ITUNERARYID: localStorage.getItem('getID'),
@@ -89,18 +89,18 @@ $(".activity_button_more2 a").mouseout(function(){
                                 dataType: 'text',
                                 success: function(res) {
                                     if(res == ""){
-                                        alert('商');
+                                        alert('');
                                     } else {
                                         alert("");
-                                    }
-                                    
-                                }
+                                    }                        
+                                },
+                                error: function (exception) {
+                                    alert("數據載入失敗: " + exception.status);
+                                },
                             });
                         }
                     },
-                    error: function (exception) {
-                        alert("數據載入失敗: " + exception.status);
-                    },
+
                 });
             }
         },

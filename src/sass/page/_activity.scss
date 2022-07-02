@@ -106,6 +106,8 @@
         display: flex;
         margin-bottom: 150px;
         img{
+            width: 300px;
+            height: 300px;
             display: block;
             border-radius: 50%;
         }
@@ -181,8 +183,13 @@
         }
         .activity_right_avatar{
             position: relative;
+            width: 300px;
+            height: 300px;
+            display: block;
+            border-radius: 50%;
             img{
-                padding-left: 20px;
+                width: 300px;
+                height: 300px;
                 display: block;
                 border-radius: 50%;
             }
@@ -193,8 +200,6 @@
                 border: 5px solid map-get($Mapcolor, 'yellow');
                 position: absolute;
                 bottom: 0;
-            }
-            #avatar img{
             }
         }
 
@@ -217,6 +222,75 @@
         }
     }
 }
+
+// 頭像談窗
+.personal_mask_user{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 99;
+  }
+.personal_popup_user{    
+    width: 800px;
+    height: 550px;
+    padding: 15px;
+    background-color: map-get($Mapcolor, 'blue');
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+    z-index: 99;
+  }
+    //裡面白線
+    .personal_card_out{
+    border: 5px solid map-get($Mapcolor, 'white');
+    border-radius: 50px;
+    height: 520px;
+    display: flex;
+    // 左邊頭貼
+    .personal_card_left{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin: auto 30px;
+        background-color: map-get($Mapcolor, 'white');
+        img{
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+        }
+    }
+    // 右邊文字
+    .personal_card_right{
+        
+        .personal_card_span{
+            color: map-get($Mapcolor, 'white');
+            width: 380px;
+        }
+        span{
+            margin-top: 30px;    
+            display: flex;
+            font-size: 24px;
+        }
+        p{  
+            margin-top: 30px;  
+            font-size: 24px;
+            height: 200px;
+            // border: 1px solid red;
+        }
+
+    }
+    // 按鈕
+    .personal_card_button{
+        display: flex;       
+    }
+  }
 
 // ---------------media query--------------------
 @media (max-width: 575.98px){
@@ -243,7 +317,7 @@
         }
         ul{
             width: 100vw;
-            margin:0;
+            margin:0 auto;
         }
         li{ 
             display: flex;
@@ -257,8 +331,7 @@
             img{
                 margin: 20px auto;
                 width: 250px;
-                height: 250px;
-                
+                height: 250px;               
             }
         }
 
@@ -275,12 +348,13 @@
     }
     // 藍色鳥鳥
     .activity_bluebird{
+        padding-bottom: 100px;
         .activity_img_bluebird{  
             left: 50%;
-            top: -50%;     
+            top: -100%;     
         }
         .activity_img_dialog{
-            top: 120%;    
+            top: 60%;    
             left: 10%;
         }
     }
@@ -302,7 +376,7 @@
             float: none;
             width: 100vw;
             flex-wrap: wrap;
-            margin:0;
+            margin:0 auto;
         }
         li{
             display: flex;
@@ -315,17 +389,14 @@
             }
             .activity_right_avatar{
                 margin: 0 auto;
-                position: relative;
                 img{
-                    padding-left: 20px;
-                    display: block;
-                    border-radius: 50%;
+                    margin: 20px auto;
                     width: 250px;
                     height: 250px;
                 }
                 #avatar{
-                    width: 100px;
-                    height: 100px;
+                    width: 120px;
+                    height: 120px;
                     border-radius: 50%;
                     border: 5px solid map-get($Mapcolor, 'yellow');
                     position: absolute;

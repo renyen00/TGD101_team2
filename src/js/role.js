@@ -19,7 +19,8 @@ $(function () {
             minWidth: 60,
             maxHeight: 150,
             minHeight: 60 
-        }).parent().draggable({
+        })
+        .parent().draggable({
             cursor: "crosshair",
             containment: ".role_show_area",
             stack: "#show img" 

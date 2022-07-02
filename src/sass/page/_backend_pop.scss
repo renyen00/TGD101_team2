@@ -90,6 +90,13 @@
 .backend_pop_right{
     margin-left: 50px;
     display: flex;
+    li{
+        img{
+            width: 120px;
+            border: 1px solid $blue;
+            margin-right: 2px;
+        }
+    }
 }
 .backend_pop_bottom{
     display: flex;

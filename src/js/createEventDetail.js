@@ -148,7 +148,7 @@ window.addEventListener('load', function(){
                         postType: 'initMessage',
                     })
                 }).then(response => response.json())
-                .then(data => {this.messages = data.reverse()});
+                .then(data => {this.messages = data});
             },
             
         },

@@ -84,3 +84,27 @@
 .backend_show{
     display: block;
 }
+.backend_product{
+    display: flex;
+}
+.backend_pop_right{
+    margin-left: 50px;
+    display: flex;
+    li{
+        img{
+            width: 120px;
+            border: 1px solid $blue;
+            margin-right: 2px;
+        }
+    }
+}
+.backend_pop_bottom{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom:20px;
+    transform: translate(-50%);
+    justify-content: space-around;
+    width: 250px;
+}
+  

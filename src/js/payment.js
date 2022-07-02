@@ -5,14 +5,16 @@ window.addEventListener("load", function(){
         data: {     // 變數放這裡！           
             memberInformation:[],
         },
-        methods: {},
+        methods: {
+            
+        },
         computed: {},
         watch: {},
         created() {
             const url = './php/payment.php';
             fetch(url)
                 .then(response => response.json())
-                .then(text => this.employee_list = text);
+                .then(text => this.memberInformation = text);
         },
         mounted() {},
         updated() {},

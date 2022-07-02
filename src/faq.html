@@ -7,62 +7,6 @@
     <title>FAQ</title>
     @@include('./layout/head.html')
     <script src="./js/accordin.min.js"></script>
-    <style>
-        /*!
- * jQuery Accordion 0.0.1
- * (c) 2014 Victor Fernandez <victor@vctrfrnndz.com>
- * MIT Licensed.
- */
-
-/* Requirements */
-
-[data-accordion] [data-content] {
-    overflow: hidden;
-    max-height: 0;
-}
-
-/* Basic Theme */
-
-[data-accordion] {
-    line-height: 1;
-}
-
-[data-control],
-[data-content] > * {
-    border-bottom: 1px solid #888;
-    padding: 10px;
-}
-
-[data-content] [data-accordion] {
-    border: 0;
-    padding: 0;
-}
-
-[data-accordion] [data-control] {
-    position: relative;
-    padding-right: 40px;
-}
-
-[data-accordion] > [data-control]:after {
-    content: "";
-    position: absolute;
-    right: 10px;
-    top: 12px;
-    font-size: 25px;
-    font-weight: 200;
-    color: #444;
-    height: 15px;
-    width: 24px;
-    background: url('../images/down.png') center center no-repeat;
-    background-size: 50%;
-}
-
-[data-accordion].open > [data-control]:after {
-    -webkit-transform: rotate(-180deg); 
-    -ms-transform: rotate(-180deg); 
-    transform: rotate(-180deg); 
-}
-    </style>
 </head>
 <body>
     <div id="allIncluded">
@@ -87,12 +31,12 @@
         <div class="cloudFrame">
             <img src="./images/faq/cloud.svg" class="cloud1">
             <img src="./images/faq/cloud.svg" class="cloud2">
-        </div>
-
-        <main id="qnaWrapper">
             <img src="./images/faq/yellowBird.svg" class="ybirdSmall">
             <img src="./images/faq/yellowBird.svg" class="ybirdBig">
-            <!-- 第一個問答 -->
+        </div>
+
+        <!-- <main id="qnaWrapper">
+            第一個問答
             <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">揪團</span>
@@ -105,7 +49,7 @@
                     123test
                 </div>
             </div>
-            <!-- 第二個問答 -->
+            第二個問答
             <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">交友</span>
@@ -118,7 +62,7 @@
                     123test
                 </div>
             </div>
-            <!-- 第三個問答 -->
+            第三個問答
             <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">購物</span>
@@ -143,30 +87,71 @@
                     <br>
                 </div>
             </div>
-        </main>
+        </main> -->
     </div>
+         <!-- 最外層包一個 div，為了不跟裡面 div 混淆這邊用 section -->
+            <section class="augurio-collapse">
+                <!-- 一個 .collapse 是一組-->
+                <div class="collapse">
+                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
+                    <div class="title-box" data-expanded="true">
+                        <div class="title">揪團</div>
+                        <div class="icons">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <!-- contents-->
+                    <div class="contents-box">
+                        <div class="contents">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="collapse yellow">
+                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
+                    <div class="title-box" data-expanded="true">
+                        <div class="title">交友</div>
+                        <div class="icons">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <!-- contents-->
+                    <div class="contents-box">
+                        <div class="contents">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="collapse">
+                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
+                    <div class="title-box" data-expanded="true">
+                        <div class="title">購物</div>
+                        <div class="icons">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <!-- contents-->
+                    <div class="contents-box">
+                        <div class="contents">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                
+            </section>
+    
 
-    <div id="multiple " data-accordion-group>
-        <div class="accordion" data-accordion>
-            <div data-control>Control</div>
-            <div data-content>
-                <div>Row</div>
-                <div>Row</div>
-                <div>Row</div>
-            </div>
-        </div>
-        <div class="accordion" data-accordion>
-            <div data-control>Control</div>
-            <div data-content>
-                <div>Row</div>
-                <div>Row</div>
-                <div>Row</div>
-            </div>
-        </div>
-    </div>
+   
     @@include('./layout/footer.html')
     
     <script>
+        //寫法1
         // const acc = document.getElementsByClassName("accordion");
         // for (let i = 0; i < acc.length; i++) {
         //     console.log(i);
@@ -199,20 +184,69 @@
         // }
 
         // ==================================================================
-        
-        $(document).ready(function() {
+        //寫法2
+    //     $(document).ready(function() {
 
 
-        $('#multiple [data-accordion]').accordion({
-            transitionSpeed: 300,
-            transitionEasing: 'ease',
-            controlElement: '[data-control]',
-            contentElement: '[data-content]',
-            groupElement: '[data-accordion-group]',
-            singleOpen: false
-        });
+    //     $('#multiple [data-accordion]').accordion({
+    //         transitionSpeed: 300,
+    //         transitionEasing: 'ease',
+    //         controlElement: '[data-control]',
+    //         contentElement: '[data-content]',
+    //         groupElement: '[data-accordion-group]',
+    //         singleOpen: false
+    //     });
 
-      });
+    //      });
+
+    // ====================================================================================
+    //寫法3
+    window.addEventListener('DOMContentLoaded', () => {
+
+// 寫入各 .content-box 的高，然後高度設成 0
+const contents = document.querySelectorAll('.augurio-collapse .contents-box');
+Array.prototype.forEach.call(contents, c => {
+  c.dataset.height = c.offsetHeight;
+  c.setAttribute('style', 'height: 0');
+});
+
+// .title-box 被點擊時，加入 .active， .content-box的高度抓 data-height 的
+const titles = document.querySelectorAll('.title-box');
+Array.prototype.forEach.call(titles, t => {
+  t.addEventListener('click', e => {
+    
+    // 如果需要開啟一個就關閉前一個，就加入以下：
+    const active = document.querySelectorAll('.active');
+    Array.prototype.forEach.call(active, act => {
+      act.classList.remove('active');
+      act.parentNode.querySelector('.contents-box').setAttribute('style', 'height: 0');
+    })
+    
+    
+    e.target.classList.toggle('active'); // 加入/移除 .active
+
+    // .title-box 同一層的 .contents-box
+    const content = e.target.parentNode.querySelector('.contents-box');
+    const height = content.dataset.height; // 從 dat-height 抓原本高度
+
+    // 判斷 .title-box 有沒有 .active
+    if(e.target.classList.contains('active')) {
+      // 有 .active，就設高
+      content.setAttribute('style', 'height: ' + height + 'px');
+    } else {
+      // 沒有，高度歸 0
+      content.setAttribute('style', 'height: 0');
+    }
+  });
+  
+  // 如果 .title-box 有 data-expanded="true"，就預設開啟
+  if(t.dataset.expanded === 'true') {
+    t.click()
+  }
+  
+});
+
+});
     </script>
 </body>
 </html>

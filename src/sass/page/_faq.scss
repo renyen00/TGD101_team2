@@ -15,7 +15,6 @@ $p-top: 20px;
     background-color: map-get($Mapcolor,'blue');
     box-sizing: border-box;
     padding: 120px 120px;
-    position: relative;
     #bgimgFrame{
         width: 100%;
         height: 460px;
@@ -78,64 +77,45 @@ $p-top: 20px;
 };
 
 .cloudFrame{
+    width: 100%;
     height: 220px;
+    position: relative;
     .cloud1{
         width: 275px;
         position: absolute;
-        top: 588px;
-        left: 700px;
+        top: -164px;
+        left: 63%;
     }
 
     .cloud2{
         width: 275px;
         position: absolute;
-        top: 710px;
-        left: 904px
+        top: -28px;
+        left: 75%;
     }
-}
 
-#qnaWrapper{
-    width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    .btn{
-        cursor: pointer;
-    }
-    .accordion{
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        transition: 0.4s;
-        background: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: map-get($Mapcolor, 'white');
-    }
-    .accordion:focus{
-        text-decoration: underline;
-    }
-    #tabTitleDimensionstab{
-        display: block;
-        line-height: 70px;
-    }
-}
     .ybirdSmall{
         transform: scaleX(-1);
         width: 48px;
         margin-right: 8px;
         position: absolute;
-        top: -72px;
-        left: 86px;
+        top: 146px;
+        left: 16%;
+        z-index: 1;
     }
     .ybirdBig{
         position: absolute;
-        top: -98px;
-        left: 166px;
+        top: 118px;
+        left: 21%;
+        z-index: 1;
     }
-
-    .faq{
+}
+// Accordion---------
+.augurio-collapse{
+    width: calc(100% - 150px);
+    margin: 0 auto;
+    position: relative;
+    .collapse{
         background-color: map-get($Mapcolor, 'blue');
         color: white;
         padding-left: 40px;
@@ -144,40 +124,54 @@ $p-top: 20px;
         overflow: hidden;
         transition: all 1s;
     }
-
-    .sec{
-        background-color: map-get($Mapcolor,'yellow');
+    .collapse.yellow{
+        background-color: map-get($Mapcolor, 'yellow');
     }
+  .title-box, .contents{
+    padding: 12px;
+  }
+}
+  
+    // collapse title
+    .title-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 
-    .drawer{
-        // max-height: 0;
-        // overflow: hidden;
-        // visibility: hidden; 
-        transition-duration: 400ms; 
-        transition-property: max-height, visibility; 
-        transition-delay: 0, 400ms;
-    }
-
-    .drawer.open{
-        visibility: visible; 
-        transition-duration: 400ms; 
-        transition-property: max-height, visibility; 
-        transition-delay: 400ms, 0; 
-    }
-
-    .closed{
+    .icons{
+        position: absolute;
+        right: 12px;
         .vertival{
+            position: absolute;
+            background-color: map-get($Mapcolor, 'white');
+            width: 3px;
+            height: 20px;
+            left: 50%;
+            margin-left: -1px;
+            top: 50%;
+            margin-top: -10px;
             transition: all 0.4s ease-in-out;
-            transform: rotate(-90deg);
+            transform: rotate(0deg);
         }
         .horizontal{
+            position: absolute;
+            background-color: map-get($Mapcolor, 'white');
+            width: 20px;
+            height: 3px;
+            left: 50%;
+            margin-left: -10px;
+            top: 50%;
+            margin-top: -1px;
             transition: all 0.4s ease-in-out;
             transform: rotate(180deg);
             opacity: 1;
         }
-    }
+      }    
 
-    .active {
+    // icons transform active
+    &.active .icons{
         opacity: 1;
         .vertical {
           transition: all 0.4s ease-in-out;
@@ -189,32 +183,25 @@ $p-top: 20px;
           opacity: 0;
         }
     }
+  
+  
+}
+  // collapse contents
+  .contents-box{
+    overflow: hidden;
+    border-top: none;
+    border-bottom: none;
+    transition: height .3s ease;
+  }
+    
+  .collapse{
+    &:last-of-type .contents-box{
+    border-bottom: 1px solid #CCC;
+  }
+}
 
-    .circleAnimation{
-        position: relative;
-        flex: 0 0 30px;
-    }
+// RWD 首頁 575.98px 版本==================================================================================================================
 
-    .circleAnimation .horizontal {
-        position: absolute;
-        background-color: map-get($Mapcolor, 'white');
-        width: 20px;
-        height: 3px;
-        left: 50%;
-        margin-left: -10px;
-        top: 50%;
-        margin-top: -1px;
-      }
-      .circleAnimation .vertical {
-        position: absolute;
-        background-color: map-get($Mapcolor, 'white');
-        width: 3px;
-        height: 20px;
-        left: 50%;
-        margin-left: -1px;
-        top: 50%;
-        margin-top: -10px;
-      }
+@media (max-width: 575.98px){
 
-
-
+}

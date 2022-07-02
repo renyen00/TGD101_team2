@@ -5,14 +5,11 @@
 
 
     //建立SQL語法
-    $sql = "select a.ID,a.M_ID,a.EMAIL,a.TIME,b.REASON,a.STATE,a.USER,a.CONTENT
-    from (select a.ID,a.M_ID,b.EMAIL,a.TIME,a.REASON,a.STATE,a.EMAIL USER,a.CONTENT
-    from (SELECT a.ID,b.ID M_ID,a.MEMBER_ID,a.TIME,a.REASON,a.STATE,b.EMAIL,b.CONTENT FROM REPORT a
-        join (SELECT a.ID,b.EMAIL,a.CONTENT from MESSAGE a
-        join MEMBER b on a.MEMBER_ID = b.ID ) b on a.MEMBER_ID = b.ID) a
-        join MEMBER b on a.MEMBER_ID = b.ID) a
-        join REPORT_REASON b on a.REASON = b.ID
-        where STATE = '未審核'";
+    $sql = "SELECT a.ID,a.MESSAGE_ID M_ID,c.EMAIL,a.TIME,d.REASON,a.STATE,b.EMAIL USER,b.CONTENT FROM REPORT a
+    join (select a.ID,a.CONTENT,b.EMAIL  from message a join member b on a.MEMBER_ID = b.ID ) b on a.MESSAGE_ID = b.ID
+   join MEMBER c on a.MEMBER_ID = c.ID
+   join REPORT_REASON d on a.REASON = d.ID
+   where STATE = '未審核'";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);

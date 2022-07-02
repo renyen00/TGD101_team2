@@ -100,7 +100,9 @@ Vue.component('backc',{
                         <li><h3>白:</h3><input type="file" @change='file' data-n='7'></li>
                         <li><h3>黃:</h3><input type="file" @change='file' data-n='8'></li>
                         <li><h3>藍:</h3><input type="file" @change='file' data-n='9'></li>
+                        <li><img :src="infor[7]"><img :src="infor[8]"><img :src="infor[9]"></li>
                     </ul>
+                    
                 </div>
                 
                 

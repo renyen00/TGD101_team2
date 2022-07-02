@@ -2,7 +2,8 @@ Vue.component('back4',{
     props:['h1'],
     data(){
         return{
-            content:''
+            content:'',
+            php:[],
         }
     },
     template:`
@@ -23,7 +24,15 @@ Vue.component('back4',{
             e.classList.add('nowpage')
             this.content = page
         },
-    }
+    },
+    mounted() {
+        const url1 = './php/backend4.php';
+        fetch(url1)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php = text
+            } );
+    },
     })
 
 
@@ -95,3 +104,14 @@ Vue.component('backd2',{
         </div>
         `,
     })
+    Vue.component('popd1',{
+        props:['infor'],
+        template:`
+       
+            `,
+        methods:{
+            close(e){
+                e.target.closest('div.backend_div_popup').classList.remove('backend_show')
+            }
+        }
+})

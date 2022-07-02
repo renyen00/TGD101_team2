@@ -1,26 +1,24 @@
-<!-- <?php
+<?php
 
-    //MySQL相關資訊
-    include("Connection_server.php");
-    
-    //建立資料庫連線物件
-    $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
-
-    //建立PDO物件，並放入指定的相關資料
-    $pdo = new PDO($dsn, $db_user, $db_pass);
-
+    include('Connection_self.php');
     //---------------------------------------------------
 
+
     //建立SQL語法
-    $sql = "SELECT EMPNO, ENAME, JOB FROM EMP;";
+    $sql = "SELECT a.ID,a.ORDERTIME,a.PAYMENT,b.METHOD,c.STATUS,d.EMAIL,e.NAME,e.CELLPHONE,a.TOTAL
+    FROM ORDERS a
+       join DELIVERY b on a.DELIVERY_ID =b.ID
+       join ORDER_STATUS c on a.STATUS=c.ID
+       join MEMBER d on a.MEMBER_ID = d.ID
+       join RECEIVER e on a.RECEIVER_ID = e.ID";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
-    $statement = $pdo->query($sql);
-
+    $statement = $pdo->prepare($sql);
+    $statement ->execute();
     //抓出全部且依照順序封裝成一個二維陣列
     $data = $statement->fetchAll();
 
-    // print_r($data);
+//     print_r($data);
 
     $process_data = [];
     //將二維陣列取出顯示其值
@@ -38,4 +36,4 @@
     // print_r($process_data[0]);
     echo json_encode($process_data);
 
-?> -->
+?>

@@ -7,7 +7,7 @@
     <title>大嶼商行</title>
     @@include('./layout/head.html')
     <!-- <script src="./js/vue.min.js"></script> -->
-    <!-- <script src="./js/nav.min.js"></script> -->
+    <script src="./js/nav.min.js"></script>
     
 </head>
 <body id="store_body" class="bgcBlue">
@@ -86,7 +86,7 @@
                 </ul>
                 <div class="productBtn">
                     <a href="./payment.html" class="pay btnS_w">直接結帳</a>
-                    <button class="addToCart btnS_y" @click="addToCart2" :data-id="product">加入購物車</button>
+                    <button class="addToCart btnS_y" @click="addToCart2" :data-id="product">商品詳細</button>
                 </div>
             </div>
             <!-- @@include('./layout/product.html')
@@ -107,7 +107,7 @@
         
         
         @@include('./layout/footer.html') 
-        <script src="./js/store.min.js"></script>
         <!-- <script src="./js/nav.min.js"></script> -->
+        <script src="./js/store.min.js"></script>
 </body>
 </html>

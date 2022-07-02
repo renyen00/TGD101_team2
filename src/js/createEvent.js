@@ -274,11 +274,11 @@ new Vue({
     },
     
     updated() {
-        $( "#draggable" ).draggable({
+        $( "#createEvent_draggable" ).draggable({
             cursor: "pointer",
             // containment: ".createEvent_div_choosePhotoL",
             drag: ( event, ui ) => {
-                this.potoposition = $("#draggable").attr('style');
+                this.potoposition = $("#createEvent_draggable").attr('style');
                 // console.log(this.potoposition);
               }
         });

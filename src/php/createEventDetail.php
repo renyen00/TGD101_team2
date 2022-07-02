@@ -23,8 +23,10 @@ if($postType['postType'] == 'sendMessage'){
     $sql = "SELECT mb.ID, ms.CONTENT, mb.AVATAR
             FROM MESSAGE ms
                 join MEMBER mb
-                    on ms.MEMBER_ID = mb.ID;
-                    order by ms.POSTTIME desc";
+                    on ms.MEMBER_ID = mb.ID
+            WHERE ms.ACTIVITY_ID = 19
+            order by ms.POSTTIME desc;";
+
     $statement = $pdo->query($sql);
     $data = $statement->fetchAll();
     echo json_encode($data);

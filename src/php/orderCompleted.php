@@ -4,7 +4,7 @@
     //建立SQL語法
     $sql = "SELECT DATE(ord.ORDERTIME), ord.ID, ordSt.STATUS, ord.PAYMENT, ord.TOTAL
                 FROM 
-                TGD101team2.ORDER ord
+                ORDER ord
                         JOIN ORDER_STATUS ordSt
                                 on ord.STATUS = ordSt.ID
                         join DELIVERY d

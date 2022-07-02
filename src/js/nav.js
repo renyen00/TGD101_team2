@@ -5,10 +5,12 @@ window.addEventListener('load', function(){
         let shopping_list = JSON.parse(localStorage.getItem('addProduct'));
         // console.log(shopping_list);
         shoppingCart_quantity.innerText = shopping_list.length;
+        $(shoppingCart_quantity).css("display", "block");
         // console.log(0);
     }else{
         // console.log(localStorage.getItem('addProduct'));
         shoppingCart_quantity.innerText = 0;
+        // $(shoppingCart_quantity).css("display", "none");
         // this.quantity = 0;
         // console.log(0);
     }

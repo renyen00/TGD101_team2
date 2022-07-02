@@ -1,7 +1,7 @@
 <?php
     include("Connection_server.php");
     //  =============================================
-    // REveiver Information
+    // Reveiver Information
     $receiverNm = htmlspecialchars($_POST["receivername"]);
     $receiverGd = htmlspecialchars($_POST["receivergender"]);
     $receiverEmail = htmlspecialchars($_POST["receiveremail"]);
@@ -17,7 +17,7 @@
 
 
     //建立SQL
-    $sql = "INSERT INTO TGD101team2.RECEIVER(NAME, GENDER, EMAIL, ADDRESS, CELLPHONE, HOMEPHONE) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO RECEIVER(NAME, GENDER, EMAIL, ADDRESS, CELLPHONE, HOMEPHONE) VALUES (?, ?, ?, ?, ?, ?)";
 
 
     //執行

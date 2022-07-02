@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    @@include('./layout/head.html')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="./js/vue.min.js"></script>
     <script src="./js/role.min.js"></script>
     <script src="./js/role_carousel.min.js"></script>
 
     <title>創建角色</title>
-    @@include('./layout/head.html')
+
 </head>
 <body class="role_body">
     @@include('./layout/header.html')
@@ -221,8 +220,7 @@
                 html2canvas(document.querySelector("#capture"))
                     .then(function(canvas) {
 
-                    var AVATAR = canvas.toDataURL("image/png , 1");
-                    // var base = encodeURIComponent(img); //轉碼        
+                    var AVATAR = canvas.toDataURL("image/png , 1");      
                     console.log(AVATAR);
 
                     const url = './php/role.php';    
@@ -235,18 +233,6 @@
                                 img: AVATAR
                             })
                         });
-                        // $.ajax({
-                        //     url: './php/role.php',
-                        //     type: 'post',
-                        //     async: true,
-                        //     data: {AVATAR:AVATAR},
-                        //     dataType: 'json',
-                        //     contentType: "application/upload",
-                        //     success:function(yes){console.log(yes)},
-                        //     error:function(no){console.log(no)},
-
-                        // });
-                        
                     });
             });
 

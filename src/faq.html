@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <title>FAQ</title>
-    <!-- @@include('./layout/head.html') 未打包 -->
+    @@include('./layout/head.html')
+    <script src="./js/accordin.min.js"></script>
 </head>
 <body>
     <div id="allIncluded">
@@ -31,13 +31,12 @@
         <div class="cloudFrame">
             <img src="./images/faq/cloud.svg" class="cloud1">
             <img src="./images/faq/cloud.svg" class="cloud2">
-        </div>
-
-        <main id="qnaWrapper">
             <img src="./images/faq/yellowBird.svg" class="ybirdSmall">
             <img src="./images/faq/yellowBird.svg" class="ybirdBig">
-            
-            <!-- 第一個問答 -->
+        </div>
+
+        <!-- <main id="qnaWrapper">
+            第一個問答
             <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">揪團</span>
@@ -47,52 +46,11 @@
                     </div>
                 </button>
                 <div class="drawer">
-                    <!-- 第一個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第二個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第三個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
+                    123test
                 </div>
             </div>
-            <!-- 第二個問答 -->
-            <div class="faq sec">
+            第二個問答
+            <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">交友</span>
                     <div class="circleAnimation closed">
@@ -101,51 +59,10 @@
                     </div>
                 </button>
                 <div class="drawer">
-                    <!-- 第一個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第二個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第三個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
+                    123test
                 </div>
             </div>
-            <!-- 第三個問答 -->
+            第三個問答
             <div class="faq">
                 <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
                     <span id="tabTitleDimensionstab">購物</span>
@@ -154,83 +71,182 @@
                         <div class="vertical"></div>
                     </div>
                 </button>
+
                 <div class="drawer">
-                    <!-- 第一個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第二個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
-                    <!-- 第三個QA -->
-                    <div class="faqDrawer">
-                        <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                            <span id="tabTitleDimensionstab">Q：這是問題?</span>
-                            <img src="./images/faq/cloud.svg" class="cloudSmall">
-                            <div class="circleAnimation closed">
-                                <div class="horizontal"></div>
-                                <div class="vertical"></div>
-                            </div>
-                        </button>
-                        <div class="drawer2">
-                            <p>A:答案</p>
-                        </div>
-                    </div>
+                    123testrkgkr
+                    <br>
+                    fheifje
+                    <br>
+                    lgjrjgr
+                    <br>
+                    123testrkgkr
+                    <br>
+                    fheifje
+                    <br>
+                    lgjrjgr
+                    <br>
                 </div>
             </div>
-                
-
-        </main>
+        </main> -->
     </div>
+         <!-- 最外層包一個 div，為了不跟裡面 div 混淆這邊用 section -->
+            <section class="augurio-collapse">
+                <!-- 一個 .collapse 是一組-->
+                <div class="collapse">
+                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
+                    <div class="title-box" data-expanded="true">
+                        <div class="title">揪團</div>
+                        <div class="icons">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <!-- contents-->
+                    <div class="contents-box">
+                        <div class="contents">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="collapse yellow">
+                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
+                    <div class="title-box" data-expanded="true">
+                        <div class="title">交友</div>
+                        <div class="icons">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <!-- contents-->
+                    <div class="contents-box">
+                        <div class="contents">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="collapse">
+                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
+                    <div class="title-box" data-expanded="true">
+                        <div class="title">購物</div>
+                        <div class="icons">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <!-- contents-->
+                    <div class="contents-box">
+                        <div class="contents">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                
+            </section>
+    
 
+   
+    @@include('./layout/footer.html')
+    
     <script>
-        const acc = document.getElementsByClassName("accordion");
-        let i;
+        //寫法1
+        // const acc = document.getElementsByClassName("accordion");
+        // for (let i = 0; i < acc.length; i++) {
+        //     console.log(i);
+        //     acc[i].addEventListener("click", function() {
+        //         let faq = document.getElementsByClassName('faq');
+        //         for(let j=0; j<faq.length; j++){
+        //         faq[j].removeAttribute("style");
+        //         }
+        //         const drawer = this.nextElementSibling;
+        //         var drawerSH = drawer.scrollHeight;
+        //         faq[i].setAttribute("style",`height:${drawerSH}px;`);
+        //         if (drawer.style.maxHeight) {
+        //         drawer.style.maxHeight = null;
+        //         drawer.classList.remove("open");
+        //         this.setAttribute('aria-expanded',"false")
+        //         } else {
+        //         let active = document.querySelectorAll(".accordion.active");
+        //         for(let j = 0; j < active.length; j++){
+        //             active[j].classList.remove("active");
+        //             active[j].setAttribute('aria-expanded',"false")
+        //             active[j].nextElementSibling.style.maxHeight = null;
+        //             active[j].nextElementSibling.classList.remove("open");
+        //         }
+        //         drawer.style.maxHeight = drawerSH + "px";
+        //         drawer.classList.add("open");
+        //         this.setAttribute('aria-expanded',"true")
+        //         }
+        //         this.classList.toggle("active");
+        //     });
+        // }
 
-        for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            const drawer = this.nextElementSibling;
-            if (drawer.style.maxHeight) {
-            drawer.style.maxHeight = null;
-            drawer.classList.remove("open");
-            this.setAttribute('aria-expanded',"false")
-            } else {
-            let active = document.querySelectorAll(".accordion.active");
-            for(let j = 0; j < active.length; j++){
-                active[j].classList.remove("active");
-                active[j].setAttribute('aria-expanded',"false")
-                active[j].nextElementSibling.style.maxHeight = null;
-                active[j].nextElementSibling.classList.remove("open");
-            }
-            drawer.style.maxHeight = drawer.scrollHeight + "px";
-            drawer.classList.add("open");
-            this.setAttribute('aria-expanded',"true")
-            }
-            this.classList.toggle("active");
-            
-        });
-        }
+        // ==================================================================
+        //寫法2
+    //     $(document).ready(function() {
+
+
+    //     $('#multiple [data-accordion]').accordion({
+    //         transitionSpeed: 300,
+    //         transitionEasing: 'ease',
+    //         controlElement: '[data-control]',
+    //         contentElement: '[data-content]',
+    //         groupElement: '[data-accordion-group]',
+    //         singleOpen: false
+    //     });
+
+    //      });
+
+    // ====================================================================================
+    //寫法3
+    window.addEventListener('DOMContentLoaded', () => {
+
+// 寫入各 .content-box 的高，然後高度設成 0
+const contents = document.querySelectorAll('.augurio-collapse .contents-box');
+Array.prototype.forEach.call(contents, c => {
+  c.dataset.height = c.offsetHeight;
+  c.setAttribute('style', 'height: 0');
+});
+
+// .title-box 被點擊時，加入 .active， .content-box的高度抓 data-height 的
+const titles = document.querySelectorAll('.title-box');
+Array.prototype.forEach.call(titles, t => {
+  t.addEventListener('click', e => {
+    
+    // 如果需要開啟一個就關閉前一個，就加入以下：
+    const active = document.querySelectorAll('.active');
+    Array.prototype.forEach.call(active, act => {
+      act.classList.remove('active');
+      act.parentNode.querySelector('.contents-box').setAttribute('style', 'height: 0');
+    })
+    
+    
+    e.target.classList.toggle('active'); // 加入/移除 .active
+
+    // .title-box 同一層的 .contents-box
+    const content = e.target.parentNode.querySelector('.contents-box');
+    const height = content.dataset.height; // 從 dat-height 抓原本高度
+
+    // 判斷 .title-box 有沒有 .active
+    if(e.target.classList.contains('active')) {
+      // 有 .active，就設高
+      content.setAttribute('style', 'height: ' + height + 'px');
+    } else {
+      // 沒有，高度歸 0
+      content.setAttribute('style', 'height: 0');
+    }
+  });
+  
+  // 如果 .title-box 有 data-expanded="true"，就預設開啟
+  if(t.dataset.expanded === 'true') {
+    t.click()
+  }
+  
+});
+
+});
     </script>
 </body>
 </html>

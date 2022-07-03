@@ -20,7 +20,31 @@ window.addEventListener("load", function(){
         updated() {},
 
     })
+    // $(".payment_ckeckbox_same").click(function(){
+
+    // })
+    $("#twzipcode").twzipcode();
+    $("#twzipcode2").twzipcode();
+    
+    $(".goPay").click(function(){
+        setTimeout(() => {
+            $(".buyerInfoMethod").css("display", "block");
+            $("#shoppingCart_icon_trash").css("display", "none");
+            $(".shoppingCart_optionBtn").css("display", "none");
+            $(".payment_optionBtn").css("display", "block");
+            $(".shoppingCart_section_promoH").css("display", "none");
+        }, 500);
+    })
+
+    $(".previous").click(function(){
+        $(".buyerInfoMethod").css("display", "none");
+        $("#shoppingCart_icon_trash").css("display", "block");
+        $(".shoppingCart_optionBtn").css("display", "block");
+        $(".payment_optionBtn").css("display", "none");
+        $(".shoppingCart_section_promoH").css("display", "block");
+    })
 })
+
 
 $("#payment_comfirm").click(function(){
     $("#payment_submit")[0].click();

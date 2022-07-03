@@ -27,7 +27,7 @@
                 </div>
                 
                 <div class="createEventDetail_div_member">
-                    <img src="./images/backgroundimg/createConfirm_member.svg">
+                    <img :src="avatar">
                 </div>
             </header>
         </div>
@@ -101,7 +101,7 @@
                     <!-- <messageboard></messageboard> -->
                     <!-- @@include('./layout/messageBoard.html') -->
                     <div class="controlpop">
-                        <messageboard></messageboard>
+                        <messageboard :activityid="activity_id"></messageboard>
                     </div>
                 </main>
             </div>

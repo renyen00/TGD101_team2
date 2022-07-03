@@ -11,9 +11,9 @@
                     on a.PLACE_ID = p.ID 
                     join PLACETYPE t 
                         on p.TYPE_ID = t.ID 
-            WHERE a.ID = :activityId;";
+            WHERE a.ID = :ACTIVITY_ID;";
     $statement = $pdo->prepare($sql);
-    $statement->bindParam(":activityId", $activityId['activityId']);
+    $statement->bindParam(":ACTIVITY_ID", $activityId['ACTIVITY_ID']);
     $statement->execute();
     $data = $statement->fetchAll();
 

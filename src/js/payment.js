@@ -30,6 +30,13 @@ window.addEventListener("load", function(){
         setTimeout(() => {
             $(".buyerInfoMethod").css("display", "block");
             $("#shoppingCart_icon_trash").css("display", "none");
+
+            $(".stepTwoLine").css("display", "block");
+            $(".stepOneLine").css("display", "none");
+
+            $("#shopingList_icon_greyBird").css("display", "none");
+            $("#payment_icon_greyBird").css("display", "block");
+
             $(".shoppingCart_optionBtn").css("display", "none");
             $(".payment_optionBtn").css("display", "block");
             $(".shoppingCart_section_promoH").css("display", "none");
@@ -39,6 +46,13 @@ window.addEventListener("load", function(){
     $(".previous").click(function(){
         $(".buyerInfoMethod").css("display", "none");
         $("#shoppingCart_icon_trash").css("display", "block");
+
+        $(".stepTwoLine").css("display", "none");
+        $(".stepOneLine").css("display", "block");
+
+        $("#shopingList_icon_greyBird").css("display", "block");
+        $("#payment_icon_greyBird").css("display", "none");
+
         $(".shoppingCart_optionBtn").css("display", "block");
         $(".payment_optionBtn").css("display", "none");
         $(".shoppingCart_section_promoH").css("display", "block");

@@ -321,3 +321,201 @@
     };
 };
 
+// ----------------media query-------------------------
+
+@media (max-width: 575.98px){
+    #store_body{
+        width: 100vw;
+
+        .main-header{
+            right: 30px;
+        }
+
+        .store_header{
+            width: 100%;
+
+            #store_div_sliderBoard{
+                margin: 0 auto;
+                width: 100%;
+                position: relative;
+                box-sizing: content-box;
+                
+                #store_ul_sliderImg{
+                    overflow: hidden;
+                    // border: 2px solid white;
+                    max-width: 100%;
+                    height: 255px;
+                    margin: 0 auto;
+                    
+                    .store_li_slider{
+                        float: left;
+                        // border: 2px solid red;
+                        width: 100%;
+        
+                        .store_img_slider{
+                            width: 100%;
+                            height: 255px;
+                        }
+                    }
+                };
+    
+                #store_div_titleSection{
+                    border: 2px solid map-get($Mapcolor, 'white');
+                    width: 200px;
+                    height: 230px;
+                    top: 140px;
+                    
+                    .store_img_logo{
+                        width: 50px;
+                        top: 35px;
+                    };
+    
+                    .store_h1_title{
+                        font-size: 2.4rem;
+                        top: 130px;
+                    };
+    
+                    .store_h3_subtitle{
+                        font-size: 1.2rem;
+                        width: 155px;
+                        top: 180px;
+                    }
+                }
+            }       
+        }
+
+        #store_section_breadCrumb{
+            display: none;
+        }
+
+    }
+    
+    #store_section_filterBtn{
+        width: 100vw;
+        padding: 0;
+        padding-top: 120px;
+    
+        #store_filter_all{
+
+            #store_icon_birdBold{
+                width: 30px;
+                height: 30px;
+                top: 60%;
+                left: 1%;
+            }
+    
+            h4{
+                font-size: 1.2rem;
+            }
+        }
+        .store_btn_filter{
+            
+            h4{
+                font-size: 1.2rem;
+            }
+    
+            #store_icon_birdT1{
+                width: 30px;
+                height: 30px;
+                top: 60%;
+                left: 26%;
+            }
+    
+            #store_icon_birdT2{
+                width: 30px;
+                height: 30px;
+                top: 60%;
+                left: 51%;
+            }
+    
+            #store_icon_birdT3{
+                width: 30px;
+                height: 30px;
+                top: 60%;
+                left: 76%;
+            }
+        }
+    }
+    
+    .store_main_product{
+        // border: 1px solid yellow;
+        max-width: 100%;
+        height: 420px;
+        gap: 20px;
+        
+        .productWrapper{
+            // float: left;
+            // border: 1px solid purple;
+            box-sizing: border-box;
+            width: 189px;
+            height: 400px;
+            margin-bottom: 3%;
+    
+            .productFrame{
+                border: 5px solid map-get($Mapcolor, 'white');
+                width: 169px;
+                height: 375px;
+                border-radius: 10px;
+            };
+    
+            .productCircle{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            };
+    
+            .productPic{
+                position: absolute;
+                width: 108px;
+            };
+    
+            .producNm{
+                font-size: 1.2rem;
+                // width: 166px;
+                display: block;
+                position: absolute;
+                top: 52%;
+                left: 45%;
+                transform: translateX(-50%);
+            };
+    
+            .productColor{
+                top: 60%;
+
+                .productColorLi{
+                    width: 15px;
+                    height: 15px;
+                };
+            };
+    
+            .productBtn{
+                // border: 1px solid red;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 68%;
+                left: 46%;
+                transform: translateX(-52%)
+            };
+        };
+    }
+
+    .store_section_moreBtn{
+        // border: 1px solid white;
+        width: 100vw;
+        margin: 0 auto;
+        padding-top: 70px;
+        position: relative;
+        margin-bottom: 5%;
+    
+        #birdBold{
+            position: absolute;
+            bottom: 35%;
+            right: 18%;
+        };
+    
+        .store_moreBtn{
+            margin: 0 auto;
+        };
+    }
+}

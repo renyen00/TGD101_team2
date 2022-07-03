@@ -6,6 +6,7 @@
     left: 0;
     top: 0;
     display: none;
+    z-index: 99;
   }
 .personal_popup_user{    
     width: 800px;
@@ -18,6 +19,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+    z-index: 99;
   }
     //裡面白線
     .personal_card_out{
@@ -63,3 +65,57 @@
         display: flex;       
     }
   }
+
+//   ---------------media query--------------------
+  @media (max-width: 575.98px){
+      // 彈窗
+      .personal_popup_user{    
+        width: 360px;
+        height: 300px;
+        padding: 10px;
+        border-radius: 30px;
+    }
+    //裡面白線
+    .personal_card_out{
+        border-radius: 30px;
+        height: 280px;
+        // 左邊頭貼
+        .personal_card_left{
+            width: 140px;
+            height: 140px;
+            margin: auto 10px;
+            img{
+                width: 120px;
+                margin: 20px auto 0;
+            }
+        }
+        // 右邊文字
+        .personal_card_right{
+            width: 170px;
+            .personal_card_span{
+                width: 170px;
+            }
+            span{
+                margin-top: 15px;
+                font-size: 14px;
+            }
+            p{  
+                margin-top: 15px;
+                font-size: 14px;
+                height: 120px;
+            }
+        }
+        // 按鈕
+        .personal_card_button{
+            a,button{
+                width: 120px;
+                height: 30px;
+                line-height: 25px;
+                margin: 5px;
+                font-size: 12px;
+            }   
+        }
+    }
+
+
+}

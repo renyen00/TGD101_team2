@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @@include('./layout/head.html')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="./js/role.min.js"></script>
     <script src="./js/role_carousel.min.js"></script>
@@ -146,21 +146,24 @@
                             <li class="role_hat"><img src="./images/xiaojiang/h2.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h3.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h4.svg" alt=""></li>
-                            <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
+                            <li class="role_hat"><img src="./images/xiaojiang/h5.svg" alt=""></li>
+                            <li class="role_hat"><img src="./images/xiaojiang/h6.svg" alt=""></li>
                         </ul>
                         <ul id="role_hat_banner2">
                             <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h2.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h3.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h4.svg" alt=""></li>
-                            <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
+                            <li class="role_hat"><img src="./images/xiaojiang/h5.svg" alt=""></li>
+                            <li class="role_hat"><img src="./images/xiaojiang/h6.svg" alt=""></li>
                         </ul>
                         <ul id="role_hat_banner3">
                             <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h2.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h3.svg" alt=""></li>
                             <li class="role_hat"><img src="./images/xiaojiang/h4.svg" alt=""></li>
-                            <li class="role_hat"><img src="./images/xiaojiang/h1.svg" alt=""></li>
+                            <li class="role_hat"><img src="./images/xiaojiang/h5.svg" alt=""></li>
+                            <li class="role_hat"><img src="./images/xiaojiang/h6.svg" alt=""></li>
                         </ul>
                     </div>
                     <button id="role_hat_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
@@ -175,19 +178,19 @@
                             <li class="role_other"><img src="./images/xiaojiang/a1.svg" alt=""></li>
                             <li class="role_other"><img src="./images/xiaojiang/a2.svg" alt=""></li>
                             <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
-                            <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
+                            <li class="role_other"><img src="./images/xiaojiang/a4.svg" alt=""></li>
                         </ul>
                         <ul id="role_other_banner2">
                             <li class="role_other"><img src="./images/xiaojiang/a1.svg" alt=""></li>
                             <li class="role_other"><img src="./images/xiaojiang/a2.svg" alt=""></li>
                             <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
-                            <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
+                            <li class="role_other"><img src="./images/xiaojiang/a4.svg" alt=""></li>
                         </ul>
                         <ul id="role_other_banner3">
                             <li class="role_other"><img src="./images/xiaojiang/a1.svg" alt=""></li>
                             <li class="role_other"><img src="./images/xiaojiang/a2.svg" alt=""></li>
                             <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
-                            <li class="role_other"><img src="./images/xiaojiang/a3.svg" alt=""></li>
+                            <li class="role_other"><img src="./images/xiaojiang/a4.svg" alt=""></li>
                         </ul>
                     </div>
                     <button id="role_other_next"><img src="./images/xiaojiang/next.svg" alt=""></button>
@@ -204,7 +207,7 @@
         <section class="role_button_bottom">
             <button class="btnL_b--s role_button_reset">重設</button>
 
-            <button type="submit" id="Rolecreate" class="btnL_y  role_button_sure">確定</button>          
+            <button type="submit" id="rolecreate" class="btnL_y  role_button_sure">確定</button>          
 
         </section>
     <!-- 按鈕 -->
@@ -215,9 +218,9 @@
     <script>
 
         $(function create_img() { 
-            $("#Rolecreate").click(function() { 
-
-                html2canvas(document.querySelector("#capture"))
+            $("#rolecreate").click(function() { 
+                const roleoptions = { backgroundColor: "rgba(0,0,0,0)" };
+                html2canvas(document.querySelector("#capture"), roleoptions)
                     .then(function(canvas) {
 
                     var AVATAR = canvas.toDataURL("image/png , 1");      

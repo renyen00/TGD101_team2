@@ -1,5 +1,5 @@
 // --------------------資料連接----------------------
-
+$(function(){
 
     new Vue({
         el: '#activity_info',
@@ -28,7 +28,8 @@
 
         },
         updated() {
-            // 按鈕--------------------------
+
+            // 按鈕-----------------------------------------
             $(".activity_button_more img").hide();
             $(".activity_button_more a").mouseover(function(){
                 $(".activity_button_more img").show();
@@ -44,8 +45,9 @@
             $(".activity_button_more2 a").mouseout(function(){
                 $(".activity_button_more2 img").hide();
             });
-            // 彈跳視窗--------------------------
-             $('.avatar1').click(function(){
+
+            // 彈跳視窗-----------------------------------
+            $('.avatar1').click(function(){
             $('.mask_user1').css('display', 'block');
             });   
             $('.mask_user1').click(function(e){
@@ -132,5 +134,5 @@
     
     });
 
-
+});
     // --------------------資料連接----------------------

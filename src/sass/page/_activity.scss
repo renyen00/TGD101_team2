@@ -3,8 +3,7 @@
     width: 100%;
 }
 
-
-/* activity_banner */
+// activity_banner
 .activity_banner{
     background-image: url(../images/xiaojiang/banner.jpg);
     background-size: cover;
@@ -58,7 +57,7 @@
     }
     .activity_img_dialog{
         width: 200px;
-        z-index: -50;
+        // z-index: -50;
         position: absolute;
         cursor: pointer;
         top: 70%;    
@@ -84,8 +83,7 @@
     }
 }
 
-
-/* activity嶼我同行 */
+// activity嶼我同行
 .activity_main_us {
     color: map-get($Mapcolor, 'white');
     h1{
@@ -106,20 +104,24 @@
         display: flex;
         margin-bottom: 150px;
         img{
+            object-fit: cover;
             width: 300px;
             height: 300px;
             display: block;
             border-radius: 50%;
+        }
+        .activity_span{
+            width: 300px;
+            margin: 20px auto;
         }
         span{
             font-size: 24px;
             display: flex;
             flex-direction:column;
             line-height: 55px;
-            margin-left: 80px;
-            margin-right: 80px;
+
         }
-        a{
+        .activity_a_beside a{
             line-height: 40px;
             margin-top: 60px;
         }
@@ -144,8 +146,7 @@
 
 }
 
-
-/* activity嶼友同行 */
+// activity嶼友同行
 .activity_main_user{
     color: map-get($Mapcolor, 'blue');   ;
     h1{
@@ -169,13 +170,15 @@
     li{
         display: flex;
         margin-bottom: 150px;
+        .activity_span{
+            margin: 20px auto;
+            width: 300px;
+        }
         span{
             font-size: 24px;
             display: flex;
             flex-direction:column;
             line-height: 55px;
-            margin-left: 80px;
-            margin-right: 80px;
         }
         .activity_a_beside a{
             line-height: 40px;
@@ -183,11 +186,8 @@
         }
         .activity_right_avatar{
             position: relative;
-            width: 300px;
-            height: 300px;
-            display: block;
-            border-radius: 50%;
             img{
+                object-fit: cover;
                 width: 300px;
                 height: 300px;
                 display: block;
@@ -223,76 +223,8 @@
     }
 }
 
-// 頭像談窗
-.personal_mask_user{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.3);
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: none;
-    z-index: 99;
-  }
-.personal_popup_user{    
-    width: 800px;
-    height: 550px;
-    padding: 15px;
-    background-color: map-get($Mapcolor, 'blue');
-    border-radius: 50px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
-    z-index: 99;
-  }
-    //裡面白線
-    .personal_card_out{
-    border: 5px solid map-get($Mapcolor, 'white');
-    border-radius: 50px;
-    height: 520px;
-    display: flex;
-    // 左邊頭貼
-    .personal_card_left{
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        margin: auto 30px;
-        background-color: map-get($Mapcolor, 'white');
-        img{
-            display: block;
-            width: 200px;
-            margin: 40px auto;
-        }
-    }
-    // 右邊文字
-    .personal_card_right{
-        
-        .personal_card_span{
-            color: map-get($Mapcolor, 'white');
-            width: 380px;
-        }
-        span{
-            margin-top: 30px;    
-            display: flex;
-            font-size: 24px;
-        }
-        p{  
-            margin-top: 30px;  
-            font-size: 24px;
-            height: 200px;
-            // border: 1px solid red;
-        }
 
-    }
-    // 按鈕
-    .personal_card_button{
-        display: flex;       
-    }
-  }
-
-// ---------------media query--------------------
+// activity---------------media query--------------------
 @media (max-width: 575.98px){
     .activity_banner{
         width: 100%;
@@ -403,9 +335,9 @@
                     bottom: 0;
                 }
             }
-        }
-        
-
+        }  
     }
 
+
 }
+    // activity---------------media query--------------------

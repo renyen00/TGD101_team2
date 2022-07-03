@@ -244,12 +244,10 @@
                 for(let j of revise){
                     j.classList.toggle('personal_hide')
                 }
-                
             },
             sure(){
                 this.forwatch +=1; 
-                this.toggle()
-                
+                this.toggle()     
             },
         },
         created() {
@@ -260,14 +258,8 @@
                         this.information = text
                         // console.log(text);
                     } );
-
             },
-
     });
-
-
-    
-
     function close(){
         $('.personal_div_popup').removeClass('personal_show');
         console.log(arr);

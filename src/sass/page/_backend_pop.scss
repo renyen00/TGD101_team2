@@ -19,6 +19,7 @@
         border-radius: 20px;
         h2,h3,input,select{
             margin-bottom: 20px;
+            color:$blue;
         }
         ul{
             color: $blue;
@@ -107,4 +108,35 @@
     justify-content: space-around;
     width: 250px;
 }
-  
+.backend_detail{
+    border-top: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    max-height: 200px;
+    overflow: auto;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    ul{
+        li.backend_detail_li{
+            width: 100%;
+        }
+    }
+    .backend_img_bird{
+        position: absolute;
+        max-width: 100px;
+        left: 50px;
+        bottom: 0;
+    }
+}
+.backend_img_bird_sp{
+    position: absolute;
+        max-width: 100px;
+        right: 50px;
+        bottom: 0;
+}
+.backend_avatar{
+    max-width: 250px;
+    max-height: 250px;
+    border: 2px solid $blue;
+    padding: 20px;
+}

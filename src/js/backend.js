@@ -85,11 +85,6 @@ Vue.component('backa1',{
     },
     template:`
         <div>
-            <ul class="backend_ul_sort">
-                <li>全部↓</li>
-                <li>最新↓</li>
-                <li>區域↓</li>
-            </ul>
             <table>
                 <tr>
                     <td>文章編號</td>
@@ -126,11 +121,6 @@ Vue.component('backa2',{
     },
     template:`
         <div>
-            <ul class="backend_ul_sort">
-                <li>全部↓</li>
-                <li>最新↓</li>
-                <li>回覆狀態↓</li>
-            </ul>
             <table>
                 <tr>
                     <td>來函編號</td>
@@ -170,9 +160,6 @@ Vue.component('backa3',{
     template:`
         <div>
             <ul class="backend_ul_sort">
-                <li>全部↓</li>
-                <li>最新↓</li>
-                <li>類型↓</li>
                 <button class="backend_btn_add back_btnS" @click='chg'>新增</button>
             </ul>
             <table>

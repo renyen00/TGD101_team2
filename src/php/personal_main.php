@@ -4,9 +4,9 @@
     //---------------------------------------------------
 
     session_start();
-//     $acc = $_SESSION['UserID']
-    $acc = 'Client@gmail.com';
-    // $acc = 'admin@123.com';
+    // $acc = $_SESSION['UserID']
+    
+    $acc = 'admin@123.com';
     //建立SQL語法
     $sql = "SELECT NAME,NICKNAME,EMAIL,BIRTH,PHONE,HOBBY,INTRODUCTION,AVATAR,PASSWORD FROM MEMBER
     where EMAIL = :acc ";

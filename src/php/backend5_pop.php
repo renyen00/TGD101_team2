@@ -3,14 +3,14 @@
     include('Connection_self.php');
     //---------------------------------------------------
 
-
+    $id = $_GET['id'];
     //建立SQL語法
-    $sql = "SELECT s.ID,s.TITLE,m.EMAIL,s.POSTTIME,s.REPLY_STATUS,s.CONTENT,s.REPLY FROM SERVICE s
-	join MEMBER m
-		on s.MEMBER_ID = m.ID order by 1";
+    $sql = "SELECT b.EMAIL FROM JOINLIST a join MEMBER b on a.MEMBER_ID = b.ID
+    where ACTIVITY_ID =  :id";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);
+    $statement ->bindValue(':id',$id);
     $statement ->execute();
     //抓出全部且依照順序封裝成一個二維陣列
     $data = $statement->fetchAll();

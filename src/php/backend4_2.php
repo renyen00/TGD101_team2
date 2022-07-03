@@ -5,9 +5,14 @@
 
 
     //建立SQL語法
-    $sql = "SELECT s.ID,s.TITLE,m.EMAIL,s.POSTTIME,s.REPLY_STATUS,s.CONTENT,s.REPLY FROM SERVICE s
-	join MEMBER m
-		on s.MEMBER_ID = m.ID order by 1";
+    $sql = "SELECT a.ID,a.ORDERTIME,a.PAYMENT,b.METHOD,c.STATUS,d.EMAIL,e.NAME,e.CELLPHONE,a.TOTAL
+    FROM `ORDER` a
+       join DELIVERY b on a.DELIVERY_ID =b.ID
+       join ORDER_STATUS c on a.STATUS=c.ID
+       join MEMBER d on a.MEMBER_ID = d.ID
+       join RECEIVER e on a.RECEIVER_ID = e.ID
+       where a.STATUS in (4,5)
+       order by 1 desc";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);

@@ -4,12 +4,12 @@
     //---------------------------------------------------
 
     session_start();
-//     $acc = $_SESSION['UserID']
-    $acc = 'Client@gmail.com';
+    // $acc = $_SESSION['UserID']
+        $acc = 'admin@123.com';
+
     $pass = $_GET['password'];
     
 
-//     $acc = 'admin@123.com';
     //建立SQL語法
     $sql = "update MEMBER 
 	set PASSWORD = :pass 

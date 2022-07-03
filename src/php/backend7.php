@@ -3,11 +3,9 @@
     include('Connection_self.php');
     //---------------------------------------------------
 
-
     //建立SQL語法
-    $sql = "SELECT s.ID,s.TITLE,m.EMAIL,s.POSTTIME,s.REPLY_STATUS,s.CONTENT,s.REPLY FROM SERVICE s
-	join MEMBER m
-		on s.MEMBER_ID = m.ID order by 1";
+    $sql = "SELECT a.ID,a.NAME,a.PIC_ARRAY,b.TYPENAME,a.LIMIT,a.TEXT,a.TEXT2,a.STATUS FROM PLACE a
+	join PLACETYPE b on a.TYPE_ID = b.ID order by 1";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);

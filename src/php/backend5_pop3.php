@@ -5,9 +5,7 @@
 
 
     //建立SQL語法
-    $sql = "SELECT s.ID,s.TITLE,m.EMAIL,s.POSTTIME,s.REPLY_STATUS,s.CONTENT,s.REPLY FROM SERVICE s
-	join MEMBER m
-		on s.MEMBER_ID = m.ID order by 1";
+    $sql = "SELECT NAME,ID FROM PLACE order by 2";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);

@@ -16,13 +16,13 @@
     // echo '登入成功';
         
     session_start();
-    $_SESSION['UserID'] = $acc;
+    $_SESSION['UserE'] = $acc;
+    // $_SESSION['memcol'] = $data;
     foreach($data as $index => $row){
-        $_SESSION['UserN'] = $row["NAME"];//欄位名稱
-        //    echo $row["NAME"];   
+        $_SESSION['UserN'] = $row["NAME"];  
         $_SESSION['UserNN'] = $row["NICKNAME"];    //欄位名稱
         $_SESSION['UserNB'] = $row["AVATAR"];    //欄位名稱	
-        // $_SESSION[''] = $row[""];
+        $_SESSION['UserUID'] = $row["ID"];
         // $_SESSION[''] = $row[""]; 
         // $_SESSION[''] = $row[""]; 
         // $_SESSION[''] = $row[""]; 

@@ -168,11 +168,11 @@
     @keyframes tree {
         from{
             transform-origin: center bottom;
-            transform: translate(-20deg);
+            transform: rotate(-3deg);
         }
         to{
             transform-origin: center bottom;
-            transform: translate(20deg);
+            transform: rotate(3deg);
         }
     }
 
@@ -187,20 +187,23 @@
 
     @keyframes ballon_blue {
         0%{
-            left: 58%;
+            transform: translateX(-100px);
             transform: rotateX(40deg);
         }
         20%{
+            transform: translateX(-80px);
             transform: rotateX(20deg);
         }
         40%{
+            transform: translateX(0px);
             transform: rotateX(40deg);
         }
         60%{
+            transform: translateX(20px);
             transform: rotateX(20deg);
         }
         100%{
-            left: 50%;
+            transform: translateX(100px);
             transform: rotateX(40deg);
         }
     }
@@ -227,7 +230,7 @@
 
     @keyframes ballon_typhoon {
         0%{
-            left: 48%;
+            left: 55%;
             transform: rotateX(40deg);
         }
         20%{
@@ -240,7 +243,7 @@
             transform: rotateX(20deg);
         }
         100%{
-            left: 60%;
+            left: 70%;
             transform: rotateX(40deg);
         }
     }
@@ -277,7 +280,7 @@
     .treeA{
         animation: {
         name: tree;
-        duration: 1s;
+        duration: 5s;
         iteration-count: infinite;
         timing-function: ease-out;
         direction: alternate;
@@ -287,7 +290,7 @@
     .treeB{
         animation: {
             name: tree;
-            duration: 1s;
+            duration: 5s;
             delay: .5s;
             iteration-count: infinite;
             timing-function: ease-out;
@@ -298,7 +301,7 @@
     .treeC{
         animation: {
             name: tree;
-            duration: 1s;
+            duration: 5s;
             iteration-count: infinite;
             timing-function: ease-out;
             direction: alternate;
@@ -308,7 +311,7 @@
     .treeD{
         animation: {
             name: tree;
-            duration: 1s;
+            duration: 5s;
             delay: .5s;
             iteration-count: infinite;
             timing-function: ease-out;
@@ -316,17 +319,16 @@
         }
     }
 
-    // .bush{
-    //     animation: {
-    //         name: tree;
-    //         duration: 1s;
-    //         delay: .5s;
-    //         iteration-count: infinite;
-    //         timing-function: ease-out;
-    //         direction: alternate;
-    //     }
-    // }
-    // scrollmagic=======================================
+    .bush{
+        animation: {
+            name: tree;
+            duration: 3s;
+            delay: .5s;
+            iteration-count: infinite;
+            timing-function: ease-out;
+            direction: alternate;
+        }
+    }
     .islandSceneObject{
         position: relative;
         margin: auto;
@@ -340,7 +342,7 @@
         height: 1200px;
         margin: 0 auto;
         position: relative;
-
+    }
 
     .birdIsland{
         display: block;
@@ -392,7 +394,7 @@
         position: absolute;
         top: 44.8%;
         left: 50.5%;
-        opacity: .5;
+        opacity: 1;
         height: 105px;
         z-index: 1;
         transition: 1s;
@@ -410,8 +412,8 @@
     // 熱氣球==========================
     .baBlue{
         position: absolute;
-        top: 6.4%;
-        left: 54%;
+        top: 21.4%;
+        left: 60%;
         animation: {
             name: ballon_blue;
             duration: 4s;
@@ -423,8 +425,9 @@
     }
     .baWhite{
         position: absolute;
-        top: 12.6%;
+        top: 26.6%;
         left: 58%;
+        z-index: 6;
         animation: {
             name: ballon_white;
             duration: 4s;
@@ -435,8 +438,9 @@
     }
     .baYellow{
         position: absolute;
-        top: 11.6%;
-        left: 50%;
+        top: 24.6%;
+        left: 80%;
+        z-index: 5;
         animation: {
             name: ballon_typhoon;
             duration: 4s;
@@ -543,20 +547,6 @@
         position: absolute;
         top: 42.4%;
         left: 31%;
-    }
-    .panda{
-        width: 5.25%;
-        position: absolute;
-        top: 45%;
-        left: 34.1%;
-    }
-    .giraffe{
-        width: 5.25%;
-        position: absolute;
-        top: 40.6%;
-        left: 37.4%;
-    }
-    .atagHoverZoo{
         &:hover{
             animation: {
                 name: landscapeHoverAnimation;
@@ -567,11 +557,40 @@
             }
         }
     }
-
+    .panda{
+        width: 5.25%;
+        position: absolute;
+        top: 45%;
+        left: 34.1%;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
+    }
+    .giraffe{
+        width: 5.25%;
+        position: absolute;
+        top: 40.6%;
+        left: 37.4%;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
+    }
     // 燈塔============================
     .lightHouse{
         width: 9.16%;
-        height: 118px;
+        height: 9.83%;
         position: absolute;
         top: 42.2%;
         left: 78.8%;
@@ -583,22 +602,6 @@
         position: absolute;
         top: 37%;
         left: 54.3%;
-    }
-    .ferryWheel{
-        width: 9.25%;
-        position: absolute;
-        top: 34.4%;
-        left: 62.8%;
-        z-index: 1;
-    }
-    .carousel{
-        width: 4.66%;
-        height: 66px;
-        position: absolute;
-        top: 39.2%;
-        left: 56.8%;
-    }
-    .atagHoverPark{
         &:hover{
             animation: {
                 name: landscapeHoverAnimation;
@@ -609,7 +612,37 @@
             }
         }
     }
-
+    .ferryWheel{
+        width: 9.25%;
+        position: absolute;
+        top: 34.4%;
+        left: 62.8%;
+        z-index: 1;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
+    }
+    .carousel{
+        width: 4.66%;
+        position: absolute;
+        top: 39.2%;
+        left: 56.8%;
+        &:hover{
+            animation: {
+                name: landscapeHoverAnimation;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
+    }
     // 橋哦 有兩座=========================
     .br1{
         width: 5.83%;
@@ -709,56 +742,52 @@
 
     .b1{
         width: 1.92%;
-        height: 13px;
         position: absolute;
-        top: 22.6%;
+        top: 22.8%;
         left: 32%;
     }
     .b2{
         width: 1.92%;
         position: absolute;
-        top: 22.6%;
+        top: 22.8%;
         left: 29.5%;
     }
     .b3{
         width: 1.92%;
         position: absolute;
-        top: 22.6%;
+        top: 22.8%;
         left: 34%;
     }
     .b4{
         width: 1.92%;
         position: absolute;
-        top: 22.6%;
+        top: 22.8%;
         left: 36.5%;
     }
     .b5{
         width: 1.92%;
-        height: 13px;
         position: absolute;
         top: 25.8%;
         left: 31.2%;
     }
     .b6{
-        width: 23px;
-        height: 13px;
+        width: 1.92%;
         position: absolute;
-        top: 11.8%;
-        left: 40.5%;
+        top: 25.2%;
+        left: 40.2%;
     }
     .b7{
-        width: 25px;
-        height: 13px;
+        width: 1.92%;
         position: absolute;
-        top: 12.6%;
-        left: 37.9%;
+        top: 26.5%;
+        left: 37.5%;
     }
     .b8{
-        width: 27px;
-        height: 13px;
+        width: 1.92%;
         position: absolute;
-        top: 13.6%;
+        top: 27.5%;
         left: 40.3%;
+        z-index: 2;
     }
 
     // 路燈================================
@@ -838,10 +867,10 @@
         left: 37.2%;
     }
     .ta3{
-        width: 45px;
+        width: 4%;
         position: absolute;
-        top: 11.3%;
-        left: 44.2%;
+        top: 25.8%;
+        left: 45.8%;
         z-index: 2;
     }
     .ta4{
@@ -898,6 +927,24 @@
         top: 44.8%;
         left: 56.6%;
         height: 49px;
+    }
+    .ta12{
+        width: 200%;
+    }
+    .atagHoverJungle{
+        position: absolute;
+        top: 27%;
+        left: 28.5%;
+        z-index: 1;
+        &:hover{
+        animation: {
+            name: landscapeHoverAnimation;
+            duration: 1s;
+            iteration-count: infinite;
+            timing-function: ease-in-out;
+            direction: alternate;
+        }
+    }
     }
     
     //黃色的大樹===========================
@@ -992,12 +1039,10 @@
         left: 30.9%;
     }
     .tc3{
-        width: 32px;
-        height: 50px;
+        width: 2.67%;
         position: absolute;
-        top: 8.6%;
-        left: 41%;
-        z-index: 1;
+        top: 20.8%;
+        left: 39.6%;
     }
     .tc4{
         width: 2.33%;
@@ -1016,11 +1061,10 @@
         z-index: 2;
     }
     .tc6{
-        width: 32px;
-        height: 50px;
+        width: 2.67%;
         position: absolute;
-        top: 9.3%;
-        left: 44%;
+        top: 24.2%;
+        left: 45.5%;
     }
     
     .td1{
@@ -1032,12 +1076,11 @@
         z-index: 1;
     }
     .td2{
-        width: 30px;
-        height: 50px;
+        width: 2.5%;
+        height: 4.16%;
         position: absolute;
-        top: 9.8%;
-        left: 42.8%;
-        z-index: 1;
+        top: 24.6%;
+        left: 43.6%;
     }
     .td3{
         width: 2.33%;
@@ -1051,8 +1094,8 @@
     .wa1{
         width: .8329%;
         position: absolute;
-        top: 13.16%;
-        left: 43.3%;
+        top: 27.9%;
+        left: 44.05%;
         z-index: 2;
         transform: scaleX(-1);
     }
@@ -1065,13 +1108,11 @@
     }
 
     .wb1{
-        width: 10px;
-        height: 12px;
+        width: .8329%;
         position: absolute;
-        top: 12.9%;
-        left: 43.48%;
+        top: 27.6%;
+        left: 44.4%;
         z-index: 1;
-        transform: scaleX(-1);
     }
     .wb2{
         width: .8329%;
@@ -1080,11 +1121,129 @@
         left: 33%;
         z-index: 1;
     }
-}
 
 .logoWhy{
     width: 120px;
     display: block;
     margin: 0 auto;
-    margin-top: -350px;
+    margin-bottom: 10.51%;
 }    
+
+// RWD 首頁 575.98px 版本==================================================================================================================
+
+@media (max-width: 575.98px){
+    // 首頁標題
+    .index_title_out{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        display: flex;
+        position: relative;
+        z-index: 10;
+        .index_title_top{
+            width: 100%;
+            height: 200px;
+            margin: 300px auto;
+            position: relative;       
+        }
+        .index_h1_before{
+            font-size: 60px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin-top: 0px;
+            margin-left: -170px;
+        }
+        .index_img_title{
+            display: block;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top:0;
+            bottom:0;        
+            left:0;        
+            right:0;       
+            margin: auto;
+       
+        }
+        .index_img_yb{
+            width: 60px;
+            position: absolute;
+            top: 13%;
+            left: 50%;
+            margin-top: 0px;
+            margin-left: 105px;
+        }
+        .index_h1_after{
+            font-size: 60px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin-top: 0px;
+            margin-left: 50px;
+        }
+    }
+    // 首頁字
+    .index_word_1{
+        color: black;
+
+        img{
+            width: 100%;
+            display: block;
+        }
+        .index_word_bg{
+            background-color: map-get($Mapcolor, 'white');
+            width: 100%;
+            height: 300px;
+        }
+        .index_h3_1{
+            font-size: 22px;
+            text-align: right;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+        .index_h3_2{
+            font-size: 22px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+    }
+    .index_word_2{
+        height: 600px;
+        .index_h3_3{
+            font-size: 22px;
+            text-align: right;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+        .index_h3_4{
+            font-size: 22px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+    }
+    .index_word_3{
+        color: black;
+        img{
+            width: 100%;
+            display: block;
+        }
+        .index_word_bg2{
+            background-color: map-get($Mapcolor, 'white');
+            width: 100%;
+            height: 400px;
+        }
+        .index_h3_5{
+            font-size: 22px;
+            text-align: right;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 10px;
+        }
+    }
+
+}

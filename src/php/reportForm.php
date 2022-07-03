@@ -5,13 +5,7 @@
     //---------------------------------------------------
 
     //建立SQL語法
-    $sql = 
-    "SELECT a.PICTURE,a.TITLE,p.NAME,a.EVENTDATE,a.STOPTIME,a.MAX,m.AVATAR,m.ID,m.NICKNAME,m.HOBBY,m.BIRTH,m.INTRODUCTION
-    FROM ACTIVITY a 
-    JOIN PLACE p
-    on a.PLACE_ID = p.ID
-    JOIN MEMBER m
-    on a.MAIN_ID = m.ID;";
+    $sql = "SELECT * FROM TGD101team2.REPORT_REASON;";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->query($sql);
@@ -34,7 +28,7 @@
             array_push($process_data, $temp);
     }
 
-//     print_r($process_data[0]);
+    // print_r($process_data[0]);
     echo json_encode($process_data);
 
 

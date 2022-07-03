@@ -62,6 +62,7 @@ window.addEventListener('load', function(){
 
 
     Vue.component('writeMessage',{
+        props:['activityid'],
         data(){
             return{
                 message: '',
@@ -73,15 +74,11 @@ window.addEventListener('load', function(){
         },
         methods: {
             submitData(e){
-                this.avatar = './images/attraction/9.svg';
+                this.avatar = $('#avatarP').attr('src');
                 if(this.message != ''){
-                    this.$emit('write', this.message, this.avatar);
                     this.ajaxSendMessage();
                 }
-                this.message = '';
-                // $('html, body').animate({
-                //     scrollTop: ($('div.messageboardoverlay ul').offset().top),
-                // }, 700);
+                
             },
 
             ajaxSendMessage(){
@@ -92,10 +89,25 @@ window.addEventListener('load', function(){
                     body: JSON.stringify({
                         postType: 'sendMessage',
                         CONTENT: this.message,
-                        'ACTIVITY_ID': this.activity_id,
-                        'MEMBER_ID': this.member_id
+                        'ACTIVITY_ID': this.activityid,
+                        // 'MEMBER_ID': this.member_id
                     })
                     
+                }).then(response => response.json())
+                .then(data =>{
+                    // console.log(data);
+                    if(data === false){
+                        Swal.fire({
+                            icon: 'warning',
+                            title: '請先登入會員',              
+                        }).then(() => {
+                            window.location.href = "./login.html"  
+                        });
+                    }else{
+                        this.$emit('write', this.message, this.avatar);
+                        this.message = '';
+                        
+                    }
                 });
             }
         },
@@ -109,21 +121,21 @@ window.addEventListener('load', function(){
             $('.writeMessage').on("focus blur", () => {
                 $('.writeMessage').toggleClass('-on');
             });
-
-            bus.$on('activity_id', a => this.activity_id = a);
-            bus.$on('member_id', m => this.member_id = m);
             
         }
     });
 
     Vue.component('messageboard', {
+        props:['activityid'],
         data(){
             return{
                 messages: [],
+                activity_id: '',
             };
         },
         methods:{
             addMessage(item, pic){
+              
                 item = item.trim();
                 if(item != ''){
                     this.messages.unshift({CONTENT:item,AVATAR:pic});
@@ -146,15 +158,16 @@ window.addEventListener('load', function(){
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
                         postType: 'initMessage',
+                        'ACTIVITY_ID': this.activityid
                     })
                 }).then(response => response.json())
-                .then(data => {this.messages = data.reverse()});
+                .then(data => {this.messages = data});
             },
             
         },
         template: `
             <section class="messageboard">
-                <writeMessage @write="addMessage"></writeMessage>
+                <writeMessage @write="addMessage" :activityid="activity_id"></writeMessage>
 
                 <ul v-if="messages.length>0">
                     <message-item v-for="(message, index) in messages" :img="message.AVATAR" :key="index" :init="message.CONTENT"></message-item>
@@ -164,7 +177,12 @@ window.addEventListener('load', function(){
             </section>
         `,
         mounted(){
+            console.log("2")
+            
+            this.activity_id = this.activityid;
+            console.log("3")
             this.ajaxInitMessage();
+            console.log("4")
         },
         updated(){
             
@@ -195,29 +213,13 @@ window.addEventListener('load', function(){
             STOPTIME: '',
             CONTENT: '',
             HOST: '',
+            HOST_AVATAR:'',
         },
         methods: {
             applyBtn(){
                 Swal.fire({
                     title: '確定要報名此團嗎?',
-                    text: "取消後返回揪團頁面!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: '我要參加!',
-                    customClass: {
-                        confirmButton: 'btnS_y',
-                        cancelButton: 'btnS_b--s',
-                    },
-                    buttonsStyling: false,
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = "./activityList.html";
-                    }
-                });
-
-                Swal.fire({
-                    title: '確定要報名此團嗎?',
-                    text: "即將返回揪團頁面!",
+                    text: "報名成功後返回揪團頁面!",
                     icon: 'question',
                     showCancelButton: true,
                     confirmButtonText: '我要報名!',
@@ -227,13 +229,53 @@ window.addEventListener('load', function(){
                     },
                     buttonsStyling: false,
                 }).then((result) => {
-                    if (result.isConfirmed) {location.href = "./activityList.html"};
+                    if (result.isConfirmed) {
+                        
+                        const url = './php/createEventDetail.php';
+                        fetch(url, {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({
+                                postType: 'insertApplyData',
+                                'ACTIVITY_ID': this.activity_id,
+                            })
+                            
+                        })
+                        .then(response => response.json())
+                            .then(data =>{
+                                // console.log(data);
+                                if(data === true){ 
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: '報名成功 ! 請至會員中心查詢',              
+                                    }).then(() => {
+                                        window.location.href = "./activityList.html"  
+                                    });
+                                }else if(data === false){
+                                    Swal.fire({
+                                        icon: 'warning',
+                                        title: '請先登入會員',              
+                                    }).then(() => {
+                                        window.location.href = "./login.html"  
+                                    });
+                                      
+                                }else if(data === "applied"){
+                                    Swal.fire({
+                                        icon: 'warning',
+                                        title: '你報名過囉',              
+                                    });
+                                }
+                        })
+                    }
                 });
             }, 
             
         },
+
         computed: {
-            
+            avatar(){
+                return $('#avatarP').attr('src');
+            }
         },
         watch: {
             
@@ -242,10 +284,10 @@ window.addEventListener('load', function(){
         created() {
             // let search_obj = new URLSearchParams(location.search);
             // this.activity_id = search_obj.get("target");
-            this.activity_id = 19;
+            this.activity_id = 20;
             this.member_id = 9;
-            bus.$emit('activity_id', this.activity_id);
-            bus.$emit('member_id', this.member_id);
+           
+            console.log(1)
 
 
             const url = './php/createEventInfo.php';
@@ -254,7 +296,7 @@ window.addEventListener('load', function(){
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     // postType: 'initEventinfo',
-                    activityId: this.activity_id,
+                    'ACTIVITY_ID': this.activity_id,
                 })
             }).then(response => response.json())
             .then(data => {
@@ -274,6 +316,7 @@ window.addEventListener('load', function(){
                 this.STOPTIME = data[0]['STOPTIME'];
                 this.CONTENT = data[0]['CONTENT'];
                 this.HOST = data[0]['MAIN_ID'];
+                this.HOST_AVATAR = data[0]['AVATAR'];
                 this.event_info = data;
                 // ID:19
             });
@@ -282,7 +325,7 @@ window.addEventListener('load', function(){
         },
         
         mounted() {
-            
+           
         },
         
         updated() {

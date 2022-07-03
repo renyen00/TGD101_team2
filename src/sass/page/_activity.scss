@@ -3,8 +3,7 @@
     width: 100%;
 }
 
-
-/* activity_banner */
+// activity_banner
 .activity_banner{
     background-image: url(../images/xiaojiang/banner.jpg);
     background-size: cover;
@@ -58,7 +57,7 @@
     }
     .activity_img_dialog{
         width: 200px;
-        z-index: -50;
+        // z-index: -50;
         position: absolute;
         cursor: pointer;
         top: 70%;    
@@ -84,8 +83,7 @@
     }
 }
 
-
-/* activity嶼我同行 */
+// activity嶼我同行
 .activity_main_us {
     color: map-get($Mapcolor, 'white');
     h1{
@@ -106,18 +104,24 @@
         display: flex;
         margin-bottom: 150px;
         img{
+            object-fit: cover;
+            width: 300px;
+            height: 300px;
             display: block;
             border-radius: 50%;
+        }
+        .activity_span{
+            width: 300px;
+            margin: 20px auto;
         }
         span{
             font-size: 24px;
             display: flex;
             flex-direction:column;
             line-height: 55px;
-            margin-left: 80px;
-            margin-right: 80px;
+
         }
-        a{
+        .activity_a_beside a{
             line-height: 40px;
             margin-top: 60px;
         }
@@ -142,8 +146,7 @@
 
 }
 
-
-/* activity嶼友同行 */
+// activity嶼友同行
 .activity_main_user{
     color: map-get($Mapcolor, 'blue');   ;
     h1{
@@ -167,13 +170,15 @@
     li{
         display: flex;
         margin-bottom: 150px;
+        .activity_span{
+            margin: 20px auto;
+            width: 300px;
+        }
         span{
             font-size: 24px;
             display: flex;
             flex-direction:column;
             line-height: 55px;
-            margin-left: 80px;
-            margin-right: 80px;
         }
         .activity_a_beside a{
             line-height: 40px;
@@ -182,7 +187,9 @@
         .activity_right_avatar{
             position: relative;
             img{
-                padding-left: 20px;
+                object-fit: cover;
+                width: 300px;
+                height: 300px;
                 display: block;
                 border-radius: 50%;
             }
@@ -193,8 +200,6 @@
                 border: 5px solid map-get($Mapcolor, 'yellow');
                 position: absolute;
                 bottom: 0;
-            }
-            #avatar img{
             }
         }
 
@@ -218,7 +223,8 @@
     }
 }
 
-// ---------------media query--------------------
+
+// activity---------------media query--------------------
 @media (max-width: 575.98px){
     .activity_banner{
         width: 100%;
@@ -243,7 +249,7 @@
         }
         ul{
             width: 100vw;
-            margin:0;
+            margin:0 auto;
         }
         li{ 
             display: flex;
@@ -257,8 +263,7 @@
             img{
                 margin: 20px auto;
                 width: 250px;
-                height: 250px;
-                
+                height: 250px;               
             }
         }
 
@@ -275,12 +280,13 @@
     }
     // 藍色鳥鳥
     .activity_bluebird{
+        padding-bottom: 100px;
         .activity_img_bluebird{  
             left: 50%;
-            top: -50%;     
+            top: -100%;     
         }
         .activity_img_dialog{
-            top: 120%;    
+            top: 60%;    
             left: 10%;
         }
     }
@@ -302,7 +308,7 @@
             float: none;
             width: 100vw;
             flex-wrap: wrap;
-            margin:0;
+            margin:0 auto;
         }
         li{
             display: flex;
@@ -315,26 +321,23 @@
             }
             .activity_right_avatar{
                 margin: 0 auto;
-                position: relative;
                 img{
-                    padding-left: 20px;
-                    display: block;
-                    border-radius: 50%;
+                    margin: 20px auto;
                     width: 250px;
                     height: 250px;
                 }
                 #avatar{
-                    width: 100px;
-                    height: 100px;
+                    width: 120px;
+                    height: 120px;
                     border-radius: 50%;
                     border: 5px solid map-get($Mapcolor, 'yellow');
                     position: absolute;
                     bottom: 0;
                 }
             }
-        }
-        
-
+        }  
     }
 
+
 }
+    // activity---------------media query--------------------

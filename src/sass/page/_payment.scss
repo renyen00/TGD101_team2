@@ -119,7 +119,7 @@
                         border: 5px solid map-get($Mapcolor, 'white');
                         border-radius: 50px;
                         width: 500px;
-                        height: 600px;
+                        height: 640px;
 
                         .buyer{
                             width: 180px;
@@ -228,7 +228,7 @@
                         border: 5px solid map-get($Mapcolor, 'white');
                         border-radius: 50px;
                         width: 500px;
-                        height: 600px;
+                        height: 640px;
 
                         .receiver{
                             display: inline-block;
@@ -487,6 +487,40 @@
                     }
                 }
             }
+        }
+    }
+
+    .shoppingCart_section_promoH{
+        margin: 0 auto;
+        width: 1100px;
+        // padding-bottom: 20%;
+        
+        .promoWrap{
+            // border: 1px solid pink;
+            width: 1100px;
+            margin: 0 auto;
+            // margin-top: -1%;
+        }
+        
+        h1{
+            text-align: center;
+            padding-top: 10%;
+        }
+        
+        h3{
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 85px;
+        }
+        
+        #productInformation{
+            display: flex;
+            flex-flow: row wrap;
+            gap: 14.25px;
+            width: 930px;
+            height: 450px;
+            overflow: hidden;
+            margin: 0 auto;
         }
     }
 }

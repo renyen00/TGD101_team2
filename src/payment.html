@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>結帳</title>
+    <!-- <script src="./js/vue.min.js"></script> -->
     @@include('./layout/head.html')
-    <script src="./js/vue.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
 </head>
@@ -32,9 +32,9 @@
         <section class="payment_section_listWrap  bgcWhite" id="payment_section_v">
             <ul>
                 @@include('./layout/productList.html')
+                <!-- @@include('./layout/productList.html')
                 @@include('./layout/productList.html')
-                @@include('./layout/productList.html')
-                @@include('./layout/productList.html')
+                @@include('./layout/productList.html') -->
             </ul>
 
             <section class="buyerInfoMethod bgcBlue" style="display: none;">
@@ -62,26 +62,26 @@
                         <ul class="payment_ul_buyerInfo">
                             <li class="buyerName">
                                 <h4 class="textWhite">姓名</h4>
-                                <input class="w300" type="text" name="buyername" placeholder="Name">
+                                <input class="w300" type="text" name="buyername" placeholder="Name" required>
                             </li>
                             <li class="buyerGender">
                                 <h4 class="textWhite">性別</h4>
                                 <label class="textWhite"><input type="radio" name="gender" value="female">女性</label>
                                 <label class="textWhite"><input type="radio" name="gender" value="male">男性</label>
-                                <label class="textWhite"><input type="radio" name="gender" value="rainbow">彩虹</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="rainbow" checked>彩虹</label>
                             </li>
                             <li class="buyerEmail">
                                 <h4 class="textWhite">Email</h4>
-                                <input class="w300" type="email" name="email" placeholder="xxx@mail.com">
+                                <input class="w300" type="email" name="email" placeholder="xxx@mail.com" required>
                             </li>
                             <li class="buyerAddress">
                                 <h4 class="textWhite">地址</h4>
                                 <div id="twzipcode"></div>
-                                <input class="w300" type="text" name="address" placeholder="Adress">
+                                <input class="w300" type="text" name="address" placeholder="Adress" required>
                             </li>
                             <li class="buyerCellphone">
                                 <h4 class="textWhite">行動電話</h4>
-                                <input class="w300" type="number" name="cellphoneNum" placeholder="Cellphone Number">
+                                <input class="w300" type="number" name="cellphoneNum" placeholder="Cellphone Number" required>
                             </li>
                             <li class="buyerPhone">
                                 <h4 class="textWhite">市內電話</h4>
@@ -92,31 +92,31 @@
 
                     <form class="receiverInfo" method="post" action="../src/php/payment.php">
                         <h3 class="receiver textWhite">收件人資料</h3>
-                        <label class="same textWhite"><input type="checkbox" value="sameInfo">同訂購人資料</label>
+                        <label class="same textWhite"><input class="payment_ckeckbox_same" type="checkbox" value="sameInfo">同訂購人資料</label>
                         <img src="./images/payment/paymentLing.png">
                         <ul class="payment_ul_receiverInfo">
                             <li class="receiverName">
                                 <h4 class="textWhite">姓名</h4>
-                                <input class="w300" type="text" name="receivername" placeholder="Name">
+                                <input class="w300" type="text" name="receivername" placeholder="Name" required>
                             </li>
                             <li class="receiverGender">
                                 <h4 class="textWhite">性別</h4>
                                 <label class="textWhite"><input type="radio" name="receivergender" value="female">女性</label>
                                 <label class="textWhite"><input type="radio" name="receivergender" value="male">男性</label>
-                                <label class="textWhite"><input type="radio" name="receivergender" value="rainbow">彩虹</label>
+                                <label class="textWhite"><input type="radio" name="receivergender" value="rainbow" checked>彩虹</label>
                             </li>
                             <li class="receiverEmail">
                                 <h4 class="textWhite">Email</h4>
-                                <input class="w300" type="email" name="receiveremail" placeholder="xxx@mail.com">
+                                <input class="w300" type="email" name="receiveremail" placeholder="xxx@mail.com" required>
                             </li>
                             <li class="receiverAddress">
                                 <h4 class="textWhite">地址</h4>
                                 <div id="twzipcode2"></div>
-                                <input class="w300 textWhite" type="text" name="receiveraddress" placeholder="Adress">
+                                <input class="w300 textWhite" type="text" name="receiveraddress" placeholder="Adress" required>
                             </li>
                             <li class="receiverCellphone">
                                 <h4 class="textWhite">行動電話</h4>
-                                <input class="w300" type="number" name="receivercellphoneNum" placeholder="Cellphone Number">
+                                <input class="w300" type="number" name="receivercellphoneNum" placeholder="Cellphone Number" required>
                             </li>
                             <li class="receiverPhone">
                                 <h4 class="textWhite">市內電話</h4>
@@ -159,12 +159,13 @@
                     <!-- shoppingCart 前往結帳 -->
                     <div class="shoppingCart_optionBtn" >
                         <a href="./store.html" class="backToStore btnXL_b--s">繼續購物</a>
-                        <input class="goPay btnXL_y" value="前往結帳"/>
+                        <!-- <input type="button" class="goPay btnXL_y" value="前往結帳"/> -->
+                        <a href="#" class="goPay btnXL_y">前往結帳</a>
                     </div>
 
                     <!-- payment 確認結帳 -->
                     <div class="payment_optionBtn" style="display: none;">
-                        <a href="./shoppingCart.html" class="previous btnXL_b--s">上一步</a>
+                        <a class="previous btnXL_b--s">上一步</a>
                         <input type="submit" class="comfire btnXL_y" id="payment_comfirm" value="確認結帳"/>
                     </div>
                 </form>
@@ -173,7 +174,7 @@
         
     </main>
 
-    <section class="shoppingCart_section_promoH  bgcBlue" style="display: none;">
+    <section class="shoppingCart_section_promoH  bgcBlue" style="display: block;">
         <div class="promoWrap">
             <h1 class="textWhite">推薦</h1>
             <h3 class="textWhite">購買此商品的人也購買了</h3>
@@ -188,14 +189,14 @@
 
     @@include('./layout/footer.html')
     
-    <script>
-        $("#twzipcode").twzipcode();
-        $("#twzipcode2").twzipcode();
-    </script>
 
     <script src="./js/payment.min.js"></script>
+    <script>
+        // $("#twzipcode").twzipcode();
+        // $("#twzipcode2").twzipcode();
+    </script>
     <script src="./js/store.min.js"></script>
-    <script src="./js/nav.min.js"></script>
+    <!-- <script src="./js/nav.min.js"></script> -->
     <!-- <script src="./js/shoppingCart.min.js"></script> -->
 </body>
 </html>

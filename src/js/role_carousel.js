@@ -46,19 +46,19 @@ $('#role_glasses_next').click(function(){
 
 // 帽子------------------------------------
 $(function(){
-  $('#role_hat_banner1').css('top', '-360px');
+  $('#role_hat_banner1').css('top', '-540px');
   $('#role_hat_banner2').css('top', '0px');
-  $('#role_hat_banner3').css('top', '360px');
+  $('#role_hat_banner3').css('top', '540px');
   
   // 上一頁
   $('#role_hat_prev').click(function(){
       $('#role_hat_prev').attr('disabled', true);
       for(let i=0; i<$('.role_accessory_hat ul').length; i++){
           $($('.role_accessory_hat ul')[i]).css('top', (parseInt($($('.role_accessory_hat ul')[i]).css('top'))-90) + 'px');
-          if($($('.role_accessory_hat ul')[i]).css('top') == '-630px'){
+          if($($('.role_accessory_hat ul')[i]).css('top') == '-990px'){
               $($('.role_accessory_hat ul')[i]).css('display','none');
               setTimeout(function(){
-                  $($('.role_accessory_hat ul')[i]).css('top','360px');
+                  $($('.role_accessory_hat ul')[i]).css('top','540px');
                   $($('.role_accessory_hat ul')[i]).css('display','block');
               }, 700)
           }
@@ -74,10 +74,10 @@ $(function(){
       $('#role_hat_next').attr('disabled', true);
       for(let i=0; i<$('.role_accessory_hat ul').length; i++){
           $($('.role_accessory_hat ul')[i]).css('top', (parseInt($($('.role_accessory_hat ul')[i]).css('top'))+90) + 'px');
-          if($($('.role_accessory_hat ul')[i]).css('top') == '630px'){
+          if($($('.role_accessory_hat ul')[i]).css('top') == '990px'){
               $($('.role_accessory_hat ul')[i]).css('display','none');
               setTimeout(function(){
-                  $($('.role_accessory_hat ul')[i]).css('top','-360px');
+                  $($('.role_accessory_hat ul')[i]).css('top','-540px');
                   $($('.role_accessory_hat ul')[i]).css('display','block');
               }, 700)
           }

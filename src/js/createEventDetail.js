@@ -213,6 +213,7 @@ window.addEventListener('load', function(){
             STOPTIME: '',
             CONTENT: '',
             HOST: '',
+            HOST_AVATAR:'',
         },
         methods: {
             applyBtn(){
@@ -315,6 +316,7 @@ window.addEventListener('load', function(){
                 this.STOPTIME = data[0]['STOPTIME'];
                 this.CONTENT = data[0]['CONTENT'];
                 this.HOST = data[0]['MAIN_ID'];
+                this.HOST_AVATAR = data[0]['AVATAR'];
                 this.event_info = data;
                 // ID:19
             });

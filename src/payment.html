@@ -34,9 +34,23 @@
 
         <h3 class="textWhite bgcYellow">購物車</h3>
 
-        <section class="payment_section_listWrap  bgcWhite" id="payment_section_v">
+        <section class="payment_section_listWrap  bgcWhite" id="payment_section_v" >
             <ul>
-                @@include('./layout/productList.html')
+                <li class="shoppingCart_li_list" v-for="(pDetail, index) in product_list">
+                    <div class="pics">
+                        <div class="circle bgcYellow"></div>
+                        <img :src="pDetail[0]">
+                    </div>
+
+                    <div class="detail">
+                        <p id="name">{{pDetail[1]}}</p>
+                        <h4>數量&nbsp&nbsp{{pDetail[7]}}</h4>
+                        <p id="price">價格&nbsp${{pDetail[6]}}</p>
+                    </div>
+                    <button id="shoppingCart_icon_trash" class="shoppingCart_icon_trash" @click="goToTrash(index)"><span class="iconify" data-icon="fa-solid:trash-alt" style="color: #2f4858;" data-width="33" data-height="41"></span></button>
+                    <img src="./images/shoppingCart/shoppingCartLing.png" class="dashLine">
+                </li>
+                <!-- @@include('./layout/productList.html') -->
                 <!-- @@include('./layout/productList.html')
                 @@include('./layout/productList.html')
                 @@include('./layout/productList.html') -->
@@ -66,65 +80,65 @@
                         <ul class="payment_ul_buyerInfo">
                             <li class="buyerName">
                                 <h4 class="textWhite">姓名</h4>
-                                <input class="w300" type="text" name="buyername" placeholder="Name" required>
+                                <input class="w300" type="text" name="buyername" placeholder="Name" v-model.trim="buyerNm">
                             </li>
                             <li class="buyerGender">
                                 <h4 class="textWhite">性別</h4>
-                                <label class="textWhite"><input type="radio" name="gender" value="female">女性</label>
-                                <label class="textWhite"><input type="radio" name="gender" value="male">男性</label>
-                                <label class="textWhite"><input type="radio" name="gender" value="rainbow" checked>彩虹</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="female" v-model="buyerGd">女性</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="male" v-model="buyerGd">男性</label>
+                                <label class="textWhite"><input type="radio" name="gender" value="rainbow" checked v-model="buyerGd">彩虹</label>
                             </li>
                             <li class="buyerEmail">
                                 <h4 class="textWhite">Email</h4>
-                                <input class="w300" type="email" name="email" placeholder="xxx@mail.com" required>
+                                <input class="w300" type="email" name="email" placeholder="xxx@mail.com" v-model.trim="buyerEm">
                             </li>
                             <li class="buyerAddress">
                                 <h4 class="textWhite">地址</h4>
                                 <div id="twzipcode"></div>
-                                <input class="w300" type="text" name="address" placeholder="Adress" required>
+                                <input class="w300" type="text" name="address" placeholder="Adress" v-model.trim="buyerAdd">
                             </li>
                             <li class="buyerCellphone">
                                 <h4 class="textWhite">行動電話</h4>
-                                <input class="w300" type="number" name="cellphoneNum" placeholder="Cellphone Number" required>
+                                <input class="w300" type="number" name="cellphoneNum" placeholder="Cellphone Number" v-model.trim="buyerCell">
                             </li>
                             <li class="buyerPhone">
                                 <h4 class="textWhite">市內電話</h4>
-                                <input class="w300" type="number" name="phoneNum" placeholder="Phone Number">
+                                <input class="w300" type="number" name="phoneNum" placeholder="Phone Number" v-model.trim="buyerPhone">
                             </li>
                         </ul>
                     </form>
 
                     <form class="receiverInfo" method="post" action="../src/php/payment.php">
                         <h3 class="receiver textWhite">收件人資料</h3>
-                        <label class="same textWhite"><input class="payment_ckeckbox_same" type="checkbox" value="sameInfo">同訂購人資料</label>
+                        <label class="same textWhite"><input class="payment_ckeckbox_same" type="checkbox" value="sameInfo" @click="sameAsBuyer">同訂購人資料</label>
                         <img src="./images/payment/paymentLing.png">
                         <ul class="payment_ul_receiverInfo">
                             <li class="receiverName">
                                 <h4 class="textWhite">姓名</h4>
-                                <input class="w300" type="text" name="receivername" placeholder="Name" required>
+                                <input class="w300" type="text" name="receivername" placeholder="Name" v-model.trim="receiverNm">
                             </li>
                             <li class="receiverGender">
                                 <h4 class="textWhite">性別</h4>
-                                <label class="textWhite"><input type="radio" name="receivergender" value="female">女性</label>
-                                <label class="textWhite"><input type="radio" name="receivergender" value="male">男性</label>
-                                <label class="textWhite"><input type="radio" name="receivergender" value="rainbow" checked>彩虹</label>
+                                <label class="textWhite"><input type="radio" name="receivergender" value="female" v-model="receiverGd">女性</label>
+                                <label class="textWhite"><input type="radio" name="receivergender" value="male" v-model="receiverGd">男性</label>
+                                <label class="textWhite"><input type="radio" name="receivergender" value="rainbow" checked v-model="receiverGd">彩虹</label>
                             </li>
                             <li class="receiverEmail">
                                 <h4 class="textWhite">Email</h4>
-                                <input class="w300" type="email" name="receiveremail" placeholder="xxx@mail.com" required>
+                                <input class="w300" type="email" name="receiveremail" placeholder="xxx@mail.com" v-model.trim="receiverEm">
                             </li>
                             <li class="receiverAddress">
                                 <h4 class="textWhite">地址</h4>
                                 <div id="twzipcode2"></div>
-                                <input class="w300 textWhite" type="text" name="receiveraddress" placeholder="Adress" required>
+                                <input class="w300 textWhite" type="text" name="receiveraddress" placeholder="Adress" v-model.trim="receiverAdd">
                             </li>
                             <li class="receiverCellphone">
                                 <h4 class="textWhite">行動電話</h4>
-                                <input class="w300" type="number" name="receivercellphoneNum" placeholder="Cellphone Number" required>
+                                <input class="w300" type="number" name="receivercellphoneNum" placeholder="Cellphone Number" v-model.trim="receiverCell">
                             </li>
                             <li class="receiverPhone">
                                 <h4 class="textWhite">市內電話</h4>
-                                <input class="w300" type="number" name="receiverphoneNum" placeholder="Phone Number">
+                                <input class="w300" type="number" name="receiverphoneNum" placeholder="Phone Number" v-model.trim="receiverPhone">
                             </li>
                         </ul>
                         <input type="submit" action="./php/payment.php" id="payment_submit" style="display: none;">
@@ -151,7 +165,7 @@
                     <ul>
                         <li>
                             <div class="title">小計</div>
-                            <div class="price">$4995</div>
+                            <div class="price">${{price}}</div>
                         </li>
                         <li>
                             <div class="title">運費</div>
@@ -159,7 +173,7 @@
                         </li>
                         <li>
                             <div class="title">總計</div>
-                            <div class="price">$5115</div>
+                            <div class="price">${{price+120}}</div>
                         </li>
                     </ul>
                     <!-- shoppingCart 前往結帳 -->
@@ -197,12 +211,6 @@
     
 
     <script src="./js/payment.min.js"></script>
-    <script>
-        // $("#twzipcode").twzipcode();
-        // $("#twzipcode2").twzipcode();
-    </script>
     <script src="./js/store.min.js"></script>
-    <!-- <script src="./js/nav.min.js"></script> -->
-    <!-- <script src="./js/shoppingCart.min.js"></script> -->
 </body>
 </html>

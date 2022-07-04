@@ -73,7 +73,7 @@
 
         <main class="store_main_product" id="productInformation">
             <!-- <component :is="countent" :productinfo="productinfo"></component> -->
-            <div class="productWrapper" :data-type="product[2]" v-for="product in render_list">
+            <div class="productWrapper" :data-type="product[2]" v-for="(product, index) in render_list">
                 <div class="productFrame"></div>
                 <div class="productCircle bgcYellow"></div>
                 <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
@@ -84,8 +84,8 @@
                     <li class="productColorLi bgcBlue" :data-img="product[4]" @click="changeImg"></li>
                 </ul>
                 <div class="productBtn">
-                    <a href="./payment.html" class="pay btnS_w">直接結帳</a>
-                    <button class="addToCart btnS_y" @click="addToCart2" :data-id="product">商品詳細</button>
+                    <a href="./payment.html" class="pay btnS_w" @click="addToCart2" :data-renderid="index">直接結帳</a>
+                    <button class="addToCart btnS_y" :data-id="product">商品詳細</button>
                 </div>
             </div>
             <!-- @@include('./layout/product.html')

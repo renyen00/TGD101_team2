@@ -173,9 +173,11 @@
                         </li>
                         <li>
                             <div class="title">總計</div>
-                            <div class="price">${{price+120}}</div>
+                            <div class="price">${{new_price}}</div>
                         </li>
                     </ul>
+                    <input type="text" name="orderIdToGreen" :value="orderIdGreen" style="display: none;">
+                    <input type="text" name="priceToGreen" :value="new_price" style="display: none;">
                     <!-- shoppingCart 前往結帳 -->
                     <div class="shoppingCart_optionBtn" >
                         <a href="./store.html" class="backToStore btnXL_b--s">繼續購物</a>
@@ -186,7 +188,7 @@
                     <!-- payment 確認結帳 -->
                     <div class="payment_optionBtn" style="display: none;">
                         <a class="previous btnXL_b--s">上一步</a>
-                        <input type="submit" class="comfire btnXL_y" id="payment_comfirm" value="確認結帳"/>
+                        <input type="submit" class="comfire btnXL_y" id="payment_comfirm" value="確認結帳" @click="confirm;new_price"/>
                     </div>
                 </form>
             </section>

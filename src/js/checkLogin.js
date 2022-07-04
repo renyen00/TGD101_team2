@@ -18,11 +18,13 @@ $(document).ready(function(){
             <img id="avatarP" :src="php.avatar" >
             <span id="nick">{{php.nickname}}</span>
             <a href="###"><i class="fa-solid fa-comment"></i></a>
-            <a href="./php/logout.php">{{php.logst}}<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <a href="./php/logout.php" @click="logout">{{php.logst}}<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>`
         ,
         methods: {
-            
+            logout(){
+                sessionStorage.clear();
+            }
         },
         mounted(){
             const url =`./php/checkLogin.php`;

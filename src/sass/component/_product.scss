@@ -81,3 +81,63 @@
         transform: translateX(-52%)
     };
 };
+
+// ----------------media query-------------------------
+
+@media (max-width: 575.98px){
+    .productWrapper{
+        // float: left;
+        // border: 1px solid purple;
+        box-sizing: border-box;
+        width: 189px;
+        height: 400px;
+        margin-bottom: 3%;
+
+        .productFrame{
+            border: 5px solid map-get($Mapcolor, 'white');
+            width: 169px;
+            height: 375px;
+            border-radius: 10px;
+        };
+
+        .productCircle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        };
+
+        .productPic{
+            position: absolute;
+            width: 108px;
+        };
+
+        .producNm{
+            font-size: 1.2rem;
+            // width: 166px;
+            display: block;
+            position: absolute;
+            top: 52%;
+            left: 45%;
+            transform: translateX(-50%);
+        };
+
+        .productColor{
+            top: 60%;
+
+            .productColorLi{
+                width: 15px;
+                height: 15px;
+            };
+        };
+
+        .productBtn{
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 68%;
+            left: 46%;
+            transform: translateX(-52%)
+        };
+    };
+}

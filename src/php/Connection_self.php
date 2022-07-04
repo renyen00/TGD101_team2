@@ -6,6 +6,12 @@
        $db_pass = "password";
        $db_select = "TGD101team2";
 
+       //-------------------------------------------------------------------------
+       // $db_host = "tgd101team2.cjggucdsi6pa.us-east-1.rds.amazonaws.com";
+       // $db_user = "tsung";
+       // $db_pass = "tgd1010000";
+       // $db_select = "TGD101team2";
+
        //-------------------------------------------------------------------------------------------------
        // $db_host = "127.0.0.1";
        // $db_user = "tibamefe_since2021";

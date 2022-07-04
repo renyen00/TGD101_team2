@@ -13,53 +13,179 @@
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 麵包屑以下 -->
-        <main class="personalEvent_main">
+        <main class="personalEvent_main" id="personal_event">
             <nav class="personalEvent_nav_change">
                 <ul>
-                    <li>報名中</li>
-                    <li>過往報名紀錄</li>
-                    <li class="li_select">個人揪團紀錄</li>
+                    <li v-for="(val,i) in pagelist" :data-n="i" @click="chgpage">{{val}}</li>
                 </ul>
             </nav>
             <!-- 內容清單 -->
-            <ul class="personalEvent_ul_list">
-                <li>
-                    <img src="./images/icon_test.png" >
+            <component :is="personalpage"></component>
+            
+        </main>
+    </div>
+</div>
+@@include('./layout/footer.html')
+<script>
+    Vue.component('personalpage1',{
+        data(){
+            return{
+                php:[],
+                php2:[]
+            }
+        },
+    template:`
+    <personal_eventList :infor="php" :infor2="php2"></personal_eventList>
+        `,
+        mounted(){  
+            const url1 = './php/personal_event.php?quest=1';
+        fetch(url1)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php = text
+            } );
+        },
+    })
+    
+    Vue.component('personalpage2',{
+        data(){
+            return{
+                php:[],
+            }
+        },
+    template:`
+    <personal_eventList :infor="php" :infor2="php2"></personal_eventList>
+        `,
+        mounted(){  
+            const url1 = './php/personal_event.php?quest=2';
+        fetch(url1)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php = text
+            } );
+            const url2 = './php/personal_event.php?quest=4';
+        fetch(url2)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php2 = text
+            } );
+        },
+    })
+    
+    Vue.component('personalpage3',{
+        data(){
+            return{
+                php:[],
+                php2:[],
+            }
+        },
+    template:`
+    <personal_eventList :infor="php"></personal_eventList>
+        `,
+        mounted(){  
+            const url1 = './php/personal_event.php?quest=3';
+        fetch(url1)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php = text
+            } );
+            const url2 = './php/personal_event.php?quest=5';
+        fetch(url2)
+            .then(response => response.json())
+            .then((text) =>{
+                this.php2 = text
+            } );
+        },
+    })
+    Vue.component('personal_eventList',{
+        props:['infor','infor2'],
+    template:`
+    <ul class="personalEvent_ul_list">
+                <li v-for="(val,i) in infor" :data-n="i">
+                    <img :src="val[0]" >
                     <section>
                         <ul>
                             <li>
                                 <h4>活動主題：</h4>
-                                <p>膽大包天</p>
+                                <p>{{val[1]}}</p>
                             </li>
                             <li>
                                 <h4>活動地點：</h4>
-                                <p>鬼屋鬼屋</p>
+                                <p>{{val[2]}}</p>
                             </li>
                             <li>
                                 <h4>活動日期：</h4>
-                                <p>2022/06/12</p>
+                                <p>{{val[3]}} {{val[4]}}</p>
                             </li>
                             <li>
                                 <h4>報名截止：</h4>
-                                <p>2022/06/09</p>
+                                <p>{{val[5]}}</p>
                             </li>
                             <li>
                                 <h4>人數限制：</h4>
-                                <p>12人</p>
+                                <p>{{val[6]}}/{{val[7]}}人</p>
                             </li>
                         </ul>
                     </section>
                     <div>
-                        <h4>報名中</h4>
-                        <a href="./createEventRecord.html" class="btnXL_b">
+                        <h4>{{val[8]}}</h4>
+                        <a :href="'./createEventRecord.html?activityid=' + val[10]" class="btnXL_b">
+                            詳細資訊
+                        </a>
+                    </div>
+                </li>
+                <li v-for="(val,i) in infor2" :data-n="i">
+                    <img :src="val[0]" >
+                    <section>
+                        <ul>
+                            <li>
+                                <h4>活動主題：</h4>
+                                <p>{{val[1]}}</p>
+                            </li>
+                            <li>
+                                <h4>活動地點：</h4>
+                                <p>{{val[2]}}</p>
+                            </li>
+                            <li>
+                                <h4>活動日期：</h4>
+                                <p>{{val[3]}} {{val[4]}}</p>
+                            </li>
+                            <li>
+                                <h4>報名截止：</h4>
+                                <p>{{val[5]}}</p>
+                            </li>
+                            <li>
+                                <h4>人數限制：</h4>
+                                <p>{{val[6]}}/{{val[7]}}人</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <div>
+                        <h4>{{val[8]}}</h4>
+                        <a :href="'./createEventRecord.html?activityid=' + val[10]" class="btnXL_b">
                             詳細資訊
                         </a>
                     </div>
                 </li>
             </ul>
-        </main>
-    </div>
-</div>
-@@include('./layout/footer.html')
+        `,})
+
+    new Vue({
+            el:'#personal_event',
+            data:{
+                content:'',
+                pagelist:['報名中','過往報名紀錄','個人揪團紀錄'],
+                personalpage:'',
+            },
+            methods: {
+                chgpage(e){
+                   let n = parseInt(e.target.dataset.n)
+                   this.personalpage = `personalpage${n+1}`
+                   $('.li_select').removeClass('li_select');
+                        e.target.classList.add('li_select')
+                }
+            },
+        });
+</script>
 </body>
 </html>

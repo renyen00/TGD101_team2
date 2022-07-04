@@ -63,7 +63,6 @@
                                 position: absolute;
                                 top: -113px;
                                 left: -2px;
-                                display: none;
                             }
                         }
                         :nth-child(1){
@@ -76,22 +75,21 @@
                                 left: 8px;
                             }
                         }
-                        .li_now{
-                            .iconify{
-                                display: block;
-                            }
-                        }
                     }
                     ul:before{
                         content: '';
                         display: block;
-                        width: 55%;
                         height: 5px;
                         background-color: $yellow;
                         position: absolute;
                         top: -57px;
                         left: 50px;
                     }
+                    ul.porder1:before{width: 0%;}
+                    ul.porder2:before{width: 28%;}
+                    ul.porder3:before{width: 55%;}
+                    ul.porder4:before{width: 84%;}
+                    
                     ul:after{
                         content:'';
                         position: absolute;

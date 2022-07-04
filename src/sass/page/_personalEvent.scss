@@ -32,7 +32,9 @@
                     justify-content: space-around;
                     margin-bottom: 80px;
                     img{
-                        max-width: 300px;
+                        object-fit: cover;
+                        width: 300px;
+                        height: 300px;
                         margin-right: 5%;
                         border-radius: 50%;
                     }

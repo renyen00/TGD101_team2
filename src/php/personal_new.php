@@ -4,8 +4,8 @@
     //---------------------------------------------------
 
     session_start();
-    // $acc = $_SESSION['UserID']
-    $acc = 'admin@123.com';
+    $acc = $_SESSION['UserE'];
+    // $acc = 'admin@123.com';
     
     $name = $_GET['name'];
     $nickname = $_GET['nickname'];

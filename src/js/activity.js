@@ -1,10 +1,8 @@
-// --------------------資料連接----------------------
-$(function(){
-
-    new Vue({
+let VM = new Vue({
         el: '#activity_info',
     
-        data: {     // 變數放這裡！              
+        data: {     // 變數放這裡！
+            offical:[],              
             activity:[],
         },
         methods: {
@@ -15,12 +13,22 @@ $(function(){
         watch: {},
 
         created() {
-            const url = './php/activity.php';
-                fetch(url)
+                fetch('./php/offical.php')
                     .then(response => response.json())
                     .then((text) =>{
-                        this.activity = text
+                        this.offical = text;
+
                     });
+            
+
+                fetch('./php/activity.php')
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.activity = text;
+                    });
+           
+            
+            
         },
         mounted() {
 
@@ -133,6 +141,3 @@ $(function(){
         },
     
     });
-
-});
-    // --------------------資料連接----------------------

@@ -6,10 +6,10 @@
 
     //建立SQL語法
     $sql = 
-    "SELECT o.PICTURE,o.TITLE,p.NAME,o.EVENTDATE,o.STARTTIME,o.ENDTIME,o.MAX,o.COST
+    "SELECT o.PICTURE,o.TITLE,p.name,o.EVENTDATE,o.STARTTIME,o.ENDTIME,o.MAX,o.COST,CONTENT
     FROM OFFICIAL_ACTIVITY o
     JOIN PLACE p
-    on o.PLACE_ID = p.ID;";
+    on o.PLACE_ID = p.ID";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->query($sql);

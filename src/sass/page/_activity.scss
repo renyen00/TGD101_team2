@@ -66,7 +66,7 @@
     }
 }
 // activity麵包屑
-.activity_ul_breadcrumb {
+.activity_ul_breadCrumbs{
     padding: 70px 0px 100px 150px;
     color: map-get($Mapcolor, 'white');
     display: flex;
@@ -226,12 +226,20 @@
 
 // activity---------------media query--------------------
 @media (max-width: 575.98px){
+    // banner
     .activity_banner{
         width: 100%;
         .activity_banner_inner{
             width: 100vw;
-            margin: auto 20px;     
+            margin: auto 20px;  
+
         }
+    }
+    // 麵包屑
+    .activity_ul_breadCrumbs{
+        padding: 50px;
+        margin: 0 auto; 
+
     }
     // 嶼我同行
     .activity_main_us{
@@ -337,4 +345,5 @@
 
 
 }
-    // activity---------------media query--------------------
+
+// activity---------------media query--------------------

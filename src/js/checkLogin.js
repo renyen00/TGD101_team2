@@ -39,7 +39,10 @@ $(document).ready(function(){
                     console.log('錯誤:', err);
                 });
 
-        }
+        },
+        updated() {
+            sessionStorage.setItem("memInfo",JSON.stringify(this.php));
+        },
     })
 
 })

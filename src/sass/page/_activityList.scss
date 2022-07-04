@@ -1,21 +1,7 @@
 .activityList_body{
-    .activityList_ul_type{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-
-        li{
-            font-size: 2.4rem;
-            height: 7rem;
-            line-height: 7rem;
-            border: 5px $blue solid;
-            width: 150px;
-            text-align: center;
-            border-radius: 10px 10px 0 0;
-            background-color: $white;
-
-        }
-    }
+    font-family: $fontFamily; 
+}
+    // 上面banner
     .activityList_banner{
         height: 700px;
         background-color: $blue;
@@ -25,11 +11,10 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            
             width: 1200px;
             height: 460px;
             margin: auto;
-            color: white;
+            color: $white;
             a{  margin: 35px auto;
                 display: block;
                 width: 120px;
@@ -49,31 +34,43 @@
             }
         }
     }
-    .activityList_background{
-        background-image: url(../images/backgroundimg/activityList.svg);
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: cover;
-        padding-bottom: 50px;
-    }
-    .activityList_wrapper{
+    // 麵包屑
+    .activityList_ul_breadCrumbs{
+        margin: 50px;
         color: $blue;
-        width: 1050px;
-        margin: 0 auto;
-        button{
-            // font-family: $fontFamily;
-            font-size: 2rem;
-        }
+        display: flex;
+        font-size: 20px;
         li{
-            cursor: pointer;
+            margin-left: 10px;
         }
-        .activityList_ul_breadCrumbs{
-            display: flex;
-            font-size: 2rem;
-            li{
-                margin: 30px 10px 150px 0;
+        a{
+        text-decoration: none;
+        color: $blue
+        }
+        a:hover{
+            color: $yellow;                    
+        }
+    }
+
+// 下面
+.activityList_wrapper{
+        color: $blue;
+        width: 100%;
+        margin: 0 auto;
+        // 背景
+        .activityList_main_bg{
+            width: 100%;
+            .activityList_main_bgtop,.activityList_main_bgbottom{
+                width: 100%;
+                display: block;
+            }
+            .activityList_main_bgcenter{
+                background-color: map-get($Mapcolor, 'yellow');;
+                width: 100%;
             }
         }
+
+        // 切換頁面
         .activityList_ul_switch{
             float: right;
             display: flex;
@@ -83,17 +80,17 @@
             border: 3px $blue solid;
             border-radius: 5rem;
             justify-content: space-between;
+            margin-right: 100px;
             padding: 0 15px;
             margin-bottom: 50px;
             background-color: $white;
             position: relative;
             .iconify{
                 position: absolute;
-                color:$blue;
+                color: $blue;
                 top:-65px;
                 right: 0;
                 transform: scaleX(-100%);
-
             }
             li{
                 width: 140px;
@@ -103,70 +100,205 @@
                 border-radius: 5rem;
                 text-align: center;
             }
-
-        }
-        .activityList_main{
-            
-            
-            .personalEvent_ul_list{
-                padding: 90px 0;
-                border: 5px solid $blue;
-                border-radius: 0 0 50px 50px;
-                background-color: $white;
-
-                li{cursor: auto;}
-                >li{
-                    height: 300px;
-                    display: flex;
-                    justify-content: space-around;
-                    margin-bottom: 60px;
-                    img{
-                        max-width: 300px;
-                        margin-right: 5%;
-                        border-radius:50%;
-                    }
-                    section{
-                        margin-right: 5%;
-                        ul{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-around;
-                            height: 300px;
-                            box-sizing: border-box;
-                            padding: 30px;  
-                            li{
-                                display: flex;
-                                p{font-size: 2.4rem;}
-                            }
-                        }    
-                    }
-                    div{
-                        padding: 20px 0;
-                        text-align: center;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        a{
-                            text-decoration: none;
-                            button{
-                                cursor: pointer;
-                            }
-                        }
-                    }
-                }
-            }
-            >p{
-                margin: 50px;
-                font-size: 3.2rem;
-                text-align: center;
-                a{color:$blue }
-            }
-        }
-        ul{
-            .li_now{
+            .activityList_li_now{
                 color:$white;
                 background-color: $blue;
             }
+
+        }
+        .activityList_main{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        // 上面篩選
+        .activityList_ul_type{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            li{
+                font-size: 2.4rem;
+                height: 7rem;
+                line-height: 7rem;
+                border: 5px $blue solid;
+                width: 150px;
+                text-align: center;
+                border-radius: 10px 10px 0 0;
+                background-color: $white;
+
+            }
+            // 切換頁面目前所在位置
+            ul{
+                .li_now{
+                    color:$white;
+                    background-color: $blue;
+                }
+            }
+        }
+
+        //清單
+        .activityList_ul_list {
+            background-color: $white;
+            border: 5px $blue solid;
+            width: 1000px;
+            margin: 0 auto;
+            border-bottom-left-radius:20px 20px;
+            border-bottom-right-radius:20px 20px;
+            li{
+                display: flex;
+                padding: 20px;
+
+                img{
+                    margin: 20px;
+                    object-fit: cover;
+                    width: 300px;
+                    height: 300px;
+                    display: block;
+                    border-radius: 50%;
+
+                }
+                .activityList_span{
+                    width: 300px;
+                    margin: 20px;
+                }
+                span{
+                    font-size: 24px;
+                    display: flex;
+                    flex-direction:column;
+                    line-height: 55px;
+        
+                }
+                .activityList_a_beside{
+                    margin: 20px;
+                }
+                .activityList_a_beside a{
+                    line-height: 40px;
+                    margin: 20px;
+                    margin-top: 60px;
+                }
+            }
+        }
+
+            // 點我揪團去
+            .activityList_p{
+                padding: 50px;
+                font-size: 3.2rem;
+                text-align: center;
+                a{
+                    color:$blue 
+                }
+            }
+        
+
+}
+
+
+
+   
+// activityList---------------media query--------------------
+@media (max-width: 575.98px){
+
+ // 上面banner
+ .activityList_banner{
+    height: 700px;
+
+    display: flex;
+    .activityList_banner_inner{
+        width: 100%;
+        height: 460px;
+        margin: auto;
+        a{  margin: 35px auto;
+            display: block;
+            width: 120px;
+        }
+        h1{
+            text-align: center;
+            background-color: $blue;
+            width: 100%;
+            height: 135px;
+            line-height: 135px;
+            display: block;
+            margin: 0 auto;
+        }
+        h5{
+            text-align: center;
+            padding-top: 20px;
         }
     }
+    }
+    // 麵包屑
+    .activityList_ul_breadCrumbs{
+        margin: 50px auto;
+    }
+
+
+// 下面
+.activityList_wrapper{
+    width: 100%;
+    margin: 0 auto;
+
+    // 切換頁面(嶼我/嶼友)
+    .activityList_ul_switch{
+        float: none;
+        margin: 0 auto 50px;
+        padding: 0 15px;
+    }
+    .activityList_main{
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    // 上面篩選
+    .activityList_ul_type{
+        width: 100%;
+        li{ 
+            height: 120px;
+            line-height: 1.5;
+            width: 150px;
+        }
+    }
+    //清單
+    .activityList_ul_list {
+        width: 100%;
+        margin: 0 auto;
+        li{
+            display: flex;
+            padding: 0;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+            img{
+                margin: 20px auto;
+                width: 250px;
+                height: 250px;
+            }
+            .activityList_span{
+                width: 250px;
+                margin: 20px auto;
+            }
+            span{
+                margin:0 auto;
+                text-align:center;
+            }
+            .activityList_a_beside{
+                margin: 0;
+                display: flex;
+            }
+            .activityList_a_beside a{
+                margin: 0 auto;
+                width: 150px;
+                font-size: 20px;
+            }
+        }
+    }
+
+        // 點我揪團去
+        .activityList_p{
+            padding: 30px;
+
+        }  
+
 }
+   
+}
+// activityList---------------media query--------------------

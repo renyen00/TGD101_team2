@@ -9,6 +9,7 @@
 </head>
 <body class="activityList_body">
     @@include('./layout/header.html')
+    <!-- 上面banner -->
     <header class="activityList_banner">
         <section class="activityList_banner_inner">
             <a href="./index.html"><img src="./images/logo/logo_white_final.svg" alt=""></a>
@@ -16,77 +17,63 @@
             <h5>NOT JUST MAKE FRIENDS BUT INTO IT.</h5>
         </section>
     </header>
-    <div class="activityList_background">
-        <div class="activityList_wrapper">
-            <ul class="activityList_ul_breadCrumbs">
-                <li>首頁</li>
-                <li>></li>
-                <li>活動總覽</li>
-            </ul>
-            <ul class="activityList_ul_switch">
-                <li class="li_now">嶼我同行</li>
-                <li>嶼友相約</li>
-                <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" data-width="70" data-height="70"></span>
+        <!-- 麵包屑 -->
+        <ul class="activityList_ul_breadCrumbs">
+            <li><a href="./index.html">首頁</a></li>
+            <li>></li>
+            <li><a href="./activityList.html">活動總覽</a></li>
+        </ul>
 
-            </ul>
-            <!-- 篩選 -->
-            <main class="activityList_main">
-                <ul class="activityList_ul_type">
-                    <li class="li_now">ALL</li>
-                    <li>鬼屋</li>
-                    <li>樂園</li>
-                    <li>動物</li>
-                    <li>古蹟</li>
-                    <li>叢林</li>
-                    <li>啾啾山</li>
+        <section class="activityList_wrapper">
+            <!-- 背景 -->
+            <section class="activityList_main_bg">
+                <img class="activityList_main_bgtop" src="./images/backgroundimg/activityList_main_bg1.svg" alt="">
+            
+                <section class="activityList_main_bgcenter">
+                    <!-- 切換頁面 -->
+                <ul class="activityList_ul_switch">
+                    <li class="activityList_li_now">嶼我同行</li>
+                    <li>嶼友相約</li>
+                    <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" data-width="70" data-height="70"></span>
                 </ul>
-                <!-- 清單 -->
-                <ul class="personalEvent_ul_list">
-                    <li>
-                        <img src="./images/./backgroundimg/activityListTop.jpg" >
-                        <section>
-                            <ul>
-                                <li>
-                                    <h4>活動主題：</h4>
-                                    <p>膽大包天</p>
-                                </li>
-                                <li>
-                                    <h4>活動地點：</h4>
-                                    <p>鬼屋鬼屋</p>
-                                </li>
-                                <li>
-                                    <h4>活動日期：</h4>
-                                    <p>2022/06/12</p>
-                                </li>
-                                <li>
-                                    <h4>報名截止：</h4>
-                                    <p>2022/06/09</p>
-                                </li>
-                                <li>
-                                    <h4>人數限制：</h4>
-                                    <p>12人</p>
-                                </li>
-                            </ul>
-                        </section>
-                        <div>
-                            <a href="">
-                                <button class="btnXL_b--s">
-                                    詳細資訊
-                                </button>
-                            </a>
-                            <a href="createEventDetail.html">
-                                <button class="btnXL_y--s">
-                                    我要報名
-                                </button>
-                            </a>
-                        </div>
-                    </li>
+                <main class="activityList_main">
+                    <!-- 篩選 -->
+                    <ul class="activityList_ul_type">
+                        <li class="li_now">ALL</li>
+                        <li>鬼屋</li>
+                        <li>樂園</li>
+                        <li>動物</li>
+                        <li>古蹟</li>
+                        <li>叢林</li>
+                        <li>啾啾山</li>
+                    </ul>
+                    
+                    <!-- 清單 -->
+                    <ul class="activityList_ul_list">
+                        <li>
+                            <img src="./images/officalEvent/1.jpg" alt="">
+                            <article class="activityList_span">
+                                <span>活動主題： {{[0][1]}}</span>
+                                <span>活動地點： {{[0][2]}}</span>
+                                <span>活動日期： {{[0][3]}}</span>
+                                <span>報名截止： {{[0][4]}}</span>
+                                <span>人數限制： {{[0][5]}}</span>
+                            </article>
+                            <article class="activityList_a_beside">
+                                <a href="./officalEvent.html?officalid=0" class="btnXL_b--s">詳細資訊</a>
+                                <a  href="" class="btnXL_y--s">我要報名</a>
+                            </article>                   
+                        </li>
+                    </ul>
+                    <!-- 點我揪團去 -->
+                    <p class="activityList_p">沒有看到喜歡的嗎？<a href="./createEvent.html">點我揪團去！</a></p>
+                </main>
 
-                </ul>
-                <p>沒有看到喜歡的嗎?<a href="./createEvent.html">點我揪團去!</a></p>
-            </main>
-        </div>
-    </div>
+                </section>
+                <!-- 背景下面 -->
+                <img class="activityList_main_bgbottom" src="./images/backgroundimg/activityList_main_bg2.svg" alt="">
+            </section>     
+        </section>
     @@include('./layout/footer.html')
 
 </body>

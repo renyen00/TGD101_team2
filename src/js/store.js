@@ -21,23 +21,33 @@ window.addEventListener('load',function(){
             },
 
             addToCart2(e){
-                let product = e.target.dataset.id;
-                console.log(product);
+                // e.preventDefault();
                 
-                let productAdd = JSON.parse(localStorage.getItem("addProduct")); // 從 localStorage 抓出資料, 並轉成 JS 能懂得
-                console.log(productAdd); // 印出抓到的訊息
-                
-                if(productAdd){ // 如果 tasks 存在, 就執行...
-                    productAdd.unshift(product); // 不移動, 將新增的項目加到陣列最前面
-                    // this.quantity = productAdd.length;
+                let id = e.target.dataset.renderid;
+                // console.log(id);
+
+
+                if(localStorage.getItem("productAdd")){ // 如果 tasks 存在, 就執行...
+                    let temp = JSON.parse(localStorage.getItem('productAdd'));
+                    temp.push(this.render_list[id]);
+                    // console.log(temp);
+                    localStorage.setItem('productAdd', JSON.stringify(temp));
 
                 }else{ // 否則執行...
-                    productAdd = [product]; // 將 task assign 給 tasks
+                    let temp = [this.render_list[id]]
+                    localStorage.setItem('productAdd', JSON.stringify(temp));
 
                 }
-                localStorage.setItem("addProduct",JSON.stringify(productAdd)); // 將資料更新再轉為 JSON 可讀懂得塞回 localStorage
+
+
+
                 
-                // let productQuantity = JSON.parse(addProduct);
+                // let productAdd = JSON.parse(localStorage.getItem("addProduct")); // 從 localStorage 抓出資料, 並轉成 JS 能懂得
+                // console.log(productAdd); // 印出抓到的訊息
+                
+                // localStorage.setItem("addProduct",JSON.stringify(productAdd)); // 將資料更新再轉為 JSON 可讀懂得塞回 localStorage
+                
+                // // let productQuantity = JSON.parse(addProduct);
                 this.quantity ++;
             },
         },

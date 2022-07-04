@@ -4,157 +4,142 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夏天就要去瀑布</title>
+    <title>官方活動</title>
     @@include('./layout/head.html')
-    <script src="./js/vue.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script>
 </head>
 <body id="officalEvent_body">
     @@include('./layout/header.html')
-
-    <header class="officalEvent_header_sliderArea">
-        <div class="parrotBox">
-            <img src="./images/officalEvent/parrot.png" class="parrot">
-            <a href="./page/index.html"><img src="./images/logo/logo_white_final.svg" class="officalEvent_logo"></a>
-            <h5 class="textWhite">NOT JUST MAKE FRIENDS  BUT INTO IT.</h5>
-            <!-- 暫時借放 -->
-            <img src="./images/officalEvent/fakePhoto.png" class="fakePhoto">
-        </div>
-        <section id="officalEvent_sliderframe">
-            <ul id="officalEvent_ul_sliderImg">
-                <li class="officalEvent_li_slider">
-                    <img src="./images/officalEvent/sliderImg1.jpg" class="offical_img_slider">
-                </li>
-                <li class="officalEvent_li_slider">
-                    <img src="./images/officalEvent/sliderImg2.jpg" class="offical_img_slider">
-                </li>
-                <li class="officalEvent_li_slider">
-                    <img src="./images/officalEvent/sliderImg3.jpg" class="offical_img_slider">
-                </li>
-            </ul>
-
-            <ul id="officalEvent_ul_sliderBtn">
-                <!-- <li></li>
-                <li></li>
-                <li></li> -->
-            </ul>
-        </section>
+<section id="offical_info">
+    <!-- 最上面banner -->
+    <header class="officalEvent_header_banner">
+            <div class="officalEvent_banner_inner">
+                <a href="./index.html">
+                    <img class="officalEvent_logo" src="./images/logo/logo_white_final.svg" alt="">
+                </a>
+                <h5>NOT JUST MAKE FRIENDS BUT INTO IT.</h5>
+            </div>
     </header>
+    <!-- 上面圖片 -->
+    <img class="officalEvent_banner" :src="PICTURE" alt="">
 
-    <section class="officalEvent_section_breadCrumb">
-        <a class="breadLink textBlue" href="index.html">首頁</a>
-            <p>&nbsp;&gt;&nbsp;</p>
-            <a class="breadLink textBlue" href="attraction.html">瀑布</a>
-            <p>&nbsp;&gt;&nbsp;</p>
-            <a class="breadLink textBlue" href="activity.html">共語同遊</a>
-            <p>&nbsp;&gt;&nbsp;</p>
-            <h5>夏天就要去瀑布</h5>
-    </section>
+    <!-- 麵包屑 -->
+    <ul class="officalEvent_ul_breadcrumb">
+        <li><a href="./index.html">首頁</a></li>
+        <li>></li>
+        <li><a href="./activity.html">ACTIVITIES</a></li>
+        <li>></li>
+        <li>{{TITLE}}</li>
+    </ul>
 
-    
+    <!-- 內容 -->
     <main class="officalEvent_main">
         <img src="./images/officalEvent/cloudL.svg" class="cloudL">
         <img src="./images/officalEvent/cloudS2.svg" class="cloudS2">
 
         <div class="officalEvent_div_articleWrap">
 
-            <section class="bird">
-            <span id="birdT" class="iconify" data-icon="icon-park-outline:bird" style="color: #2f4858;" data-width="100" data-height="100" data-flip="horizontal"></span>
-            <span id="birdB" class="iconify" data-icon="icon-park-outline:bird" style="color: #2f4858;" data-width="100" data-height="100" data-flip="horizontal"></span>
+            <section class="officalEvent_bird">
+                <span id="birdT" class="iconify" data-icon="icon-park-outline:bird" style="color: #2f4858;" data-width="100" data-height="100" data-flip="horizontal"></span>
+                <span id="birdB" class="iconify" data-icon="icon-park-outline:bird" style="color: #2f4858;" data-width="100" data-height="100" data-flip="horizontal"></span>
             </section>
 
-            <article class="itsSummer">
-            <h1 class="textBlue">夏天就要去瀑布</h1>
-            <p class="waterfallSummer textBlue">
-                有台灣尼加拉瀑布美稱，超美！而且賞瀑步道平坦好，還有不同角度的觀瀑玻璃平台，但最酷的是途中還經過一個瀑布，以及一座跟鐵路併行的溪谷吊橋。這幾個瀑布都是我們實際走訪過的，難度不高，就算帶小孩也能輕鬆賞到，可以欣賞瀑布之美，呼吸森林芬多精，不管何時出發都可以！還在等甚麼?
-            </p>
+            <article class="officalEvent_content">
+                <h1 class="textBlue">{{TITLE}}</h1>
+                <p class="officalEvent_content_main textBlue">
+                    有台灣尼加拉瀑布美稱，超美！而且賞瀑步道平坦好，還有不同角度的觀瀑玻璃平台，但最酷的是途中還經過一個瀑布，以及一座跟鐵路併行的溪谷吊橋。這幾個瀑布都是我們實際走訪過的，難度不高，就算帶小孩也能輕鬆賞到，可以欣賞瀑布之美，呼吸森林芬多精，不管何時出發都可以！還在等甚麼?
+                    {{CONTENT}}
+                </p>
             </article>
         </div>
     </main>
 
+    <!-- 藍色背景上面 -->
     <img src="./images/officalEvent/bgiWave.svg" id="officalEvent_img_bgWave">
-
-    <section class="officalEvent_section_eventInfo bgcBlue textWhite">
-        <div class="yellowFrame">
-            <ul>
-                <li>
-                    <h3>本場活動</h3>
-                    <pre>NT  $599 / 人</pre>
-                </li>
-                <li>
-                    <h3>活動地點</h3>
-                    <pre>甲府升仙峽</pre>
-                </li>
-                <li>
-                    <h3>活動日期</h3>
-                    <pre>2022/07/16</pre>
-                </li>
-                <li>
-                    <h3>活動時間</h3>
-                    <pre>10 A.M.</pre>
-                </li>
-                <li>
-                    <h3>報名人數</h3>
-                    <select name="people" id="numOfPpl" class="textBlue">
-                        <option value="0">人數</option>
-                        <option value="1">1人</option>
-                        <option value="2">2人</option>
-                        <option value="3">3人</option>
-                        <option value="4">4人</option>
-                        <option value="5">5人</option>
-                        <option value="6">6人</option>
-                        <option value="7">7人</option>
-                        <option value="8">8人</option>
-                        <option value="9">9人</option>
-                        <option value="10">10人</option>
-                    </select>
-                </li>
-            </ul>
-            <input type="submit" class="btnXL_y" value="我要報名" onclick="registerEvent()">
-        </div>
-    </section>
-
-    <section class="officalEvent_section_chatB bgcBlue">
-        <div class="chatBwrap">
-            <div>
-                <input type="text" value="Message" class="talking">
-                <input type="submit" value="留言" class="chatSubmitBtn btnM_w--s">
+    <!-- 藍色背景下面 -->
+    <section class="officalEvent_bg_blue">
+        <!-- 報名表單 -->
+        <section class="officalEvent_section_eventInfo bgcBlue textWhite">
+            <div class="yellowFrame">
+                <ul>
+                    <li>
+                        <h3>本場活動</h3>
+                        <pre>NT {{COST}} / 人</pre>
+                    </li>
+                    <li>
+                        <h3>活動地點</h3>
+                        <pre>{{PLACE}}</pre>
+                    </li>
+                    <li>
+                        <h3>活動日期</h3>
+                        <pre>{{EVENTDATE}}</pre>
+                    </li>
+                    <li>
+                        <h3>活動時間</h3>
+                        <pre>{{STARTTIME}}</pre>
+                    </li>
+                    <li>
+                        <h3>報名人數</h3>
+                        <select name="people" id="numOfPpl" class="textBlue">
+                            <option value="0">人數</option>
+                            <option value="1">1人</option>
+                            <option value="2">2人</option>
+                            <option value="3">3人</option>
+                            <option value="4">4人</option>
+                            <option value="5">5人</option>
+                            <option value="6">6人</option>
+                            <option value="7">7人</option>
+                            <option value="8">8人</option>
+                            <option value="9">9人</option>
+                            <option value="10">10人</option>
+                        </select>
+                    </li>
+                </ul>
+                <input type="submit" class="btnXL_y" value="我要報名">
             </div>
+        </section>
 
-            <ul class="bgcWhite">
-                <li>
-                    <img src="./images/officalEvent/betty.png" class="headshot">
-                    <p class="textBlue">走啊!走啊!一起玩!</p>
-                    <button>
-                        <span class="iconify" data-icon="ep:warning" style="color: #2f4858;" data-width="24" data-height="24" data-flip="horizontal"></span>
-                    </button>
-                </li>
-                <li>
-                    <img src="./images/officalEvent/berlin.png" class="headshot">
-                    <p class="textBlue">海邊吃龍蝦!</p>
-                    <button>
-                        <span class="iconify" data-icon="ep:warning" style="color: #2f4858;" data-width="24" data-height="24" data-flip="horizontal"></span>
-                    </button>
-                </li>   
-            </ul>
-        </div>
-    </section>
-    
-    <section class="officalEvent_section_more bgcBlue">
-       <div>
-            <span id="officalEvent_bird" class="iconify" data-icon="icon-park-outline:bird" style="color: white;" data-width="100" data-height="100" data-flip="horizontal"></span>
-            <button class="showMoreChat">更多留言</button>
-       </div>
-    </section>
-    
-    @@include('./layout/footer.html')
+        <!-- 留言版 -->
+        <section class="officalEvent_section_chatB bgcBlue">
+            <div class="chatBwrap">
+                <!-- 留言 -->
+                <div>
+                    <input type="text" placeholder="Message" class="talking">
+                    <input type="submit" value="留言" class="chatSubmitBtn btnM_w--s">
+                </div>
+                <!-- 白色部分 -->
+                <ul class="bgcWhite">
+                    <li>
+                        <img src="./images/officalEvent/betty.png" class="headshot">
+                        <p class="textBlue">走啊!走啊!一起玩!</p>
+                        <button>
+                            <span class="iconify" data-icon="ep:warning" style="color: #2f4858;" data-width="24" data-height="24" data-flip="horizontal"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <img src="./images/officalEvent/berlin.png" class="headshot">
+                        <p class="textBlue">海邊吃龍蝦!</p>
+                        <button>
+                            <span class="iconify" data-icon="ep:warning" style="color: #2f4858;" data-width="24" data-height="24" data-flip="horizontal"></span>
+                        </button>
+                    </li>   
+                </ul>
+            </div>
+            <!-- 更多留言 -->
+            <section class="officalEvent_section_more bgcBlue">
+                <div>
+                    <span id="officalEvent_bird" class="iconify" data-icon="icon-park-outline:bird" style="color: white;" data-width="100" data-height="100" data-flip="horizontal"></span>
+                    <button class="showMoreChat">更多留言</button>
+                </div>
+            </section>
+        </section>
+        <!-- 留言版 --> 
+        @@include('./layout/footer.html')
+    </section> 
+</section>
 
-    <!-- Needed to be moved -->
-    <script>
-        function registerEvent(){
-            alert('報名成功 !  可至會員區查看詳細內容');
-        }
-    </script>
+    <script src="./js/officalEvent.min.js"></script>
     
 </body>
 </html>

@@ -35,7 +35,7 @@
 }
    
 //麵包屑
-.officalEvent_ul_breadcrumb {
+.officalEvent_ul_breadCrumbs{
     color: map-get($Mapcolor, 'blue');
     display: flex;
     font-size: 20px;
@@ -281,7 +281,7 @@
         display: block;
     }
     //麵包屑
-    .officalEvent_ul_breadcrumb {
+    .officalEvent_ul_breadCrumbs{
         margin: 15px auto;
         }
 

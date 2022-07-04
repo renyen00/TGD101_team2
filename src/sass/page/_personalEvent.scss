@@ -1,11 +1,12 @@
-.personal_body{
-
+.personal_body{   
     @import '_personalMod.scss';
+    font-family: $fontFamily; 
     // =====================main==============
-  
+
     .personal_div_wrapper{
         .personalEvent_main{
             .personalEvent_nav_change{
+
                 width: 80%;
                 font-size: 2.4rem;
                 margin: 0 auto;
@@ -77,3 +78,18 @@
         }
     }
 }
+
+// personalEvent---------------media query--------------------
+@media (max-width: 575.98px){
+    .personalEvent_nav_change{
+        width: 100%;
+        ul{
+            margin: 0 auto;
+            li{
+                text-align: center;
+            }
+        }
+    }
+
+}
+// personalEvent---------------media query--------------------

@@ -190,14 +190,20 @@
             }
         }
 
-    }
-    .personal_div_popup{
-        section{
-            
-            width: 100vw;
-            border: 5px solid $blue;
-            padding: 60px;
-            margin: 0 auto;
+        div.personal_div_popup{
+            section{
+                
+                width: 90vw;
+                border: 5px solid $blue;
+                padding: 30px;
+                margin: 0 auto;
+                ul{
+                    width: 75vw;
+                }
+                input{
+                    width: 40vw;
+                }
+            }
         }
     }
 }

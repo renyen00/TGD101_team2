@@ -44,13 +44,20 @@
             .then((text) =>{
                 this.php = text
             } );
-        },
+            const url2 = './php/personal_event.php?quest=4';
+            fetch(url2)
+                .then(response => response.json())
+                .then((text) =>{
+                    this.php2 = text
+                } );
+            },
     })
     
     Vue.component('personalpage2',{
         data(){
             return{
                 php:[],
+                php2:[],
             }
         },
     template:`
@@ -63,7 +70,7 @@
             .then((text) =>{
                 this.php = text
             } );
-            const url2 = './php/personal_event.php?quest=4';
+            const url2 = './php/personal_event.php?quest=5';
         fetch(url2)
             .then(response => response.json())
             .then((text) =>{
@@ -76,7 +83,6 @@
         data(){
             return{
                 php:[],
-                php2:[],
             }
         },
     template:`
@@ -88,12 +94,6 @@
             .then(response => response.json())
             .then((text) =>{
                 this.php = text
-            } );
-            const url2 = './php/personal_event.php?quest=5';
-        fetch(url2)
-            .then(response => response.json())
-            .then((text) =>{
-                this.php2 = text
             } );
         },
     })

@@ -162,3 +162,42 @@
         display: none;
     }
 }
+@media (max-width: 575.98px){
+    .personal_body{
+            
+        div.personal_div_wrapper{
+            width: 90vw;
+            .personal_main{
+                width: 90vw;
+                padding: 20px;
+                ul{
+                    width: 80vw;
+                    li{
+                        input{
+                            width: 50vw;
+                        }
+                        textarea{
+                            width: 50vw;
+                            height: 85px;
+                        }
+                    }
+                }
+                .personal_icon{
+                    max-width: 100px;
+                    display: none;
+                   
+                }
+            }
+        }
+
+    }
+    .personal_div_popup{
+        section{
+            
+            width: 100vw;
+            border: 5px solid $blue;
+            padding: 60px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -164,9 +164,9 @@ window.addEventListener('load', function(){
         },
         
         created() {
-            // let search_obj = new URLSearchParams(location.search);
-            // this.activity_id = search_obj.get("activityid");
-            this.activity_id = 48;
+            let search_obj = new URLSearchParams(location.search);
+            this.activity_id = search_obj.get("activityid");
+            // this.activity_id = 48;
 
             const url = './php/createEventInfo.php';
             fetch(url, {

@@ -43,7 +43,7 @@
                         <img src="./images/backgroundimg/attraction_c1.svg" class="createEvent_icon_cloud2">
                         <section class="createEvent_section_rule">
                             <h3>如何發起</h3>
-                            <h4>揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制揪團規則與限制</h4>
+                            <h4>給發起的活動訂個主題並選擇喜歡的地點與日期，並設定條件，最後寫下關於此次揪團活動的描述。注意，每個欄位都需要填寫哦!</h4>
                         </section>
                         <img src="./images/backgroundimg/createEvent_arrow.svg" class="createEvent_icon_arrow">
                         <div class="createEvent_div_createForm">
@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <section class="createEvent_section_note">
-                        <h4>報名截止時間若未滿最低人數自動解團，成團後系統發信通知之類的之類的之類的之類的之類的之類的之類的之類</h4>
+                        <h4>報名截止時間到期後，若報名者未達最低人數，此揪團活動將會自動被取消，請大家熱情邀約志同道合的鳥友們~</h4>
                     </section>
                     <!-- <input type="submit" class="btnXL_b createEvent_btn_submitCreate" value="發起揪團"> -->
                     <!-- <input type="submit" class="btnXL_b createEvent_a_createbtn" @click="createConfirm" value="發起揪團"> -->
@@ -172,7 +172,7 @@
                     </div>
                     
                     <div class="createEventConfirm_div_member">
-                        <img src="./images/backgroundimg/createConfirm_member.svg">
+                        <img :src="hostavatar">
                     </div>
                 </header>
             </div>
@@ -245,9 +245,6 @@
             </div>
         </form>
 
-        <form v-if="currentStep == 2">
-
-        </form>
     </div>
     <script src="./js/createEvent.min.js"></script>
 

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @@include('./layout/head.html')
     <title>景點活動總覽</title>
+    @@include('./layout/head.html')
 </head>
 <body class="activityList_body">
     @@include('./layout/header.html')
@@ -24,18 +24,18 @@
             <li><a href="./activityList.html">活動總覽</a></li>
         </ul>
 
-        <section class="activityList_wrapper">
+        <section id="activityList" class="activityList_wrapper">
             <!-- 背景 -->
+            <ul class="activityList_ul_switch">
+                <li class="activityList_li_now" @click="showOffice">嶼我同行</li>
+                <li @click="showCreate">嶼友相約</li>
+                <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" data-width="70" data-height="70"></span>
+            </ul>
             <section class="activityList_main_bg">
                 <img class="activityList_main_bgtop" src="./images/backgroundimg/activityList_main_bg1.svg" alt="">
-            
+                
                 <section class="activityList_main_bgcenter">
                     <!-- 切換頁面 -->
-                <ul class="activityList_ul_switch">
-                    <li class="activityList_li_now">嶼我同行</li>
-                    <li>嶼友相約</li>
-                    <span id="store_icon_birdBold" class="iconify" data-icon="ph:bird-bold" data-width="70" data-height="70"></span>
-                </ul>
                 <main class="activityList_main">
                     <!-- 篩選 -->
                     <ul class="activityList_ul_type">
@@ -49,24 +49,11 @@
                     </ul>
                     
                     <!-- 清單 -->
-                    <ul class="activityList_ul_list">
-                        <li>
-                            <img src="./images/officalEvent/1.jpg" alt="">
-                            <article class="activityList_span">
-                                <span>活動主題： {{[0][1]}}</span>
-                                <span>活動地點： {{[0][2]}}</span>
-                                <span>活動日期： {{[0][3]}}</span>
-                                <span>報名截止： {{[0][4]}}</span>
-                                <span>人數限制： {{[0][5]}}</span>
-                            </article>
-                            <article class="activityList_a_beside">
-                                <a href="./officalEvent.html?officalid=0" class="btnXL_b--s">詳細資訊</a>
-                                <a  href="" class="btnXL_y--s">我要報名</a>
-                            </article>                   
-                        </li>
-                    </ul>
+                    <office-event :init="officialList" :showoffice="showoffice"></office-event>
+                    <create-event :init="createList" :showcreate="showcreate"></create-event>
+                    
                     <!-- 點我揪團去 -->
-                    <p class="activityList_p">沒有看到喜歡的嗎？<a href="./createEvent.html">點我揪團去！</a></p>
+                    <h4 class="activityList_p">沒有看到喜歡的嗎？<a href="./createEvent.html">點我揪團去！</a></h4>
                 </main>
 
                 </section>
@@ -75,6 +62,7 @@
             </section>     
         </section>
     @@include('./layout/footer.html')
+    <script src="./js/activityList.min.js"></script>
 
 </body>
 </html>

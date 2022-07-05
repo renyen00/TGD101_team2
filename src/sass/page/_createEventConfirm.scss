@@ -293,6 +293,7 @@
     
     .createEventConfirm_div_bg{
         display: block;
+        margin-top: 2px;
     }
     
     .createEventConfirm_div_wrapperB{
@@ -300,7 +301,7 @@
     
         .createEventConfirm_div_container{
             max-width: 1200px;
-            margin: 0 auto;
+            margin: -1px auto;
             color: map-get($Mapcolor, 'white');
             // border: 1px solid #abc;
     

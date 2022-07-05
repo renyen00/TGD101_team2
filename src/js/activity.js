@@ -1,13 +1,13 @@
-// --------------------資料連接----------------------
-
-
-    new Vue({
+window.addEventListener('load', function(){
+let VM = new Vue({
         el: '#activity_info',
     
-        data: {     // 變數放這裡！              
+        data: {     // 變數放這裡！
+            offical:[],              
             activity:[],
         },
         methods: {
+            
         },
         computed: {
     
@@ -15,12 +15,24 @@
         watch: {},
 
         created() {
-            const url = './php/activity.php';
-                fetch(url)
+
+
+                fetch('./php/offical.php')
                     .then(response => response.json())
                     .then((text) =>{
-                        this.activity = text
+                        this.offical = text;
+
                     });
+            
+
+                fetch('./php/activity.php')
+                    .then(response => response.json())
+                    .then((text) =>{
+                        this.activity = text;
+                    });
+           
+            
+            
         },
         mounted() {
 
@@ -28,7 +40,8 @@
 
         },
         updated() {
-            // 按鈕--------------------------
+
+            // 按鈕-----------------------------------------
             $(".activity_button_more img").hide();
             $(".activity_button_more a").mouseover(function(){
                 $(".activity_button_more img").show();
@@ -44,8 +57,9 @@
             $(".activity_button_more2 a").mouseout(function(){
                 $(".activity_button_more2 img").hide();
             });
-            // 彈跳視窗--------------------------
-             $('.avatar1').click(function(){
+
+            // 彈跳視窗-----------------------------------
+            $('.avatar1').click(function(){
             $('.mask_user1').css('display', 'block');
             });   
             $('.mask_user1').click(function(e){
@@ -131,6 +145,4 @@
         },
     
     });
-
-
-    // --------------------資料連接----------------------
+});

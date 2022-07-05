@@ -1,0 +1,90 @@
+.side_cart{
+    margin: 20px auto;
+    background-color: #fff;
+    width: 400px;
+    height: auto;
+    max-height: 95vh;
+    position: fixed;
+    right: 150px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,.1);
+    color: #000;
+    z-index: 9998;
+    display: none;
+    .close{
+        text-align: center;
+        height: 50px;
+        padding:0 10px;
+        box-shadow: 0px 1px 1px 1px rgba(0,0,0,.1);
+        background-color: #F2BF61;
+        line-height: 50px;
+        .X_icon{
+            float: right;
+        }
+    }
+    ul{
+        margin:0 10px;
+        padding: 10px;
+        height: auto;
+        max-height: 60vh;
+        list-style: none;
+        overflow-y:auto;
+        li{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            border: 3px dashed #F2BF61;
+            border-radius: 10px;
+            height: 140px;
+            
+            .proList{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                flex-shrink: 0;
+                flex-grow: 1;
+               
+            }
+            .proPic{
+                display: flex;
+                flex-grow: 1;
+                padding: 20px;
+            }
+            .deleteBuy{
+                display: flex;
+                align-items: flex-end;
+                margin: 10px;
+                font-size: 48px;
+            }
+        }
+    }
+    hr{
+        width: 95%;
+        margin: 10px auto;
+    }
+    .total_price{
+        text-align: right;
+        padding: 20px;
+    }
+    .cart_check{
+        display: block;
+        text-decoration: none;
+        width:90%;
+        border-radius: 5px;
+        
+        margin: 10px auto;
+        margin-top:20px ;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        border: 2px solid #000;
+        background-color: rgba(0,0,0,1);
+        color: white;
+        transition: .3s;
+        &:hover{
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}

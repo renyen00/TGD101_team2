@@ -47,12 +47,14 @@
     .createEventRecord_div_uploadimg{
         width: 400px;
         height: 400px;
+        border-radius: 50%;
         margin: 0 auto -12%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        overflow: hidden;
+        background-color: rgba(47, 72, 88, .5);
         
         img{
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 450px;
         }
     }
 
@@ -67,9 +69,11 @@
         left: 34%;
 
         img{
-            width: 80%;
-            display: block;
+            position: absolute;
+            width: 130%;
             margin: 8% auto;
+            top: -22%;
+            left: -16%;
         }
     }
 }
@@ -114,7 +118,7 @@
 .createEventRecord_section_eventDetail{
     border: 5px dashed map-get($Mapcolor, 'yellow');
     border-radius: 30px;
-    margin: 85px auto 60px;
+    margin: 85px auto 50px;
     padding: 35px;
     width: 60%;
     height: 480px;
@@ -168,15 +172,11 @@
         left: 83%;
         transform: scaleX(-1);
     }
-    .iconifyY{
-        position: absolute;
-        top: 234.5%;
-        left: 69%;
-    }
+    
 }
 
 .createEventRecord_section_eventContent{
-    margin: 0 auto 10%;
+    margin: 0 auto 8%;
     padding: 35px;
     width: 700px;
 
@@ -185,7 +185,7 @@
         margin-bottom: 30px;
     }
     h4:nth-child(2){
-        line-height: 2;
+        line-height: 1.7;
     }
 }
 
@@ -193,7 +193,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
+    position: relative;
     a{
         display: inline-block;
         color: map-get($Mapcolor, 'white');
@@ -206,7 +207,11 @@
     input{
         display: inline-block;
     }
-    
+    .iconifyY{
+        position: absolute;
+        top: -63%;
+        left: 61%;
+    }
 }
 
 
@@ -221,7 +226,7 @@
     
         position: relative;
         z-index: 2;
-    
+        
         .marquee{
             width: 100%;
             // border: 1px solid blue;
@@ -258,12 +263,14 @@
         .createEventRecord_div_uploadimg{
             width: 200px;  //
             height: 200px;  //
+            border-radius: 50%;
             margin: 0 auto -12%;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            overflow: hidden;
+            background-color: rgba(47, 72, 88, .5);
             
             img{
-                width: 100%;
-                border-radius: 50%;
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                width: 250px;
             }
         }
     
@@ -278,23 +285,22 @@
             left: 23%;  //
     
             img{
-                width: 80%;
-                display: block;
+                position: absolute;
+                width: 130%;
                 margin: 8% auto;
+                top: -22%;
+                left: -17%;
             }
         }
     }
     
-    .createEventRecord_div_bg{
-        display: block;
-    }
-    
+
     .createEventRecord_div_wrapperB{
         background-color: map-get($Mapcolor, 'blue');
     
         .createEventRecord_div_container{
             max-width: 1200px;
-            margin: 0 auto;
+            margin: -1px auto;
             color: map-get($Mapcolor, 'white');
             // border: 1px solid #abc;
     
@@ -325,7 +331,7 @@
     .createEventRecord_section_eventDetail{
         border: 5px dashed map-get($Mapcolor, 'yellow');
         border-radius: 30px;
-        margin: 35px auto 35px;  //
+        margin: 35px auto 40px;  //
         padding: 20px;  //
         width: 90%; //
         height: 350px;  //
@@ -382,17 +388,13 @@
             top: 80%;  //
             left: 85%;  //
         }
-        .iconifyY{
-            position: absolute;
-            top: 255.5%; //
-            left: 76%;
-        }
     }
     
     .createEventRecord_section_eventContent{
         margin: 0 auto 10%;
         padding: 20px; //
         width: 90%; //
+        height: auto;
     
         h4:first-child{
             font-size: 2rem; //
@@ -401,6 +403,7 @@
         }
         h4:nth-child(2){
             font-size: 2rem; //
+            line-height: 1.7;
         }
     }
     
@@ -420,6 +423,11 @@
         }
         input{
             display: inline-block;
+        }
+        .iconifyY{
+            position: absolute;
+            top: -64.5%; //
+            left: 73%;
         }
         
     }

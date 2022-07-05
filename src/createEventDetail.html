@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>發起揪團詳細頁面</title>
     @@include('./layout/head.html')
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.min.css"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script>
 
 </head>
@@ -27,7 +25,7 @@
                 </div>
                 
                 <div class="createEventDetail_div_member">
-                    <img src="./images/backgroundimg/createConfirm_member.svg">
+                    <img :src="HOST_AVATAR">
                 </div>
             </header>
         </div>
@@ -91,7 +89,12 @@
                         <h4>{{CONTENT}}
                         </h4>
                         <!-- @@include('./layout/applicants.html') -->
-                        <applicants></applicants>
+                        
+                        <applicants :activityid="activity_id"></applicants>
+                        
+                        <applicant-list></applicant-list>
+                        
+                            
                     </section>
                     <div class="createEventDetail_div_btns">
                         <span class="iconify iconifyB" data-icon="emojione-v1:bird" style="color: #f2bf61; font-size: 100px;"></span>
@@ -101,22 +104,17 @@
                     <!-- <messageboard></messageboard> -->
                     <!-- @@include('./layout/messageBoard.html') -->
                     <div class="controlpop">
-                        <messageboard></messageboard>
+                        <messageboard :activityid="activity_id"></messageboard>
                     </div>
+                    <!-- <div class="controlreportbox"> -->
+                        <reportbox class="controlreportbox" :initreport="reportReason"></reportbox>
+                    <!-- </div> -->
                 </main>
             </div>
             @@include('./layout/footer.html')
         </div>
     </div>
-    <!-- <script src="http://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-
-    <!-- <script>
-        let my_btn = document.getElementById("apply");
-        my_btn.addEventListener("click", function(){
-            alert("報名成功 !  可至會員區查看詳細內容");
-            self.location='activityList.html';
-        });
-    </script> -->
+    
     <script src="./js/createEventDetail.min.js"></script>
 </body>
 </html>

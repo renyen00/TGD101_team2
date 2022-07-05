@@ -9,7 +9,7 @@
     join (select a.ID,a.CONTENT,b.EMAIL  from message a join member b on a.MEMBER_ID = b.ID ) b on a.MESSAGE_ID = b.ID
    join MEMBER c on a.MEMBER_ID = c.ID
    join REPORT_REASON d on a.REASON = d.ID
-   where STATE != '未審核'";
+   where STATE != '未審核' order by 1 desc";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->prepare($sql);

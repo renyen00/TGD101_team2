@@ -4,15 +4,15 @@
     //---------------------------------------------------
 
     session_start();
-//     $acc = $_SESSION['UserID']
-    $acc = 'Client@gmail.com';
+    $acc = $_SESSION['UserE'];
+    // $acc = 'admin@123.com';
+    
     $name = $_GET['name'];
     $nickname = $_GET['nickname'];
     $phone = $_GET['phone'];
     $hobby = $_GET['hobby'];
     $intro = $_GET['intro'];
 
-//     $acc = 'admin@123.com';
     //建立SQL語法
     $sql = "update MEMBER 
 	set NAME = :name,NICKNAME = :nickname,PHONE = :phone,HOBBY =:hobby,INTRODUCTION=:intro 

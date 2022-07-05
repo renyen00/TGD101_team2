@@ -1,274 +1,231 @@
 #officalEvent_body{
+    font-family: $fontFamily; 
+}
     
-    .officalEvent_header_sliderArea{
-        // border: 1px solid black;
-        width: 100%;
-        height: 700px;
-        overflow: hidden;
-        margin: 0 auto;
-        
-        .parrotBox{
-            // border: 1px solid green;
+ // 最上面banner
+.officalEvent_header_banner{
+    position: relative;
+    width: 100%;
+    .officalEvent_banner_inner{
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        margin:200px auto;
+        width: 600px;
+        // LOGO
+        .officalEvent_logo{
             display: block;
-            margin: 0 auto;
-            position: relative;
-            width: 1440px;
-
-            .parrot{
-                position: absolute;
-                top: 430px;
-                right: 20%;
-                z-index: -1;
-            }
-
-            .officalEvent_logo{
-                width: 120px;
-                position: absolute;
-                top: 270px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            h5{
-                position: absolute;
-                top: 420px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            // Needed to be removed after
-            .fakePhoto{
-                position: absolute;
-                top: 0;
-                right: 0;
-            }
-       }
-
-        #officalEvent_sliderframe{
-            width: 1440px;
-            display: block;
-            margin: 0 auto;
-
-            // position: absolute;
-            // top: 0;
-            // left: 50%;
-            // transform: translateX(-50%);
-
-            #officalEvent_ul_sliderImg{
-                // border: 1px solid rgb(55, 0, 255);
-                width: 100%;
-                height: 700px;
-                overflow: hidden;
-    
-                .officalEvent_li_slider{
-                    display: inline;
-                    margin-right: 175px;
-                    
-                    .offical_img_slider{
-                        max-width: 100%;
-                    }
-                }
-            }
+            width: 120px;
+            margin: 30px auto;
         }
-        
-    }
-
-    .officalEvent_section_breadCrumb{
-        // border: 1px solid red;
-        width: 1200px;
-        margin: 0 auto;
-        margin-top: 30px;
-        padding-bottom: 38px;
-        padding-left: 50px;
-
-        .breadLink{
-            text-decoration: none;
-            font-size: 2rem;
-            display: inline-block;
-        }
-
-        p{
-            display: inline-block;
-        }
-
         h5{
-            display: inline-block;
+            text-align: center;
+            color: map-get($Mapcolor, 'white');
+            font-weight: bold;
         }
     }
-
-    .officalEvent_main{
-        // border: 1px solid orange;
-        width: 100%;
-        position: relative;
-        
-        .cloudL{
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .cloudS2{
-            position: absolute;
-            top: 40%;
-            left: 30%;
-            z-index: -1;
-        }
-
-        .officalEvent_div_articleWrap{
-            // border: 1px solid brown;
-            width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            gap: 50px;
-
-            .bird{
-                // border: 1px solid darkblue;
-                width: 580px;
-                position: relative;
-
-                #birdT{
-                    position: absolute;
-                    top: 90px;
-                    right: 70px;
-                }
-
-                #birdB{
-                    position: absolute;
-                    top: 250px;
-                    right: 190px;
-                }
-            }
-
-            .itsSummer{
-                // border: 1px solid darkblue;
-                width: 580px;
-
-                h1{
-                font-weight: bold;
-                text-align: center;
-                }
-
-                .waterfallSummer{
-                line-height: 1.5;
-                font-size: 3.2rem;
-                margin-top: 85px;
-                }
-            }
+}
+// 上面圖片
+.officalEvent_banner{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+   
+//麵包屑
+.officalEvent_ul_breadCrumbs{
+    color: map-get($Mapcolor, 'blue');
+    display: flex;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+    li{
+        margin-left: 10px;
+    }
+    a{
+    text-decoration:none;
+    color: map-get($Mapcolor, 'blue');
+        &:hover{
+            color: map-get($Mapcolor, 'yellow');                    
         }
     }
+}
 
-    #officalEvent_img_bgWave{
-        // margin-top: 5%;
-        position: relative;
+// 內容
+.officalEvent_main{
+    // border: 1px solid orange;
+    width: 100%;
+    position: relative;
+    
+    .cloudL{
+        position: absolute;
+        top: 0;
+        left: 0;
         z-index: -1;
     }
 
-    .officalEvent_section_eventInfo{
-        width: 100%;
-        margin-top: -9px;
+    .cloudS2{
+        position: absolute;
+        top: 40%;
+        left: 30%;
+        z-index: -1;
+    }
 
-        .yellowFrame{
-            border: 5px dashed map-get($Mapcolor, 'yellow');
-            border-radius: 30px;
-            margin: 0 auto;
-            width: 700px;
+    .officalEvent_div_articleWrap{
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
 
-            ul{
-                // border: 1px solid skyblue;
-                margin: 5% auto;
-                width: 63%;
+        .officalEvent_bird{
+            width: 580px;
+            position: relative;
 
-                h3{
-                    display: inline-block;
-                    font-weight: bold;
-                    margin-bottom: 5%;
-                }
-
-                pre{
-                    display: inline-block;
-                    font-size: 3.2rem;
-                    margin-left: 25%;
-                }
-
-                select{
-                    height: 50px;
-                    width: 190px;
-                    font-size: 3.2rem;
-                    margin-left: 25%;
-                    border-radius: 10px;
-                }
+            #birdT{
+                position: absolute;
+                top: 90px;
+                right: 70px;
             }
 
-            input{
-                margin: 0 auto;
+            #birdB{
+                position: absolute;
+                top: 250px;
+                right: 190px;
+            }
+        }
+
+        .officalEvent_content{
+            // border: 1px solid darkblue;
+            width: 580px;
+
+            h1{
+            font-weight: bold;
+            text-align: center;
+            }
+
+            .officalEvent_content_main{
+            line-height: 1.5;
+            font-size: 3.2rem;
+            margin-top: 85px;
+            }
+        }
+    }
+}
+    // 藍色背景上面
+    #officalEvent_img_bgWave{
+        width: 100%;   
+        position: relative;
+        z-index: -1;
+        display: block;
+    }
+    // 藍色背景下面
+    .officalEvent_bg_blue{
+        background-color: map-get($Mapcolor, 'blue');
+        width: 100%;
+    }
+
+// 報名表單
+.officalEvent_section_eventInfo{
+    width: 100%;
+    .yellowFrame{
+        border: 5px dashed map-get($Mapcolor, 'yellow');
+        border-radius: 30px;
+        margin: 0 auto;
+        width: 700px;
+
+        ul{
+            margin: 5% auto;
+            width: 63%;
+
+            h3{
+                display: inline-block;
+                font-weight: bold;
                 margin-bottom: 5%;
             }
-        }
-    }
 
-    .officalEvent_section_chatB{
-        width: 100%;
-        
-        .chatBwrap{
-            // border: 1px solid teal;
-            width: 1200px;
-            margin: 0 auto;
-            padding-top: 70px;
-
-            div{
-                // border: 1px solid pink;
-                width: 780px;
-                margin: 0 auto;
-
-                .talking{
-                    width: 653px;
-                    height: 62px;
-                    border-radius: 10px;
-                    padding-left: 5%;
-                    font-size: 2rem;
-                }
-                
-                .chatSubmitBtn{
-                    background-color: transparent;
-                    display: inline-block;
-                    vertical-align: baseline;
-                }
-                .chatSubmitBtn:hover{
-                    background-color: map-get($Mapcolor, 'white');
-                }
+            pre{
+                display: inline-block;
+                font-size: 3.2rem;
+                margin-left: 25%;
             }
 
-            ul{
+            select{
+                height: 50px;
+                width: 190px;
+                font-size: 3.2rem;
+                margin-left: 25%;
                 border-radius: 10px;
-                width: 800px;
-                margin: 0 auto;
-                margin-top: 50px;
-
-                li{
-                    // border: 1px solid purple;
-                    display: flex;
-
-                    img{
-                        margin: 1%;
-                    }
-
-                    p{
-                        height: 20px;
-                        margin: auto;
-                    }
-
-                    button{
-                        border: none;
-                        margin-right: 1%;
-                    }
-                }
             }
         }
 
+        input{
+            margin: 0 auto;
+            margin-bottom: 5%;
+        }
     }
+}
+// 留言板
+.officalEvent_section_chatB{
+    width: 100%;
+    
+    .chatBwrap{
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 70px;
 
+        div{
+            // border: 1px solid pink;
+            width: 780px;
+            margin: 0 auto;
+
+            .talking{
+                width: 780px;
+                height: 60px;
+                border-radius: 10px;
+                padding-left: 5%;
+                font-size: 2rem;
+            }
+            
+            .chatSubmitBtn{
+                background-color: transparent;
+                margin: 20px auto;
+                vertical-align: baseline;
+            }
+            .chatSubmitBtn:hover{
+                background-color: map-get($Mapcolor, 'white');
+            }
+        }
+
+        ul{
+            border-radius: 10px;
+            width: 800px;
+            margin: 0 auto;
+            margin-top: 50px;
+
+            li{
+                // border: 1px solid purple;
+                display: flex;
+
+                img{
+                    margin: 1%;
+                }
+
+                p{
+                    height: 20px;
+                    margin: auto;
+                }
+
+                button{
+                    border: none;
+                    margin-right: 1%;
+                }
+            }
+        }
+    }
     .officalEvent_section_more{
         width: 100%;
 
@@ -297,4 +254,194 @@
             }
         }
     }
+
 }
+
+
+// officalEvent---------------media query--------------------
+@media (max-width: 575.98px){
+
+    // 最上面banner
+    .officalEvent_header_banner{
+        position: relative;
+        width: 100%;
+        .officalEvent_banner_inner{
+            margin: 200px auto;
+            width: 300px;
+            // LOGO
+            .officalEvent_logo{
+                width: 120px;
+                margin: 10px auto;
+            }
+        }
+    }
+    // 上面圖片
+    .officalEvent_banner{
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    //麵包屑
+    .officalEvent_ul_breadCrumbs{
+        margin: 15px auto;
+        }
+
+    // 內容
+    .officalEvent_main{
+        width: 100%;
+        position: static;
+        .cloudL,.cloudS2{
+            display: none;
+        }
+
+        .officalEvent_div_articleWrap{
+            width: 100%;
+            margin: 0 auto;
+            flex-direction: column;
+            .officalEvent_bird{
+                width: 0;
+                position: static;
+                #birdT,#birdB{
+                    display: none;
+                }
+            }
+            .officalEvent_content{
+                width: 100%;
+                h1{
+                    font-size: 40px;
+                    margin: 20px auto;
+                }
+                .officalEvent_content_main{
+                    line-height: 1.5;
+                    font-size: 24px;
+                    margin: 0 auto;
+                    padding: 20px 15px;                   
+                }
+            }
+        }
+    }
+    // 藍色背景上面
+    #officalEvent_img_bgWave{
+        // margin-top: 5%;
+        position: relative;
+        z-index: -1;
+    }
+    // 報名表單
+    .officalEvent_section_eventInfo{
+        width: 100%;
+        margin: 0 auto 50px;
+        padding: 10px;
+        .yellowFrame{
+            margin: 0 auto;
+            width: 100%;
+                h3{
+                    font-size: 20px;
+                    display: inline-block;
+                    font-weight: bold;
+                }
+
+                pre{
+                    font-size: 20px;
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+
+                select{
+                    height: 30px;
+                    width: 100px;
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
+            }
+            input{
+                margin: 0 auto;
+            }
+        }
+    }
+    // 留言板
+    .officalEvent_section_chatB{
+        width: 100%;
+        
+        .chatBwrap{
+            // border: 1px solid teal;
+            width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+
+            div{
+                width: 100%;
+                margin: 0 auto;
+                padding: 5px;
+
+                .talking{
+                    width: 100%;
+                    height: 60px;
+                    padding-left: 5%;
+                    font-size: 2rem;
+                }
+                
+                .chatSubmitBtn{
+                    background-color: transparent;
+                    margin: 20px auto;
+                    vertical-align: baseline;
+                }
+                .chatSubmitBtn:hover{
+                    background-color: map-get($Mapcolor, 'white');
+                }
+            }
+
+            ul{
+                border-radius: 10px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 0px;
+
+                li{
+                    // border: 1px solid purple;
+                    display: flex;
+
+                    img{
+                        margin: 1%;
+                    }
+
+                    p{
+                        height: 20px;
+                        margin: auto;
+                    }
+
+                    button{
+                        border: none;
+                        margin-right: 1%;
+                    }
+                }
+            }
+        }
+        .officalEvent_section_more{
+            width: 100%;
+
+            div{
+                // border: 1px solid teal;
+                width: 100%;
+                padding-top: 20%;
+                margin: 0 auto;
+                position: relative;
+
+                #officalEvent_bird{
+                    display: none;
+                }
+
+                .showMoreChat{
+                    color: map-get($Mapcolor, 'yellow');
+                    text-decoration: underline;
+                    border: none;
+                    font-size: 2rem;
+                    position: absolute;
+                    top: 20%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+    }
+// officalEvent---------------media query--------------------

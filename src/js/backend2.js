@@ -72,10 +72,6 @@ Vue.component('backb1',{
     },
     template:`
         <div>
-            <ul class="backend_ul_sort">
-                <li>全部↓</li>
-                <li>審核↓</li>
-            </ul>
             <table>
                 <tr>
                     <td>檢舉編號</td>
@@ -111,10 +107,6 @@ Vue.component('backb2',{
     props:['infor2'],
     template:`
         <div>
-            <ul class="backend_ul_sort">
-                <li>全部↓</li>
-                <li>審核↓</li>
-            </ul>
             <table>
                 <tr>
                     <td>檢舉編號</td>

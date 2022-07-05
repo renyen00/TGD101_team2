@@ -39,3 +39,28 @@
         }
     }
 }
+
+@media (max-width: 575.98px){
+    .personal_body{
+            
+        div.personal_div_wrapper{
+            width: 90vw;
+            .personalNotice_main{
+                section{
+                    width: 80vw;
+                    padding: 20px 30px;
+                    p{
+                        &:last-child{
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+                .personalNotice_nav_change{
+                    ul>li{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

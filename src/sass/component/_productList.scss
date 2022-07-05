@@ -1,8 +1,6 @@
 .shoppingCart_li_list{
     width: 970px;
     margin: 0 auto;
-    display: flex;
-    flex-flow: row;
     margin-top: 5%;
 
     .pics{
@@ -21,8 +19,9 @@
         }
         
         img{
+            width: 200px;
             position: absolute;
-            bottom: 0;
+            bottom: -220px;
             left: 0;
         }
     }
@@ -32,6 +31,7 @@
         flex-grow: 2;
 
         #name{
+            font-weight: bold;
             display: block;
             width: 100%;
             text-align: center;
@@ -42,7 +42,6 @@
         h4{
             // border: 1px solid rgb(128, 0, 34);
             text-align: center;
-            // display: block;
         }
 
         #price{
@@ -53,18 +52,88 @@
             text-align: center;
         }
     }
+
     #shoppingCart_icon_trash{
         border: none;
         height: 42px;
         position: relative;
-        bottom: -145px;
+        bottom: 45px;
+        left: 95%;
         cursor: pointer;
+    }
+    
+    .dashLine{
+        height: 5px;
+        display: block;
+        margin: 0 auto;
+        display: block;
     }
 }
 
-.dashLine{
-    height: 5px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 5%;
+// ----------------media query-------------------------
+
+@media (max-width: 575.98px){
+    .shoppingCart_li_list{
+        width: 100%;
+        margin-top: 5%;
+    
+        .pics{
+            // border: 1px solid yellow;
+            width: 150px;
+            position: relative;
+            left: 2%;
+    
+            .circle{
+                width: 100px;
+                height: 100px;
+            }
+            
+            img{
+                width: 150px;
+                position: absolute;
+                bottom: -150px;
+                left: 0;
+            }
+        }
+    
+        .detail{
+            // border: 1px solid green;
+    
+            #name{
+                width: 130px;
+                // border: 1px solid purple;
+                font-size: 2.4rem;
+                margin-left: 45%;
+            }
+    
+            h4{
+                // border: 1px solid rgb(128, 0, 34);
+                width: 130px;
+                font-size: 1.2em;
+                margin-left: 45%;
+            }
+    
+            #price{
+                // border: 1px solid orangered;
+                width: 130px;
+                font-size: 1.6rem;
+                margin-left: 45%;
+            }
+        }
+        #shoppingCart_icon_trash{
+            border: none;
+            height: 42px;
+            position: relative;
+            bottom: 100px;
+            left: 80%;
+            cursor: pointer;
+        }
+        
+        .dashLine{
+            height: 2px;
+            width: 90%;
+            // margin-top: 5%;
+        }
+    }
+    
 }

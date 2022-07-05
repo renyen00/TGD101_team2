@@ -9,23 +9,31 @@ $(function () {
 });
 
 // 眼鏡
-$(function () {
 
+$(function () {
     $('.role_glasses').click(function(){
         $('.role_show_glasses').children('img').attr('src', $(this).children('img').attr('src'))
-        .resizable({ 
-            containment: ".role_show_area",
-            maxWidth: 150,
-            minWidth: 60,
-            maxHeight: 150,
-            minHeight: 60 
-        })
-        .parent().draggable({
+        .draggable({
             cursor: "crosshair",
             containment: ".role_show_area",
             stack: "#show img" 
-        });
+        })
+
+
     });
+
+    // .resizable({ 
+    //     containment: ".role_show_area",
+    //     maxWidth: 150,
+    //     minWidth: 60,
+    //     maxHeight: 150,
+    //     minHeight: 60 
+    // });
+    // .parent().draggable({
+    //     cursor: "crosshair",
+    //     containment: ".role_show_area",
+    //     stack: "#show img" 
+    // });
 
     
 });
@@ -34,38 +42,27 @@ $(function () {
 
     $('.role_hat').click(function(){
         $('.role_show_hat').children('img').attr('src', $(this).children('img').attr('src'))
-        .resizable({ 
-            containment: ".role_show_area",
-            maxWidth: 150,
-            minWidth: 60,
-            maxHeight: 150,
-            minHeight: 60 
-        }).parent().draggable({
+        .draggable({
             cursor: "crosshair",
             containment: ".role_show_area",
             stack: "#show img" 
-        });
+        })
 
     });
     
 });
 
-// // 飾品
+ // 飾品
 $(function () {
 
     $('.role_other').click(function(){
-        $('.role_show_other').children('img').attr('src', $(this).children('img').attr('src'))
-        .resizable({ 
-            containment: ".role_show_area",
-            maxWidth: 150,
-            minWidth: 60,
-            maxHeight: 150,
-            minHeight: 60 
-        }).parent().draggable({
+        $('.role_show_other').children('img').attr('src', $(this).children('img').attr('src'));
+        $('.role_show_other img')
+        .draggable({
             cursor: "crosshair",
             containment: ".role_show_area",
             stack: "#show img" 
-        });
+        })
 
     });
     

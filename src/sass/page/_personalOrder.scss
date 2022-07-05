@@ -110,3 +110,36 @@
         }
     }
 }
+@media (max-width: 575.98px){
+    .personal_body{
+            
+        div.personal_div_wrapper{
+            width: 90vw;
+            .personalOrder_main{
+                section{
+                    padding: 20px;
+                    div{
+                        width: 70vw;
+                        ul{
+                            justify-content: space-around;
+                        }
+                        ul.porder1:before{width: 0%;}
+                        ul.porder2:before{width: 28%;}
+                        ul.porder3:before{width: 43%;}
+                        ul.porder4:before{width: 75%;}
+                        
+                        ul:after{
+                            content:'';
+                            width: 75%; 
+                        }
+                    }
+                }
+                .personalOrder_nav_change{
+                    ul>li{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

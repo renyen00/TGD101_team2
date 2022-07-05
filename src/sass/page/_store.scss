@@ -476,13 +476,16 @@
                 display: block;
                 position: absolute;
                 top: 52%;
-                left: 45%;
+                left: 50%;
                 transform: translateX(-50%);
             };
     
             .productColor{
+                width: 95px;
                 top: 60%;
-
+                left: 50%;
+                transform: translateX(-50%);
+                
                 .productColorLi{
                     width: 15px;
                     height: 15px;
@@ -495,8 +498,8 @@
                 flex-direction: column;
                 position: absolute;
                 top: 68%;
-                left: 46%;
-                transform: translateX(-52%)
+                left: 50%;
+                transform: translateX(-50%)
             };
         };
     }

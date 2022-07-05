@@ -19,18 +19,22 @@ $p-top: 20px;
         width: 100%;
         height: 460px;
         margin: 0 auto;
-        background:{
-            image: url(/images/faq/lake.jpg);
-            position: center;
-            size: cover;
-        }
+        background-image: url(../images/faq/lake.jpg);
+        background-size: cover;
+        background-attachment: scroll;
         #logoFrame{
-            img{
-                width: $logo-w;
+            .aTagWidth{
                 display: block;
+                width: 120px;
                 margin: 0 auto;
-                padding-top: $p-top;
+                    img{
+                    width: $logo-w;
+                    display: block;
+                    margin: 0 auto;
+                    padding-top: $p-top;
             }
+            }
+            
         }
         .subtitle{
             color: map-get($Mapcolor, 'white');
@@ -65,10 +69,7 @@ $p-top: 20px;
         text-decoration: none;
     };
     span{
-        font:{
             color: map-get($Mapcolor, 'blue');
-            
-        }
     }
     .crumpFaq{
         color: map-get($Mapcolor, 'blue');
@@ -203,5 +204,19 @@ $p-top: 20px;
 // RWD 首頁 575.98px 版本==================================================================================================================
 
 @media (max-width: 575.98px){
+    .cloudFrame{
+        .cloud1{
+            width: 24%;
+            top: -114px;
+        }
+        .cloud2{
+            width: 24%;
+            top: -28px;
+        }
 
+    }
+
+    .augurio-collapse{
+        width:  calc(100% - 60px);
+    }
 }

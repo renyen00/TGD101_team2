@@ -13,7 +13,7 @@
 <body class="index_body">
     @@include('./layout/header.html')
     <!-- 首頁標題 -->
-    <div class="index_title_top">
+    <div id="totop" class="index_title_top">
         <h1 class="index_h1_before">鳥語</h1>
         <img class="index_img_title" src="./images/logo/logo_white_final.svg" alt="">
         <img class="index_img_yb" src="./images/xiaojiang/yb.svg" alt="">
@@ -120,51 +120,77 @@
                         </div>  -->
                            
                             <!-- 鳥嶼本體(兩個) -->
-                            <img src="./images/index_kao/bird_island.svg" class="birdIsland ">
+                            <img src="./images/index_kao/birdIslandFinal.png" class="birdIsland ">
 
                             <!-- 各種主要景點 -->
                             
                             <!-- 馬丘比丘 -->
-                            <a href="" class="atagHoverMachuPicchu"><img src="./images/index_kao/Machu_Picchu.svg" class="machuPicchu"></a>
+                            <div class="atagHoverMachuPicchu">
+                                <a href="attraction.html?target=4"><img src="./images/index_kao/Machu_Picchu.svg" class="machuPicchu">
+                                </a>
+                                <div class="leadFont"><h3 class="fontAdjust">天空之城</h3></div>
+                            </div>
                             
                             <!-- 鳥嶼商店 -->
-                            <a href="" class="atagHoverStore"><img src="./images/index_kao/store.svg" class="store"></a>
+                            <div class="atagHoverStore">
+                                <a href="./store.html"><img src="./images/index_kao/store.svg" class="store">
+                                </a>
+                                <div class="leadFont"><h3 class="fontAdjust">大嶼商行</h3></div>
+                            </div>
 
                             <!-- 熱氣球 -->
                             <img src="./images/index_kao/hot_air_ballon_blue.svg" class="baBlue">
                             <img src="./images/index_kao/hot_air_ballon_white.svg" class="baWhite">
                             <img src="./images/index_kao/hot_air_ballon_yellow.svg" class="baYellow">
                             <!-- 鬼屋 -->
-                            <section class=" landscape_hover">
-                                <a href="attraction.html?target=0" class="atagHoverGhostHouse"><img src="./images/index_kao/ghosthouse.svg" class="ghostHouse"></a>
-                                <img src="./images/index_kao/pinkcloud.svg" class="pinkCloud">
-                                <img src="./images/index_kao/yellowcloud.svg" class="yellowCloud">
+                            <section class="atagHoverGhostHouse">
+                                <a href="attraction.html?target=1">
+                                <img src="./images/index_kao/ghosthouse.svg" class="ghostHouse">
+                                </a> 
+                                <div class="leadFont"><h3 class="fontAdjust">人骨教堂</h3></div>
                             </section>
+                                <img src="./images/index_kao/pinkcloud.svg" class="pinkCloud">
+                                <img src="./images/index_kao/yellowcloud.svg" class="yellowCloud">    
+                           
                             <!-- 啾啾山 -->
-                            <a href="attraction.html?target=4" class="atagHoverSnowMoutain"><img src="./images/index_kao/snowmoutain.svg" class="snowMoutain"></a>
+                            <div class="atagHoverSnowMoutain">
+                                <a href="attraction.html?target=5"><img src="./images/index_kao/snowmoutain.svg" class="snowMoutain">
+                                </a>
+                                <div class="leadFont"><h3 class="fontAdjust">啾啾山</h3></div>
+                            </div>
                             <!-- 瀑布 -->
-                            <a href="attraction.html?target=2" class="atagHoverWaterfall"><img src="./images/index_kao/waterfall.svg" class="waterfall"></a>
+                            <div class="atagHoverWaterfall">
+                                <a href="attraction.html?target=3"><img src="./images/index_kao/waterfall.svg" class="waterfall">
+                                </a>
+                                <div class="leadFont"><h3 class="fontAdjust">甲府瀑布</h3></div>
+                            </div>
                             <!-- 動物園 -->
-                            <a href="attraction.html?target=6" class="atagHoverZoo">
-                                <img src="./images/index_kao/elephant.svg" class="elephant">
-                                <img src="./images/index_kao/giraffe.svg" class="giraffe">
-                                <img src="./images/index_kao/panda.svg" class="panda">
-                            </a>
-                            <!-- 燈塔-非景點 -->
-                            <img src="./images/index_kao/light_house.svg" class="lightHouse">
+                            <div class="atagHoverZoo">
+                                <a href="attraction.html?target=7">
+                                    <img src="./images/index_kao/elephant.svg" class="elephant">
+                                    <img src="./images/index_kao/giraffe.svg" class="giraffe">
+                                    <img src="./images/index_kao/panda.svg" class="panda">
+                                </a>
+                                <div class="zooFont"><h3 class="fontAdjust">鳥嶼動物園</h3></div>
+                            </div>
                             <!-- 遊樂園 -->
-                            <section class="amusemenPark">
-                            <a href="attraction.html?target=5" class="atagHoverPark">
+                            <section class="atagHoverPark">
+                            <a href="attraction.html?target=6">
                             <img src="./images/index_kao/ferry_wheel.svg" class="ferryWheel">
                             <img src="./images/index_kao/roller_coaster.svg" class="rollerCoaster">
                             <img src="./images/index_kao/carousel.svg" class="carousel">
                             </a>
+                            <div class="parkFont"><h3 class="fontAdjust">鳥嶼樂園</h3></div>
                             </section>
                             <!-- 叢林 -->
-                            <a href="attraction.html?target=1" class="atagHoverJungle"><img src="./images/index_kao/tree_a.svg" class="ta12"></a>
+                            <div class="atagHoverJungle">
+                                <a href="attraction.html?target=2"><img src="./images/index_kao/tree_a.svg" class="ta12">
+                                </a>
+                                <div class="leadFont"><h3 class="fontAdjust">鳥語叢林</h3></div>
+                            </div>
 
                             <!-- 各種非主景點素材 -->
-                            <img src="./images/index_kao/tree_a.svg" class="treeA ta1">
+                            <!-- <img src="./images/index_kao/tree_a.svg" class="treeA ta1">
                             <img src="./images/index_kao/tree_a.svg" class="treeA ta2">
                             <img src="./images/index_kao/tree_a.svg" class="treeA ta3">
                             <img src="./images/index_kao/tree_a.svg" class="treeA ta4">
@@ -220,12 +246,12 @@
                             <img src="./images/index_kao/street_light.svg" class="streetLight st4">
                             <img src="./images/index_kao/street_light.svg" class="streetLight st5">
                             <img src="./images/index_kao/street_light.svg" class="streetLight st6">
-                            <img src="./images/index_kao/street_light.svg" class="streetLight st7">
+                            <img src="./images/index_kao/street_light.svg" class="streetLight st7"> -->
 
                             <img src="./images/index_kao/bridge_1.svg" class="br1">
                             <img src="./images/index_kao/bridge_2.svg" class="br2">
 
-                            <img src="./images/index_kao/fountain.svg" class="fountain">
+                            <!-- <img src="./images/index_kao/fountain.svg" class="fountain">
 
                             <img src="./images/index_kao/chair.svg" class="chair ch1">
                             <img src="./images/index_kao/chair.svg" class="chair ch2">
@@ -233,12 +259,21 @@
                             <img src="./images/index_kao/coconut_tree.svg" class="coTree ct1">
                             <img src="./images/index_kao/coconut_tree.svg"  class="coTree ct2">
 
-                            <img src="./images/index_kao/river.svg" class="river">
+                            <img src="./images/index_kao/river.svg" class="river"> -->
                         
             </div>     
         </div>
 
-        <img src="./images/logo/logo_white_final.svg" class="logoWhy">
+        <div class="landscapeRWD"><a href="attraction.html?target=4"><img src="./images/index_kao/machubichu_RWD_.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="attraction.html?target=7"><img src="./images/index_kao/zoo_RWD.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="attraction.html?target=3"><img src="./images/index_kao/waterfall_RWD_.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="./store.html"><img src="./images/index_kao/store_RWD.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="attraction.html?target=2"><img src="./images/index_kao/jungle_RWD_.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="attraction.html?target=5"><img src="./images/index_kao/moutain_RWD_.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="attraction.html?target=1"><img src="./images/index_kao/ghosthoouse_RWD_.svg" alt=""></a></div>
+        <div class="landscapeRWD"><a href="attraction.html?target=6"><img src="./images/index_kao/amusemenPark_RWD_.svg" alt=""></a></div>
+
+        <a href="#totop"><img src="./images/logo/logo_white_final.svg" class="logoWhy"></a>
         @@include('./layout/footer.html')
 
     <!-- AOS -->
@@ -248,10 +283,16 @@
     </script>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/MotionPathPlugin.min.js"></script>
-    <!-- <script src="./js/index.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/MotionPathPlugin.min.js"></script> -->
+    
+    <!-- ScrollMagic -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="./js/index.min.js"></script>
     
 
     <script>
@@ -259,7 +300,7 @@
 //     navbar();
 //     popUpShow();
 
-// function navbar() {
+// function navbar() {  
 //     var scrolltop = new Array();
 //     var index = 0;
 //     scrolltop[0] = 0;

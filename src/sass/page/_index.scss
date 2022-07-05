@@ -1,7 +1,11 @@
 // 首頁背景
+html{
+    scroll-behavior: smooth;
+}
 .index_body{
     background-color: #2F4858;
-    color: map-get($Mapcolor, 'white');;
+    color: map-get($Mapcolor, 'white');
+    
   
 }
 // 首頁標題
@@ -165,29 +169,29 @@
 //鳥嶼==================================================
 
     // 動畫影格設定
-    @keyframes tree {
-        from{
-            transform-origin: center bottom;
-            transform: rotate(-3deg);
-        }
-        to{
-            transform-origin: center bottom;
-            transform: rotate(3deg);
-        }
-    }
+    // @keyframes tree {
+    //     from{
+    //         transform-origin: center bottom;
+    //         transform: rotate(-3deg);
+    //     }
+    //     to{
+    //         transform-origin: center bottom;
+    //         transform: rotate(3deg);
+    //     }
+    // }
 
-    @keyframes cloud {
-        from{
-            transform: translateX(-5px);
-        }
-        to{
-            transform: translateX(5px);
-        }
-    }
+    // @keyframes cloud {
+    //     from{
+    //         transform: translateX(-5px);
+    //     }
+    //     to{
+    //         transform: translateX(5px);
+    //     }
+    // }
 
     @keyframes ballon_blue {
         0%{
-            transform: translateX(-100px);
+            left: 50%;
             transform: rotateX(40deg);
         }
         20%{
@@ -203,7 +207,7 @@
             transform: rotateX(20deg);
         }
         100%{
-            transform: translateX(100px);
+            left: 70%;
             transform: rotateX(40deg);
         }
     }
@@ -248,23 +252,23 @@
         }
     }
 
-    @keyframes coconuttree {
-        from{
-            transform: rotateX(20deg);
-        }        
-        to{
-            transform: rotateX(40deg);
-        }
-    }
+    // @keyframes coconuttree {
+    //     from{
+    //         transform: rotateX(20deg);
+    //     }        
+    //     to{
+    //         transform: rotateX(40deg);
+    //     }
+    // }
 
-    @keyframes streetlight {
-        from{
-            transform: rotateX(15deg);
-        }        
-        to{
-            transform: rotateX(0deg);
-        }
-    }
+    // @keyframes streetlight {
+    //     from{
+    //         transform: rotateX(15deg);
+    //     }        
+    //     to{
+    //         transform: rotateX(0deg);
+    //     }
+    // }
 
     @keyframes landscapeHoverAnimation {
         from{
@@ -276,7 +280,7 @@
             transform: rotate(-6deg);
         }
     }
-    //================================================== 
+    //動畫製作================================================== 
     .treeA{
         animation: {
         name: tree;
@@ -333,15 +337,16 @@
         position: relative;
         margin: auto;
         box-sizing: border-box;
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 1000px;
     }    
 
     .islandItself{
-        width: 1200px;
-        height: 1200px;
+        width: 80%;
+        height: 100%;
         margin: 0 auto;
-        position: relative;
+        position: absolute;
+        left: 10%;
     }
 
     .birdIsland{
@@ -349,24 +354,33 @@
         margin: 0 auto;
         width: 100%;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -999;
     }
-    
+
+    .leadFont{
+        position: relative;
+    }
+
+    .fontAdjust{
+        position: absolute;
+        top: -8px;
+        left: 0;
+        color: #2F4858;
+        width: 160px;
+        height: 60px;
+        font-weight: 600;
+    }
+
     // 馬丘比丘======================
     .machuPicchu{
         width: 96%;
     }
     .atagHoverMachuPicchu{
-        display: block;
-        position: absolute;
-        top: 14.7%;
-        left: 28%;
-        opacity: 1;
-        transition: 5s;
-        &:hover{
+        position: fixed;
+        top: 13vh;
+        left: 23vw;
+        transform: scale(1.6);
+        transition: 1s;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -374,7 +388,6 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
 
     .river{
@@ -391,28 +404,26 @@
         
     }
     .atagHoverStore{
-        position: absolute;
-        top: 44.8%;
-        left: 50.5%;
-        opacity: 1;
+        position: fixed;
+        transform: scale(1.6);
+        top: 69vh;
+        left: 37vw;
         height: 105px;
-        z-index: 1;
         transition: 1s;
-        &:hover{
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
                 iteration-count: infinite;
                 timing-function: ease-in-out;
                 direction: alternate;
-            }
-        }   
+            }  
     }
 
     // 熱氣球==========================
     .baBlue{
         position: absolute;
-        top: 21.4%;
+        top: 22.4%;
         left: 60%;
         animation: {
             name: ballon_blue;
@@ -425,9 +436,9 @@
     }
     .baWhite{
         position: absolute;
-        top: 26.6%;
+        top: 30.6%;
         left: 58%;
-        z-index: 6;
+        z-index: 2;
         animation: {
             name: ballon_white;
             duration: 4s;
@@ -438,9 +449,9 @@
     }
     .baYellow{
         position: absolute;
-        top: 24.6%;
+        top: 26.6%;
         left: 80%;
-        z-index: 5;
+        z-index: 1;
         animation: {
             name: ballon_typhoon;
             duration: 4s;
@@ -457,12 +468,11 @@
     }
     .atagHoverGhostHouse{
         position: absolute;
-        top: 20.2%;
-        left: 17.6%;
-        opacity: 1;
-        z-index: 1;
+        transform: scale(1.6);
+        top: 24.7vh;
+        left: 15vw;
         transition: 1s;
-        &:hover{
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -470,7 +480,6 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
 
     .yellowCloud{
@@ -508,10 +517,10 @@
     }
     .atagHoverSnowMoutain{
         position: absolute;
-        top: 26.6%;
-        left: 41%;
-        z-index: 3;
-        &:hover{
+        transform: scale(1.6);
+        top: 33vh;
+        left: 30vw;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -519,7 +528,6 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     
     .waterfall{
@@ -527,10 +535,10 @@
     }
     .atagHoverWaterfall{
         position: absolute;
-        top: 33.1%;
-        left: 39.4%;
-        z-index: 3;
-        &:hover{
+        transform: scale(1.6);
+        top: 45vh;
+        left: 28vw;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -538,16 +546,32 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
 
     // 動物園===========================
+    .zooFont{
+        position: absolute;
+        width: 160px;
+        top: 72vh;
+        left: 23vw;
+        color: #2F4858;
+        font-weight: 600;
+        opacity: 0;
+        animation: {
+            name: landscapeHoverAnimation;
+            duration: 1s;
+            iteration-count: infinite;
+            timing-function: ease-in-out;
+            direction: alternate;
+        }
+    }
     .elephant{
         width: 5.25%;
         position: absolute;
-        top: 42.4%;
-        left: 31%;
-        &:hover{
+        transform: scale(1.6);
+        top: 61vh;
+        left: 23vw;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -555,14 +579,14 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     .panda{
         width: 5.25%;
         position: absolute;
-        top: 45%;
-        left: 34.1%;
-        &:hover{
+        transform: scale(1.6);
+        top: 66vh;
+        left: 25vw;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -570,14 +594,14 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     .giraffe{
         width: 5.25%;
         position: absolute;
-        top: 40.6%;
-        left: 37.4%;
-        &:hover{
+        transform: scale(1.6);
+        top: 59vh;
+        left: 27.5vw;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -585,7 +609,6 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     // 燈塔============================
     .lightHouse{
@@ -597,12 +620,27 @@
     }
 
     // 遊樂園==========================
+    .parkFont{
+        position: absolute;
+        width: 90px;
+        top: 65vh;
+        left: 43vw;
+        opacity: 0;
+        animation: {
+            name: landscapeHoverAnimation;
+            duration: 1s;
+            iteration-count: infinite;
+            timing-function: ease-in-out;
+            direction: alternate;
+        }
+    }
     .rollerCoaster{
         width: 15.08%;
         position: absolute;
-        top: 37%;
-        left: 54.3%;
-        &:hover{
+        transform: scale(1.6);
+        top: 52vh;
+        left: 40vw;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -610,15 +648,15 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     .ferryWheel{
         width: 9.25%;
         position: absolute;
-        top: 34.4%;
-        left: 62.8%;
+        transform: scale(1.6);
+        top: 49vh;
+        left: 46vw;
         z-index: 1;
-        &:hover{
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -626,14 +664,15 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     .carousel{
         width: 4.66%;
         position: absolute;
-        top: 39.2%;
-        left: 56.8%;
-        &:hover{
+        transform: scale(1.6);
+        top: 55vh;
+        left: 42vw;
+        z-index: 2;
+        opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
                 duration: 1s;
@@ -641,15 +680,13 @@
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-        }
     }
     // 橋哦 有兩座=========================
     .br1{
-        width: 5.83%;
-        height: 2.08%;
+        width: 6%;
         position: absolute;
-        top: 28%;
-        left: 35.4%;
+        top: 31.6%;
+        left: 33.5%;
         animation: {
             name: coconuttree;
             duration: 1s;
@@ -660,11 +697,10 @@
         }
     }
     .br2{
-        width: 5.83%;
-        height: 2.08%;
+        width: 6%;
         position: absolute;
-        top: 52.4%;
-        left: 42%;
+        top: 74.4%;
+        left: 40.8%;
         animation: {
             name: coconuttree;
             duration: 1s;
@@ -933,10 +969,11 @@
     }
     .atagHoverJungle{
         position: absolute;
-        top: 27%;
-        left: 28.5%;
+        transform: scale(1.6);
+        top: 32vh;
+        left: 22vw;
         z-index: 1;
-        &:hover{
+        opacity: 0;
         animation: {
             name: landscapeHoverAnimation;
             duration: 1s;
@@ -944,7 +981,6 @@
             timing-function: ease-in-out;
             direction: alternate;
         }
-    }
     }
     
     //黃色的大樹===========================
@@ -1129,6 +1165,10 @@
     margin-bottom: 10.51%;
 }    
 
+.landscapeRWD{
+    display: none;
+}
+
 // RWD 首頁 575.98px 版本==================================================================================================================
 
 @media (max-width: 575.98px){
@@ -1245,5 +1285,15 @@
             padding: 30px 10px;
         }
     }
+
+        // 島的部分=========================================================================================
+        #islandWrapper, .leadFont, .zooFont, .parkFont{
+            display: none;
+        }
+
+        .landscapeRWD{
+            display: block;
+        }
+        
 
 }

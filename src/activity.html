@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>單一景點-活動總頁</title>
     @@include('./layout/head.html')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script>
 </head>
 <body class="activity_body">
     @@include('./layout/header.html')
@@ -42,7 +43,7 @@
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html?officalid=0" class="btnXL_w--s">詳細資訊</a>
-                        <a  href="" class="btnXL_y--s">我要報名</a>
+                        <a href="" class="btnXL_y--s" >我要報名</a>
                     </article>                   
                 </li>
                 <li>
@@ -56,7 +57,7 @@
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html?officalid=1" class="btnXL_w--s">詳細資訊</a>
-                        <a  href="" class="btnXL_y--s">我要報名</a>
+                        <a href="" class="btnXL_y--s" >我要報名</a>
                     </article>
                 </li>
                 <li>
@@ -70,7 +71,7 @@
                     </article>
                     <article class="activity_a_beside">
                         <a href="./officalEvent.html?officalid=2" class="btnXL_w--s">詳細資訊</a>
-                        <a  href="" class="btnXL_y--s">我要報名</a>
+                        <a href="" class="btnXL_y--s" >我要報名</a>
                     </article>
                 </li>
             </ul>  
@@ -104,7 +105,7 @@
                 <li>
                     <article class="activity_a_beside" >
                         <a href="./createEventDetail.html?activityid=0" class="btnXL_b--s">詳細資訊</a>
-                        <a  href="" class="btnXL_y--s">我要報名</a>
+                        <a href="" class="btnXL_y--s" >我要報名</a>
                     </article>
                     <article class="activity_span">
                         <span>活動主題： {{activity[0][1]}}</span>
@@ -123,7 +124,7 @@
                 <li>
                     <article class="activity_a_beside">
                         <a href="./createEventDetail.html?activityid=1" class="btnXL_b--s">詳細資訊</a>
-                        <a  href="" class="btnXL_y--s">我要報名</a>
+                        <a href="" class="btnXL_y--s" >我要報名</a>
                     </article>
                     <article class="activity_span">
                         <span>活動主題： {{activity[1][1]}}</span>
@@ -157,15 +158,15 @@
                         <div class="personal_card_out">
                             <!-- 頭像 -->
                             <div class="personal_card_left card_left1">
-                                <img :src="activity[3][6]" alt="">
+                                <img :src="activity[0][6]" alt="">
                             </div>
                             <!-- 右邊介紹 -->
                             <div class="personal_card_right card1">
                                 <div class="personal_card_span">
-                                    <span>名稱：{{activity[3][8]}}</span>
-                                    <span>興趣：{{activity[3][9]}}</span>
-                                    <span>生日：{{activity[3][10]}}</span>
-                                    <p>自我介紹：{{activity[3][11]}}
+                                    <span>名稱：{{activity[0][8]}}</span>
+                                    <span>興趣：{{activity[0][9]}}</span>
+                                    <span>生日：{{activity[0][10]}}</span>
+                                    <p>自我介紹：{{activity[0][11]}}
                                                                     
                                     </p>
                                 </div>
@@ -188,15 +189,15 @@
                         <div class="personal_card_out">
                             <!-- 頭像 -->
                             <div class="personal_card_left card_left2">
-                                <img :src="activity[4][6]" alt="">
+                                <img :src="activity[1][6]" alt="">
                             </div>
                             <!-- 右邊介紹 -->
                             <div class="personal_card_right card2">
                                 <div class="personal_card_span">
-                                    <span>名稱：{{activity[4][8]}}</span>
-                                    <span>興趣：{{activity[4][9]}}</span>
-                                    <span>生日：{{activity[4][10]}}</span>
-                                    <p>自我介紹：{{activity[4][11]}}
+                                    <span>名稱：{{activity[1][8]}}</span>
+                                    <span>興趣：{{activity[1][9]}}</span>
+                                    <span>生日：{{activity[1][10]}}</span>
+                                    <p>自我介紹：{{activity[1][11]}}
                                                                     
                                     </p>
                                 </div>

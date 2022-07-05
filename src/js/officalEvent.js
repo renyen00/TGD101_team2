@@ -1,11 +1,9 @@
-let search_obj = new URLSearchParams(location.search);
-let prod_num = search_obj.get("officalid");
-
 
 let VM = new Vue({
     el: '#offical_info',
 
     data: {     // 變數放這裡！
+        officalid: 0,
         offical_info:[],
         PICTURE: '',
         TITLE: '',
@@ -13,7 +11,6 @@ let VM = new Vue({
         EVENTDATE: '',
         STARTTIME: '',
         ENDTIME: '',
-        TYPE: '',
         COST: '',
         MAX: '',
         STOPTIME: '',
@@ -27,36 +24,35 @@ let VM = new Vue({
     watch: {},
 
     created() {
+                
+                let search_obj = new URLSearchParams(location.search);
+                this.officalid = search_obj.get("officalid");
 
                 const url = './php/offical.php';
                 fetch(url, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    // activityId: this.activity_id,
                 })
                 })
                 .then(response => response.json())
-                // .then((text) =>{
-                //     this.offical = text;
-                // })
-                .then((data) =>{
-                    this.PICTURE = data[0]['PICTURE'];
-                    this.TITLE = data[0]['TITLE'];
-                    this.PLACE = data[0]['NAME'];
-                    this.EVENTDATE = data[0]['EVENTDATE'];
 
-                    this.COST = data[0]['COST'];
-                    this.MAX = data[0]['MAX'];
-                    this.STARTTIME = data[0]['STARTTIME'];
-                    this.STOPTIME = data[0]['STOPTIME'];
-                    this.CONTENT = data[0]['CONTENT'];
+                .then((data) =>{
+                    this.PICTURE = data[this.officalid]['PICTURE'];
+                    this.TITLE = data[this.officalid]['TITLE'];
+                    this.PLACE = data[this.officalid]['NAME'];
+                    this.EVENTDATE = data[this.officalid]['EVENTDATE'];
+                    this.COST = data[this.officalid]['COST'];
+                    this.MAX = data[this.officalid]['MAX'];
+                    this.STARTTIME = data[this.officalid]['STARTTIME'];
+                    this.STOPTIME = data[this.officalid]['STOPTIME'];
+                    this.CONTENT = data[this.officalid]['CONTENT'];
                     this.offical_info = data;
                 });
         
     },
     updated() {
-        
+
     }
         
 });

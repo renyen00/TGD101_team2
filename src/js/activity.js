@@ -1,3 +1,4 @@
+window.addEventListener('load', function(){
 let VM = new Vue({
         el: '#activity_info',
     
@@ -6,6 +7,7 @@ let VM = new Vue({
             activity:[],
         },
         methods: {
+            
         },
         computed: {
     
@@ -13,6 +15,8 @@ let VM = new Vue({
         watch: {},
 
         created() {
+
+
                 fetch('./php/offical.php')
                     .then(response => response.json())
                     .then((text) =>{
@@ -141,3 +145,4 @@ let VM = new Vue({
         },
     
     });
+});

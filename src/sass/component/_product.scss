@@ -89,13 +89,13 @@
         // float: left;
         // border: 1px solid purple;
         box-sizing: border-box;
-        width: 189px;
+        width: 165px;
         height: 400px;
         margin-bottom: 3%;
 
         .productFrame{
             border: 5px solid map-get($Mapcolor, 'white');
-            width: 169px;
+            width: 165px;
             height: 375px;
             border-radius: 10px;
         };
@@ -104,6 +104,8 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
         };
 
         .productPic{
@@ -117,12 +119,15 @@
             display: block;
             position: absolute;
             top: 52%;
-            left: 45%;
+            left: 50%;
             transform: translateX(-50%);
         };
 
         .productColor{
+            width: 95px;
             top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
 
             .productColorLi{
                 width: 15px;
@@ -136,8 +141,8 @@
             flex-direction: column;
             position: absolute;
             top: 68%;
-            left: 46%;
-            transform: translateX(-52%)
+            left: 50%;
+            transform: translateX(-50%)
         };
     };
 }

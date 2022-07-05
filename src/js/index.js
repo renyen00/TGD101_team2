@@ -23,6 +23,7 @@
 // .to(".index_cloud_6", {x: -1200})
 // .to(".index_cloud_7", {x: -1200})
 // .to(".islandAnimationTest", {x: 500});
+
 var controller = new ScrollMagic.Controller();
 var stickyMap = new TimelineMax();
     stickyMap

@@ -38,10 +38,7 @@ window.addEventListener('load',function(){
                     localStorage.setItem('productAdd', JSON.stringify(temp));
 
                 }
-
-
-
-                
+    
                 // let productAdd = JSON.parse(localStorage.getItem("addProduct")); // 從 localStorage 抓出資料, 並轉成 JS 能懂得
                 // console.log(productAdd); // 印出抓到的訊息
                 

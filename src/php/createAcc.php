@@ -47,6 +47,7 @@
         $stmt->bindValue(":tel", $tel);
         $stmt->bindValue(":date", $date);
         $stmt->execute();
+        header("location:../login.html");
         $resp['sucessfully'] = $stmt->rowCount() > 0;
         echo json_encode($resp);
         exit();

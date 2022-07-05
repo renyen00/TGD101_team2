@@ -9,6 +9,7 @@
     <meta name="google-signin-client_id" content="60353520409-vorqrmhferhfum27sactiqdkhd02nknt.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     @@include('./layout/head.html')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
     <div class="sign_container sign_bg">
@@ -27,23 +28,23 @@
                     <input v-model="lcpwd" type="password" placeholder="確認密碼" onkeyup="validate()" id="pwd_c">
                     <div id="check"></div>
                     <div class="btnGroup">
-                        <input class="btnS_b" type="submit" value="清除">
+                        <input class="btnS_b" type="button" @click="clear" value="清除">
                         <input id="submit" class="btnS_b" type="submit" value="送出" style="display:none;">
                         <input id="ckeckmit" class="btnS_b" @click="submit" type="submit" value="送出">
                     </div>
                 </form>
             </div>
             <div class="form-cont signIn-cont">
-                <form id="logIn" action="./php/login.php" method="POST">
+                <form id="logIn" method="">
                     <h4>登入</h4>
                     <div class="g-signin2" data-width="300" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
                     <span class="hr-login">or</span>
-                    <span id="tips" v-model="tips"></span>
+                    
                     <input v-model="email" type="email" placeholder="Email" name="EMAIL">
                     <input v-model="pwd" type="password" placeholder="密碼" name="PASSWORD">
                     <div class="btnGroup">
-                        <input class="btnS_y" type="submit" value="清除">
-                        <input class="btnS_y" type="submit" value="登入">
+                        <input class="btnS_y" @click="clear" type="button" value="清除">
+                        <input class="btnS_y" @click="submit" type="submit" value="登入">
                     </div>
 
                         <a id="missingBtn" href="###">忘記密碼?</a>

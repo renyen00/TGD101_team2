@@ -376,7 +376,8 @@ window.addEventListener('load', function(){
                                         icon: 'warning',
                                         title: '請先登入會員',              
                                     }).then(() => {
-                                        window.location.href = "./login.html"  
+                                        window.location.href = "./login.html",
+                                        localStorage.setItem('LINK', './createEventDetail.html')
                                     });
                                       
                                 }else if(data === "applied"){

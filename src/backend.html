@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @@include('./layout/backend/backend_link.html')
-
+    <script src="./js/checkLogin.js"></script>
     <title>鳥語鳥嶼後台管理</title>
 </head>
 <body class="backend_body">
@@ -16,6 +16,7 @@
         <!-- <back1 :h1="title"></back1> -->
         <component :is="page" :h1="title"></component>>
     </div>
+    <span class="check_status"></span>
     <!-- 
     <div class="backend_div_popup">
         <section>

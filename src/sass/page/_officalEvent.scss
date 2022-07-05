@@ -173,12 +173,10 @@
     width: 100%;
     
     .chatBwrap{
-        width: 100%;
+        width: 780px;
         margin: 0 auto;
         padding-top: 70px;
-
-        div{
-            // border: 1px solid pink;
+        .officalEvent_section_message{
             width: 780px;
             margin: 0 auto;
 
@@ -202,7 +200,7 @@
 
         ul{
             border-radius: 10px;
-            width: 800px;
+            width: 780px;
             margin: 0 auto;
             margin-top: 50px;
 
@@ -357,7 +355,7 @@
                 margin: 0 auto;
             }
         }
-    }
+
     // 留言板
     .officalEvent_section_chatB{
         width: 100%;
@@ -367,8 +365,7 @@
             width: 100%;
             margin: 0 auto;
             padding: 10px;
-
-            div{
+            .officalEvent_section_message{
                 width: 100%;
                 margin: 0 auto;
                 padding: 5px;
@@ -444,4 +441,5 @@
         }
 
     }
+}
 // officalEvent---------------media query--------------------

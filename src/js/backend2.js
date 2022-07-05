@@ -105,6 +105,11 @@ Vue.component('backb1',{
     })
 Vue.component('backb2',{
     props:['infor2'],
+    data(){
+        return{
+            popup:[],
+        }
+    },
     template:`
         <div>
             <table>
@@ -127,8 +132,17 @@ Vue.component('backb2',{
                     <p @click='chgpop'>詳細</p>
                 </tr>
             </table> 
+            <popb2 :infor='popup'></popb2>
+
         </div>
         `,
+        methods:{
+            chgpop(e){
+                let i = e.target.closest('tr').dataset.n
+                this.popup = this.infor2[i]
+                document.querySelector('.backend_div_popup').classList.add('backend_show')
+            }
+        }
     })
 Vue.component('popb1',{
         props:['infor'],
@@ -153,14 +167,22 @@ Vue.component('popb1',{
                     <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
                 </div>
                 <div class="backend_pass">
-                    <input type="radio" name="pass">通過
-                    <input type="radio" name="pass">駁回
+                    <input type="radio" v-model="infor[5]" value='通過'>通過
+                    <input type="radio" v-model="infor[5]" value='駁回'>駁回
                 </div>
-                <button class="back_btnM" @click='close'>關閉</button>
+                <div class="backend_pop_bottom">
+                    <p class="back_btnS" @click='close'>取消</p>
+                    <p class="back_btnS" @click='sub'>儲存</p>
+                </div>
             </section>
         </div>
             `,
         methods:{
+            sub(e){
+                const url = `./php/backend1_insert.php?quest=7&id=${this.infor[0]}&s=${this.infor[5]}`;
+                fetch(url)
+                this.close(e)
+            },
             close(e){
                 e.target.closest('div.backend_div_popup').classList.remove('backend_show')
             }

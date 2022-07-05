@@ -189,7 +189,7 @@ $p-top: 20px;
 }
 
 // General
-input {
+#chck1, #chck2, #chck3 {
   position: absolute;
   opacity: 0;
   z-index: -1;
@@ -262,7 +262,7 @@ input {
 }
 
 // :checked
-input:checked {
+#chck1:checked, #chck2:checked, #chck3:checked {
   + .tab-label {
     &::after {
       transform: rotate(90deg);

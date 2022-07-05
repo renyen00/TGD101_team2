@@ -1165,7 +1165,7 @@ html{
     margin-bottom: 10.51%;
 }    
 
-.landscapeRWD{
+.landscapeRWD1, .landscapeRWD2{
     display: none;
 }
 
@@ -1287,13 +1287,82 @@ html{
     }
 
         // 島的部分=========================================================================================
+        $hint: '點我看更多唷!';
         #islandWrapper, .leadFont, .zooFont, .parkFont{
             display: none;
         }
 
-        .landscapeRWD{
-            display: block;
+        @keyframes RWD_TYPE_1 {
+            from{
+                transform-origin: center bottom;
+                transform: rotate(6deg);
+            }
+            to{
+                transform-origin: center bottom;
+                transform: rotate(-6deg);
+            }
         }
-        
-
+        @keyframes RWD_TYPE_2 {
+            from{
+                transform-origin: center bottom;
+                transform: rotate(-6deg);
+            }
+            to{
+                transform-origin: center bottom;
+                transform: rotate(6deg);
+            }
+        }
+        @keyframes elementAfterControl {
+            from{
+                transform: scale(2);
+                transform: rotate(3deg);
+            }
+            to{
+                transform: scale(.5);
+                transform: rotate(-3deg);
+            }
+        }
+        .landscapeRWD1{
+            display: block;
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 150px;
+            &::after{
+                content: $hint;
+                font-size: 20px;
+                font-weight: 700;
+                position: absolute;
+                top: 150px;
+                left: 50px;
+            }
+            animation: {
+                name: RWD_TYPE_1;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
+        .landscapeRWD2{
+            display: block;
+            width: 90%;
+            text-align: center;
+            margin-bottom: 150px;
+            &::after{
+                content: $hint;
+                font-size: 20px;
+                font-weight: 700;
+                position: absolute;
+                top: 150px;
+                left: 150px;
+            }
+            animation: {
+                name: RWD_TYPE_2;
+                duration: 1s;
+                iteration-count: infinite;
+                timing-function: ease-in-out;
+                direction: alternate;
+            }
+        }
 }

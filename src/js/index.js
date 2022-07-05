@@ -26,8 +26,7 @@
 var controller = new ScrollMagic.Controller();
 var stickyMap = new TimelineMax();
     stickyMap
-        .to(' ',  2, { opacity: '1' })
-        .to('.footer_info', 2, {opacity: '0'})
+        // .to('.footer_info', 2, {opacity: '0'})
         // 馬丘比丘
         .to('.atagHoverMachuPicchu, .leadFont', 2, {opacity: '1'})
         .to('.islandItself', 5, { scale: '3', top: '74%', left: '26%' })
@@ -68,8 +67,7 @@ var stickyMap = new TimelineMax();
         .to('.islandItself', 5, { top: '-7%', left: '-41%' })
         .to('.islandItself', 5, { top: '-7%', left: '-41%' })
         .to(' .ferryWheel, .rollerCoaster, .carousel, .parkFont', 4, {opacity: '0'})
-
-        .to('.footer_info', 2, {opacity: '1'})
+        // .to('.footer_info', 2, {opacity: '1'})
         // 回到原本畫面
         .to('.islandItself', 5, { scale: '1', top: '0%', left: '0%' })
         .to('.islandItself', 5, { scale: '1', top: '0%', left: '0%' })

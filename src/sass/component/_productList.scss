@@ -75,7 +75,7 @@
 @media (max-width: 575.98px){
     .shoppingCart_li_list{
         width: 100%;
-        margin-top: 5%;
+        margin-top: 10%;
     
         .pics{
             // border: 1px solid yellow;
@@ -89,7 +89,7 @@
             }
             
             img{
-                width: 150px;
+                width: 120px;
                 position: absolute;
                 bottom: -150px;
                 left: 0;
@@ -126,7 +126,6 @@
             position: relative;
             bottom: 100px;
             left: 80%;
-            cursor: pointer;
         }
         
         .dashLine{

@@ -1,4 +1,6 @@
 // 切換頁面
+window.onload = () => {
+  if(window.innerWidth>575.98){
 $(function () {
 
   $('.about_main').hide();
@@ -7,7 +9,7 @@ $(function () {
     $('.about_member').not(this).children(".about_main").hide();
     })  
 });
-
+}
 // 組員燈箱
 $(function(){
  $('.about_a_introduce1').click(function(){
@@ -104,3 +106,6 @@ $(function(){
      console.log(e.eventPhase);
    })
  }); 
+
+
+  }

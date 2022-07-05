@@ -19,6 +19,7 @@ window.addEventListener("load", function(){
             receiverCell: "",
             receiverPhone: "",
         },
+
         methods: {
             goToTrash(index){
                 // console.log(index);
@@ -51,15 +52,37 @@ window.addEventListener("load", function(){
                     this.receiverCell = "";
                     this.receiverPhone = "";
                 }
+            },
+
+            confirm(){
+                const url = './php/payment.php';
+                const timestamp = Date.now();
+                this.orderIdGreen = 'M' + timestamp;
+                fetch(url, {
+                    method: 'POST',
+                    headers:{
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        receiverId: timestamp,
+                        receiverNm: this.receiverNm,
+                        receiverGd: this.receiverGd,
+                        receiverEm: this.receiverEm,
+                        receiverAdd: this.receiverAdd,
+                        receiverCell: this.receiverCell,
+                        receiverPhone: this.receiverPhone
+                    })
+                })
             }
         },
-        computed: {},
+        computed: {
+            new_price(){
+                return (this.price + 120);
+            }
+        },
         watch: {},
         created() {
-            const url = './php/payment.php';
-            fetch(url)
-                .then(response => response.json())
-                .then(text => this.memberInformation = text);
+            
         },
         mounted() {
             // this.product_list = JSON.parse(localStorage.getItem('productAdd'));
@@ -100,20 +123,28 @@ window.addEventListener("load", function(){
 
             $(".goPay").click(function(e){
                 e.preventDefault();
-                setTimeout(() => {
-                    $(".buyerInfoMethod").css("display", "block");
-                    $(".shoppingCart_icon_trash").css("display", "none");
-        
-                    $(".stepTwoLine").css("display", "block");
-                    $(".stepOneLine").css("display", "none");
-        
-                    $("#shopingList_icon_greyBird").css("display", "none");
-                    $("#payment_icon_greyBird").css("display", "block");
-        
-                    $(".shoppingCart_optionBtn").css("display", "none");
-                    $(".payment_optionBtn").css("display", "block");
-                    $(".shoppingCart_section_promoH").css("display", "none");
-                }, 500);
+                let memInfo = JSON.parse(sessionStorage.getItem('memInfo'));
+                // console.log(memInfo);
+
+                if(memInfo['id']){
+                    setTimeout(() => {
+                        $(".buyerInfoMethod").css("display", "block");
+                        $(".shoppingCart_icon_trash").css("display", "none");
+                        $(".shoppingCart_li_list .dashLine").css("margin-top", "5%");
+            
+                        $(".stepTwoLine").css("display", "block");
+                        $(".stepOneLine").css("display", "none");
+            
+                        $("#shopingList_icon_greyBird").css("display", "none");
+                        $("#payment_icon_greyBird").css("display", "block");
+            
+                        $(".shoppingCart_optionBtn").css("display", "none");
+                        $(".payment_optionBtn").css("display", "block");
+                        $(".shoppingCart_section_promoH").css("display", "none");
+                    }, 500);
+                }else{
+                    window.location.href = "./login.html";
+                }
             }),
 
             $(".previous").click(function(){

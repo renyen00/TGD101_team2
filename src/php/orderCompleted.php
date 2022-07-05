@@ -1,6 +1,7 @@
 <?php
     include("Connection_server.php");
     //  ==============================================
+    
     //建立SQL語法
     $sql = "SELECT DATE(ord.ORDERTIME), ord.ID, ordSt.STATUS, ord.PAYMENT, ord.TOTAL
                 FROM 

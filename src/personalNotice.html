@@ -13,23 +13,96 @@
     <div class="personal_div_wrapper">
         @@include('./layout/backend/personalTop.html')
         <!-- 麵包屑以下 -->
-        <main class="personalNotice_main">
+        <main class="personalNotice_main" id="personal_notice">
             <nav class="personalNotice_nav_change">
                 <ul>
-                    <li class="li_select">訊息通知</li>
-                    <li>廣播通知</li>
+                    <li v-for="(val,i) in pagelist" :data-n="i" @click="chgpage">{{val}}</li>
                 </ul>
             </nav>
             <!-- 內容清單 -->
-           <section>
-            <p id="personalNotice_content">您好：<br>
-                您的嘉年華活動已報名完成！詳情您可以至揪團紀錄查看，提醒您請務必準時參加，否則可能會被列入黑名單，謝謝。</p>
-            <p id="personalNotice_whoSend">2022/05/21 鳥語・鳥嶼客服 敬上</p>
-           </section>
+            <component :is="personalpage"></component>
+
+          
         </main>
     </div>
 </div>
 @@include('./layout/footer.html')
 
+<script>
+
+    Vue.component('personalpage1',{
+            data(){
+                return{
+                    php:[],
+                }
+            },
+        template:`
+            <div>
+                <section v-for="val in php">
+                    <p>您好：<br>
+                        您的  {{val[0]}} 已報名完成！詳情您可以至揪團紀錄查看，提醒您請務必準時參加，否則可能會被列入黑名單，謝謝。</p>
+                    <br>
+                    <br>
+                    <p>{{val[1]}} 鳥語・鳥嶼客服 敬上</p>
+                </section>
+            </div>
+            `,
+            mounted(){  
+                const url1 = './php/personal_notice.php?quest=1';
+            fetch(url1)
+                .then(response => response.json())
+                .then((text) =>{
+                    this.php = text
+                } );
+            },
+        })
+        
+        Vue.component('personalpage2',{
+            data(){
+                return{
+                    php:[],
+                }
+            },
+        template:`
+                <div>
+                    <section v-for="val in php">
+                        <p>{{val[0]}}
+                            <br>
+                            <br>
+                            {{val[1]}}
+                            </p>
+                            <br>
+                            <br>
+                        <p> {{val[2]}} 鳥語・鳥嶼 </p>
+                    </section>
+                </div>
+                    `,
+            mounted(){  
+                const url1 = './php/personal_notice.php?quest=2';
+            fetch(url1)
+                .then(response => response.json())
+                .then((text) =>{
+                    this.php = text
+                } );
+            },
+        })
+        
+        new Vue({
+                el:'#personal_notice',
+                data:{
+                    content:'',
+                    pagelist:['訊息通知','推播通知'],
+                    personalpage:'',
+                },
+                methods: {
+                    chgpage(e){
+                       let n = parseInt(e.target.dataset.n)
+                       this.personalpage = `personalpage${n+1}`
+                       $('.li_select').removeClass('li_select');
+                            e.target.classList.add('li_select')
+                    }
+                },
+            });
+    </script>
 </body>
 </html>

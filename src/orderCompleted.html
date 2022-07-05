@@ -8,7 +8,7 @@
     @@include('./layout/head.html')
 </head>
 <body id="orderCompleted_body">
-    <!-- @@include('./layout/header.html') -->
+    @@include('./layout/header.html')
 
     <nav class="orderCompleted_nav"></nav>
     
@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <main class="orderCompleted_main_detail">
+    <main class="orderCompleted_main_detail" id="oc_orderInfo">
         <table class="orderCompleted_table_detail">
             <tr class="orderCompleted_tr_th textBlue">
                 <th class="oc_th_title">訂購日期</th>
@@ -42,10 +42,36 @@
                 <th class="oc_th_title">訂單金額</th>
             </tr>
 
-            <tr class="orderCompleted_tr_td textBlue" id="oc_orderInfo" v-if="orderInfo[0]">
+            <tr class="orderCompleted_tr_td textBlue" v-if="orderInfo[0]">
                 <td class="oc_td_detail">{{orderInfo[0][0]}}</td>
                 <td class="oc_td_detail">Pd-{{orderInfo[0][1]}}</td>
                 <td class="oc_td_detail">{{orderInfo[0][2]}}</td>
+                <td class="oc_td_detail">{{deliveryTime}}</td>
+                <td class="oc_td_detail">{{orderInfo[0][3]}}</td>
+                <td class="oc_td_detail">{{orderInfo[0][4]}}</td>
+            </tr>
+        </table>
+
+        <table class="orderCompleted_table_detail2">
+            <tr class="orderCompleted_tr_th textBlue">
+                <th class="oc_th_title">訂購日期</th>
+                <th class="oc_th_title">訂單編號</th>
+                <th class="oc_th_title">處理狀態</th>
+            </tr>
+
+            <tr class="orderCompleted_tr_td textBlue" v-if="orderInfo[0]">
+                <td class="oc_td_detail">{{orderInfo[0][0]}}</td>
+                <td class="oc_td_detail">Pd-{{orderInfo[0][1]}}</td>
+                <td class="oc_td_detail">{{orderInfo[0][2]}}</td>
+            </tr>
+
+            <tr class="orderCompleted_tr_th textBlue">
+                <th class="oc_th_title">出貨時間</th>
+                <th class="oc_th_title">付款方式</th>
+                <th class="oc_th_title">訂單金額</th>
+            </tr>
+
+            <tr class="orderCompleted_tr_td textBlue" v-if="orderInfo[0]">
                 <td class="oc_td_detail">{{deliveryTime}}</td>
                 <td class="oc_td_detail">{{orderInfo[0][3]}}</td>
                 <td class="oc_td_detail">{{orderInfo[0][4]}}</td>

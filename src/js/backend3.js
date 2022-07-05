@@ -39,13 +39,13 @@ Vue.component('backc',{
                     <td>上架狀態</td>
                     <td>編輯</td>
                 </tr>
-                <tr v-for="(val,i) in infor" :data-n='i'>
-                    <td>{{infor[i][0]}}</td>
-                    <td>{{infor[i][1]}}</td>
-                    <td>{{infor[i][2]}}</td>
+                <tr v-for="(val,i) in infor" :data-n='i' :data-index='val[0]'>
+                    <td>{{val[0]}}</td>
+                    <td>{{val[1]}}</td>
+                    <td>{{val[2]}}</td>
                     <td>
                         <label class="backend_switch">
-                            <input type="checkbox" v-model='infor[i][4]' :true-value="1" :false-value="0">
+                            <input type="checkbox" v-model='val[4]' :true-value="1" :false-value="0" @click='status'>
                             <span class="backend_slider backend_round"></span>
                         </label>
                     </td>
@@ -56,6 +56,18 @@ Vue.component('backc',{
         </div>
         `,
         methods:{
+            status(e){
+                let i = e.target.closest('tr').dataset.index
+                let ox;
+                if(e.target.checked){
+                    ox = 1
+                }else(
+                    ox = 0
+                )
+                const url = `./php/backend3_insert.php?quest=1&id=${i}&s=${ox}`;
+                fetch(url)
+            },
+
             chgpop(e){
                 let i = e.target.closest('tr').dataset.n
                 this.popup = this.infor[i]

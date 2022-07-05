@@ -108,7 +108,7 @@ Vue.component('backg',{
                                 <option v-for="val in list" :data-n="val[0]">{{val[1]}}</option>
                             </select>
                             </li>
-                            <li><h2>上限人數：<input v-model="infor[4]"></li>
+                            <li><h2>上限人數：</h2><input v-model="infor[4]"></li>
                         </ul>
                         <div class="backend_pop_right">
                             <ul> 

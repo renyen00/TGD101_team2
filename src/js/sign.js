@@ -108,11 +108,18 @@ new Vue({
             .then(resp => resp.json())
             .then(Msg => {
                 if(Msg == "沒有"){
-                    alert('註冊成功，將回到登入頁');
+                    Swal.fire({
+                        icon: 'success',
+                        title: '註冊成功，將回到登入頁',              
+                    })
                     $("#submit")[0].click();
 
                 }else{
-                    alert("此Email已經被使用，請使用其他Email");
+                    Swal.fire({
+                        icon: 'warning',
+                        title: '此Email已經被使用，請使用其他Email',              
+                    })
+                    
                 }
             })
 
@@ -127,7 +134,6 @@ new Vue({
         login_list: [],
         email: "",
         pwd: "",
-        tips: "",
         error: 'hint',
     },
 
@@ -136,18 +142,31 @@ new Vue({
              e.preventDefault();
 
             if (this.email == '' || this.pwd == '') {
-                    alert('請輸入帳號密碼');
+                Swal.fire({
+                    icon: 'warning',
+                    title: '請輸入帳號密碼',              
+                })
             } else {
                 const url = `./php/login2.php?EMAIL=${this.email}&PASSWORD=${this.pwd}`;
                 fetch(url)
                     .then(response => response.json())
                     .then(text => {
                         if (text === '沒有') {
-                            alert('帳號或密碼錯誤');
-                            this.tips = '帳號或密碼錯誤';
+                            Swal.fire({
+                                icon: 'error',
+                                title: '帳號或密碼錯誤',              
+                            })
                             this.error = 'hint error';
                         } else {
-                            window.location.href = 'personalMain.html';
+                            if(localStorage.getItem('LINK')){
+                                // localStorage.getItem('LINK', './createEvent.html');
+                                window.location.href = localStorage.getItem('LINK');
+                                localStorage.removeItem('LINK');
+                            }else{
+                                window.location.href = 'personalMain.html';
+
+                            }
+                            
                         }
                     })
             }

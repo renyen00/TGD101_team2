@@ -92,14 +92,23 @@ new Vue({
         //     }
 
         // },
+        
+        clear(){
+            this.lname = "",
+            this.lnick ="", 
+            this.lemail = "", 
+            this.lpwd = "",
+            this.ltel = "" ,
+            this.lbirth =""
+        },
         submit(e){
             e.preventDefault();
-            const url = `./php/login2.php?EMAIL=${this.lemail}`
+            const url = `./php/login3.php?EMAIL=${this.lemail}`
             fetch(url)
             .then(resp => resp.json())
             .then(Msg => {
                 if(Msg == "沒有"){
-                    
+                    alert('註冊成功，將回到登入頁');
                     $("#submit")[0].click();
 
                 }else{
@@ -124,26 +133,30 @@ new Vue({
 
     methods: {
         submit(e) {
-            e.preventDefault();
+             e.preventDefault();
 
             if (this.email == '' || this.pwd == '') {
-                alert('請輸入帳號密碼');
+                    alert('請輸入帳號密碼');
             } else {
-                const url = `./php/login.php?EMAIL=${this.email}&PASSEORD=${this.pwd}`;
+                const url = `./php/login2.php?EMAIL=${this.email}&PASSWORD=${this.pwd}`;
                 fetch(url)
                     .then(response => response.json())
                     .then(text => {
-                        if (text === 'false') {
+                        if (text === '沒有') {
                             alert('帳號或密碼錯誤');
                             this.tips = '帳號或密碼錯誤';
                             this.error = 'hint error';
-
                         } else {
-                            window.location.href = 'member.html';
+                            window.location.href = 'personalMain.html';
                         }
                     })
             }
-
+        
+        },
+        clear(e){
+            e.preventDefault();
+            this.email = "", 
+            this.pwd = ""
         },
     },
     compute: {},

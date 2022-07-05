@@ -32,7 +32,12 @@
     // header("Location: ../orderCompleted.html");
 
 //  =============================================
-    // Create order
+    // Create order information
+    $paymentMethod = htmlspecialchars(isset($_GET["payingMethod"]) ? $_GET["payingMethod"] : false);
+    $paymentMethod = htmlspecialchars(isset($_GET["deliveryMethod"]) ? $_GET["deliveryMethod"] : false);
+    $buyerId = ($_SESSION['memberID'])
+
+
     // $sql = 
     
 

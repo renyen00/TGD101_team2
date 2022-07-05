@@ -18,7 +18,6 @@ window.addEventListener("load", function(){
             receiverAdd: "",
             receiverCell: "",
             receiverPhone: "",
-            // priceGreen:0,
         },
 
         methods: {
@@ -59,7 +58,6 @@ window.addEventListener("load", function(){
                 const url = './php/payment.php';
                 const timestamp = Date.now();
                 this.orderIdGreen = 'M' + timestamp;
-                // this.priceGreen = this.new_price;
                 fetch(url, {
                     method: 'POST',
                     headers:{
@@ -79,8 +77,7 @@ window.addEventListener("load", function(){
         },
         computed: {
             new_price(){
-                return (this.price + 120)
-                console.log(typeof(this.price));
+                return (this.price + 120);
             }
         },
         watch: {},
@@ -128,6 +125,7 @@ window.addEventListener("load", function(){
                 e.preventDefault();
                 let memInfo = JSON.parse(sessionStorage.getItem('memInfo'));
                 // console.log(memInfo);
+
                 if(memInfo['id']){
                     setTimeout(() => {
                         $(".buyerInfoMethod").css("display", "block");

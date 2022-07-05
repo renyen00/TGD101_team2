@@ -36,7 +36,7 @@
 
         <section class="payment_section_listWrap  bgcWhite" id="payment_section_v" >
             <ul>
-                <li class="shoppingCart_li_list" v-for="(pDetail, index) in product_list">
+                <li class="shoppingCart_li_list bgcWhite" v-for="(pDetail, index) in product_list">
                     <div class="pics">
                         <div class="circle bgcYellow"></div>
                         <img :src="pDetail[0]">
@@ -60,16 +60,16 @@
                 <h3 class="textWhite">付款方式與配送方式</h3>
 
                 <div class="selectMethod">
-                    <select id="payingMethod" class="textWhite">
+                    <select id="payingMethod" class="textWhite" name="payingMethod"required>
                         <option value="0" selected class="textBlue">選擇付款方式</option>
-                        <option value="1" class="textBlue">貨到付款</option>
-                        <option value="2" class="textBlue">信用卡付款</option>
+                        <option value="payWhenReceive" class="textBlue">貨到付款</option>
+                        <option value="creditCard" class="textBlue">信用卡付款</option>
                     </select>
 
-                    <select id="deliveryMethod" class="textWhite">
+                    <select id="deliveryMethod" class="textWhite" name="deliveryMethod" required>
                         <option value="0" class="textBlue">選擇配送方式</option>
-                        <option value="1" class="textBlue">宅配</option>
-                        <option value="2" class="textBlue">超商取貨</option>
+                        <option value="1" class="textBlue">超商取貨</option>
+                        <option value="2" class="textBlue">宅配</option>
                     </select>
                 </div>
 

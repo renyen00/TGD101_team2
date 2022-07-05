@@ -19,9 +19,9 @@ $(document).ready(function(){
             template:
             `<div class="memberInfo">
                 <img id="avatarP" :src="php.avatar" >
-                <span id="nick">{{php.nickname}}</span>
-                <a href="###"><i class="fa-solid fa-comment"></i></a>
-                <a href="./php/logout.php">{{php.logst}}<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                <a href="./personalMain.html" id="nick">{{php.nickname}}</a>
+                <a href="./personalNotice.html"><i class="fa-solid fa-comment"></i></a>
+                <a :href="php.link">{{php.logst}}<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>`
             ,
             methods: {

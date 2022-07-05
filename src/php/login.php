@@ -1,5 +1,6 @@
 <?php
     include("Connection_server.php");
+    print_r($_POST);
     $acc = $_POST["EMAIL"];
     $pwd = $_POST["PASSWORD"];
 

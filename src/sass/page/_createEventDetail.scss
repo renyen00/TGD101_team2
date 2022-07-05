@@ -69,9 +69,11 @@
         left: 34%;
 
         img{
-            width: 80%;
-            display: block;
+            position: absolute;
+            width: 130%;
             margin: 8% auto;
+            top: -22%;
+            left: -16%;
         }
     }
 }
@@ -157,6 +159,7 @@
         position: absolute;
         top: -14%;
         left: 78%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 
     .createEventDetail_icon_cloud2{
@@ -165,6 +168,7 @@
         top: 18%;
         left: 95%;
         z-index: 2;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 
     .createEventDetail_icon_birdY{
@@ -288,16 +292,15 @@
             left: 23%;  //
     
             img{
-                width: 80%;
-                display: block;
+                position: absolute;
+                width: 130%;
                 margin: 8% auto;
+                top: -22%;
+                left: -17%;
             }
         }
     }
     
-    .createEventDetail_div_bg{
-        display: block;
-    }
     
     .createEventDetail_div_wrapperB{
         background-color: map-get($Mapcolor, 'blue');

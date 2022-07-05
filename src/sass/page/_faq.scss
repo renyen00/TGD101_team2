@@ -19,18 +19,22 @@ $p-top: 20px;
         width: 100%;
         height: 460px;
         margin: 0 auto;
-        background:{
-            image: url(/images/faq/lake.jpg);
-            position: center;
-            size: cover;
-        }
+        background-image: url(../images/faq/lake.jpg);
+        background-size: cover;
+        background-attachment: scroll;
         #logoFrame{
-            img{
-                width: $logo-w;
+            .aTagWidth{
                 display: block;
+                width: 120px;
                 margin: 0 auto;
-                padding-top: $p-top;
+                    img{
+                    width: $logo-w;
+                    display: block;
+                    margin: 0 auto;
+                    padding-top: $p-top;
             }
+            }
+            
         }
         .subtitle{
             color: map-get($Mapcolor, 'white');
@@ -65,10 +69,7 @@ $p-top: 20px;
         text-decoration: none;
     };
     span{
-        font:{
             color: map-get($Mapcolor, 'blue');
-            
-        }
     }
     .crumpFaq{
         color: map-get($Mapcolor, 'blue');
@@ -186,22 +187,123 @@ $p-top: 20px;
   
   
 }
-  // collapse contents
-  .contents-box{
-    overflow: hidden;
-    border-top: none;
-    border-bottom: none;
-    transition: height .3s ease;
+
+// General
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+// Layout
+.row {
+  display:flex;
+  .col {
+    flex:1;
+    &:last-child {
+      margin-left: 1em;
+    }
   }
-    
-  .collapse{
-    &:last-of-type .contents-box{
-    border-bottom: 1px solid #CCC;
+}
+/* Accordion styles */
+.tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+.tab {
+  width: 100%;
+  color: map-get($Mapcolor, 'white');
+  overflow: hidden;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: map-get($Mapcolor, 'blue');
+    font-weight: bold;
+    cursor: pointer;
+    /* Icon */
+    &.yellow{
+        background: map-get($Mapcolor, 'yellow');
+    }
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all .35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: map-get($Mapcolor, 'black');
+    background: map-get($Mapcolor, 'white');
+    transition: all .35s;
+    font-family: Zen Maru Gothic;
+    font-weight: 700;
+    border: 2px solid map-get($Mapcolor, 'blue');
+    &.yellow{
+        border: 2px solid map-get($Mapcolor, 'yellow');
+    }
+  }
+//   &-close {
+//     display: flex;
+//     justify-content: flex-end;
+//     padding: 1em;
+//     font-size: 0.75em;
+//     background: $midnight;
+//     cursor: pointer;
+//     &:hover {
+//       background: darken($midnight, 10%);
+//     }
+//   }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+    line-height: 36px;
   }
 }
 
 // RWD 首頁 575.98px 版本==================================================================================================================
 
 @media (max-width: 575.98px){
+    #headerWrapper{
+        padding: 0px 0px;
+        height: 490px;
+        .subtitle{
+            font-size: 24px;
+        }
+    }
 
+    .cloudFrame{
+        .cloud1{
+            width: 24%;
+            top: -114px;
+        }
+        .cloud2{
+            width: 24%;
+            top: -28px;
+        }
+        .ybirdSmall{
+            left: 21%;
+        }
+        .ybirdBig{
+            left: 32%;
+        }
+    }
+
+    .augurio-collapse{
+        width:  calc(100% - 60px);
+    }
 }

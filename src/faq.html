@@ -9,12 +9,13 @@
     <script src="./js/accordin.min.js"></script>
 </head>
 <body>
+    @@include('./layout/header.html')
     <div id="allIncluded">
         <header>
             <div id="headerWrapper">
                 <div id="bgimgFrame">
                     <div id="logoFrame">
-                        <img src="./images/logo/logo_white_final.svg" class="logoWhite">
+                        <a href="./index.html" class="aTagWidth"><img src="./images/logo/logo_white_final.svg" class="logoWhite"></a>
                     </div>
                     <div id="slogan"><h3 class="subtitle">NOT JUST MAKE FRIENDS  BUT INTO IT.</h3></div>
                     <div id="faqFrame"><h1 class="title">FAQ</h1></div>
@@ -34,173 +35,48 @@
             <img src="./images/faq/yellowBird.svg" class="ybirdSmall">
             <img src="./images/faq/yellowBird.svg" class="ybirdBig">
         </div>
+        
+    
+            <!-- Accordion -->
+            <div class="tabs">
+                    <div class="tab">
+                        <input type="checkbox" id="chck1">
+                        <label class="tab-label" for="chck1">揪團</label>
+                        <div class="tab-content">
+                            Q: 如果不是鳥嶼,可以使用揪團功能嗎?
+                            <br>
+                            A: 如果要使用揪團功能的話,需先註冊會員方可使用!
+                        </div>
+                    </div>
 
-        <!-- <main id="qnaWrapper">
-            第一個問答
-            <div class="faq">
-                <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                    <span id="tabTitleDimensionstab">揪團</span>
-                    <div class="circleAnimation closed">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
+                    <div class="tab">
+                        <input type="checkbox" id="chck2">
+                        <label class="tab-label yellow" for="chck2">交友</label>
+                        <div class="tab-content yellow">
+                            Q: 請問交友清單如何向已經是好友的人,發送訊息?
+                            <br>
+                            A: 本功能維護中,如有不便敬請見諒!
+                        </div>
                     </div>
-                </button>
-                <div class="drawer">
-                    123test
-                </div>
-            </div>
-            第二個問答
-            <div class="faq">
-                <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                    <span id="tabTitleDimensionstab">交友</span>
-                    <div class="circleAnimation closed">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </button>
-                <div class="drawer">
-                    123test
-                </div>
-            </div>
-            第三個問答
-            <div class="faq">
-                <button class="btn accordion" aria-haspopup="true" aria-expanded="false">
-                    <span id="tabTitleDimensionstab">購物</span>
-                    <div class="circleAnimation closed">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </button>
 
-                <div class="drawer">
-                    123testrkgkr
-                    <br>
-                    fheifje
-                    <br>
-                    lgjrjgr
-                    <br>
-                    123testrkgkr
-                    <br>
-                    fheifje
-                    <br>
-                    lgjrjgr
-                    <br>
-                </div>
+                    <div class="tab">
+                        <input type="checkbox" id="chck3">
+                        <label class="tab-label" for="chck3">購物</label>
+                        <div class="tab-content">
+                            Q: 如果我已下單,也已經付款,如何取消呢?
+                            <br>
+                            A: 很抱歉,親愛的朋友,你的錢錢已像肉包子打狗一去不回了!
+                        </div>
+                    </div>
             </div>
-        </main> -->
     </div>
-         <!-- 最外層包一個 div，為了不跟裡面 div 混淆這邊用 section -->
-            <section class="augurio-collapse">
-                <!-- 一個 .collapse 是一組-->
-                <div class="collapse">
-                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
-                    <div class="title-box" data-expanded="true">
-                        <div class="title">揪團</div>
-                        <div class="icons">
-                            <div class="horizontal"></div>
-                            <div class="vertical"></div>
-                        </div>
-                    </div>
-                    <!-- contents-->
-                    <div class="contents-box">
-                        <div class="contents">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
-                        </div>
-                    </div>
-                
-                </div>
-                <div class="collapse yellow">
-                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
-                    <div class="title-box" data-expanded="true">
-                        <div class="title">交友</div>
-                        <div class="icons">
-                            <div class="horizontal"></div>
-                            <div class="vertical"></div>
-                        </div>
-                    </div>
-                    <!-- contents-->
-                    <div class="contents-box">
-                        <div class="contents">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
-                        </div>
-                    </div>
-                
-                </div>
-                <div class="collapse">
-                    <!-- title，，加入 data-expanded="true"，預設就會開啟 -->
-                    <div class="title-box" data-expanded="true">
-                        <div class="title">購物</div>
-                        <div class="icons">
-                            <div class="horizontal"></div>
-                            <div class="vertical"></div>
-                        </div>
-                    </div>
-                    <!-- contents-->
-                    <div class="contents-box">
-                        <div class="contents">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ducimus, illum vitae nam officia quidem iste maxime provident! Temporibus repellat nulla blanditiis at accusamus minima delectus aut doloribus officia deserunt.</p>
-                        </div>
-                    </div>
-                
-                </div>
-                
-            </section>
+
     
 
    
     @@include('./layout/footer.html')
     
     <script>
-        //寫法1
-        // const acc = document.getElementsByClassName("accordion");
-        // for (let i = 0; i < acc.length; i++) {
-        //     console.log(i);
-        //     acc[i].addEventListener("click", function() {
-        //         let faq = document.getElementsByClassName('faq');
-        //         for(let j=0; j<faq.length; j++){
-        //         faq[j].removeAttribute("style");
-        //         }
-        //         const drawer = this.nextElementSibling;
-        //         var drawerSH = drawer.scrollHeight;
-        //         faq[i].setAttribute("style",`height:${drawerSH}px;`);
-        //         if (drawer.style.maxHeight) {
-        //         drawer.style.maxHeight = null;
-        //         drawer.classList.remove("open");
-        //         this.setAttribute('aria-expanded',"false")
-        //         } else {
-        //         let active = document.querySelectorAll(".accordion.active");
-        //         for(let j = 0; j < active.length; j++){
-        //             active[j].classList.remove("active");
-        //             active[j].setAttribute('aria-expanded',"false")
-        //             active[j].nextElementSibling.style.maxHeight = null;
-        //             active[j].nextElementSibling.classList.remove("open");
-        //         }
-        //         drawer.style.maxHeight = drawerSH + "px";
-        //         drawer.classList.add("open");
-        //         this.setAttribute('aria-expanded',"true")
-        //         }
-        //         this.classList.toggle("active");
-        //     });
-        // }
-
-        // ==================================================================
-        //寫法2
-    //     $(document).ready(function() {
-
-
-    //     $('#multiple [data-accordion]').accordion({
-    //         transitionSpeed: 300,
-    //         transitionEasing: 'ease',
-    //         controlElement: '[data-control]',
-    //         contentElement: '[data-content]',
-    //         groupElement: '[data-accordion-group]',
-    //         singleOpen: false
-    //     });
-
-    //      });
-
-    // ====================================================================================
-    //寫法3
     window.addEventListener('DOMContentLoaded', () => {
 
 // 寫入各 .content-box 的高，然後高度設成 0

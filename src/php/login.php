@@ -32,7 +32,7 @@
     }
     header("location:../index.html");
     }else{
-    echo '帳號或密碼錯誤';
+        print_r($_POST);
     };
     //將二維陣列取出顯示其值
 

@@ -9,7 +9,7 @@
 </head>
 <body class="product_wrap">
     @@include('./layout/header.html')
-    <div class="prd_wrapper">
+    <div id="proD" class="prd_wrapper">
         <main class="prd_cont">
             <section class="prd_item">
                 <header class="proD_logo">
@@ -25,13 +25,13 @@
                         <div class="toolbar">
                             <div id="myColorSelector" class="colorSelector">
                                 <label class="kindT resize">
-                                    <a class="color1">-</a>
+                                    <a class="color1" @click="minusOne">-</a>
                                 </label>
-                                <label class="quar">
-                                    1
+                                <label class="quar" v-model.lazy="count" >
+                                    {{count}}
                                 </label>
                                 <label class="kindR resize">
-                                    <a class="color1">+</a>
+                                    <a class="color1" @click="count+=1;">+</a>
                                 </label>
                             </div>
                         </div>
@@ -98,22 +98,34 @@
             </section>
             <section class="prd_text">
                 <div class="text">
-                    <h1>商品簡介</h1>
+                    <h3>商品簡介</h3>
                     <p>採用純棉且高成本的生態友善編織工法,成就了我們的鳥嶼揪揪透氣涼感T,簡約且明瞭的商標名稱直接傳達了鳥語鳥嶼這裡的島嶼氛圍-我們就是要你更融入,而且沒有壓力</p>
                 </div>
                 <div class="box_s">
                     <div class="title">
-                        <h2>商品規格</h2>
+                        <h3>商品規格</h3>
                     </div>
                     <div class="prop">
                         <div>
-                            規格 
+                            <h4>規格</h4>
+                            <div class="sizeGroup">
+                                <span>XL</span>
+                                <span>L</span>
+                                <span>M</span>
+                                <span>S</span>
+                            </div>
                         </div>
                         <div>
-                            材質 100%純棉
+                            <h4>材質</h4>
+                            <span>100%純棉</span>
                         </div>
                         <div>
-                            顏色 白 綠 藍
+                            <h4>顏色</h4>
+                            <div class="sizeGroup">
+                                <span>白</span>
+                                <span>綠</span>
+                                <span>藍</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,5 +142,7 @@
         </main>
     </div>
     @@include('./layout/footer.html') 
+    <script src="./js/proD.min.js"></script>
+    
 </body>
 </html>

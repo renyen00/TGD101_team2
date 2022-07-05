@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     new Vue({
         el: '#createEvent',
         data: {  
@@ -23,6 +22,7 @@ $(document).ready(function(){
             eventSpot:'',
             minAge:'18',
             maxAge:'65',
+            hostavatar:'',
             currentStep: 0,
         },
         methods: {
@@ -172,7 +172,9 @@ $(document).ready(function(){
                                 icon: 'warning',
                                 title: '請先登入會員',              
                             }).then(() => {
-                                window.location.href = "./login.html"  
+                                window.location.href = "./login.html"
+                                localStorage.setItem('LINK', './createEvent.html')
+
                             }); 
                         }
                 });
@@ -240,7 +242,7 @@ $(document).ready(function(){
         created() {
                 this.ajaxInitData();
                 this.ajaxPlaceType();
-            
+
             },
         mounted() {
             var today = new Date();

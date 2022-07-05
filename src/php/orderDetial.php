@@ -1,20 +1,29 @@
 <?php
 
-    include("Connection_server.php");
-
+    include('Connection_self.php');
     //---------------------------------------------------
 
+    session_start();
+    $acc = $_SESSION['UserE'];
+    $id = $_GET['orderid'];
+    // $acc = 'admin@123.com';
     //建立SQL語法
-    $sql = 
-    "SELECT NICKNAME,BIRTH,HOBBY,INTRODUCTION,AVATAR FROM MEMBER;";
+        $sql = "SELECT a.ID,a.PAYMENT,b.METHOD,c.STATUS,e.NAME,e.ADDRESS,e.CELLPHONE,e.HOMEPHONE,a.TOTAL FROM `ORDER` a 
+        join DELIVERY b on a.DELIVERY_ID=b.ID
+        join ORDER_STATUS c on a.STATUS = c.ID
+        join MEMBER d on a.MEMBER_ID = d.ID
+        join RECEIVER e on a.RECEIVER_ID = e.ID
+        where d.EMAIL = :acc and a.ID = :id";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
-    $statement = $pdo->query($sql);
-
+    $statement = $pdo->prepare($sql);
+    $statement ->bindValue(':acc',$acc);
+    $statement ->bindValue(':id',$id);
+    $statement ->execute();
     //抓出全部且依照順序封裝成一個二維陣列
     $data = $statement->fetchAll();
 
-    // print_r($data);
+//     print_r($data);
 
     $process_data = [];
     //將二維陣列取出顯示其值
@@ -31,8 +40,5 @@
 
     // print_r($process_data[0]);
     echo json_encode($process_data);
-
-
-
 
 ?>

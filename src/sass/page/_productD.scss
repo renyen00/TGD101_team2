@@ -224,7 +224,7 @@
 
 .prd_text{
     height: auto;
-    padding-top: 100px;
+    padding-top: 150px;
     position: relative;
     overflow: hidden;
     &::after{
@@ -240,10 +240,17 @@
         transition: .5s;
     }
     .text{
-        border: 1px solid #000;
         margin: 0 auto;
         width: 60%;
+        line-height: 50px;
         letter-spacing: 5px;
+        p{
+            text-align: left;
+        }
+        h3{
+            color: #000;
+            font-weight: bold;
+        }
     }
     .box_s{
         padding: 20px;
@@ -253,7 +260,8 @@
         width: 600px;
         max-width: 100%;
         height: auto;
-        margin-top: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         border-radius: 15px;
         background-color: #2F4858;
         transition: .3s;
@@ -261,16 +269,21 @@
         .title{
             flex-grow: .2;
             color: #fff;
+
         }
         .prop{
             flex-grow: 1;
             display: flex;
-            
             align-content: space-around;
+            flex-wrap: wrap;
             >div{
                 flex-grow: 1;
                 margin: 10px 0;
                 color: #fff;
+                .sizeGroup{
+                    display: flex;
+                    justify-content:space-evenly;
+                }
             }
         }
     }
@@ -574,6 +587,27 @@
                     }
         
                 }
+        }
+    }
+    .prd_text{
+        padding-top: 50px;
+        .text{
+            margin: 0 auto;
+            width: 90%;
+            line-height: 40px;
+            letter-spacing: 5px;
+            p{
+                text-align: left;
+            }
+            h3{
+                color: #000;
+                font-weight: bold;
+            }
+        }
+        .box_s{
+            border-radius: 0;
+            padding:20px 5px;
+            width: 100vw;
         }
     }
 }

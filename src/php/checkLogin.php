@@ -12,7 +12,6 @@
         );
         echo json_encode($info);
     }else{
-        
         $info = array(
             'name'=>'訪客',
             'nickname'=>'訪客',

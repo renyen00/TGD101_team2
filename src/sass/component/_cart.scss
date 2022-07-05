@@ -1,29 +1,41 @@
 .side_cart{
+    display: none;
     margin: 20px auto;
     background-color: #fff;
     width: 400px;
     height: auto;
     max-height: 95vh;
     position: fixed;
-    right: 150px;
-    overflow: hidden;
+    right: 10.5vw;
+    // overflow: hidden;
+    border:5px solid #F2BF61;
     border-radius: 10px 10px 0 0;
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,.1);
     color: #000;
-    z-index: 9998;
+    z-index: 9999;
+    &::after{
+        display: inline-block;
+        position: absolute;
+        content: '';
+        top: 157px;
+        right: -40px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #F2BF61;
+    }
     .close{
         text-align: center;
+        // border-radius: 10px 10px 0 0;
         height: 50px;
         padding:0 10px;
         box-shadow: 0px 1px 1px 1px rgba(0,0,0,.1);
         background-color: #F2BF61;
         line-height: 50px;
-        .X_icon{
-            float: right;
-        }
+
     }
     ul{
-        margin:0 10px;
+        margin:5px 10px;
         padding: 10px;
         height: auto;
         max-height: 60vh;
@@ -56,11 +68,26 @@
                 margin: 10px;
                 font-size: 48px;
             }
+            
+        }
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        //捲軸底色
+        &::-webkit-scrollbar-track {
+            border: 2px solid rgba(47, 72, 88, 0.1);
+            border-radius: 40px;
+            background: #FFFFFF;
+        }
+        //捲軸本體顏色
+        &::-webkit-scrollbar-thumb {
+            background-color: #f2bf61;
+            border-radius: 40px;
         }
     }
     hr{
         width: 95%;
-        margin: 10px auto;
+        margin: 5px auto;
     }
     .total_price{
         text-align: right;
@@ -72,7 +99,7 @@
         width:90%;
         border-radius: 5px;
         
-        margin: 10px auto;
+        margin: 5px auto;
         margin-top:20px ;
         height: 60px;
         text-align: center;

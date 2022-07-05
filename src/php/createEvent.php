@@ -38,7 +38,8 @@
             $imageName = 'user'.$_SESSION['UserUID'].'_'.$tInt.'.jpg';
 
             //server路徑+自己資料夾的名稱
-            $path = $ServerRoot."/bettyGroup/src/images/userUpload/";     
+            // $path = $ServerRoot."/bettyGroup/src/images/userUpload/";
+            $path = $ServerRoot."/tgd101/g2/dist/images/userUpload/";    
             if (!is_dir($path)){ //判斷目錄是否存在 不存在就建立 並賦予777許可權
                 mkdir($path,0777,true);
             }
@@ -63,8 +64,8 @@
             VALUES(:USERID, :TITLE, :EVENTDATE, :STARTTIME, :ENDTIME, :PLACE_ID, NOW(), :STOPDATE, :MAX, :PICTURE, :PICTURE_POSITION, :CONTENT, '2', :MINAGE, :MAXAGE);";
 
             $sqlJoinList = "INSERT INTO JOINLIST
-            (ACTIVITY_ID, MEMBER_ID)
-            VALUES(LAST_INSERT_ID(), :USERID);";
+            (ACTIVITY_ID, MEMBER_ID, JOINTIME)
+            VALUES(LAST_INSERT_ID(), :USERID, NOW());";
 
             $statement = $pdo->prepare($sql);
             $statement->bindParam(":USERID", $_SESSION['UserUID']);

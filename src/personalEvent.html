@@ -9,7 +9,7 @@
 </head>
 <body class="personal_body">
 
-    <!-- @@include('./layout/header.html') -->
+    @@include('./layout/header.html')
     <div class="personal_body1">
         
     <div class="personal_div_wrapper">
@@ -105,27 +105,14 @@
     <ul class="personalEvent_ul_list">
                 <li v-for="(val,i) in infor" :data-n="i">
                     <img :src="val[0]" >
-                    <section>
+                    <section class="activityList_span">
                         <ul>
                             <li>
-                                <h4>活動主題：</h4>
-                                <p>{{val[1]}}</p>
-                            </li>
-                            <li>
-                                <h4>活動地點：</h4>
-                                <p>{{val[2]}}</p>
-                            </li>
-                            <li>
-                                <h4>活動日期：</h4>
-                                <p>{{val[3]}} {{val[4]}}</p>
-                            </li>
-                            <li>
-                                <h4>報名截止：</h4>
-                                <p>{{val[5]}}</p>
-                            </li>
-                            <li>
-                                <h4>人數限制：</h4>
-                                <p>{{val[6]}}/{{val[7]}}人</p>
+                                <span>活動主題：{{val[1]}}</span>
+                                <span>活動地點：{{val[2]}}</span>
+                                <span>活動日期：{{val[3]}} {{val[4]}}</span>
+                                <span>報名截止：{{val[5]}}</span>
+                                <span>人數：{{val[6]}}/{{val[7]}}人</span>
                             </li>
                         </ul>
                     </section>
@@ -138,27 +125,14 @@
                 </li>
                 <li v-for="(val,i) in infor2" :data-n="i">
                     <img :src="val[0]" >
-                    <section>
+                    <section class="activityList_span">
                         <ul>
                             <li>
-                                <h4>活動主題：</h4>
-                                <p>{{val[1]}}</p>
-                            </li>
-                            <li>
-                                <h4>活動地點：</h4>
-                                <p>{{val[2]}}</p>
-                            </li>
-                            <li>
-                                <h4>活動日期：</h4>
-                                <p>{{val[3]}} {{val[4]}}</p>
-                            </li>
-                            <li>
-                                <h4>報名截止：</h4>
-                                <p>{{val[5]}}</p>
-                            </li>
-                            <li>
-                                <h4>人數限制：</h4>
-                                <p>{{val[6]}}/{{val[7]}}人</p>
+                                <span>活動主題：{{val[1]}}</span>
+                                <span>活動地點：{{val[2]}}</span>
+                                <span>活動日期：{{val[3]}} {{val[4]}}</span>
+                                <span>報名截止：{{val[5]}}</span>
+                                <span>人數：{{val[6]}}/{{val[7]}}人</span>
                             </li>
                         </ul>
                     </section>

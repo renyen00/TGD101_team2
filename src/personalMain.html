@@ -14,48 +14,47 @@
 <body class="personal_body">
     @@include('./layout/header.html')
     <div class="personal_body1">
-    <div class="personal_div_wrapper">
-        @@include('./layout/backend/personalTop.html')
-        <!-- 框框裡面 -->
-        <div id="vmain">
-            <pmain v-if="information.length > 0" :infor="information" :a="forwatch" ></pmain>
-            <div class="personal_div_doWhat">
-                <button class="btnXL_b" @click="toggle">編輯</button>
-                <button class="btnXL_b--s personal_hide" @click="toggle">取消編輯</button>
-                <button class="btnXL_y personal_hide" @click="sure">
-                    <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
-                    確認編輯
-                </button>
-                
-            </div>
+        <div class="personal_div_wrapper">
+            @@include('./layout/backend/personalTop.html')
+            <!-- 框框裡面 -->
+            <div id="vmain">
+                <pmain v-if="information.length > 0" :infor="information" :a="forwatch" ></pmain>
+                <div class="personal_div_doWhat">
+                    <button class="btnXL_b" @click="toggle">編輯</button>
+                    <button class="btnXL_b--s personal_hide" @click="toggle">取消編輯</button>
+                    <button class="btnXL_y personal_hide" @click="sure">
+                        <span id="orderCompleted_icon_greyBird" class="iconify" data-icon="emojione-v1:bird" data-width="45" data-height="45"></span>
+                        確認編輯
+                    </button>
+                    
+                </div>
+            </div>            
         </div>
-
-        
+        <span class="check_status"></span>
+        <div class="personal_div_popup">
+            <section>
+                <h3>修改密碼</h3>
+                <ul>
+                    <li>
+                        <h4>舊密碼</h4>
+                        <input type="text" placeholder="請輸入舊密碼">
+                    </li>
+                    <li>
+                        <h4>新密碼</h4>
+                        <input type="text" placeholder="請輸入新密碼">
+                    </li>
+                    <li>
+                        <h4>確認密碼</h4>
+                        <input type="text" placeholder="請再次輸入新密碼">
+                    </li>
+                </ul>
+                <P class="personal_hide">輸入不正確</P>
+                <button class="btnL_b">確定修改</button>
+                <i class="fa-solid fa-x"></i>
+            </section>
+        </div>
     </div>
-    <div class="personal_div_popup">
-        <section>
-            <h3>修改密碼</h3>
-            <ul>
-                <li>
-                    <h4>舊密碼</h4>
-                    <input type="text" placeholder="請輸入舊密碼">
-                </li>
-                <li>
-                    <h4>新密碼</h4>
-                    <input type="text" placeholder="請輸入新密碼">
-                </li>
-                <li>
-                    <h4>確認密碼</h4>
-                    <input type="text" placeholder="請再次輸入新密碼">
-                </li>
-            </ul>
-            <P class="personal_hide">輸入不正確</P>
-            <button class="btnL_b">確定修改</button>
-            <i class="fa-solid fa-x"></i>
-        </section>
-    </div>
-</div>
-@@include('./layout/footer.html')
+    @@include('./layout/footer.html')
 
 
 <script>
@@ -160,10 +159,6 @@
                 </li>
                 <li>
                     <h4>生日</h4>
-                    <p class='personal_show'>{{infor[0][3]}}</p>
-                </li>
-                <li>
-                    <h4>星座</h4>
                     <p class='personal_show'>{{infor[0][3]}}</p>
                 </li>
                 <li data-count='4'>

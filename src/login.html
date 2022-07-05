@@ -12,20 +12,24 @@
 </head>
 <body>
     <div class="sign_container sign_bg">
+        <span class="thislog"></span>
         <main class="sign_wrapper" id="sign_wrapper">
-            <div class="form-cont signUp-cont">
+            <div id="signUpE" class="form-cont signUp-cont">
                 <form action="./php/createAcc.php" method="POST">
                     <h4>加入鳥語 島嶼</h4>
-                    <input type="text" placeholder="姓名" name="NAME">
-                    <input type="text" placeholder="暱稱" name="NICKNAME">
-                    <input type="email" placeholder="Email" name="EMAIL">
-                    <input type="password" placeholder="密碼" name="PASSWORD">
-                    <input type="password" placeholder="確認密碼">
-                    <input type="tel" placeholder="行動電話" name="PHONE">
-                    <input type="date" name="BIRTH">
+                    
+                    <input v-model="lname" type="text" placeholder="姓名" name="NAME">
+                    <input v-model="lnick" type="text" placeholder="暱稱" name="NICKNAME">
+                    <input v-model="lemail" type="email" placeholder="Email" name="EMAIL">
+                    <input v-model="ltel" type="tel" placeholder="行動電話" name="PHONE">
+                    <input v-model="lbirth" type="date" name="BIRTH">
+                    <input v-model="lpwd" type="password" placeholder="密碼" name="PASSWORD" id="pwd_s">
+                    <input v-model="lcpwd" type="password" placeholder="確認密碼" onkeyup="validate()" id="pwd_c">
+                    <div id="check"></div>
                     <div class="btnGroup">
                         <input class="btnS_b" type="submit" value="清除">
-                        <input class="btnS_b" type="submit" value="送出">
+                        <input id="submit" class="btnS_b" type="submit" value="送出" style="display:none;">
+                        <input id="ckeckmit" class="btnS_b" @click="submit" type="submit" value="送出">
                     </div>
                 </form>
             </div>
@@ -34,8 +38,9 @@
                     <h4>登入</h4>
                     <div class="g-signin2" data-width="300" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
                     <span class="hr-login">or</span>
-                    <input type="email" placeholder="Email" name="EMAIL">
-                    <input type="password" placeholder="密碼" name="PASSWORD">
+                    <span id="tips" v-model="tips"></span>
+                    <input v-model="email" type="email" placeholder="Email" name="EMAIL">
+                    <input v-model="pwd" type="password" placeholder="密碼" name="PASSWORD">
                     <div class="btnGroup">
                         <input class="btnS_y" type="submit" value="清除">
                         <input class="btnS_y" type="submit" value="登入">
@@ -75,5 +80,6 @@
     </div>
 
     <script src="./js/sign.min.js"></script>
+
 </body>
 </html>

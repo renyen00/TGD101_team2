@@ -23,7 +23,7 @@
             a{
                 display: block;
                 text-decoration: none;
-                color: $yellow;
+                color: #f2bf61;
                 background: url('https://api.iconify.design/bx/cloud.svg?color=%23f2bf61&width=120&height=120') no-repeat center center / contain;
                 width: 160px;
                 height: 160px;
@@ -52,13 +52,16 @@
         display: flex;
         li{
             font-size: 2rem;
-            color:$blue;
             margin: 0 5px;
+            a{
+                text-decoration: none;
+                color:$gray;
+            }
             &:nth-child(odd){
                 cursor: pointer;
             }
             &:last-child{
-                color:$yellow;
+                color:$blue;
             }
         }
 

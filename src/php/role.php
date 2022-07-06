@@ -2,6 +2,7 @@
 
     include("Connection_server.php");
     $postType = json_decode(file_get_contents("php://input"), true);
+    $acc = $_SESSION['UserE'];
     //---------------------------------------------------   
         $avatarBase64Str = $postType['img'];
         //server根目錄
@@ -27,13 +28,11 @@
         $r = file_put_contents($imageSrc, $data);
                
         //建立SQL語法
-        $sql = "UPDATE INTO MEMBER(AVATAR) 
-        VALUES (:AVATAR)
+        $sql = "UPDATE MEMBER set AVATAR = :AVATAR where ID = :acc;
         ";
-
-
         $statement = $pdo->prepare($sql);
         $statement->bindParam(":AVATAR", $imageSrcforSQL);
+        $statement ->bindValue(':acc',$acc);
         // 判斷會員
         // $statement->bindParam(":MEMBER", $imageSrcforSQL);
 

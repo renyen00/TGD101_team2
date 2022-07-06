@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     <!-- <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script> -->
 </head>
 <body>
     @@include('./layout/header.html')
@@ -152,6 +152,14 @@
                     <!-- <input type="submit" class="btnXL_b createEvent_a_createbtn" @click="createConfirm" value="發起揪團"> -->
                     <!-- <a class="btnXL_b createEvent_a_createbtn" href="createEventConfirm.html">發起揪團</a> -->
                     <a class="btnXL_b createEvent_a_createbtn" @click="createConfirm">發起揪團</a>
+                
+                    <div style="display: none;">
+                        <textarea style="border: 5px solid #abc;" v-model="sqlstr" id="" cols="30" rows="10"></textarea>
+                        <input type="text" v-model="query" >
+                        <button @click.prevent="sql">sss</button>
+                    </div>
+                
+                
                 </div>
                 @@include('./layout/footer.html')
             </div>
@@ -241,6 +249,7 @@
                         </div>
                     </main>
                 </div>
+                
                 @@include('./layout/footer.html')
             </div>
         </form>

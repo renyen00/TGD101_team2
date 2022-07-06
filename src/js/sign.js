@@ -163,7 +163,11 @@ new Vue({
                                 window.location.href = localStorage.getItem('LINK');
                                 localStorage.removeItem('LINK');
                             }else{
-                                window.location.href = 'personalMain.html';
+                                if(this.email == "admin@123.com"){
+                                    window.location.href = 'backend.html';
+                                }else{
+                                    window.location.href = 'personalMain.html';
+                                }
 
                             }
                             

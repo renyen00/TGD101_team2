@@ -27,11 +27,11 @@
                                 <label class="kindT resize">
                                     <a class="color1" @click="minusOne">-</a>
                                 </label>
-                                <label class="quar" v-model.lazy="count" >
-                                    {{count}}
+                                <label class="quar">
+                                    1
                                 </label>
                                 <label class="kindR resize">
-                                    <a class="color1" @click="count+=1;">+</a>
+                                    <a class="color1" @click="addOne">+</a>
                                 </label>
                             </div>
                         </div>
@@ -88,8 +88,11 @@
                         <div class="img_s">
                             <img class="line4" src="./images/store/t-shirt.png" alt="">
                             <div class="pro_name">
+                                <!-- series -->
                                 <h4>鳥語Tshirt</h4>
+                                <!--  prodocut name -->
                                 <h1>啾啾T</h1>
+                                <!-- price  -->
                                 <h3>$495</h3>
                             </div>
                         </div>
@@ -99,6 +102,7 @@
             <section class="prd_text">
                 <div class="text">
                     <h3>商品簡介</h3>
+                    <!-- info -->
                     <p>採用純棉且高成本的生態友善編織工法,成就了我們的鳥嶼揪揪透氣涼感T,簡約且明瞭的商標名稱直接傳達了鳥語鳥嶼這裡的島嶼氛圍-我們就是要你更融入,而且沒有壓力</p>
                 </div>
                 <div class="box_s">
@@ -117,6 +121,7 @@
                         </div>
                         <div>
                             <h4>材質</h4>
+                            <!-- quality -->
                             <span>100%純棉</span>
                         </div>
                         <div>
@@ -134,15 +139,14 @@
                 <h1>推薦</h1>
                 <p>購買此商品的人也購買了</p>
                 <div class="cue">
-                    <div>@@include('./layout/product.html')</div>
-                    <div>@@include('./layout/product.html')</div>
-                    <div>@@include('./layout/product.html')</div>
+                    @@include('./layout/product.html')
                 </div>
             </section>
         </main>
     </div>
     @@include('./layout/footer.html') 
-    <script src="./js/proD.min.js"></script>
+    <!-- <script src="./js/proD.min.js"></script> -->
+    <script src="./js/store.min.js"></script>
     
 </body>
 </html>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     // $.ajax({
     //     type: "POST",
     //     url: "",
@@ -8,6 +9,9 @@ $(document).ready(function(){
     //         alert("error!");
     //     }
     // });
+    $('.menu-icon:nth-child(4)').click(function(){
+        $("#sideCart").toggle();
+    })
     if(document.querySelector('.thislog')){
         console.log("login");
     }else{

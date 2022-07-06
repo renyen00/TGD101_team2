@@ -1,16 +1,19 @@
 new Vue({
     el:'#proD',
     data:{
-        count:0,
+        count:1,
     },
     methods:{
         minusOne() {
-            this.count--;
-            count = (count < 1) ? 1 : amountShow
+            if(this.count > 1){
+                this.count--
+            }
         },
         addOne() {
-            amountShow++;
-            amountShow = (amountShow > 9) ? 9 : amountShow
+            if(this.count < 9){
+                this.count++
+            }
+
         },
     },
     // mounted() {

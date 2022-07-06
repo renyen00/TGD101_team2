@@ -20,6 +20,7 @@ Vue.component('backc',{
         return{
             infor:[],
             popup:[],
+            item:'',
         }
     },
     template:`
@@ -52,7 +53,7 @@ Vue.component('backc',{
                     <p @click='chgpop'>編輯</p>
                 </tr>
             </table> 
-            <popc1 :infor='popup'></popc1>
+            <popc1 :infor='popup,item' ></popc1>
         </div>
         `,
         methods:{
@@ -72,11 +73,12 @@ Vue.component('backc',{
                 let i = e.target.closest('tr').dataset.n
                 this.popup = this.infor[i]
                 document.querySelector('.backend_div_popup').classList.add('backend_show')
-
+                this.item = 0
             },
             chg(){
                 document.querySelector('.backend_div_popup').classList.add('backend_show')
                 this.popup = []
+                this.item = 1
             }
         },
         mounted() {
@@ -89,17 +91,27 @@ Vue.component('backc',{
         },
     })
     Vue.component('popc1',{
-        props:['infor'],
+        props:['infor','item'],
+        data(){
+            return{
+                list:['服飾','配件','其他'],
+                image:'',
+            }
+        },
         template:`
         <div class="backend_div_popup">
             <section>
                 <i class="fa-solid fa-x" @click='close'></i>
                 <div class="backend_product">
                     <ul>
-                        <li><h2>編號</h2> <input v-model="infor[0]"></li>
+                        <li><h2>編號</h2> <h3>{{infor[0]}}</h3></li>
                         <li><h2>品名</h2> <input v-model="infor[1]"></li>
                         <li><h2>價格</h2> <input v-model="infor[2]"></li>
-                        <li><h2>種類</h2> <input v-model="infor[5]"></li>
+                        <li><h2>種類</h2> 
+                            <select v-model='infor[5]'>
+                                <option v-for="(val,i) in list" :value='i+1'>{{val}}</option>
+                            </select>
+                        </li>
                         <li><h2>材質</h2> <input v-model="infor[6]"></li>
                     </ul>
                     <div class="backend_pop_right">
@@ -120,12 +132,12 @@ Vue.component('backc',{
                     <input type="radio" v-model="infor[4]" value='0'><h3>下架</h3>
                 </div>
                 <h3>商品描述</h3>
-                <textarea cols="30" rows="10" class="backend_div_content">
+                <textarea cols="30" rows="10" class="backend_div_content" v-model="infor[3]">
                 </textarea>
             
                 <div class="backend_pop_bottom">
                     <p class="back_btnS" @click='close'>取消</p>
-                    <p class="back_btnS">儲存</p>
+                    <p class="back_btnS" @click='save'>儲存</p>
                 </div>
             </section>
         </div>
@@ -137,6 +149,39 @@ Vue.component('backc',{
             file(e){
                 let i = e.target.dataset.n
                 this.infor[i]=e.target.files[0].name
+                let file = e.target.files[0]
+                let readFile = new FileReader()
+                    readFile.readAsDataURL(file)
+                    readFile.addEventListener('load', this.loadImage)
+            },
+            loadImage(e){
+                this.image = e.target.result
+            },
+            save(e){
+
+                if(this.item == 1 && this.infor[0] !='' && this.infor[1] !='' && this.infor[2] !='' && this.infor[3] !='' && this.infor[4] !='' && this.infor[5] !='' && this.infor[6] !=''){
+                    const url = `./php/backend3_insert.php?quest=2&name=${this.infor[1]}&price=${this.infor[2]}&text=${this.infor[3]}&status=${this.infor[4]}&type=${this.infor[5]}&material=${this.infor[6]}&pic=${this.infor[7]}&pic2=${this.infor[8]}&pic3=${this.infor[9]}`;
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            postType: 'insertData',
+                            PICTURE: this.image,
+                        })
+                        })
+                    this.close(e)
+                }else if(this.item == 0){
+                    const url = `./php/backend3_insert.php?quest=3&id=${this.infor[0]}&name=${this.infor[1]}&price=${this.infor[2]}&text=${this.infor[3]}&status=${this.infor[4]}&type=${this.infor[5]}&material=${this.infor[6]}&pic=${this.infor[7]}&pic2=${this.infor[8]}&pic3=${this.infor[9]}`;
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            postType: 'insertData',
+                            PICTURE: this.image,
+                        })
+                    })
+                    this.close(e)
+                }
             }
         }
 })

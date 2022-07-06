@@ -70,7 +70,7 @@
                         <td>收件人電話</td>
                         <td class="orderDetails_phone">{{ val[6] }}</br>{{ val[7] }}</td>
                         <td>訂單金額</td>
-                        <td class="orderDetails_price">{{ val[8] }}</td>
+                        <td class="orderDetails_price">{{total}}</td>
                     </tr>
                     <tr>
                         <td>收件地址</td>
@@ -100,9 +100,9 @@
             data: {
                 val: [],
                 list: [],
+                total:0,
             },
             created() {
-                console.log(orderid);
                 const url1 = `./php/orderDetial.php?orderid=${orderid}`;
                 fetch(url1)
                     .then(response => response.json())
@@ -114,7 +114,13 @@
                     .then(response => response.json())
                     .then((text) => {
                         this.list = text
+                        
+                        for(let i = 0; i < this.list.length; i++){
+                            this.total += parseInt(this.list[i][4])
+                            console.log(this.total);
+                        }
                     });
+                    
             },
         },
         )

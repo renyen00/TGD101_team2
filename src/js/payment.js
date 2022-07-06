@@ -18,6 +18,11 @@ window.addEventListener("load", function(){
             receiverAdd: "",
             receiverCell: "",
             receiverPhone: "",
+            buyerId: "",
+            orderTime: "",
+            payingMethod: "",
+            deliveryMethod: "",
+            orderPrice: "",
         },
 
         methods: {
@@ -57,7 +62,10 @@ window.addEventListener("load", function(){
             confirm(){
                 const url = './php/payment.php';
                 const timestamp = Date.now();
-                this.orderIdGreen = 'M' + timestamp;
+                // this.orderIdGreen = 'M' + timestamp;
+                let memInfo = JSON.parse(sessionStorage.getItem('memInfo'));
+                // console.log(memInfo['id']);
+
                 fetch(url, {
                     method: 'POST',
                     headers:{
@@ -70,7 +78,10 @@ window.addEventListener("load", function(){
                         receiverEm: this.receiverEm,
                         receiverAdd: this.receiverAdd,
                         receiverCell: this.receiverCell,
-                        receiverPhone: this.receiverPhone
+                        receiverPhone: this.receiverPhone,
+                        orderTime: timestamp,
+                        buyerId: memInfo['id'],
+                        orderPrice: this.orderPrice
                     })
                 })
             }
@@ -124,7 +135,7 @@ window.addEventListener("load", function(){
             $(".goPay").click(function(e){
                 e.preventDefault();
                 let memInfo = JSON.parse(sessionStorage.getItem('memInfo'));
-                // console.log(memInfo);
+                // console.log(memInfo['id']);
 
                 if(memInfo['id']){
                     setTimeout(() => {

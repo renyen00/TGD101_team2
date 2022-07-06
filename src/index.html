@@ -12,23 +12,6 @@
 
 <body class="index_body">
     @@include('./layout/header.html')
-    <ul>
-        <li class="imgBox">
-            <img src="./images/index_kao/mouseoverBird.svg" alt="">
-        </li>
-        <li class="imgBox">
-            <img src="./images/index_kao/mouseoverBird.svg" alt="">
-        </li>
-        <li class="imgBox">
-            <img src="./images/index_kao/mouseoverBird.svg" alt="">
-        </li>
-        <li class="imgBox">
-            <img src="./images/index_kao/mouseoverBird.svg" alt="">
-        </li>
-        <li class="imgBox">
-            <img src="./images/index_kao/mouseoverBird.svg" alt="">
-        </li>
-    </ul>
     <!-- 首頁標題 -->
     <div id="totop" class="index_title_top">
         <h1 class="index_h1_before">鳥語</h1>
@@ -37,7 +20,7 @@
         <h1 class="index_h1_after">鳥嶼</h1>
     </div>
     <!-- 字 -->
-    <section>
+    <section class="wordSection" style="width: 100vw">
          <div class="index_word_1">
             <img src="./images/xiaojiang/index_bg_top.svg" alt="">
             <div class="index_word_bg">
@@ -213,7 +196,7 @@
                             <img src="./images/index_kao/bridge_2.svg" class="br2">
             </div>     
         </div>
-
+        <section class="rwdForLandscapes">
         <div class="landscapeRWD1"><a href="attraction.html?target=4"><img src="./images/index_kao/machubichu_RWD_.svg" alt=""></a></div>
         <div class="landscapeRWD2"><a href="attraction.html?target=7"><img src="./images/index_kao/zoo_RWD.svg" alt=""></a></div>
         <div class="landscapeRWD1"><a href="attraction.html?target=3"><img src="./images/index_kao/waterfall_RWD_.svg" alt=""></a></div>
@@ -222,6 +205,7 @@
         <div class="landscapeRWD2"><a href="attraction.html?target=5"><img src="./images/index_kao/moutain_RWD_.svg" alt=""></a></div>
         <div class="landscapeRWD1"><a href="attraction.html?target=1"><img src="./images/index_kao/ghosthoouse_RWD_.svg" alt=""></a></div>
         <div class="landscapeRWD2"><a href="attraction.html?target=6"><img src="./images/index_kao/amusemenPark_RWD_.svg" alt=""></a></div>
+        </section>
 
         <a href="#totop"><img src="./images/logo/logo_white_final.svg" class="logoWhy"></a>
         @@include('./layout/footer.html')
@@ -245,14 +229,14 @@
     
 
     <script>
-        document.addEventListener('mousemove', (event)=> {
-        gsap.to('.imgBox', {
-            x: event.pageX,
-            y: event.pageY,
-            stagger: -0.1,
-            delay: .08,
-  });
-});
+//         document.addEventListener('mousemove', (event)=> {
+//         gsap.to('.imgBox', {
+//             x: event.pageX,
+//             y: event.pageY,
+//             stagger: -0.1,
+//             delay: .08,
+//   });
+// });
     // =======================================================================
 //     navbar();
 //     popUpShow();

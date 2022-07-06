@@ -4,9 +4,8 @@
     //---------------------------------------------------
 
     //建立SQL語法
-    $sql = "SELECT a.ID,a.POSTTIME,a.STOPTIME,c.NAME,d.Q,a.MAX,e.STATUS,a.EVENTDATE FROM OFFICIAL_ACTIVITY a
+    $sql = "SELECT a.ID,a.POSTTIME,a.ENDTIME,c.NAME,a.MAX,a.MAX,e.STATUS,a.EVENTDATE FROM OFFICIAL_ACTIVITY a
     join PLACE c on a.PLACE_ID = c.ID
-    join (SELECT  OFFICIAL_ID ACT,COUNT(MEMBER_ID) Q FROM OFFICIAL_JOINLIST group by OFFICIAL_ID)d on a.ID = d.ACT 
     join ACTIVITY_STATUS e on a.STATUS = e.ID
     order by 1";
 

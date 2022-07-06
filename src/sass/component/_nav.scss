@@ -256,6 +256,8 @@
                 position: absolute;
                 right: 0px;
                 top: -5px;
+                // border: 5px solid #f2bf61;
+                border-radius: 50%;
                 display: block;
                 z-index: 10000;
                 cursor:default;
@@ -263,6 +265,7 @@
                     width: 50px;
                     height: 50px;
                     display: flex;
+                    border: 5px solid #f2bf61;
                     justify-content:space-around;
                     background-color:transparent;
                     border-radius: 30px;
@@ -277,7 +280,7 @@
                     }
                     img{
                         position: relative;
-                        width: 50px;
+                        
                         border-radius: 50%;
                         z-index: 9999;
                     }
@@ -285,6 +288,7 @@
                         position: relative;
                         top: 0;
                         padding-right: 10px;
+                        border: 0px solid #f2bf61;
                         background-color: #fff;
                         width: 240px;
                         height: 50px;
@@ -313,11 +317,13 @@
             }
             .menu-icon{
                 .bird{
+                    // border: 0px solid #f2bf61;
                     .memberInfo{
                         position: relative;
                         top: -30px;
                         padding-right: 10px;
                         background-color: #fff;
+                        border: 0px solid #f2bf61;
                         width: 240px;
                         height: 50px;
                         outline: 3px solid map-get($Mapcolor,'yellow');

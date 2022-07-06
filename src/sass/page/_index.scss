@@ -1,10 +1,14 @@
 // 首頁背景
+$hint: '點我看更多唷!';
+
 html{
     scroll-behavior: smooth;
+    line-height: 1.5;
 }
 
 .imgBox {
     position: absolute;
+
     z-index: 99;
     transform: translate(-50%, -50%);   // 讓游標在中間
     width: 55px;
@@ -310,14 +314,6 @@ html{
                 timing-function: ease-in-out;
                 direction: alternate;
             }
-    }
-
-    .river{
-        position: absolute;
-        top: 17.2%;
-        left: 10.2%;
-        width: 73.33%;
-        z-index: -1;
     }
 
     // 商店========================
@@ -655,7 +651,7 @@ html{
     margin-bottom: 10.51%;
 }    
 
-.landscapeRWD1, .landscapeRWD2{
+.rwdForLandscapes{
     display: none;
 }
 
@@ -777,7 +773,10 @@ html{
     }
 
         // 島的部分=========================================================================================
-        $hint: '點我看更多唷!';
+        .imgBoxs{
+            display: none;
+        }
+
         #islandWrapper, .leadFont, .zooFont, .parkFont{
             display: none;
         }
@@ -812,12 +811,19 @@ html{
                 transform: rotate(-3deg);
             }
         }
+
+        .rwdForLandscapes{
+            display: flex;
+            flex-direction: column;
+        }
+
         .landscapeRWD1{
             display: block;
-            width: 70%;
+            width: 60%;
             margin: 0 auto;
             text-align: center;
             margin-bottom: 150px;
+            position: relative;
             &::after{
                 content: $hint;
                 font-size: 20px;
@@ -836,9 +842,10 @@ html{
         }
         .landscapeRWD2{
             display: block;
-            width: 90%;
+            width: 60%;
             text-align: center;
             margin-bottom: 150px;
+            position: relative;
             &::after{
                 content: $hint;
                 font-size: 20px;

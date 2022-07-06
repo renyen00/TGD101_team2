@@ -74,6 +74,7 @@ Vue.component('backe1',{
     data(){
         return{
             popup:[],
+            index:'',
         }
     },
     template:`
@@ -98,20 +99,24 @@ Vue.component('backe1',{
                     <td>{{val[2]}}</td>
                     <td>{{val[3]}}</td>
                     <td>{{val[4]}}</td>
-                    <td>{{val[5]}}/{{val[6]}}</td>
+                    <td>{{val[6]}}</td>
                     <td>{{val[7]}}</td>
                     <p @click='chgpop'>詳細</p>
                 </tr>
             </table> 
-            <pope1 :infor='popup'></pope1>
+            <pope1 :infor='popup' :index='index' @del="pop"></pope1>
         </div>
         `,
         methods:{
             chgpop(e){
                 let i = e.target.closest('tr').dataset.n
                 this.popup = this.php[i]
+                this.index = i
                 document.querySelector('.backend_div_popup').classList.add('backend_show')
             },
+            pop(i){
+                this.php.splice(i,1)
+            }
         },
     })
 Vue.component('backe2',{
@@ -119,6 +124,8 @@ Vue.component('backe2',{
     data(){
         return{
             popup:[],
+            index:'',
+            count:[],
         }
     },
     template:`
@@ -144,12 +151,12 @@ Vue.component('backe2',{
                     <td>{{val[1]}}</td>
                     <td>{{val[2]}}</td>
                     <td>{{val[3]}}</td>
-                    <td>{{val[4]}}/{{val[5]}}</td>
+                    <td>{{val[5]}}</td>
                     <td>{{val[6]}}</td>
                     <p @click='chgpop'>詳細</p>
                 </tr>
             </table> 
-            <pope2 :infor='popup'></pope2>
+            <pope2 :infor='popup' :index='index' @del="pop"></pope2>
 
             <pope3 :infor='popup'></pope3>
 
@@ -164,6 +171,9 @@ Vue.component('backe2',{
             chg(){
                 document.querySelector('.backend_popup').classList.add('backend_show')
                 this.popup =[]
+            },
+            pop(i){
+                this.popup[i][6]='已取消'
             }
         },
     })
@@ -201,7 +211,7 @@ Vue.component('backe3',{
                     <p @click='chgpop'>詳細</p>
                 </tr>
             </table> 
-            <pope1 :infor='popup'></pope1>
+            <pope4 :infor='popup'></pope4>
 
         </div>
         `,
@@ -210,11 +220,11 @@ Vue.component('backe3',{
                 let i = e.target.closest('tr').dataset.n
                 this.popup = this.php3[i]
                 document.querySelector('.backend_div_popup').classList.add('backend_show')
-            },
+            }, 
         },
     })
 Vue.component('pope1',{
-    props:['infor'],
+    props:['infor','index'],
     data(){
         return{
             list:[]
@@ -246,13 +256,22 @@ Vue.component('pope1',{
                 </ul>
                 <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
             </div>
-            <button class="backend_btn_dosomething_red">取消揪團</button>
+            <button class="backend_btn_dosomething_red" @click='del'>取消揪團</button>
             <button class="back_btnM" @click='close'>關閉</button>
         </section>
     </div>`,
     methods:{
         close(e){
             e.target.closest('div.backend_div_popup').classList.remove('backend_show')
+        },
+        del(e){
+            
+            if(confirm('確定取消?')){
+                const url = `./php/backend5_insert.php?quest=2&id=${this.infor[0]}`;
+                fetch(url)
+                this.$emit('del',this.index)
+                this.close(e)
+            };
         }
     },
     watch:{
@@ -299,13 +318,22 @@ Vue.component('pope2',{
                 </ul>
                 <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
             </div>
-            <button class="backend_btn_dosomething_red">取消揪團</button>
+            <button class="backend_btn_dosomething_red" @click='del'>取消揪團</button>
             <button class="back_btnM" @click='close'>關閉</button>
         </section>
     </div>`,
     methods:{
         close(e){
             e.target.closest('div.backend_div_popup').classList.remove('backend_show')
+        },
+        del(e){
+            
+            if(confirm('確定取消?')){
+                const url = `./php/backend5_insert.php?quest=1&id=${this.infor[0]}`;
+                fetch(url)
+                this.$emit('del',this.index)
+                this.close(e)
+            };
         }
     },
     watch:{
@@ -326,6 +354,7 @@ Vue.component('pope3',{
         return{
             list:[],
             num:'',
+            sub:[],
         }
     },
     template:`
@@ -334,21 +363,24 @@ Vue.component('pope3',{
         <i class="fa-solid fa-x" @click='close'></i>
         <div class="backend_product">
             <ul>
-                <li><h2>活動日期:</h2><input type="date" v-model='infor[7]'></li>
+                <li><h2>標題:</h2><input v-model='sub[0]'></li>
+                <li><h2>活動日期:</h2><input type="date" v-model='sub[1]'></li>
                 <li><h2>地點:</h2>
-                    <select v-model='infor[3]'>
-                        <option v-for="(val,i) in list">{{i+1}}.{{val[0]}}</option>
+                    <select v-model='sub[2]'>
+                        <option v-for="(val,i) in list" :value="i">{{val[0]}}</option>
                     </select>
                 </li>
-                <li><h2>人數:</h2><input v-model='infor[5]'></li>
-                <li><h2>金額:</h2><input v-model='infor[8]'></li>
+                <li><h2>人數:</h2><input v-model='sub[3]'></li>
+                <li><h2>金額:</h2><input v-model='sub[4]'></li>
             </ul>
-        </div>       
+            
+            </div>       
+            <textarea cols="30" rows="10" v-model='sub[5]'></textarea>
         
         <img class="backend_img_bird_sp " src="./images/emojione-v1_bird.jpg">
         <div class="backend_pop_bottom">
             <p class="back_btnS" @click='close'>取消</p>
-            <p class="back_btnS">儲存</p>
+            <p class="back_btnS" @click="save">儲存</p>
         </div>
     </section>
 </div>`,
@@ -356,6 +388,13 @@ Vue.component('pope3',{
         close(e){
             e.target.closest('div.backend_div_popup').classList.remove('backend_show')
         },
+        save(e){
+            // let a =this.sub[1]
+            // console.log(a);
+            const url = `./php/backend5_insert.php?quest=3&title=${this.sub[0]}&date=${this.sub[1]}&place=${this.sub[2]}&people=${this.sub[3]}&cost=${this.sub[4]}&content=${this.sub[5]}`;
+                fetch(url)
+                this.close(e);
+        }
     },
     mounted(){
         const urll = `./php/backend5_pop3.php`;
@@ -365,9 +404,56 @@ Vue.component('pope3',{
                     this.list = text
                 } );
     },
+})
+Vue.component('pope4',{
+    props:['infor','index'],
+    data(){
+        return{
+            list:[]
+        }
+    },
+    template:`
+    <div class="backend_div_popup">
+        <section>
+            <i class="fa-solid fa-x" @click='close'></i>
+            <div class="backend_product">
+                <ul>
+                    <li><h2>編號</h2><h3>{{infor[0]}}</h3></li>
+                    
+                    <li><h2>地點</h2><h3>{{infor[4]}}</h3></li>
+                </ul>
+                <div class="backend_pop_right">
+                    <h3> </h3>
+                    <ul>
+                        <li><h2>成立日期</h2><h3>{{infor[2]}}</h3></li>
+                        <li><h2>截止日期</h2><h3>{{infor[3]}}</h3></li>
+                        <li><h2>活動日期</h2><h3>{{infor[8]}}</h3></li>
+                    </ul>
+                </div>
+            </div>       
+            <h2>參加名單</h2>
+            <div class="backend_detail">
+                <ul>
+                    <li class="backend_detail_li" v-for="val in list"><h2>{{val[0]}}</h2></li>
+                </ul>
+                <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
+            </div>
+            <button class="back_btnM" @click='close'>關閉</button>
+        </section>
+    </div>`,
+    methods:{
+        close(e){
+            e.target.closest('div.backend_div_popup').classList.remove('backend_show')
+        },
+    },
     watch:{
         infor(){
-            this.num= this.infor[3].substr(0,1);
+            const urll = `./php/backend5_pop.php?id=${this.infor[0]}`;
+            fetch(urll)
+                .then(response => response.json())
+                .then((text) =>{
+                    this.list = text
+                } );
         }
     }
 })

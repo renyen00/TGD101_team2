@@ -1,6 +1,4 @@
-.activityList_body{
-    font-family: $fontFamily; 
-}
+
     // 上面banner
     .activityList_banner{
         height: 700px;
@@ -56,7 +54,7 @@
 .activityList_wrapper{
         color: $blue;
         width: 100%;
-        margin: 0 auto;
+        margin: -13% auto 0;
         // 背景
         .activityList_main_bg{
             width: 100%;
@@ -72,7 +70,6 @@
 
         // 切換頁面
         .activityList_ul_switch{
-            float: right;
             display: flex;
             font-size: 2rem;
             width: 310px;
@@ -80,11 +77,11 @@
             border: 3px $blue solid;
             border-radius: 5rem;
             justify-content: space-between;
-            margin-right: 100px;
+            margin-left: 65%;
             padding: 0 15px;
-            margin-bottom: 50px;
             background-color: $white;
             position: relative;
+            top: 219PX;
             .iconify{
                 position: absolute;
                 color: $blue;
@@ -99,6 +96,8 @@
                 margin-top: 7.5px;
                 border-radius: 5rem;
                 text-align: center;
+                cursor: pointer;
+
             }
             .activityList_li_now{
                 color:$white;
@@ -115,8 +114,9 @@
             display: flex;
             width: 100%;
             justify-content: space-between;
+            cursor: pointer;
             li{
-                font-size: 2.4rem;
+                font-size: 2rem;
                 height: 7rem;
                 line-height: 7rem;
                 border: 5px $blue solid;
@@ -124,14 +124,11 @@
                 text-align: center;
                 border-radius: 10px 10px 0 0;
                 background-color: $white;
-
             }
             // 切換頁面目前所在位置
-            ul{
-                .li_now{
-                    color:$white;
-                    background-color: $blue;
-                }
+            .li_now{
+                color:$white;
+                background-color: $blue;
             }
         }
 
@@ -143,15 +140,17 @@
             margin: 0 auto;
             border-bottom-left-radius:20px 20px;
             border-bottom-right-radius:20px 20px;
+            
             li{
                 display: flex;
-                padding: 20px;
+                padding: 10px;
+                justify-content: center;
 
                 img{
                     margin: 20px;
                     object-fit: cover;
-                    width: 300px;
-                    height: 300px;
+                    width: 250px;
+                    height: 250px;
                     display: block;
                     border-radius: 50%;
 
@@ -161,33 +160,32 @@
                     margin: 20px;
                 }
                 span{
-                    font-size: 24px;
+                    font-size: 2rem;
                     display: flex;
                     flex-direction:column;
-                    line-height: 55px;
-        
+                    line-height: 50px;
                 }
                 .activityList_a_beside{
-                    margin: 20px;
+                    margin: 15px;
                 }
                 .activityList_a_beside a{
                     line-height: 40px;
                     margin: 20px;
-                    margin-top: 60px;
+                    margin-top: 50px;
                 }
             }
         }
 
             // 點我揪團去
             .activityList_p{
-                padding: 50px;
-                font-size: 3.2rem;
+                padding: 50px 0 0;
+                // font-size: 3.2rem;
                 text-align: center;
                 a{
                     color:$blue 
                 }
             }
-        
+            
 
 }
 
@@ -199,7 +197,7 @@
 
  // 上面banner
  .activityList_banner{
-    height: 700px;
+    height: 550px;
 
     display: flex;
     .activityList_banner_inner{
@@ -234,43 +232,58 @@
 // 下面
 .activityList_wrapper{
     width: 100%;
-    margin: 0 auto;
 
     // 切換頁面(嶼我/嶼友)
     .activityList_ul_switch{
-        float: none;
-        margin: 0 auto 50px;
+        display: flex;
+        font-size: 2rem;
+        width: 310px;
+        height: 7rem;
+        border: 3px $blue solid;
+        border-radius: 5rem;
+        justify-content: space-between;
+        margin-left: 15%;
         padding: 0 15px;
+        background-color: $white;
+        position: relative;
+        top: 28px;
+    }
+    
+    .activityList_main_bgtop{
+        margin-top: -10%;
+        display: block;
     }
     .activityList_main{
         width: 100%;
-        margin: 0 auto;
-        padding: 10px;
+        margin: -1px auto;
+        padding: 20px 10px;
     }
 
     // 上面篩選
     .activityList_ul_type{
         width: 100%;
         li{ 
-            height: 120px;
-            line-height: 1.5;
+            height: auto;
+            line-height: 2;
             width: 150px;
+            font-size: 1.2rem;;
         }
     }
     //清單
     .activityList_ul_list {
         width: 100%;
         margin: 0 auto;
+        padding-top: 10px;
         li{
             display: flex;
             padding: 0;
             flex-direction: column;
             flex-wrap: wrap;
-            margin-bottom: 80px;
+            margin-bottom: 30px;
             img{
                 margin: 20px auto;
-                width: 250px;
-                height: 250px;
+                width: 200px;
+                height: 200px;
             }
             .activityList_span{
                 width: 250px;
@@ -279,6 +292,7 @@
             span{
                 margin:0 auto;
                 text-align:center;
+                line-height: 33px;
             }
             .activityList_a_beside{
                 margin: 0;
@@ -287,7 +301,7 @@
             .activityList_a_beside a{
                 margin: 0 auto;
                 width: 150px;
-                font-size: 20px;
+                font-size: 1.6rem;
             }
         }
     }
@@ -295,7 +309,7 @@
         // 點我揪團去
         .activityList_p{
             padding: 30px;
-
+            font-size: 2rem;
         }  
 
 }

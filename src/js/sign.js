@@ -92,18 +92,34 @@ new Vue({
         //     }
 
         // },
+        
+        clear(){
+            this.lname = "",
+            this.lnick ="", 
+            this.lemail = "", 
+            this.lpwd = "",
+            this.ltel = "" ,
+            this.lbirth =""
+        },
         submit(e){
             e.preventDefault();
-            const url = `./php/login2.php?EMAIL=${this.lemail}`
+            const url = `./php/login3.php?EMAIL=${this.lemail}`
             fetch(url)
             .then(resp => resp.json())
             .then(Msg => {
                 if(Msg == "沒有"){
-                    
+                    Swal.fire({
+                        icon: 'success',
+                        title: '註冊成功，將回到登入頁',              
+                    })
                     $("#submit")[0].click();
 
                 }else{
-                    alert("此Email已經被使用，請使用其他Email");
+                    Swal.fire({
+                        icon: 'warning',
+                        title: '此Email已經被使用，請使用其他Email',              
+                    })
+                    
                 }
             })
 
@@ -118,32 +134,52 @@ new Vue({
         login_list: [],
         email: "",
         pwd: "",
-        tips: "",
         error: 'hint',
     },
 
     methods: {
         submit(e) {
-            e.preventDefault();
+             e.preventDefault();
 
             if (this.email == '' || this.pwd == '') {
-                alert('請輸入帳號密碼');
+                Swal.fire({
+                    icon: 'warning',
+                    title: '請輸入帳號密碼',              
+                })
             } else {
-                const url = `./php/login.php?EMAIL=${this.email}&PASSEORD=${this.pwd}`;
+                const url = `./php/login2.php?EMAIL=${this.email}&PASSWORD=${this.pwd}`;
                 fetch(url)
                     .then(response => response.json())
                     .then(text => {
-                        if (text === 'false') {
-                            alert('帳號或密碼錯誤');
-                            this.tips = '帳號或密碼錯誤';
+                        if (text === '沒有') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '帳號或密碼錯誤',              
+                            })
                             this.error = 'hint error';
-
                         } else {
-                            window.location.href = 'member.html';
+                            if(localStorage.getItem('LINK')){
+                                // localStorage.getItem('LINK', './createEvent.html');
+                                window.location.href = localStorage.getItem('LINK');
+                                localStorage.removeItem('LINK');
+                            }else{
+                                if(this.email == "admin@123.com"){
+                                    window.location.href = 'backend.html';
+                                }else{
+                                    window.location.href = 'personalMain.html';
+                                }
+
+                            }
+                            
                         }
                     })
             }
-
+        
+        },
+        clear(e){
+            e.preventDefault();
+            this.email = "", 
+            this.pwd = ""
         },
     },
     compute: {},

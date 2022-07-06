@@ -150,7 +150,6 @@ Vue.component('backd1',{
                 <img class="backend_img_bird" src="./images/emojione-v1_bird.jpg">
                 </div>
             
-                <button class="backend_btn_dosomething_red">取消訂單</button>
                 <button class="back_btnM" @click='close'>關閉</button>
             </section>
         </div>

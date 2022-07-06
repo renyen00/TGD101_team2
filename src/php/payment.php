@@ -33,32 +33,22 @@
 
 //  =============================================
     // Create order information
-    $paymentMethod = htmlspecialchars(isset($_GET["payingMethod"]) ? $_GET["payingMethod"] : false);
-    $paymentMethod = htmlspecialchars(isset($_GET["deliveryMethod"]) ? $_GET["deliveryMethod"] : false);
-    $buyerId = ($_SESSION['memberID'])
+    $orderTime = $data['orderTime'];
+    $buyerId = $data['buyerId'];
+    $receiverId = $data['receiverId'];
+    $orderPrice = $data['orderPrice'];
 
-
-    // $sql = 
-    
-
-    // // echo $receiverNm;
-
-
-
-    // //建立SQL
-    // $sql = "INSERT INTO RECEIVER(NAME, GENDER, EMAIL, ADDRESS, CELLPHONE, HOMEPHONE) VALUES (?, ?, ?, ?, ?, ?)";
-
+    //建立SQL
+    $sql = "INSERT INTO ORDER(ORDERTIME, MEMBER_ID, RECEIVER_ID, TOTAL) VALUES (?, ?, ?, ?)";
 
     // //執行
-    // //  $pdo->exec($sql);
-    // $statement = $pdo->prepare($sql);
-    // $statement->bindValue(1, $receiverNm);
-    // $statement->bindValue(2, $receiverGd);
-    // $statement->bindValue(3, $receiverEmail);
-    // $statement->bindValue(4, $receiverAdd);
-    // $statement->bindValue(5, $receiverCell);
-    // $statement->bindValue(6, $receiverPhone);
-    // $statement->execute();
+    $pdo->exec($sql);
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $orderTime);
+    $statement->bindValue(2, $buyerId);
+    $statement->bindValue(3, $receiverId);
+    $statement->bindValue(4, $orderPrice);
+    $statement->execute();
 
     include("pay.php");
 

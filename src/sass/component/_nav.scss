@@ -69,6 +69,10 @@
             // padding: 26px 26px;
             cursor: pointer;
             z-index: 9999;
+            &:nth-child(1){
+                border: 0px;
+                box-shadow: 0px 0px 0px;
+            }
             .cart{
                 > i{ 
                 text-shadow: 0px 0px 5px rgba(0,0,0,.5);
@@ -101,7 +105,7 @@
             &__line{
                 display: block;
                 margin: 0px auto;
-                margin-top: 20px;
+                margin-top: 19px;
                 position: relative;
                 box-shadow: 0px 0px 5px rgba(0,0,0,.5);
                 background-color: #f2bf61;
@@ -250,7 +254,7 @@
         .menu-icon{
             .bird{
                 position: absolute;
-                right: -5px;
+                right: 0px;
                 top: -5px;
                 display: block;
                 z-index: 10000;
@@ -265,13 +269,17 @@
                     transition: .3s;
                     overflow: hidden;
                     span,a{
-                        display: none;
+                        position: relative;
+                        display: none !important;
                         transition: 1s;
                         color: map-get($Mapcolor, 'blue' );
+                        z-index: 9997;
                     }
                     img{
+                        position: relative;
                         width: 50px;
                         border-radius: 50%;
+                        z-index: 9999;
                     }
                     &:hover{
                         position: relative;
@@ -283,13 +291,52 @@
                         outline: 3px solid map-get($Mapcolor,'yellow');
                         border-radius: 30px;
                         span,a{
-                            display: inline-block;
+                            
+                            display: inline-block !important;
                             line-height: 50px;
                             margin-left: 10px;
                             transition: 1s;
 
                         }
                     }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:427.98px) {
+    .main-header{
+        right: 5vw;
+        .navItem{
+            .nav-links{
+                left:-75vw;
+            }
+            .menu-icon{
+                .bird{
+                    .memberInfo{
+                        position: relative;
+                        top: -30px;
+                        padding-right: 10px;
+                        background-color: #fff;
+                        width: 240px;
+                        height: 50px;
+                        outline: 3px solid map-get($Mapcolor,'yellow');
+                        border-radius: 30px;
+                        span,a{
+                            
+                            display: inline-block !important;
+                            line-height: 50px;
+                            margin-left: 10px;
+                            transition: 1s;
+
+                        }
+                        &:hover{
+                            top: -30px;
+                        }
+                    }
+                }
+                &:nth-child(3),&:nth-child(4){
+                    transform: translateY(-30px);
                 }
             }
         }

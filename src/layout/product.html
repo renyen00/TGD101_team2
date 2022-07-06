@@ -22,6 +22,7 @@
         <div class="productCircle bgcYellow"></div>
         <a href="./productDetail.html"><img :src="product[0]" class="productPic"></a>
         <p class="producNm textWhite">{{product[1]}}</p>
+        <p class="productPc textWhite">$&nbsp;{{product[6]}}</p>
         <ul class="productColor">
             <li class="productColorLi bgcWhite" :data-img="product[0]" @click="changeImg"></li>
             <li class="productColorLi bgcYellow" :data-img="product[3]" @click="changeImg"></li>

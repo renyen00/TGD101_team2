@@ -50,11 +50,22 @@
         transform: translateX(-50%);
     };
 
+    .productPc{
+        font-size: 1.6rem;
+        // width: 166px;
+        display: block;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .productColor{
+        // display: none;
         list-style-type: none;
         width: 133px;
         position: absolute;
-        top: 75%;
+        top: 76%;
         left: 50%;
         transform: translateX(-50%);
 
@@ -118,10 +129,15 @@
             // width: 166px;
             display: block;
             position: absolute;
-            top: 52%;
+            top: 50%;
             left: 50%;
             transform: translateX(-50%);
         };
+
+        .productPc{
+            font-size: 1.2rem;
+            top: 55%;
+        }    
 
         .productColor{
             width: 95px;

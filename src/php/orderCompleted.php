@@ -3,13 +3,17 @@
     //  ==============================================
     
     //建立SQL語法
-    $sql = "SELECT DATE(ord.ORDERTIME), ord.ID, ordSt.STATUS, ord.PAYMENT, ord.TOTAL
+    $sql = "SELECT DATE(ord.ORDERTIME), ord.ID, ordSt.STATUS, ord.PAYMENT, ord.TOTAL, mem.ID
                 FROM 
                 `ORDER` ord
                         JOIN ORDER_STATUS ordSt
                                 on ord.STATUS = ordSt.ID
-                        join DELIVERY d
-                                 on ord.DELIVERY_ID = d.ID";
+                        JOIN DELIVERY d
+                                on ord.DELIVERY_ID = d.ID
+                        JOIN `MEMBER` mem 
+                                on mem.ID = MEMBER_ID
+                WHERE MEMBER_ID = MEMBER_ID
+                order by ORDERTIME desc;";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->query($sql);

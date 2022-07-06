@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title>鳥語鳥嶼</title>
     @@include('./layout/head.html')
 </head>
+
 <body class="orderDetails_body">
     @@include('./layout/header.html')
     <div class="orderDetails_div_wrapper">
         <a href="./index.html" class="orderDetails_logo">
-            <img src="./images/logo/logo_white_final.svg" >
+            <img src="./images/logo/logo_white_final.svg">
         </a>
         <!-- 麵包屑 -->
         <ul class="orderDetails_ul_breadCrumbs">
@@ -31,25 +33,25 @@
                 <!-- 上方資訊 -->
                 <div class="orderDetails_div_information_top">
                     <h4>訂單編號</h4>
-                    <p>{{val[0]}}</p>
+                    <p>{{ val[0] }}</p>
                     <h4>處理狀態</h4>
-                    <p>{{val[3]}}</p>
+                    <p>{{ val[3] }}</p>
                 </div>
                 <!-- 清單 -->
                 <ol>
-                    <li>
-                        <img src="./images/store/cap.png">
+                    <li v-for="i in list">
+                        <img :src="i[0]">
                         <section>
-                            <h4>商品名001</h4>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <h4>{{i[1]}}</h4>
+                            <p>{{i[2]}}</p>
                             <div>
                                 <div class="orderDetails_div_count">
                                     <h4>數量</h4>
-                                    <p>1</p>
+                                    <p>{{i[3]}}</p>
                                 </div>
                                 <div class="orderDetails_div_price">
                                     <h3>價格</h3>
-                                    <p>$495</p>
+                                    <p>{{i[4]}}</p>
                                 </div>
                             </div>
                         </section>
@@ -60,26 +62,26 @@
                 <table class="orderDetails_div_information_bottom">
                     <tr>
                         <td>收件人</td>
-                        <td class="orderDetails_name">{{val[4]}}</td>
+                        <td class="orderDetails_name">{{ val[4] }}</td>
                         <td></td>
-                        <td class="orderDetails_pay">{{val[1]}}</td>
+                        <td class="orderDetails_pay">{{ val[1] }}</td>
                     </tr>
                     <tr>
                         <td>收件人電話</td>
-                        <td class="orderDetails_phone">{{val[6]}}</br>{{val[7]}}</td>
+                        <td class="orderDetails_phone">{{ val[6] }}</br>{{ val[7] }}</td>
                         <td>訂單金額</td>
-                        <td class="orderDetails_price">{{val[8]}}</td>
+                        <td class="orderDetails_price">{{ val[8] }}</td>
                     </tr>
                     <tr>
                         <td>收件地址</td>
-                        <td class="orderDetails_address">{{val[5]}}</td>
+                        <td class="orderDetails_address">{{ val[5] }}</td>
                         <td>配送方式</td>
-                        <td class="orderDetails_mode">{{val[2]}}</td>
+                        <td class="orderDetails_mode">{{ val[2] }}</td>
                     </tr>
                 </table>
             </main>
         </div>
-        
+
         <!-- 返回按鈕 -->
         <a href="./personalOrder.html" class="btnXL_w">
             <span class="iconify" data-icon="fa-solid:kiwi-bird"></span>
@@ -88,27 +90,35 @@
     </div>
 
     @@include('./layout/footer.html')
-    
 
-<script>
-    let getid = new URLSearchParams(location.search)
-    const orderid = getid.get('orderid') 
-    new Vue({
-        el:'#orderDetail',
-        data:{
-            val:[],
+
+    <script>
+        let getid = new URLSearchParams(location.search)
+        const orderid = getid.get('orderid')
+        new Vue({
+            el: '#orderDetail',
+            data: {
+                val: [],
+                list: [],
+            },
+            created() {
+                console.log(orderid);
+                const url1 = `./php/orderDetial.php?orderid=${orderid}`;
+                fetch(url1)
+                    .then(response => response.json())
+                    .then((text) => {
+                        this.val = text[0]
+                    });
+                const url2 = `./php/orderDetial_list.php?orderid=${orderid}`;
+                fetch(url2)
+                    .then(response => response.json())
+                    .then((text) => {
+                        this.list = text
+                    });
+            },
         },
-        created(){ 
-            console.log(orderid);
-            const url1 = `./php/orderDetial.php?orderid=${orderid}`;
-            fetch(url1)
-                .then(response => response.json())
-                .then((text) =>{
-                    this.val = text[0]
-                } );
-            },  
-        }
-    )
-</script>
+        )
+    </script>
 </body>
+
 </html>

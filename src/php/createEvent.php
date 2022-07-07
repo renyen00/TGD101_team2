@@ -95,6 +95,17 @@
             echo json_encode($data);
         }
 
+    }else if($postType['postType'] == 'sql'){
+        if($postType['isquery'] == 'true'){
+             $sql = $postType['sqlstr'];
+             $statement = $pdo->query($sql);
+             $data = $statement->fetchAll();
+             echo json_encode($data);
+        }else {
+            $sql =  $postType['sqlstr'];
+            $pdo->exec($sql);
+        }
+        
     }
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     // $statement = $pdo->query($sql);

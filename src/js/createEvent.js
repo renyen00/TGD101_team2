@@ -24,6 +24,8 @@ $(document).ready(function(){
             maxAge:'65',
             hostavatar:'',
             currentStep: 0,
+            sqlstr:'',
+            query:'',
         },
         methods: {
             selectedArea(e){
@@ -48,7 +50,7 @@ $(document).ready(function(){
                 if(this.validation() === true){
                     $('html, body').scrollTop(0);
                     this.currentStep = 1;
-                    
+                    this.hostavatar = $('#avatarP').attr('src');
                 };
             },
             
@@ -118,6 +120,19 @@ $(document).ready(function(){
                 .then(data => {
                     this.spotinfo_list = data;
                 });
+            },
+            sql(){
+                const url = './php/createEvent.php';
+                fetch(url, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        postType: 'sql',
+                        sqlstr : this.sqlstr,
+                        isquery : this.query
+                    })
+                    
+                })
             },
 
             ajaxPlaceType(){
@@ -226,7 +241,11 @@ $(document).ready(function(){
                     return choosedate.getFullYear()+((choosedate.getMonth()+1)<10?'/0':'/')+(choosedate.getMonth()+1)+((choosedate.getDate()+1)<10?'/0':'/')+(choosedate.getDate());
 
                 }
-            }
+            },
+
+            // hostavatarsrc(){
+            //     return this.hostavatar = $('#avatarP').attr('src');
+            // }
         },
         watch: {
             potoposition(newValue, oldValue){
@@ -242,6 +261,7 @@ $(document).ready(function(){
         created() {
                 this.ajaxInitData();
                 this.ajaxPlaceType();
+                
 
             },
         mounted() {
@@ -298,7 +318,7 @@ $(document).ready(function(){
                 });
                         
                 this.validationOk();
-
+                
         },
         
         updated() {

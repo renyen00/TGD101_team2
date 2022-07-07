@@ -59,7 +59,7 @@
             <section class="buyerInfoMethod bgcBlue" style="display: none;">
                 <h3 class="textWhite">付款方式與配送方式</h3>
 
-                <div class="selectMethod">
+                <form method="post" action="../src/php/payment.php" class="selectMethod">
                     <select id="payingMethod" class="textWhite" name="payingMethod"required>
                         <option value="0" selected class="textBlue">選擇付款方式</option>
                         <option value="payWhenReceive" class="textBlue">貨到付款</option>
@@ -71,7 +71,7 @@
                         <option value="1" class="textBlue">超商取貨</option>
                         <option value="2" class="textBlue">宅配</option>
                     </select>
-                </div>
+                </form>
 
                 <div class="info">
                     <form class="buyerInfo" method="post" action="../src/php/payment.php">
@@ -176,7 +176,8 @@
                             <div class="price">${{new_price}}</div>
                         </li>
                     </ul>
-                    <input type="text" name="orderIdToGreen" :value="orderIdGreen" style="display: none;">
+                    <input type="text" name="orderIdToGreen" style="display: none;">
+                    <!-- :value="orderIdGreen" -->
                     <input type="text" name="priceToGreen" :value="new_price" style="display: none;">
                     <!-- shoppingCart 前往結帳 -->
                     <div class="shoppingCart_optionBtn" >

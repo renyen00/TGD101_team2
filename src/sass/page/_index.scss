@@ -323,10 +323,9 @@ html{
     .atagHoverStore{
         position: fixed;
         transform: scale(1.6);
-        top: 69vh;
-        left: 37vw;
+        top: 63vh;
+        left: 34vw;
         height: 105px;
-        transition: 1s;
         opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
@@ -340,7 +339,7 @@ html{
     // 熱氣球==========================
     .baBlue{
         position: absolute;
-        top: 22.4%;
+        top: 10.4%;
         left: 60%;
         animation: {
             name: ballon_blue;
@@ -353,7 +352,7 @@ html{
     }
     .baWhite{
         position: absolute;
-        top: 30.6%;
+        top: 13.6%;
         left: 58%;
         z-index: 2;
         animation: {
@@ -366,7 +365,7 @@ html{
     }
     .baYellow{
         position: absolute;
-        top: 26.6%;
+        top: 19.6%;
         left: 80%;
         z-index: 1;
         animation: {
@@ -470,7 +469,7 @@ html{
         position: absolute;
         width: 160px;
         top: 72vh;
-        left: 23vw;
+        left: 21vw;
         color: #2F4858;
         font-weight: 600;
         opacity: 0;
@@ -541,7 +540,7 @@ html{
         position: absolute;
         width: 90px;
         top: 65vh;
-        left: 43vw;
+        left: 40vw;
         opacity: 0;
         animation: {
             name: landscapeHoverAnimation;
@@ -556,7 +555,7 @@ html{
         position: absolute;
         transform: scale(1.6);
         top: 52vh;
-        left: 40vw;
+        left: 37vw;
         opacity: 0;
             animation: {
                 name: landscapeHoverAnimation;
@@ -571,7 +570,7 @@ html{
         position: absolute;
         transform: scale(1.6);
         top: 49vh;
-        left: 46vw;
+        left: 43vw;
         z-index: 1;
         opacity: 0;
             animation: {
@@ -587,7 +586,7 @@ html{
         position: absolute;
         transform: scale(1.6);
         top: 55vh;
-        left: 42vw;
+        left: 39vw;
         z-index: 2;
         opacity: 0;
             animation: {
@@ -602,8 +601,8 @@ html{
     .br1{
         width: 6%;
         position: absolute;
-        top: 31.6%;
-        left: 33.5%;
+        top: 20.6%;
+        left: 33.2%;
         animation: {
             name: coconuttree;
             duration: 1s;
@@ -616,8 +615,8 @@ html{
     .br2{
         width: 6%;
         position: absolute;
-        top: 74.4%;
-        left: 40.8%;
+        top: 47.4%;
+        left: 40.9%;
         animation: {
             name: coconuttree;
             duration: 1s;

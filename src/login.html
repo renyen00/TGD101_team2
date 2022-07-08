@@ -23,7 +23,7 @@
                     <input v-model="lnick" type="text" placeholder="暱稱" name="NICKNAME">
                     <input v-model="lemail" type="email" placeholder="Email" name="EMAIL">
                     <input v-model="ltel" type="tel" placeholder="行動電話" name="PHONE">
-                    <input v-model="lbirth" type="date" name="BIRTH">
+                    <input v-model="lbirth" type="text" name="BIRTH" placeholder="生日" placeholder="生日" onfocus="(this.type='date')">
                     <input v-model="lpwd" type="password" placeholder="密碼" name="PASSWORD" id="pwd_s">
                     <input v-model="lcpwd" type="password" placeholder="確認密碼" onkeyup="validate()" id="pwd_c">
                     <div id="check"></div>

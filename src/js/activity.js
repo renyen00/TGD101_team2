@@ -7,7 +7,9 @@ let VM = new Vue({
             activity:[],
         },
         methods: {
-            
+            personhref(index){
+                return "./createEventDetail.html?activityid=" + index; 
+            }
         },
         computed: {
     

@@ -69,9 +69,11 @@
         left: 34%;
 
         img{
-            width: 80%;
-            display: block;
+            position: absolute;
+            width: 130%;
             margin: 8% auto;
+            top: -22%;
+            left: -16%;
         }
     }
 }

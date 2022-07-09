@@ -16,7 +16,7 @@
         $info = array(
             'name'=>'訪客',
             'nickname'=>'訪客',
-            'avatar'=>'./images/emojione-v1_bird.jpg',
+            'avatar'=>'./images/emojione-v1_bird.png',
             'link'=> './login.html',
             'logst'=>'登入'
         );

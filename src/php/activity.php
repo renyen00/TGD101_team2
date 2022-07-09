@@ -12,7 +12,8 @@
     on a.PLACE_ID = p.ID
     JOIN MEMBER m
     on a.MAIN_ID = m.ID
-    order by a.ID ASC;";
+    WHERE a.STATUS = 2 or a.STATUS = 3
+    order by a.ID desc;";
 
     //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
     $statement = $pdo->query($sql);

@@ -26,6 +26,7 @@ $(document).ready(function(){
             currentStep: 0,
             sqlstr:'',
             query:'',
+            stopDateConfirm:'',
         },
         methods: {
             selectedArea(e){
@@ -66,7 +67,7 @@ $(document).ready(function(){
             validation(){
                 if($('.--requiredSpan').length == 0){
                     $('.validation').each(function() {
-                        console.log($(this))
+                        // console.log($(this))
                         if( $(this).val() == ''){
                             $(this).toggleClass('--requiredInput');
                                         
@@ -165,7 +166,7 @@ $(document).ready(function(){
                         PICTURE: this.image,
                         PICTURE_POSITION: this.potoposition,
                         PLACE_ID: this.selectedspot,
-                        STOPDATE: this.stopDate,
+                        STOPDATE: this.stopDateConfirm,
                         MAX: this.numOfPeople,
                         MINAGE: this.minAge,
                         MAXAGE: this.maxAge
@@ -187,9 +188,26 @@ $(document).ready(function(){
                                 icon: 'warning',
                                 title: '請先登入會員',              
                             }).then(() => {
-                                window.location.href = "./login.html"
-                                localStorage.setItem('LINK', './createEvent.html')
-
+                                window.location.href = "./login.html";
+                                localStorage.setItem('LINK', './createEvent.html');
+                                let eventData = {
+                                    TITLE: this.eventTitle,
+                                    EVENTDATE: this.eventDate,
+                                    STARTTIME: this.eventTimeStart,
+                                    ENDTIME: this.eventTimeEnd,
+                                    CONTENT: this.eventContent,
+                                    PICTURE: this.image,
+                                    PICTURE_POSITION: this.potoposition,
+                                    PLACE_ID: this.selectedspot,
+                                    stopDateConfirm: this.stopDateConfirm,
+                                    MAX: this.numOfPeople,
+                                    MINAGE: this.minAge,
+                                    MAXAGE: this.maxAge,
+                                    eventType: this.eventType,
+                                    eventSpot: this.eventSpot,
+                                    selectedCost: this.selectedCost,
+                                };
+                                localStorage.setItem('eventData', JSON.stringify(eventData));
                             }); 
                         }
                 });
@@ -213,6 +231,30 @@ $(document).ready(function(){
                         window.location.href = "./activityList.html";
                     }
                 })
+            },
+
+            storageInit(){
+                if(JSON.parse(localStorage.getItem('eventData'))){
+                    let eventData = JSON.parse(localStorage.getItem('eventData'));
+                    this.eventTitle = eventData.TITLE;
+                    this.eventDate = eventData.EVENTDATE;
+                    this.eventTimeStart = eventData.STARTTIME;
+                    this.eventTimeEnd = eventData.ENDTIME;
+                    this.eventContent = eventData.CONTENT;
+                    this.image = eventData.PICTURE;
+                    this.potoposition = eventData.PICTURE_POSITION;
+                    this.selectedspot = eventData.PLACE_ID;
+                    this.stopDateConfirm = eventData.stopDateConfirm;
+                    this.numOfPeople = eventData.MAX;
+                    this.minAge = eventData.MINAGE;
+                    this.maxAge = eventData.MAXAGE;
+                    this.eventType = eventData.eventType;
+                    this.eventSpot = eventData.eventSpot;
+                    // this.hostavatar = JSON.parse(sessionStorage.getItem('memInfo')).avatar;
+                    this.selectedCost = eventData.selectedCost;
+                    this.currentStep = 1;
+                    localStorage.removeItem('eventData');
+                }
             }
             
         },
@@ -235,10 +277,10 @@ $(document).ready(function(){
                 let choosedate = new Date(this.eventDate);
                 if(this.eventDate==''){
                     today.setDate(today.getDate() + 4);
-                    return today.getFullYear()+((today.getMonth()+1)<10?'/0':'/')+(today.getMonth()+1)+((today.getDate()+1)<10?'/0':'/')+(today.getDate());
+                    return this.stopDateConfirm = today.getFullYear()+((today.getMonth()+1)<10?'/0':'/')+(today.getMonth()+1)+((today.getDate()+1)<10?'/0':'/')+(today.getDate());
                 }else{
                     choosedate.setDate(choosedate.getDate() - 3);
-                    return choosedate.getFullYear()+((choosedate.getMonth()+1)<10?'/0':'/')+(choosedate.getMonth()+1)+((choosedate.getDate()+1)<10?'/0':'/')+(choosedate.getDate());
+                    return this.stopDateConfirm = choosedate.getFullYear()+((choosedate.getMonth()+1)<10?'/0':'/')+(choosedate.getMonth()+1)+((choosedate.getDate()+1)<10?'/0':'/')+(choosedate.getDate());
 
                 }
             },
@@ -318,6 +360,7 @@ $(document).ready(function(){
                 });
                         
                 this.validationOk();
+                this.storageInit();
                 
         },
         
@@ -339,7 +382,7 @@ $(document).ready(function(){
                 });
             };
 
-            
+            this.hostavatar = JSON.parse(sessionStorage.getItem('memInfo')).avatar;
         },
         
 

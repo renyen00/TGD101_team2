@@ -52,7 +52,7 @@ $(document).ready(function(){
         </ul>`,
     });
 
-    let vm = new Vue({
+    new Vue({
         el: '#activityList',
 
         data: {     // 變數放這裡！
@@ -67,8 +67,8 @@ $(document).ready(function(){
                 this.showoffice = false;
             },
             showOffice(){
-                this.showcreate = false;
-                this.showoffice = true;
+                this.showcreate = true;
+                this.showoffice = false;
             }
         },
         computed: {

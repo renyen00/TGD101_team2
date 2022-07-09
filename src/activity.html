@@ -102,44 +102,26 @@
             <h1>嶼友同行</h1>
             <h4>嶼友揪團, 與好友相約出遊</h4>
             <ul>
-                <li>
+                <li v-for="(oneactivity, index) in activity" v-show="index<2">
                     <article class="activity_a_beside" >
-                        <a href="./createEventDetail.html?activityid=0" class="btnXL_b--s">詳細資訊</a>
+                        <a :href="personhref(activity[index][7])" class="btnXL_b--s">詳細資訊</a>
                         <a href="" class="btnXL_y--s" >我要報名</a>
                     </article>
                     <article class="activity_span">
-                        <span>活動主題： 嗨翻大海盜</span>
-                        <span>活動地點： 鳥嶼樂園</span>
-                        <span>活動日期： 2022-07-22</span>
-                        <span>報名截止： 2022-07-19</span>
-                        <span>人數限制： 8</span>
+                        <span>活動主題： {{activity[index][1]}}</span>
+                        <span>活動地點： {{activity[index][2]}}</span>
+                        <span>活動日期： {{activity[index][3]}}</span>
+                        <span>報名截止： {{activity[index][4]}}</span>
+                        <span>人數限制： {{activity[index][5]}}</span>
                     </article>
                     <article class="activity_right_avatar">
                     <!-- 頭像 -->
-                    <div><img id="avatar" class="avatar1" :src="activity[0][6]" alt=""></div>
+                    <div><img id="avatar" class="avatar1" :src="activity[index][6]" alt=""></div>
                     <!-- 圖片 -->
-                    <img src="./images/userUpload/user7.jpg" alt="">
+                    <img :src="activity[index][0]" alt="">
                     </article>
                 </li>
-                <li>
-                    <article class="activity_a_beside">
-                        <a href="./createEventDetail.html?activityid=1" class="btnXL_b--s">詳細資訊</a>
-                        <a href="" class="btnXL_y--s" >我要報名</a>
-                    </article>
-                    <article class="activity_span">
-                        <span>活動主題： 天龍人聚會</span>
-                        <span>活動地點： 鳥嶼樂園</span>
-                        <span>活動日期： 2022-07-24</span>
-                        <span>報名截止： 2022-07-21</span>
-                        <span>人數限制： 10</span>
-                    </article>
-                    <article class="activity_right_avatar">
-                        <!-- 頭像 -->
-                        <div><img id="avatar" class="avatar2" :src="activity[1][6]" alt=""></div>
-                        <!-- 圖片 -->
-                        <img src="./images/userUpload/888.PNG" alt="">
-                    </article>
-                </li>
+                
             </ul>
 
             <!-- 按鈕 -->

@@ -38,7 +38,7 @@
             $imageName = 'user'.$_SESSION['UserUID'].'_'.$tInt.'.jpg';
 
             //server路徑+自己資料夾的名稱
-            // $path = $ServerRoot."/bettyGroup/src/images/userUpload/";
+            // $path = $ServerRoot."/bettyGroup/dist/images/userUpload/";
             $path = $ServerRoot."/tgd101/g2/dist/images/userUpload/";    
             if (!is_dir($path)){ //判斷目錄是否存在 不存在就建立 並賦予777許可權
                 mkdir($path,0777,true);

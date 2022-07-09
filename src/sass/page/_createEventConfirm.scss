@@ -284,9 +284,12 @@
             left: 23%;  //
     
             img{
-                width: 80%;
+                width: 130%;
                 display: block;
                 margin: 8% auto;
+                position: absolute;
+                top: -22%;
+                left: -18%;
             }
         }
     }

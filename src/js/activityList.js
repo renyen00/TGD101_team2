@@ -58,8 +58,8 @@ $(document).ready(function(){
         data: {     // 變數放這裡！
             officialList: [],           
             createList: [],
-            showcreate: false,
-            showoffice: true,
+            showcreate: true,
+            showoffice: false,
         },
         methods: {
             showCreate(e){

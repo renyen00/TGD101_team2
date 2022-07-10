@@ -250,7 +250,7 @@ $(document).ready(function(){
                     this.maxAge = eventData.MAXAGE;
                     this.eventType = eventData.eventType;
                     this.eventSpot = eventData.eventSpot;
-                    // this.hostavatar = JSON.parse(sessionStorage.getItem('memInfo')).avatar;
+                    this.hostavatar = JSON.parse(sessionStorage.getItem('memInfo')).avatar;
                     this.selectedCost = eventData.selectedCost;
                     this.currentStep = 1;
                     localStorage.removeItem('eventData');
@@ -382,7 +382,7 @@ $(document).ready(function(){
                 });
             };
 
-            this.hostavatar = JSON.parse(sessionStorage.getItem('memInfo')).avatar;
+            // this.hostavatar = JSON.parse(sessionStorage.getItem('memInfo')).avatar;
         },
         
 

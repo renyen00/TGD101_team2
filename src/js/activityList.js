@@ -10,7 +10,7 @@ $(document).ready(function(){
         template:
         `<ul class="activityList_ul_list" v-if="showoffice">
             <li v-for="event in init">
-                <img :src=event.PICTURE>
+                <img class="event_img" :src=event.PICTURE>
                 <article class="activityList_span">
                     <span>活動主題： {{event.TITLE}}</span>
                     <span>活動地點： {{event.NAME}}</span>
@@ -36,18 +36,19 @@ $(document).ready(function(){
         template:
         `<ul class="activityList_ul_list" v-if="showcreate">
             <li v-for="event in init">
-                <img :src=event.PICTURE>
+                <img class="event_img" :src=event.PICTURE>
                 <article class="activityList_span">
                     <span>活動主題： {{event.TITLE}}</span>
                     <span>活動地點： {{event.NAME}}</span>
                     <span>活動日期： {{event.EVENTDATE}}</span>
                     <span>報名截止： {{event.STOPTIME}}</span>
                     <span>人數限制： {{event.MAX}} 人</span>
+                    <div class="hostavatar"><img class="hostavatar_img" :src="event.AVATAR"></div>
                 </article>
                 <article class="activityList_a_beside">
                     <a :href="personhref(event.ID)" class="btnXL_b--s">詳細資訊</a>
                     <a  href="" class="btnXL_y--s">我要報名</a>
-                </article>                   
+                </article>
             </li>
         </ul>`,
     });
@@ -67,8 +68,8 @@ $(document).ready(function(){
                 this.showoffice = false;
             },
             showOffice(){
-                this.showcreate = true;
-                this.showoffice = false;
+                this.showcreate = false;
+                this.showoffice = true;
             }
         },
         computed: {

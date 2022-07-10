@@ -6,10 +6,12 @@
 
     //建立SQL語法
     if($postType['postType'] == 'createEvent'){
-        $sql = "SELECT a.*, p.NAME
+        $sql = "SELECT a.*, p.NAME, m.AVATAR
         FROM ACTIVITY a
          JOIN PLACE p
              on a.PLACE_ID = p.ID
+         JOIN MEMBER m
+             on a.MAIN_ID = m.ID
         WHERE a.STATUS = 2 or a.STATUS = 3
         order by a.ID desc";
         $statement = $pdo->query($sql);

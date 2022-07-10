@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("Connection_server.php");
     $acc = $_GET["EMAIL"];
     $pwd = $_GET["PASSWORD"];
@@ -15,7 +16,6 @@
 
     if(count($data) > 0){
         echo json_encode("有");
-        session_start();
     $_SESSION['UserE'] = $acc;
     // $_SESSION['memcol'] = $data;
         foreach($data as $index => $row){

@@ -146,24 +146,42 @@
                 padding: 10px;
                 justify-content: center;
 
-                img{
+                .event_img{
                     margin: 20px;
                     object-fit: cover;
                     width: 250px;
                     height: 250px;
                     display: block;
                     border-radius: 50%;
-
                 }
                 .activityList_span{
                     width: 300px;
                     margin: 20px;
+                    position: relative;
                 }
                 span{
                     font-size: 2rem;
                     display: flex;
                     flex-direction:column;
                     line-height: 50px;
+                    
+                }
+                .hostavatar{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    border: 8px solid map-get($Mapcolor, 'yellow');
+                    position: absolute;
+                    top: 60%;
+                    left: -42%;
+
+                    .hostavatar_img{
+                        position: absolute;
+                        width: 130%;
+                        margin: 8% auto;
+                        top: -22%;
+                        left: -16%;
+                    }
                 }
                 .activityList_a_beside{
                     margin: 15px;
@@ -280,7 +298,7 @@
             flex-direction: column;
             flex-wrap: wrap;
             margin-bottom: 30px;
-            img{
+            .event_img{
                 margin: 20px auto;
                 width: 200px;
                 height: 200px;
@@ -293,6 +311,16 @@
                 margin:0 auto;
                 text-align:center;
                 line-height: 33px;
+            }
+            .hostavatar{
+                width: 85px;
+                height: 85px;
+                border-radius: 50%;
+                border: 8px solid #f2bf61;
+                position: absolute;
+                top: -74%;
+                left: 64%;
+
             }
             .activityList_a_beside{
                 margin: 0;
